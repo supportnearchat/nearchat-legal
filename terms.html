@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NearChat — Terms of Service</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #0a0a0a;
+    --border: #e8e8e8;
+    --tag-bg: #f4f4f4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Top nav ── */
+  .lang-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .lang-nav-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 52px;
+    flex-wrap: wrap;
+  }
+  .lang-nav span {
+    font-size: 12px;
+    color: var(--muted);
+    margin-right: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .lang-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+  .lang-nav a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ── Layout ── */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  /* ── Language block ── */
+  .lang-block {
+    padding-top: 24px;
+  }
+  .lang-block + .lang-block {
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Header ── */
+  .doc-header {
+    margin-bottom: 56px;
+  }
+  .doc-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--tag-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .doc-title {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 44px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  .section ul li {
+    font-size: 15px;
+    color: #333;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .section ul li:last-child { border-bottom: none; }
+  .section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  /* ── Divider ── */
+  .lang-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .lang-divider-flag { font-size: 22px; }
+  .lang-divider-name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 48px 16px 80px; }
+    .doc-title { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="lang-nav" aria-label="Language navigation">
+  <div class="lang-nav-inner">
+    <span>Jump to:</span>
+    <a href="#en">English</a>
+    <a href="#ru">Русский</a>
+    <a href="#az">Azərbaycan</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ═══════════════════ ENGLISH ═══════════════════ -->
+  <section class="lang-block" id="en">
+    <div class="doc-header">
+      <div class="lang-divider">
+        <span class="lang-divider-flag">🇬🇧</span>
+        <span class="lang-divider-name">English</span>
+      </div>
+      <div class="doc-label">Terms of Service</div>
+      <h1 class="doc-title">NearChat User Agreement</h1>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">1. Acceptance of Terms</h2>
+      <p>This Agreement is a legally binding contract between you and the NearChat developer. By using the app you accept all terms. If you disagree — please uninstall the application.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">2. Age Restrictions</h2>
+      <p>NearChat is for users aged 17+. The «18+» mode is for adults only. The «Under 17» parameter refers to the partner's preferred age. The administration is not responsible for false age information.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">3. Code of Conduct and Prohibited Content</h2>
+      <p>You agree not to use NearChat for the following purposes:</p>
+      <ul>
+        <li>Insulting, threatening, intimidating or harassing other users</li>
+        <li>Posting sexually explicit material outside the «18+» mode</li>
+        <li>Creating or distributing child sexual abuse material (CSAM) — reported immediately to law enforcement</li>
+        <li>Distributing content involving minors in a sexual context in any mode</li>
+        <li>Sending spam, unauthorised advertising or unsolicited links</li>
+        <li>Impersonating another person or deceiving your chat partner</li>
+        <li>Sharing personal data of third parties without consent (doxxing)</li>
+        <li>Distributing malware or viruses</li>
+        <li>Violating applicable laws</li>
+        <li>Using the app for human trafficking or exploitation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">4. Intellectual Property</h2>
+      <p>All elements of NearChat are protected by copyright. You are granted a limited licence for personal non-commercial use only. Commercial use without written permission is prohibited.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">5. Limitation of Liability</h2>
+      <ul>
+        <li>The app is provided "AS IS" without any warranties</li>
+        <li>The administration is not responsible for user-generated message content</li>
+        <li>The administration does not guarantee uninterrupted operation of the app</li>
+        <li>The administration is not liable for any damages related to use of the app</li>
+        <li>The user is solely responsible for their conduct and legal compliance</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">6. User-Generated Content</h2>
+      <p>You bear full responsibility for all content transmitted through the app. The administration reserves the right to remove content that violates this Agreement.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">7. Blocking and Moderation</h2>
+      <p>The administration reserves the right to block access for violations of this Agreement. Blocks are applied to the device identifier. Users may appeal via support.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">8. Termination</h2>
+      <p>You may stop using the app at any time by uninstalling it. The administration may terminate your access for Agreement violations.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">9. Changes to the Agreement</h2>
+      <p>The administration may modify this Agreement at any time. The current version is always available in the app. Continued use constitutes acceptance of the updated terms.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">10. Governing Law</h2>
+      <p>This Agreement is governed by the laws of the developer's country of registration. Disputes shall be resolved through negotiation.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">11. Contact Information</h2>
+      <p>For questions: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a> or <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a>. We respond within 30 business days.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ RUSSIAN ═══════════════════ -->
+  <section class="lang-block" id="ru">
+    <div class="doc-header">
+      <div class="lang-divider">
+        <span class="lang-divider-flag">🇷🇺</span>
+        <span class="lang-divider-name">Русский</span>
+      </div>
+      <div class="doc-label">Пользовательское соглашение</div>
+      <h1 class="doc-title">Пользовательское соглашение NearChat</h1>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">1. Принятие условий</h2>
+      <p>Настоящее Пользовательское соглашение является юридически обязывающим договором между вами и разработчиком NearChat. Используя приложение, вы принимаете его условия в полном объёме. Если вы не согласны — прекратите использование и удалите приложение.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">2. Возрастные ограничения</h2>
+      <p>Приложение предназначено для лиц от 17 лет. Режим «18+» — только для совершеннолетних. Параметр «до 17» относится к возрасту собеседника, а не пользователя. Администрация не несёт ответственности за недостоверные сведения о возрасте.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">3. Правила поведения и запрещённый контент</h2>
+      <p>Вы обязуетесь не использовать NearChat в следующих целях:</p>
+      <ul>
+        <li>Оскорблять, угрожать, запугивать или преследовать других пользователей</li>
+        <li>Публиковать материалы сексуального характера вне режима «18+»</li>
+        <li>Создавать или распространять материалы сексуального насилия над детьми (CSAM) — немедленно передаётся в правоохранительные органы</li>
+        <li>Распространять контент с несовершеннолетними в сексуальном контексте в любом режиме</li>
+        <li>Рассылать спам, несанкционированную рекламу или нежелательные ссылки</li>
+        <li>Выдавать себя за другого человека или вводить собеседника в заблуждение</li>
+        <li>Публиковать персональные данные третьих лиц без их согласия (доксинг)</li>
+        <li>Распространять вредоносное программное обеспечение или вирусы</li>
+        <li>Нарушать действующее законодательство и нормы международного права</li>
+        <li>Использовать приложение в целях торговли людьми или эксплуатации</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">4. Интеллектуальная собственность</h2>
+      <p>Все элементы приложения NearChat защищены авторским правом. Вам предоставляется ограниченная лицензия на использование приложения исключительно в личных некоммерческих целях. Коммерческое использование без письменного разрешения запрещено.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">5. Ограничение ответственности</h2>
+      <ul>
+        <li>Приложение предоставляется «как есть» без каких-либо гарантий</li>
+        <li>Администрация не несёт ответственности за содержание сообщений пользователей</li>
+        <li>Администрация не гарантирует бесперебойную работу приложения</li>
+        <li>Администрация не несёт ответственности за прямой или косвенный ущерб от использования приложения</li>
+        <li>Пользователь несёт полную ответственность за своё поведение в приложении</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">6. Пользовательский контент</h2>
+      <p>Вы несёте полную ответственность за контент, передаваемый через приложение. Администрация вправе удалять контент, нарушающий настоящее Соглашение.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">7. Блокировка и модерация</h2>
+      <p>Администрация вправе заблокировать доступ при нарушении Соглашения или по жалобам пользователей. Блокировка применяется к идентификатору устройства. Пользователь вправе оспорить блокировку через поддержку.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">8. Прекращение действия</h2>
+      <p>Вы вправе прекратить использование приложения в любое время, удалив его. Администрация вправе прекратить ваш доступ при нарушении Соглашения.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">9. Изменения соглашения</h2>
+      <p>Администрация вправе вносить изменения в Соглашение. Актуальная версия всегда доступна в приложении. Продолжение использования означает принятие обновлённой редакции.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">10. Применимое право и разрешение споров</h2>
+      <p>Соглашение регулируется законодательством страны регистрации разработчика. Все споры стороны стремятся урегулировать путём переговоров.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">11. Контактная информация</h2>
+      <p>По вопросам, связанным с Соглашением: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a> или <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a>. Рассматриваем обращения в течение 30 рабочих дней.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ AZERBAIJANI ═══════════════════ -->
+  <section class="lang-block" id="az">
+    <div class="doc-header">
+      <div class="lang-divider">
+        <span class="lang-divider-flag">🇦🇿</span>
+        <span class="lang-divider-name">Azərbaycan</span>
+      </div>
+      <div class="doc-label">İstifadəçi Müqaviləsi</div>
+      <h1 class="doc-title">NearChat İstifadəçi Müqaviləsi</h1>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">1. Şərtlərin qəbulu</h2>
+      <p>Bu Müqavilə siz və NearChat işləyicisi arasında hüquqi bağlayıcı müqavilədir. Tətbiqdən istifadə etməklə şərtləri tam qəbul edirsiniz. Razı deyilsinizsə — tətbiqi silin.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">2. Yaş məhdudiyyətləri</h2>
+      <p>Tətbiq 17 yaş və yuxarı şəxslər üçündür. «18+» rejimi yalnız yetkinlər üçündür. «17-dən az» parametri söhbətçinin yaş seçimini bildirir. Administrasiya yanlış yaş məlumatına görə məsuliyyət daşımır.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">3. Davranış qaydaları və qadağan edilmiş məzmun</h2>
+      <p>Aşağıdakı məqsədlər üçün NearChat-dan istifadə etməməyi öhdənizə götürürsünüz:</p>
+      <ul>
+        <li>Digər istifadəçiləri təhqir etmək, hədələmək, qorxutmaq və ya təqib etmək</li>
+        <li>«18+» rejimdən kənar seksual xarakterli materiallar yaymaq</li>
+        <li>Uşaqlara qarşı cinsi zorakılığı əks etdirən material yaratmaq və ya yaymaq (CSAM)</li>
+        <li>İstənilən rejimdə yetkinlik yaşına çatmayanları seksual kontekstdə əhatə edən məzmun yaymaq</li>
+        <li>Spam, icazəsiz reklam və ya istənilməyən linklər göndərmək</li>
+        <li>Başqa şəxs kimi özünü təqdim etmək və ya söhbətçini aldatmaq</li>
+        <li>Razılıq olmadan üçüncü şəxslərin şəxsi məlumatlarını yaymaq</li>
+        <li>Zərərli proqram və ya viruslar yaymaq</li>
+        <li>Qanunvericiliyi pozmaq</li>
+        <li>Tətbiqi insan ticarəti və ya istismar məqsədilə istifadə etmək</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">4. Əqli mülkiyyət</h2>
+      <p>NearChat-ın bütün elementləri müəllif hüququ ilə qorunur. Sizə yalnız şəxsi qeyri-kommersiya məqsədlər üçün məhdud lisenziya verilir.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">5. Məsuliyyətin məhdudlaşdırılması</h2>
+      <ul>
+        <li>Tətbiq «olduğu kimi» (AS IS) təqdim edilir</li>
+        <li>Administrasiya istifadəçi mesajlarının məzmununa görə məsuliyyət daşımır</li>
+        <li>Administrasiya tətbiqin fasiləsiz işləməsinə zəmanət vermir</li>
+        <li>Administrasiya tətbiqdən istifadə ilə bağlı zərərə görə məsuliyyət daşımır</li>
+        <li>İstifadəçi öz davranışına tam məsuliyyət daşıyır</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">6. İstifadəçi məzmunu</h2>
+      <p>Tətbiq vasitəsilə ötürdüyünüz bütün məzmuna görə tam məsuliyyət daşıyırsınız. Administrasiya Müqaviləni pozan məzmunu silmək hüququnu saxlayır.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">7. Bloklanma və moderasiya</h2>
+      <p>Administrasiya Müqavilənin pozulması zamanı istifadəçinin girişini bloklamaq hüququnu saxlayır. İstifadəçi dəstəklə əlaqə saxlayaraq etiraz edə bilər.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">8. Müqavilənin xitamı</h2>
+      <p>Tətbiqi silərək istənilən vaxt istifadəni dayandıra bilərsiniz.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">9. Müqavilədə dəyişikliklər</h2>
+      <p>Administrasiya Müqaviləyə dəyişikliklər etmək hüququna malikdir. Aktual versiya həmişə tətbiqdə mövcuddur.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">10. Tətbiq olunan hüquq</h2>
+      <p>Müqavilə işləyicinin qeydiyyat ölkəsinin qanunvericiliyinə uyğun tənzimlənir.</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">11. Əlaqə məlumatı</h2>
+      <p>Suallar üçün: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a> və ya <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a>. Müraciətlərə 30 iş günü ərzində baxılır.</p>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

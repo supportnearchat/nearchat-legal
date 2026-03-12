@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NearChat — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #0a0a0a;
+    --border: #e8e8e8;
+    --tag-bg: #f4f4f4;
+    --link: #1a1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Top nav ── */
+  .lang-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .lang-nav-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 52px;
+    flex-wrap: wrap;
+  }
+  .lang-nav span {
+    font-size: 12px;
+    color: var(--muted);
+    margin-right: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .lang-nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+  .lang-nav a:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ── Layout ── */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  /* ── Language block ── */
+  .lang-block {
+    padding-top: 24px;
+  }
+  .lang-block + .lang-block {
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Header ── */
+  .doc-header {
+    margin-bottom: 56px;
+  }
+  .doc-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--tag-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .doc-title {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .doc-date {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 44px;
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .section ul li {
+    font-size: 15px;
+    color: #333;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .section ul li:last-child { border-bottom: none; }
+  .section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  /* ── Divider ── */
+  .lang-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .lang-divider-flag {
+    font-size: 22px;
+  }
+  .lang-divider-name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 48px 16px 80px; }
+    .doc-title { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="lang-nav" aria-label="Language navigation">
+  <div class="lang-nav-inner">
+    <span>Jump to:</span>
+    <a href="#en">English</a>
+    <a href="#ru">Русский</a>
+    <a href="#az">Azərbaycan</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ═══════════════════ ENGLISH ═══════════════════ -->
+  <section class="lang-block" id="en">
+    <div class="doc-header">
+      <div class="lang-divider">
+        <span class="lang-divider-flag">🇬🇧</span>
+        <span class="lang-divider-name">English</span>
+      </div>
+      <div class="doc-label">Privacy Policy</div>
+      <h1 class="doc-title">NearChat Privacy Policy</h1>
+      <p class="doc-date">Last updated: June 01, 2025</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">What we collect</h2>
+      <ul>
+        <li>Anonymous device identifier (Android ID) — used solely for abuse prevention; not shared with third parties</li>
+        <li>Selected search parameters: gender, age, topic (stored only for the session duration)</li>
+        <li>Country and city — only if you enter them manually</li>
+        <li>Technical data: OS version, device type, error codes</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">What we do NOT collect</h2>
+      <ul>
+        <li>Name, surname, email or phone number</li>
+        <li>Message content — conversations are never stored after the session ends</li>
+        <li>Precise device geolocation (GPS/IP geolocation is not used)</li>
+        <li>Data from social networks or third-party apps</li>
+        <li>Biometric data, payment details or financial information</li>
+        <li>Any information that could identify you personally</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Purposes of data processing</h2>
+      <ul>
+        <li>To match you with a chat partner based on your selected parameters</li>
+        <li>To ensure technical operation and stability of the chat</li>
+        <li>Abuse prevention: blocking rule violators by device identifier</li>
+        <li>To improve app performance and user experience</li>
+        <li>To comply with applicable legal requirements</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Sharing data with third parties</h2>
+      <ul>
+        <li>We do not sell or transfer your data to third parties for commercial purposes</li>
+        <li>Data may only be disclosed upon a lawful request from authorised authorities</li>
+        <li>Firebase (Google LLC) is used for technical infrastructure — GDPR compliant</li>
+        <li>We enter into data processing agreements with all service providers</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Data storage and deletion</h2>
+      <ul>
+        <li>Messages exist only within an active session and are never stored after it ends</li>
+        <li>Exception: when a report is submitted, last messages are temporarily saved for moderator review</li>
+        <li>Device identifier is stored only in case of a block for rule violations</li>
+        <li>We do not maintain conversation archives and cannot restore deleted messages</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Your rights</h2>
+      <ul>
+        <li>Right of access: you may request information about what data we process</li>
+        <li>Right to erasure: delete the app to remove all local data</li>
+        <li>Right to object: you may withdraw consent to data processing at any time</li>
+        <li>Right to lodge a complaint with a data protection authority</li>
+        <li>To exercise your rights, contact us using the details in the Contacts section</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Children's Privacy</h2>
+      <ul>
+        <li>The app is intended for users aged 17 and older</li>
+        <li>The «Under 17» filter refers to the preferred age of a chat partner, not the user's own age</li>
+        <li>We do not knowingly collect data from children under 13</li>
+        <li>If a child is using the app — notify us immediately via the Report button</li>
+        <li>We will block the account and delete any associated data</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Third-party services</h2>
+      <ul>
+        <li>Firebase Authentication (Google LLC) — anonymous sign-in without personal data</li>
+        <li>Firebase Firestore (Google LLC) — session parameter storage; policy: policies.google.com/privacy</li>
+        <li>Firebase Crashlytics — crash reports to improve stability</li>
+        <li>Google AdMob (Google LLC) — in-app advertising. AdMob may collect your device advertising identifier (GAID) for personalised ads. Policy: policies.google.com/privacy</li>
+        <li>To opt out of personalised ads: Settings → Privacy → Ads → Opt out of Ads Personalisation</li>
+        <li>Third-party services process data according to their own privacy policies</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Contact and Data Controller</h2>
+      <p>If you have questions about this Privacy Policy, reach us via Telegram or email — we respond within 30 days.</p>
+      <ul>
+        <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
+        <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ RUSSIAN ═══════════════════ -->
+  <section class="lang-block" id="ru">
+    <div class="doc-header">
+      <div class="lang-divider">
+        <span class="lang-divider-flag">🇷🇺</span>
+        <span class="lang-divider-name">Русский</span>
+      </div>
+      <div class="doc-label">Политика конфиденциальности</div>
+      <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
+      <p class="doc-date">Дата последнего обновления: 01.06.2025</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Что мы собираем</h2>
+      <ul>
+        <li>Анонимный идентификатор устройства (Android ID) — используется исключительно для защиты от злоупотреблений; не передаётся третьим лицам</li>
+        <li>Выбранные параметры поиска: пол, возраст, тема общения (хранятся только в течение сессии)</li>
+        <li>Страна и город — исключительно если вы указали их вручную</li>
+        <li>Технические данные о работе приложения: версия ОС, тип устройства, коды ошибок</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Что мы НЕ собираем</h2>
+      <ul>
+        <li>Имя, фамилию, email или номер телефона</li>
+        <li>Содержимое переписки — сообщения не сохраняются после завершения сессии</li>
+        <li>Точную геолокацию устройства (GPS/IP-геолокация не используется)</li>
+        <li>Данные из социальных сетей или сторонних приложений</li>
+        <li>Биометрические данные, платёжные данные или финансовую информацию</li>
+        <li>Любые сведения, позволяющие идентифицировать личность пользователя</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Цели обработки данных</h2>
+      <ul>
+        <li>Подбор собеседника по выбранным параметрам поиска</li>
+        <li>Обеспечение технической работы и стабильности чата</li>
+        <li>Защита от злоупотреблений: блокировка нарушителей по идентификатору устройства</li>
+        <li>Улучшение производительности и пользовательского опыта приложения</li>
+        <li>Исполнение требований применимого законодательства</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Передача данных третьим лицам</h2>
+      <ul>
+        <li>Мы не продаём и не передаём ваши данные третьим лицам в коммерческих целях</li>
+        <li>Данные могут быть раскрыты исключительно по законному требованию уполномоченных органов</li>
+        <li>Для технической инфраструктуры используется Firebase (Google LLC) — сервис соответствует GDPR</li>
+        <li>При передаче данных поставщикам услуг мы заключаем с ними договоры об обработке данных</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Хранение и удаление данных</h2>
+      <ul>
+        <li>Сообщения существуют только в рамках активной сессии и нигде не сохраняются после её завершения</li>
+        <li>Исключение: при подаче жалобы последние сообщения временно сохраняются для модератора, после чего удаляются</li>
+        <li>Идентификатор устройства хранится только в случае блокировки за нарушение правил</li>
+        <li>Мы не ведём архив переписки и не можем восстановить удалённые сообщения</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Ваши права</h2>
+      <ul>
+        <li>Право на доступ: вы можете запросить информацию о том, какие данные мы обрабатываем</li>
+        <li>Право на удаление: удалите приложение, чтобы удалить все локальные данные</li>
+        <li>Право на возражение: вы можете отозвать согласие на обработку данных в любой момент</li>
+        <li>Право на жалобу: вы вправе подать жалобу в надзорный орган по защите данных</li>
+        <li>Для реализации прав свяжитесь с нами по контактам в разделе «Контакты»</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Защита детей</h2>
+      <ul>
+        <li>Приложение предназначено для лиц в возрасте 17 лет и старше</li>
+        <li>Фильтр «до 17» означает возраст собеседника, а не самого пользователя</li>
+        <li>Мы не собираем осознанно данные детей до 13 лет</li>
+        <li>Если ребёнок использует приложение — сообщите нам через кнопку «Жалоба» или в поддержку</li>
+        <li>Мы заблокируем аккаунт и удалим связанные данные</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Сторонние сервисы</h2>
+      <ul>
+        <li>Firebase Authentication (Google LLC) — анонимная авторизация без личных данных</li>
+        <li>Firebase Firestore (Google LLC) — хранение параметров сессии; политика: policies.google.com/privacy</li>
+        <li>Firebase Crashlytics — отчёты об ошибках для улучшения стабильности</li>
+        <li>Google AdMob (Google LLC) — показ рекламы в приложении. AdMob может собирать рекламный идентификатор устройства (GAID) для показа персонализированной рекламы. Политика: policies.google.com/privacy</li>
+        <li>Вы можете отказаться от персонализированной рекламы: Настройки → Конфиденциальность → Реклама → Отключить персонализацию рекламы</li>
+        <li>Сторонние сервисы обрабатывают данные согласно собственным политикам конфиденциальности</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Контакты и ответственный за данные</h2>
+      <p>Если у вас есть вопросы о политике конфиденциальности, напишите нам в Telegram или на email — мы отвечаем в течение 30 дней.</p>
+      <ul>
+        <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
+        <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ AZERBAIJANI ═══════════════════ -->
+  <section class="lang-block" id="az">
+    <div class="doc-header">
+      <div class="lang-divider">
+        <span class="lang-divider-flag">🇦🇿</span>
+        <span class="lang-divider-name">Azərbaycan</span>
+      </div>
+      <div class="doc-label">Məxfilik Siyasəti</div>
+      <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
+      <p class="doc-date">Son yeniləmə tarixi: 01.06.2025</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Nə toplayırıq</h2>
+      <ul>
+        <li>Anonim cihaz identifikatoru (Android ID) — yalnız sui-istifadədən qorunmaq üçün; üçüncü tərəflərə ötürülmür</li>
+        <li>Seçilmiş axtarış parametrləri: cins, yaş, mövzu (yalnız sessiya müddətində saxlanılır)</li>
+        <li>Ölkə və şəhər — yalnız əl ilə daxil etdikdə</li>
+        <li>Tətbiqin işi üçün texniki məlumatlar: OS versiyası, cihaz növü, xəta kodları</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Nə toplamırıq</h2>
+      <ul>
+        <li>Ad, soyad, email və ya telefon nömrəsi</li>
+        <li>Yazışmaların məzmunu — mesajlar sessiya bitdikdən sonra saxlanılmır</li>
+        <li>Cihazın dəqiq geolokasiyası (GPS/IP-geolokasiya istifadə edilmir)</li>
+        <li>Sosial şəbəkələrdən və ya digər tətbiqlərdən məlumatlar</li>
+        <li>Biometrik məlumatlar, ödəniş məlumatları və ya maliyyə məlumatı</li>
+        <li>İstifadəçinin şəxsiyyətini müəyyən etməyə imkan verən hər hansı məlumat</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Məlumatların işlənməsi məqsədləri</h2>
+      <ul>
+        <li>Seçilmiş parametrlərə görə söhbətçi tapmaq</li>
+        <li>Söhbətin texniki işini və sabitliyini təmin etmək</li>
+        <li>Sui-istifadədən qorunma: qayda pozucularını cihaz identifikatoru ilə bloklamaq</li>
+        <li>Tətbiqin performansını və istifadəçi təcrübəsini yaxşılaşdırmaq</li>
+        <li>Tətbiq olunan qanunvericiliyin tələblərini yerinə yetirmək</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Üçüncü tərəflərə məlumat ötürülməsi</h2>
+      <ul>
+        <li>Məlumatlarınızı kommersiya məqsədilə üçüncü tərəflərə satmırıq və ötürmürük</li>
+        <li>Məlumatlar yalnız səlahiyyətli dövlət orqanlarının qanuni tələbi ilə açıqlanır</li>
+        <li>Texniki infrastruktur üçün Firebase (Google LLC) istifadə edilir — GDPR-a uyğundur</li>
+        <li>Xidmət təminatçılarına məlumat ötürüldükdə onlarla məlumat emalı müqaviləsi bağlanır</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Məlumatların saxlanması və silinməsi</h2>
+      <ul>
+        <li>Mesajlar yalnız aktiv sessiya çərçivəsində mövcuddur və sessiya bitdikdən sonra saxlanılmır</li>
+        <li>İstisna: şikayət zamanı son mesajlar moderator üçün müvəqqəti saxlanılır, sonra silinir</li>
+        <li>Cihaz identifikatoru yalnız qayda pozuntusu zamanı blok üçün saxlanılır</li>
+        <li>Yazışma arxivi aparmırıq və silinmiş mesajları bərpa etmək mümkün deyil</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Sizin hüquqlarınız</h2>
+      <ul>
+        <li>Giriş hüququ: hansı məlumatları emal etdiyimiz barədə məlumat tələb edə bilərsiniz</li>
+        <li>Silmə hüququ: bütün lokal məlumatları silmək üçün tətbiqi silin</li>
+        <li>Etiraz hüququ: istənilən vaxt məlumatların emalına razılığı geri götürə bilərsiniz</li>
+        <li>Şikayət hüququ: məlumatların mühafizəsi üzrə nəzarət orqanına şikayət etmək hüququnuz var</li>
+        <li>Hüquqlarınızı həyata keçirmək üçün «Əlaqə» bölməsindəki kontaktlarla bizimlə əlaqə saxlayın</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Uşaqların qorunması</h2>
+      <ul>
+        <li>Tətbiq 17 yaş və yuxarı şəxslər üçün nəzərdə tutulub</li>
+        <li>«17-dən az» filtri söhbətçinin yaşını bildirir, istifadəçinin öz yaşını deyil</li>
+        <li>13 yaşına çatmayan uşaqların məlumatlarını bilərəkdən toplamırıq</li>
+        <li>Uşağın tətbiqdən istifadə etdiyini öyrənsəniz — dərhal «Şikayət» düyməsi ilə bildirin</li>
+        <li>Hesabı bloklanacaq və əlaqəli məlumatlar silinəcək</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Üçüncü tərəf xidmətlər</h2>
+      <ul>
+        <li>Firebase Authentication (Google LLC) — şəxsi məlumat olmadan anonim avtorizasiya</li>
+        <li>Firebase Firestore (Google LLC) — sessiya parametrlərinin saxlanması; siyasət: policies.google.com/privacy</li>
+        <li>Firebase Crashlytics — sabitliyi artırmaq üçün xəta hesabatları</li>
+        <li>Google AdMob (Google LLC) — tətbiqdə reklam göstərilməsi. AdMob fərdiləşdirilmiş reklam üçün cihazın reklam identifikatorunu (GAID) toplaya bilər. Siyasət: policies.google.com/privacy</li>
+        <li>Fərdiləşdirilmiş reklamdan imtina: Parametrlər → Məxfilik → Reklam → Reklamın fərdiləşdirilməsini söndür</li>
+        <li>Üçüncü tərəf xidmətlər məlumatları öz məxfilik siyasətlərinə uyğun emal edir</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Əlaqə və məlumatlardan məsul şəxs</h2>
+      <p>Məxfilik siyasəti ilə bağlı suallarınız varsa, Telegram və ya email vasitəsilə bizimlə əlaqə saxlayın — 30 gün ərzində cavab veririk.</p>
+      <ul>
+        <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
+        <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
