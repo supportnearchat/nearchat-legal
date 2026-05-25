@@ -76,17 +76,16 @@
   <div class="lang-nav-inner">
     <span>Jump to:</span>
     <a href="#en">English</a>
-    <a href="#ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
-    <a href="#az">Az&#601;rbaycan</a>
+    <a href="#ru">Русский</a>
+    <a href="#az">Azərbaycan</a>
   </div>
 </nav>
 
 <div class="page">
 
-<!-- ENGLISH -->
 <section class="lang-block" id="en">
   <div class="doc-header">
-    <div class="lang-divider"><span class="lang-divider-flag">&#127468;&#127463;</span><span class="lang-divider-name">English</span></div>
+    <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Privacy Policy</div>
     <h1 class="doc-title">NearChat Privacy Policy</h1>
     <p class="doc-date">Last updated: May 24, 2026</p>
@@ -95,13 +94,13 @@
   <div class="section">
     <h2 class="section-title">1. What data we collect</h2>
     <ul>
-      <li>Anonymous device identifier (Android ID) &#8212; used solely for abuse prevention, ban enforcement, and re-registration cooldown; not shared with third parties for commercial purposes</li>
-      <li>Firebase UID &#8212; anonymous identifier assigned at sign-in; used for ban verification and session management; not linked to any personal information</li>
-      <li>Selected search parameters: gender, age range, conversation topic &#8212; stored only for the duration of the active session</li>
-      <li>Country and city &#8212; only if you enter them manually</li>
+      <li>Anonymous device identifier (Android ID) — used strictly for server-side abuse prevention, ban enforcement, and tracking re-registration cooldown; it is never shared with third parties for commercial use</li>
+      <li>Firebase UID — anonymous identifier assigned at sign-in, used simultaneously with Android ID for security checks, ban verification, and active session management</li>
+      <li>Selected search parameters: gender, age range (18-21, 22-25, 26-35, 36+), conversation topic — processed and stored only for the duration of the active matchmaking queue and active session</li>
+      <li>Country and city — only if you enter them manually</li>
       <li>Technical diagnostics: OS version, device type, app version, crash reports (via Firebase Crashlytics)</li>
-      <li>FCM push token &#8212; used solely to deliver in-app notifications; not shared with third parties</li>
-      <li>Admin panel access logs &#8212; email address, login time, browser agent, login result (success/failure); stored in Firestore collection admin_logs; accessible only to administrators</li>
+      <li>FCM push token — used solely to deliver active message notifications; never shared with third parties</li>
+      <li>Admin panel access logs — email address, login time, browser agent, login result; securely stored in Firestore and accessible only to administrators</li>
     </ul>
   </div>
 
@@ -109,22 +108,22 @@
     <h2 class="section-title">2. What we do NOT collect</h2>
     <ul>
       <li>Name, surname, email address or phone number (from regular users)</li>
-      <li>Message content &#8212; conversations are never stored after the session ends</li>
+      <li>Message content — conversations are never stored on the server after the session ends</li>
       <li>Precise device geolocation (GPS or IP geolocation is not used)</li>
       <li>Data from social networks or third-party applications</li>
       <li>Biometric data, payment details or financial information</li>
       <li>Any information that could directly identify you as a person</li>
-      <li>Advertising identifier (GAID) &#8212; AdMob integration was removed; no advertising data is collected</li>
+      <li>Advertising identifier (GAID) — no ad networks integrated, no advertising data collected</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">3. Purposes of data processing</h2>
     <ul>
-      <li>Matching you with a chat partner based on your selected parameters (performed exclusively server-side via Cloud Functions)</li>
+      <li>Matching you with a chat partner based on your selected adult parameters (performed exclusively server-side via Cloud Functions)</li>
       <li>Ensuring the technical operation and stability of the service</li>
-      <li>Abuse prevention: blocking rule violators by device identifier and Firebase UID</li>
-      <li>Enforcing re-registration cooldown (7 days) to prevent ban circumvention after account deletion</li>
+      <li>Abuse prevention: blocking rule violators simultaneously by device identifier (Android ID) and Firebase UID</li>
+      <li>Enforcing platform re-registration cooldown (7 days) via UID and device tracking to prevent post-deletion abuse</li>
       <li>Delivering push notifications about new messages and chat matches</li>
       <li>Improving app performance and stability via crash analytics</li>
       <li>Moderating user reports submitted via the in-app Report function</li>
@@ -136,9 +135,9 @@
   <div class="section">
     <h2 class="section-title">4. Legal basis for processing (GDPR)</h2>
     <ul>
-      <li>Legitimate interest &#8212; to provide the core chat-matching service, prevent abuse, and ensure platform security</li>
-      <li>Legal obligation &#8212; when required to disclose data to competent authorities (e.g. CSAM reports)</li>
-      <li>Consent &#8212; for optional features where explicitly requested</li>
+      <li>Legitimate interest — to provide the core chat-matching service, prevent abuse, and ensure platform security</li>
+      <li>Legal obligation — when required to disclose data to competent authorities (e.g. CSAM reports)</li>
+      <li>Consent — for optional features where explicitly requested</li>
     </ul>
   </div>
 
@@ -148,7 +147,7 @@
       <li>We do not sell or transfer your data to third parties for commercial purposes</li>
       <li>Data may only be disclosed upon a lawful request from authorised authorities</li>
       <li>CSAM-related reports are proactively forwarded to law enforcement and where applicable to NCMEC</li>
-      <li>Firebase (Google LLC) is used for technical infrastructure &#8212; GDPR compliant; Data Processing Agreement concluded</li>
+      <li>Firebase (Google LLC) is used for technical infrastructure — GDPR compliant; Data Processing Agreement concluded</li>
       <li>All service providers process data only on our behalf and under data processing agreements</li>
     </ul>
   </div>
@@ -159,7 +158,7 @@
       <li>Chat messages exist only within an active session and are deleted automatically within 24 hours after the session ends</li>
       <li>When a report is submitted, the most recent messages (up to 20) are temporarily retained for moderator review, then deleted within 30 days</li>
       <li>Device identifier and Firebase UID are retained only when a ban is applied; deleted when the ban expires or is lifted</li>
-      <li>Re-registration cooldown record (delete_cooldown) is retained for 8 days after account deletion, then automatically purged</li>
+      <li>Re-registration cooldown record is retained for 7 days after account deletion, then automatically purged by server functions</li>
       <li>User profiles are automatically deleted after 90 days of inactivity</li>
       <li>Admin access logs are retained for 90 days for security audit purposes</li>
       <li>We do not maintain conversation archives and cannot restore deleted messages</li>
@@ -170,19 +169,18 @@
     <h2 class="section-title">7. Your rights</h2>
     <ul>
       <li>Right of access: you may request information about what data we process about you</li>
-      <li>Right to erasure: delete your account directly in the app (Settings &#8594; Danger zone &#8594; Delete my account and data) or by contacting us</li>
+      <li>Right to erasure: delete your account directly in the app (Settings → Danger zone → Delete my account and data)</li>
       <li>Right to data portability: you may request a copy of your data in a machine-readable format</li>
       <li>Right to object: you may object to processing based on legitimate interest by contacting us</li>
       <li>Right to lodge a complaint with the data protection authority in your country</li>
-      <li>To exercise any right, contact us via the details in Section 11</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">8. Account and data deletion</h2>
-    <p>You may delete your account and all associated data at any time directly within the app: <strong>Settings &#8594; Danger zone &#8594; Delete my account and data</strong>. Alternatively, send a deletion request to support.nearchat@gmail.com. We will process the request within 30 days.</p>
+    <p>You may delete your account and all associated data at any time directly within the app: <strong>Settings → Danger zone → Delete my account and data</strong>. Alternatively, send a deletion request to support.nearchat@gmail.com. We will process the request within 30 days.</p>
     <p>Upon deletion the following are removed: your Firestore user profile, Firebase Auth account, RTDB presence, queue and session records, and all local app preferences.</p>
-    <p>A 7-day re-registration cooldown is recorded after deletion (keyed by Firebase UID) to prevent abuse. Device identifier records linked to active bans are retained to prevent ban circumvention, as permitted by our legitimate interest in platform safety.</p>
+    <p>A 7-day re-registration cooldown is strictly recorded after deletion (keyed simultaneously by Firebase UID and Android ID) to prevent platform abuse. Device identifier records linked to active bans are retained to prevent ban circumvention, as permitted by our legitimate interest in platform safety.</p>
   </div>
 
   <div class="section">
@@ -190,36 +188,35 @@
     <p>NearChat implements the following technical measures to protect user data:</p>
     <ul>
       <li>Firebase Security Rules: each user can only read and write their own data; system fields (ban status, roles) cannot be modified by client-side code</li>
-      <li>Session creation is performed exclusively server-side via Cloud Functions &#8212; clients cannot create sessions directly</li>
-      <li>The banned devices list (banned_devices) is accessible only to administrators via Admin SDK &#8212; not to regular users</li>
-      <li>Ban verification uses the user&#39;s own bans/{uid} document &#8212; the user cannot read other users&#39; ban records</li>
+      <li>Session creation is performed exclusively server-side via Cloud Functions — clients cannot create sessions directly</li>
+      <li>The banned devices list (banned_devices) is accessible only to administrators via Admin SDK — not to regular users</li>
+      <li>Ban verification uses both Android ID and the user's bans/{uid} document simultaneously upon launch</li>
       <li>Report submissions are validated server-side: the reporter UID must match the authenticated user; prohibited fields are blocked</li>
       <li>All data is transmitted over encrypted connections (TLS 1.2+)</li>
-      <li>Admin panel sessions expire after 30 minutes of inactivity; login attempts are rate-limited (5 failures trigger a 15-minute lockout)</li>
+      <li>Admin panel sessions expire after 30 minutes of inactivity; login attempts are rate-limited</li>
       <li>Administrator actions are logged with timestamp, email, and browser agent</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">10. Children&#39;s Privacy (COPPA)</h2>
+    <h2 class="section-title">10. Children's Privacy</h2>
     <ul>
-      <li>NearChat is intended exclusively for users aged 18 and older. Age is verified at app launch via a date-of-birth gate</li>
-      <li>The "Under 17" search filter refers to the preferred age of a chat partner, not the user&#39;s own age</li>
-      <li>We do not knowingly collect personal data from anyone under the age of 13</li>
-      <li>If you believe a minor is using the app, please notify us immediately via the in-app Report button or by email</li>
-      <li>Upon notification we will investigate and delete all associated data without delay</li>
+      <li>NearChat is intended exclusively for users aged 18 and older. Age is verified at app launch via a mandatory date-of-birth gate.</li>
+      <li>All active search filters are strictly limited to adult age brackets (18-21, 22-25, 26-35, 36+).</li>
+      <li>We do not knowingly collect personal data from anyone under the age of 18.</li>
+      <li>If you suspect any user is a minor or is violating the age policy, please use the in-app Report button immediately to submit a report for moderator review.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">11. Third-party services</h2>
     <ul>
-      <li>Firebase Authentication (Google LLC) &#8212; anonymous sign-in; no personal data required. All data encrypted in transit (TLS)</li>
-      <li>Firebase Firestore (Google LLC) &#8212; user profile and session parameter storage; data encrypted in transit and at rest</li>
-      <li>Firebase Realtime Database (Google LLC) &#8212; real-time chat matching and presence; data encrypted in transit</li>
-      <li>Firebase Crashlytics (Google LLC) &#8212; crash diagnostics to improve stability</li>
-      <li>Firebase Cloud Messaging (Google LLC) &#8212; push notifications (FCM token only; no message content stored)</li>
-      <li>Firebase Cloud Functions (Google LLC) &#8212; server-side session creation, auto-banning, GDPR deletion, scheduled cleanup</li>
+      <li>Firebase Authentication (Google LLC) — anonymous sign-in; no personal data required</li>
+      <li>Firebase Firestore (Google LLC) — user profile and session parameter storage</li>
+      <li>Firebase Realtime Database (Google LLC) — real-time chat matching and presence</li>
+      <li>Firebase Crashlytics (Google LLC) — crash diagnostics to improve stability</li>
+      <li>Firebase Cloud Messaging (Google LLC) — push notifications</li>
+      <li>Firebase Cloud Functions (Google LLC) — server-side session creation, automatic banning infrastructure, deletion routines</li>
     </ul>
   </div>
 
@@ -233,143 +230,133 @@
   </div>
 </section>
 
-<!-- RUSSIAN -->
 <section class="lang-block" id="ru">
   <div class="doc-header">
-    <div class="lang-divider"><span class="lang-divider-flag">&#127479;&#127482;</span><span class="lang-divider-name">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span></div>
-    <div class="doc-label">&#1055;&#1086;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072; &#1082;&#1086;&#1085;&#1092;&#1080;&#1076;&#1077;&#1085;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1080;</div>
-    <h1 class="doc-title">&#1055;&#1086;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072; &#1082;&#1086;&#1085;&#1092;&#1080;&#1076;&#1077;&#1085;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1080; NearChat</h1>
-    <p class="doc-date">&#1044;&#1072;&#1090;&#1072; &#1087;&#1086;&#1089;&#1083;&#1077;&#1076;&#1085;&#1077;&#1075;&#1086; &#1086;&#1073;&#1085;&#1086;&#1074;&#1083;&#1077;&#1085;&#1080;&#1103;: 24.05.2026</p>
+    <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
+    <div class="doc-label">Политика конфиденциальности</div>
+    <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
+    <p class="doc-date">Дата последнего обновления: 24.05.2026</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">1. &#1050;&#1072;&#1082;&#1080;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1084;&#1099; &#1089;&#1086;&#1073;&#1080;&#1088;&#1072;&#1077;&#1084;</h2>
+    <h2 class="section-title">1. Какие данные мы собираем</h2>
     <ul>
-      <li>&#1040;&#1085;&#1086;&#1085;&#1080;&#1084;&#1085;&#1099;&#1081; &#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088; &#1091;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072; (Android ID) &#8212; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1079;&#1072;&#1097;&#1080;&#1090;&#1099; &#1086;&#1090; &#1079;&#1083;&#1086;&#1091;&#1087;&#1086;&#1090;&#1088;&#1077;&#1073;&#1083;&#1077;&#1085;&#1080;&#1081;, &#1073;&#1083;&#1086;&#1082;&#1080;&#1088;&#1086;&#1074;&#1086;&#1082; &#1080; &#1082;&#1091;&#1083;&#1076;&#1072;&#1091;&#1085;&#1072; &#1087;&#1077;&#1088;&#1077;&#1088;&#1077;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1094;&#1080;&#1080;; &#1085;&#1077; &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1105;&#1090;&#1089;&#1103; &#1090;&#1088;&#1077;&#1090;&#1100;&#1080;&#1084; &#1083;&#1080;&#1094;&#1072;&#1084; &#1074; &#1082;&#1086;&#1084;&#1084;&#1077;&#1088;&#1095;&#1077;&#1089;&#1082;&#1080;&#1093; &#1094;&#1077;&#1083;&#1103;&#1093;</li>
-      <li>Firebase UID &#8212; &#1072;&#1085;&#1086;&#1085;&#1080;&#1084;&#1085;&#1099;&#1081; &#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088;, &#1087;&#1088;&#1080;&#1089;&#1074;&#1072;&#1080;&#1074;&#1072;&#1077;&#1084;&#1099;&#1081; &#1087;&#1088;&#1080; &#1074;&#1093;&#1086;&#1076;&#1077;; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1076;&#1083;&#1103; &#1087;&#1088;&#1086;&#1074;&#1077;&#1088;&#1082;&#1080; &#1073;&#1072;&#1085;&#1072; &#1080; &#1091;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1103; &#1089;&#1077;&#1089;&#1089;&#1080;&#1103;&#1084;&#1080;; &#1085;&#1077; &#1089;&#1074;&#1103;&#1079;&#1072;&#1085; &#1085;&#1080; &#1089; &#1082;&#1072;&#1082;&#1086;&#1081; &#1083;&#1080;&#1095;&#1085;&#1086;&#1081; &#1080;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1077;&#1081;</li>
-      <li>&#1042;&#1099;&#1073;&#1088;&#1072;&#1085;&#1085;&#1099;&#1077; &#1087;&#1072;&#1088;&#1072;&#1084;&#1077;&#1090;&#1088;&#1099; &#1087;&#1086;&#1080;&#1089;&#1082;&#1072;: &#1087;&#1086;&#1083;, &#1074;&#1086;&#1079;&#1088;&#1072;&#1089;&#1090;, &#1090;&#1077;&#1084;&#1072; &#8212; &#1093;&#1088;&#1072;&#1085;&#1103;&#1090;&#1089;&#1103; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; &#1072;&#1082;&#1090;&#1080;&#1074;&#1085;&#1086;&#1081; &#1089;&#1077;&#1089;&#1089;&#1080;&#1080;</li>
-      <li>&#1057;&#1090;&#1088;&#1072;&#1085;&#1072; &#1080; &#1075;&#1086;&#1088;&#1086;&#1076; &#8212; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1077;&#1089;&#1083;&#1080; &#1074;&#1099; &#1091;&#1082;&#1072;&#1079;&#1072;&#1083;&#1080; &#1080;&#1093; &#1074;&#1088;&#1091;&#1095;&#1085;&#1091;&#1102;</li>
-      <li>&#1058;&#1077;&#1093;&#1085;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;: &#1074;&#1077;&#1088;&#1089;&#1080;&#1103; &#1054;&#1057;, &#1090;&#1080;&#1087; &#1091;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072;, &#1074;&#1077;&#1088;&#1089;&#1080;&#1103; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;, &#1086;&#1090;&#1095;&#1105;&#1090;&#1099; &#1086;&#1073; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;&#1093; (Firebase Crashlytics)</li>
-      <li>FCM push-&#1090;&#1086;&#1082;&#1077;&#1085; &#8212; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1076;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1080; &#1091;&#1074;&#1077;&#1076;&#1086;&#1084;&#1083;&#1077;&#1085;&#1080;&#1081;; &#1085;&#1077; &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1105;&#1090;&#1089;&#1103; &#1090;&#1088;&#1077;&#1090;&#1100;&#1080;&#1084; &#1083;&#1080;&#1094;&#1072;&#1084;</li>
-      <li>&#1046;&#1091;&#1088;&#1085;&#1072;&#1083; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1072; &#1072;&#1076;&#1084;&#1080;&#1085;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1086;&#1088;&#1072; &#8212; email, &#1074;&#1088;&#1077;&#1084;&#1103; &#1074;&#1093;&#1086;&#1076;&#1072;, &#1073;&#1088;&#1072;&#1091;&#1079;&#1077;&#1088;, &#1088;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090; &#1074;&#1093;&#1086;&#1076;&#1072;; &#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1089;&#1103; &#1074; Firestore (admin_logs); &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1077;&#1085; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1072;&#1076;&#1084;&#1080;&#1085;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1086;&#1088;&#1072;&#1084;</li>
+      <li>Анонимный идентификатор устройства (Android ID) — используется исключительно на стороне сервера для предотвращения нарушений правил, применения банов и контроля кулдауна перерегистрации; никогда не передается третьим лицам;</li>
+      <li>Firebase UID — анонимный идентификатор, присваиваемый при входе, используемый одновременно с Android ID для проверки статуса блокировок и управления сессиями;</li>
+      <li>Выбранные параметры поиска: пол, возрастной диапазон (18-21, 22-25, 26-35, 36+), тема общения — обрабатываются сервером только во время нахождения в очереди и активной сессии общения;</li>
+      <li>Страна и город — только в случае, если вы вводите их вручную;</li>
+      <li>Техническая диагностика: версия ОС, модель устройства, версия приложения, отчеты о сбоях (через Firebase Crashlytics);</li>
+      <li>FCM-токен push-уведомлений — используется только для доставки уведомлений о новых сообщениях;</li>
+      <li>Логи доступа к панели администратора — email, время входа, данные браузера; хранятся в Firestore и доступны только администраторам.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">2. &#1063;&#1090;&#1086; &#1084;&#1099; &#1053;&#1045; &#1089;&#1086;&#1073;&#1080;&#1088;&#1072;&#1077;&#1084;</h2>
+    <h2 class="section-title">2. Что мы НЕ собираем</h2>
     <ul>
-      <li>&#1048;&#1084;&#1103;, &#1092;&#1072;&#1084;&#1080;&#1083;&#1080;&#1102;, email &#1080;&#1083;&#1080; &#1085;&#1086;&#1084;&#1077;&#1088; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;&#1072; (&#1091; &#1086;&#1073;&#1099;&#1095;&#1085;&#1099;&#1093; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1077;&#1081;)</li>
-      <li>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1080;&#1084;&#1086;&#1077; &#1087;&#1077;&#1088;&#1077;&#1087;&#1080;&#1089;&#1082;&#1080; &#8212; &#1089;&#1086;&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1103; &#1085;&#1077; &#1089;&#1086;&#1093;&#1088;&#1072;&#1085;&#1103;&#1102;&#1090;&#1089;&#1103; &#1087;&#1086;&#1089;&#1083;&#1077; &#1079;&#1072;&#1074;&#1077;&#1088;&#1096;&#1077;&#1085;&#1080;&#1103; &#1089;&#1077;&#1089;&#1089;&#1080;&#1080;</li>
-      <li>&#1058;&#1086;&#1095;&#1085;&#1091;&#1102; &#1075;&#1077;&#1086;&#1083;&#1086;&#1082;&#1072;&#1094;&#1080;&#1102; &#1091;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072; (GPS/IP-&#1075;&#1077;&#1086;&#1083;&#1086;&#1082;&#1072;&#1094;&#1080;&#1103; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;)</li>
-      <li>&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1080;&#1079; &#1089;&#1086;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1099;&#1093; &#1089;&#1077;&#1090;&#1077;&#1081; &#1080;&#1083;&#1080; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1085;&#1080;&#1093; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1081;</li>
-      <li>&#1041;&#1080;&#1086;&#1084;&#1077;&#1090;&#1088;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;, &#1087;&#1083;&#1072;&#1090;&#1105;&#1078;&#1085;&#1099;&#1077; &#1088;&#1077;&#1082;&#1074;&#1080;&#1079;&#1080;&#1090;&#1099; &#1080;&#1083;&#1080; &#1092;&#1080;&#1085;&#1072;&#1085;&#1089;&#1086;&#1074;&#1091;&#1102; &#1080;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1102;</li>
-      <li>&#1056;&#1077;&#1082;&#1083;&#1072;&#1084;&#1085;&#1099;&#1081; &#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088; (GAID) &#8212; &#1080;&#1085;&#1090;&#1077;&#1075;&#1088;&#1072;&#1094;&#1080;&#1103; AdMob &#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1072;; &#1088;&#1077;&#1082;&#1083;&#1072;&#1084;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1085;&#1077; &#1089;&#1086;&#1073;&#1080;&#1088;&#1072;&#1102;&#1090;&#1089;&#1103;</li>
+      <li>Имена, фамилии, адреса электронной почты или номера телефонов обычных пользователей;</li>
+      <li>Содержимое сообщений — чаты никогда не сохраняются на сервере после завершения сессии;</li>
+      <li>Точное географическое положение (данные GPS или IP-геолокация не используются);</li>
+      <li>Данные из ваших социальных сетей или других сторонних приложений;</li>
+      <li>Биометрические или финансовые данные;</li>
+      <li>Рекламный идентификатор (GAID) — в приложении нет интеграции рекламных сетей AdMob или трекеров.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">3. &#1062;&#1077;&#1083;&#1080; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;</h2>
+    <h2 class="section-title">3. Цели обработки данных</h2>
     <ul>
-      <li>&#1055;&#1086;&#1076;&#1073;&#1086;&#1088; &#1089;&#1086;&#1073;&#1077;&#1089;&#1077;&#1076;&#1085;&#1080;&#1082;&#1072; &#1087;&#1086; &#1074;&#1099;&#1073;&#1088;&#1072;&#1085;&#1085;&#1099;&#1084; &#1087;&#1072;&#1088;&#1072;&#1084;&#1077;&#1090;&#1088;&#1072;&#1084; (&#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1077;&#1090;&#1089;&#1103; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1085;&#1072; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1077; &#1089;&#1077;&#1088;&#1074;&#1077;&#1088;&#1072; &#1095;&#1077;&#1088;&#1077;&#1079; Cloud Functions)</li>
-      <li>&#1054;&#1073;&#1077;&#1089;&#1087;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; &#1090;&#1077;&#1093;&#1085;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099; &#1080; &#1089;&#1090;&#1072;&#1073;&#1080;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1080; &#1089;&#1077;&#1088;&#1074;&#1080;&#1089;&#1072;</li>
-      <li>&#1047;&#1072;&#1097;&#1080;&#1090;&#1072; &#1086;&#1090; &#1079;&#1083;&#1086;&#1091;&#1087;&#1086;&#1090;&#1088;&#1077;&#1073;&#1083;&#1077;&#1085;&#1080;&#1081;: &#1073;&#1083;&#1086;&#1082;&#1080;&#1088;&#1086;&#1074;&#1082;&#1072; &#1085;&#1072;&#1088;&#1091;&#1096;&#1080;&#1090;&#1077;&#1083;&#1077;&#1081; &#1087;&#1086; Android ID &#1080; Firebase UID</li>
-      <li>&#1055;&#1088;&#1080;&#1084;&#1077;&#1085;&#1077;&#1085;&#1080;&#1077; &#1082;&#1091;&#1083;&#1076;&#1072;&#1091;&#1085;&#1072; 7 &#1076;&#1085;&#1077;&#1081; &#1087;&#1086;&#1089;&#1083;&#1077; &#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1103; &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090;&#1072; &#1076;&#1083;&#1103; &#1087;&#1088;&#1077;&#1076;&#1086;&#1090;&#1074;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1103; &#1086;&#1073;&#1093;&#1086;&#1076;&#1072; &#1073;&#1083;&#1086;&#1082;&#1080;&#1088;&#1086;&#1074;&#1086;&#1082;</li>
-      <li>&#1044;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1072; push-&#1091;&#1074;&#1077;&#1076;&#1086;&#1084;&#1083;&#1077;&#1085;&#1080;&#1081; &#1086; &#1085;&#1086;&#1074;&#1099;&#1093; &#1089;&#1086;&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1103;&#1093; &#1080; &#1085;&#1072;&#1081;&#1076;&#1077;&#1085;&#1085;&#1099;&#1093; &#1089;&#1086;&#1073;&#1077;&#1089;&#1077;&#1076;&#1085;&#1080;&#1082;&#1072;&#1093;</li>
-      <li>&#1059;&#1083;&#1091;&#1095;&#1096;&#1077;&#1085;&#1080;&#1077; &#1087;&#1088;&#1086;&#1080;&#1079;&#1074;&#1086;&#1076;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1080; &#1080; &#1089;&#1090;&#1072;&#1073;&#1080;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1080; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;</li>
-      <li>&#1054;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1072; &#1078;&#1072;&#1083;&#1086;&#1073; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1077;&#1081;</li>
-      <li>&#1047;&#1072;&#1087;&#1080;&#1089;&#1100; &#1078;&#1091;&#1088;&#1085;&#1072;&#1083;&#1072; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1072; &#1072;&#1076;&#1084;&#1080;&#1085;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1086;&#1088;&#1086;&#1074; &#1076;&#1083;&#1103; &#1073;&#1077;&#1079;&#1086;&#1087;&#1072;&#1089;&#1085;&#1086;&#1089;&#1090;&#1080;</li>
-      <li>&#1048;&#1089;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1077; &#1090;&#1088;&#1077;&#1073;&#1086;&#1074;&#1072;&#1085;&#1080;&#1081; &#1087;&#1088;&#1080;&#1084;&#1077;&#1085;&#1080;&#1084;&#1086;&#1075;&#1086; &#1079;&#1072;&#1082;&#1086;&#1085;&#1086;&#1076;&#1072;&#1090;&#1077;&#1083;&#1100;&#1089;&#1090;&#1074;&#1072;</li>
+      <li>Подбор собеседников на основе выбранных вами параметров совершеннолетия (выполняется строго на стороне сервера через Cloud Functions);</li>
+      <li>Обеспечение технической стабильности работы сервиса;</li>
+      <li>Предотвращение нарушений: блокировка нарушителей одновременно по идентификатору устройства (Android ID) и Firebase UID;</li>
+      <li>Контроль кулдауна перерегистрации (7 дней) после удаления аккаунта для предотвращения спама;</li>
+      <li>Доставка push-уведомлений о чатах;</li>
+      <li>Анализ логов ошибок для улучшения стабильности кода;</li>
+      <li>Обработка жалоб пользователей через встроенную функцию Report.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">4. &#1055;&#1088;&#1072;&#1074;&#1086;&#1074;&#1086;&#1077; &#1086;&#1089;&#1085;&#1086;&#1074;&#1072;&#1085;&#1080;&#1077; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1080; (GDPR)</h2>
+    <h2 class="section-title">4. Правовые основания для обработки (GDPR)</h2>
     <ul>
-      <li>&#1047;&#1072;&#1082;&#1086;&#1085;&#1085;&#1099;&#1081; &#1080;&#1085;&#1090;&#1077;&#1088;&#1077;&#1089; &#8212; &#1087;&#1088;&#1077;&#1076;&#1086;&#1089;&#1090;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1077; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1075;&#1086; &#1089;&#1077;&#1088;&#1074;&#1080;&#1089;&#1072;, &#1079;&#1072;&#1097;&#1080;&#1090;&#1072; &#1086;&#1090; &#1079;&#1083;&#1086;&#1091;&#1087;&#1086;&#1090;&#1088;&#1077;&#1073;&#1083;&#1077;&#1085;&#1080;&#1081; &#1080; &#1073;&#1077;&#1079;&#1086;&#1087;&#1072;&#1089;&#1085;&#1086;&#1089;&#1090;&#1100; &#1087;&#1083;&#1072;&#1090;&#1092;&#1086;&#1088;&#1084;&#1099;</li>
-      <li>&#1070;&#1088;&#1080;&#1076;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1077; &#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1089;&#1090;&#1074;&#1086; &#8212; &#1087;&#1088;&#1080; &#1085;&#1077;&#1086;&#1073;&#1093;&#1086;&#1076;&#1080;&#1084;&#1086;&#1089;&#1090;&#1080; &#1088;&#1072;&#1089;&#1082;&#1088;&#1099;&#1090;&#1100; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1091;&#1087;&#1086;&#1083;&#1085;&#1086;&#1084;&#1086;&#1095;&#1077;&#1085;&#1085;&#1099;&#1084; &#1086;&#1088;&#1075;&#1072;&#1085;&#1072;&#1084; (&#1085;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;, &#1078;&#1072;&#1083;&#1086;&#1073;&#1099; CSAM)</li>
-      <li>&#1057;&#1086;&#1075;&#1083;&#1072;&#1089;&#1080;&#1077; &#8212; &#1076;&#1083;&#1103; &#1085;&#1077;&#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1093; &#1092;&#1091;&#1085;&#1082;&#1094;&#1080;&#1081;, &#1075;&#1076;&#1077; &#1103;&#1074;&#1085;&#1086; &#1079;&#1072;&#1087;&#1088;&#1072;&#1096;&#1080;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103;</li>
+      <li>Законный интерес — предоставление услуг анонимного чата, защита платформы от злоупотреблений и обеспечение безопасности;</li>
+      <li>Юридическое обязательство — при необходимости передачи данных государственным органам (например, критические отчеты CSAM).</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">5. &#1055;&#1077;&#1088;&#1077;&#1076;&#1072;&#1095;&#1072; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093; &#1090;&#1088;&#1077;&#1090;&#1100;&#1080;&#1084; &#1083;&#1080;&#1094;&#1072;&#1084;</h2>
+    <h2 class="section-title">5. Передача данных третьим лицам</h2>
     <ul>
-      <li>&#1052;&#1099; &#1085;&#1077; &#1087;&#1088;&#1086;&#1076;&#1072;&#1105;&#1084; &#1080; &#1085;&#1077; &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1105;&#1084; &#1074;&#1072;&#1096;&#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1090;&#1088;&#1077;&#1090;&#1100;&#1080;&#1084; &#1083;&#1080;&#1094;&#1072;&#1084; &#1074; &#1082;&#1086;&#1084;&#1084;&#1077;&#1088;&#1095;&#1077;&#1089;&#1082;&#1080;&#1093; &#1094;&#1077;&#1083;&#1103;&#1093;</li>
-      <li>&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1084;&#1086;&#1075;&#1091;&#1090; &#1073;&#1099;&#1090;&#1100; &#1088;&#1072;&#1089;&#1082;&#1088;&#1099;&#1090;&#1099; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1087;&#1086; &#1079;&#1072;&#1082;&#1086;&#1085;&#1085;&#1086;&#1084;&#1091; &#1090;&#1088;&#1077;&#1073;&#1086;&#1074;&#1072;&#1085;&#1080;&#1102; &#1091;&#1087;&#1086;&#1083;&#1085;&#1086;&#1084;&#1086;&#1095;&#1077;&#1085;&#1085;&#1099;&#1093; &#1086;&#1088;&#1075;&#1072;&#1085;&#1086;&#1074;</li>
-      <li>&#1046;&#1072;&#1083;&#1086;&#1073;&#1099; CSAM &#1087;&#1088;&#1086;&#1072;&#1082;&#1090;&#1080;&#1074;&#1085;&#1086; &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1102;&#1090;&#1089;&#1103; &#1074; &#1087;&#1088;&#1072;&#1074;&#1086;&#1086;&#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1086;&#1088;&#1075;&#1072;&#1085;&#1099;</li>
-      <li>&#1044;&#1083;&#1103; &#1090;&#1077;&#1093;&#1085;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1081; &#1080;&#1085;&#1092;&#1088;&#1072;&#1089;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1099; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; Firebase (Google LLC) &#8212; &#1089;&#1086;&#1086;&#1090;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; GDPR; &#1079;&#1072;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1086; &#1057;&#1086;&#1075;&#1083;&#1072;&#1096;&#1077;&#1085;&#1080;&#1077; &#1086;&#1073; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;</li>
-      <li>&#1042;&#1089;&#1077; &#1087;&#1086;&#1089;&#1090;&#1072;&#1074;&#1097;&#1080;&#1082;&#1080; &#1091;&#1089;&#1083;&#1091;&#1075; &#1086;&#1073;&#1088;&#1072;&#1073;&#1072;&#1090;&#1099;&#1074;&#1072;&#1102;&#1090; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1087;&#1086; &#1085;&#1072;&#1096;&#1077;&#1084;&#1091; &#1087;&#1086;&#1088;&#1091;&#1095;&#1077;&#1085;&#1080;&#1102;</li>
+      <li>Мы не продаем и не передаем данные пользователей третьим лицам в коммерческих целях;</li>
+      <li>Данные передаются только по официальным запросам правоохранительных органов в соответствии с законом;</li>
+      <li>Отчеты, связанные с угрозой безопасности детей (CSAM), проактивно направляются в правоохранительные органы и NCMEC;</li>
+      <li>Инфраструктура Firebase (Google LLC) полностью соответствует требованиям GDPR, заключено соглашение об обработке данных (DPA).</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">6. &#1061;&#1088;&#1072;&#1085;&#1077;&#1085;&#1080;&#1077; &#1080; &#1089;&#1088;&#1086;&#1082;&#1080; &#1093;&#1088;&#1072;&#1085;&#1077;&#1085;&#1080;&#1103; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;</h2>
+    <h2 class="section-title">6. Хранение и удаление данных</h2>
     <ul>
-      <li>&#1057;&#1086;&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1103; &#1072;&#1074;&#1090;&#1086;&#1084;&#1072;&#1090;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080; &#1091;&#1076;&#1072;&#1083;&#1103;&#1102;&#1090;&#1089;&#1103; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; 24 &#1095;&#1072;&#1089;&#1086;&#1074; &#1087;&#1086;&#1089;&#1083;&#1077; &#1079;&#1072;&#1074;&#1077;&#1088;&#1096;&#1077;&#1085;&#1080;&#1103; &#1089;&#1077;&#1089;&#1089;&#1080;&#1080;</li>
-      <li>&#1055;&#1088;&#1080; &#1087;&#1086;&#1076;&#1072;&#1095;&#1077; &#1078;&#1072;&#1083;&#1086;&#1073;&#1099; &#1087;&#1086;&#1089;&#1083;&#1077;&#1076;&#1085;&#1080;&#1077; &#1089;&#1086;&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1103; (&#1076;&#1086; 20) &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1085;&#1086; &#1089;&#1086;&#1093;&#1088;&#1072;&#1085;&#1103;&#1102;&#1090;&#1089;&#1103; &#1076;&#1083;&#1103; &#1087;&#1088;&#1086;&#1074;&#1077;&#1088;&#1082;&#1080; &#1084;&#1086;&#1076;&#1077;&#1088;&#1072;&#1090;&#1086;&#1088;&#1086;&#1084;, &#1079;&#1072;&#1090;&#1077;&#1084; &#1091;&#1076;&#1072;&#1083;&#1103;&#1102;&#1090;&#1089;&#1103; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; 30 &#1076;&#1085;&#1077;&#1081;</li>
-      <li>&#1048;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088; &#1091;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;&#1072; &#1080; Firebase UID &#1093;&#1088;&#1072;&#1085;&#1103;&#1090;&#1089;&#1103; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1074; &#1089;&#1083;&#1091;&#1095;&#1072;&#1077; &#1073;&#1083;&#1086;&#1082;&#1080;&#1088;&#1086;&#1074;&#1082;&#1080;; &#1091;&#1076;&#1072;&#1083;&#1103;&#1102;&#1090;&#1089;&#1103; &#1087;&#1086; &#1080;&#1089;&#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1080; &#1089;&#1088;&#1086;&#1082;&#1072; &#1080;&#1083;&#1080; &#1087;&#1088;&#1080; &#1089;&#1085;&#1103;&#1090;&#1080;&#1080;</li>
-      <li>&#1047;&#1072;&#1087;&#1080;&#1089;&#1100; &#1082;&#1091;&#1083;&#1076;&#1072;&#1091;&#1085;&#1072; (delete_cooldown) &#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1089;&#1103; 8 &#1076;&#1085;&#1077;&#1081; &#1087;&#1086;&#1089;&#1083;&#1077; &#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1103; &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090;&#1072;, &#1079;&#1072;&#1090;&#1077;&#1084; &#1072;&#1074;&#1090;&#1086;&#1084;&#1072;&#1090;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080; &#1091;&#1076;&#1072;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103;</li>
-      <li>&#1055;&#1088;&#1086;&#1092;&#1080;&#1083;&#1080; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1077;&#1081; &#1072;&#1074;&#1090;&#1086;&#1084;&#1072;&#1090;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080; &#1091;&#1076;&#1072;&#1083;&#1103;&#1102;&#1090;&#1089;&#1103; &#1095;&#1077;&#1088;&#1077;&#1079; 90 &#1076;&#1085;&#1077;&#1081; &#1085;&#1077;&#1072;&#1082;&#1090;&#1080;&#1074;&#1085;&#1086;&#1089;&#1090;&#1080;</li>
-      <li>&#1046;&#1091;&#1088;&#1085;&#1072;&#1083; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1072; &#1072;&#1076;&#1084;&#1080;&#1085;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1086;&#1088;&#1086;&#1074; &#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1089;&#1103; 90 &#1076;&#1085;&#1077;&#1081;</li>
-      <li>&#1052;&#1099; &#1085;&#1077; &#1074;&#1077;&#1076;&#1105;&#1084; &#1072;&#1088;&#1093;&#1080;&#1074; &#1087;&#1077;&#1088;&#1077;&#1087;&#1080;&#1089;&#1082;&#1080; &#1080; &#1085;&#1077; &#1084;&#1086;&#1078;&#1077;&#1084; &#1074;&#1086;&#1089;&#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1080;&#1090;&#1100; &#1091;&#1076;&#1072;&#1083;&#1105;&#1085;&#1085;&#1099;&#1077; &#1089;&#1086;&#1086;&#1073;&#1097;&#1077;&#1085;&#1080;&#1103;</li>
+      <li>Тексты сообщений существуют только в рамках активной сессии чата и автоматически стираются в течение 24 часов после его завершения;</li>
+      <li>При отправке жалобы до 20 сообщений временно удерживаются для проверки модератором и удаляются в течение 30 дней;</li>
+      <li>Идентификаторы устройств и Firebase UID сохраняются в базе данных только в случае активного бана и удаляются автоматически по истечении его срока;</li>
+      <li>Запись о кулдауне перерегистрации хранится ровно 7 дней после удаления профиля;</li>
+      <li>Профили автоматически удаляются после 90 дней полной неактивности пользователя.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">7. &#1042;&#1072;&#1096;&#1080; &#1087;&#1088;&#1072;&#1074;&#1072;</h2>
+    <h2 class="section-title">7. Ваши права</h2>
     <ul>
-      <li>&#1055;&#1088;&#1072;&#1074;&#1086; &#1085;&#1072; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;: &#1074;&#1099; &#1084;&#1086;&#1078;&#1077;&#1090;&#1077; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089;&#1080;&#1090;&#1100; &#1080;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1102; &#1086; &#1090;&#1086;&#1084;, &#1082;&#1072;&#1082;&#1080;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1084;&#1099; &#1086;&#1073;&#1088;&#1072;&#1073;&#1072;&#1090;&#1099;&#1074;&#1072;&#1077;&#1084;</li>
-      <li>&#1055;&#1088;&#1072;&#1074;&#1086; &#1085;&#1072; &#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1077;: &#1091;&#1076;&#1072;&#1083;&#1080;&#1090;&#1077; &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090; &#1085;&#1077;&#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086; &#1074; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080; &#1080;&#1083;&#1080; &#1086;&#1073;&#1088;&#1072;&#1090;&#1080;&#1074;&#1096;&#1080;&#1089;&#1100; &#1082; &#1085;&#1072;&#1084;</li>
-      <li>&#1055;&#1088;&#1072;&#1074;&#1086; &#1085;&#1072; &#1087;&#1077;&#1088;&#1077;&#1085;&#1086;&#1089;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;: &#1074;&#1099; &#1084;&#1086;&#1078;&#1077;&#1090;&#1077; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089;&#1080;&#1090;&#1100; &#1082;&#1086;&#1087;&#1080;&#1102; &#1074;&#1072;&#1096;&#1080;&#1093; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;</li>
-      <li>&#1055;&#1088;&#1072;&#1074;&#1086; &#1085;&#1072; &#1074;&#1086;&#1079;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1077;: &#1074;&#1099; &#1084;&#1086;&#1078;&#1077;&#1090;&#1077; &#1074;&#1086;&#1079;&#1088;&#1072;&#1079;&#1080;&#1090;&#1100; &#1087;&#1088;&#1086;&#1090;&#1080;&#1074; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1080; &#1085;&#1072; &#1086;&#1089;&#1085;&#1086;&#1074;&#1072;&#1085;&#1080;&#1080; &#1079;&#1072;&#1082;&#1086;&#1085;&#1085;&#1086;&#1075;&#1086; &#1080;&#1085;&#1090;&#1077;&#1088;&#1077;&#1089;&#1072;</li>
-      <li>&#1055;&#1088;&#1072;&#1074;&#1086; &#1085;&#1072; &#1078;&#1072;&#1083;&#1086;&#1073;&#1091;: &#1074;&#1099; &#1074;&#1087;&#1088;&#1072;&#1074;&#1077; &#1087;&#1086;&#1076;&#1072;&#1090;&#1100; &#1078;&#1072;&#1083;&#1086;&#1073;&#1091; &#1074; &#1085;&#1072;&#1076;&#1079;&#1086;&#1088;&#1085;&#1099;&#1081; &#1086;&#1088;&#1075;&#1072;&#1085; &#1087;&#1086; &#1079;&#1072;&#1097;&#1080;&#1090;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093; &#1074; &#1074;&#1072;&#1096;&#1077;&#1081; &#1089;&#1090;&#1088;&#1072;&#1085;&#1077;</li>
+      <li>Право на доступ: вы можете запросить информацию о том, какие данные обрабатываются;</li>
+      <li>Право на удаление: вы можете полностью стереть свои данные, нажав кнопку удаления аккаунта в настройках приложения;</li>
+      <li>Право на возражение против обработки, основанной на законных интересах платформы.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">8. &#1059;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1077; &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090;&#1072; &#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;</h2>
-    <p>&#1042;&#1099; &#1084;&#1086;&#1078;&#1077;&#1090;&#1077; &#1091;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100; &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090; &#1080; &#1074;&#1089;&#1077; &#1089;&#1074;&#1103;&#1079;&#1072;&#1085;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1074; &#1083;&#1102;&#1073;&#1086;&#1081; &#1084;&#1086;&#1084;&#1077;&#1085;&#1090; &#1085;&#1077;&#1087;&#1086;&#1089;&#1088;&#1077;&#1076;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086; &#1074; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080;: <strong>&#1053;&#1072;&#1089;&#1090;&#1088;&#1086;&#1081;&#1082;&#1080; &#8594; &#1054;&#1087;&#1072;&#1089;&#1085;&#1072;&#1103; &#1079;&#1086;&#1085;&#1072; &#8594; &#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100; &#1084;&#1086;&#1081; &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090; &#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;</strong>. &#1051;&#1080;&#1073;&#1086; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1100;&#1090;&#1077; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089; &#1085;&#1072; support.nearchat@gmail.com. &#1052;&#1099; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&#1077;&#1084; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; 30 &#1076;&#1085;&#1077;&#1081;.</p>
-    <p>&#1055;&#1088;&#1080; &#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1080; &#1091;&#1076;&#1072;&#1083;&#1103;&#1102;&#1090;&#1089;&#1103;: &#1087;&#1088;&#1086;&#1092;&#1080;&#1083;&#1100; Firestore, &#1072;&#1082;&#1082;&#1072;&#1091;&#1085;&#1090; Firebase Auth, &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1087;&#1088;&#1080;&#1089;&#1091;&#1090;&#1089;&#1090;&#1074;&#1080;&#1103;, &#1086;&#1095;&#1077;&#1088;&#1077;&#1076;&#1080; &#1080; &#1089;&#1077;&#1089;&#1089;&#1080;&#1081; &#1074; RTDB, &#1074;&#1089;&#1077; &#1083;&#1086;&#1082;&#1072;&#1083;&#1100;&#1085;&#1099;&#1077; &#1085;&#1072;&#1089;&#1090;&#1088;&#1086;&#1081;&#1082;&#1080; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;. &#1047;&#1072;&#1087;&#1080;&#1089;&#1100; &#1082;&#1091;&#1083;&#1076;&#1072;&#1091;&#1085;&#1072; (delete_cooldown) &#1089;&#1086;&#1093;&#1088;&#1072;&#1085;&#1103;&#1077;&#1090;&#1089;&#1103; 8 &#1076;&#1085;&#1077;&#1081; &#1076;&#1083;&#1103; &#1087;&#1088;&#1077;&#1076;&#1086;&#1090;&#1074;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1103; &#1079;&#1083;&#1086;&#1091;&#1087;&#1086;&#1090;&#1088;&#1077;&#1073;&#1083;&#1077;&#1085;&#1080;&#1081;. &#1047;&#1072;&#1087;&#1080;&#1089;&#1080; &#1080;&#1076;&#1077;&#1085;&#1090;&#1080;&#1092;&#1080;&#1082;&#1072;&#1090;&#1086;&#1088;&#1086;&#1074; &#1091;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074;, &#1089;&#1074;&#1103;&#1079;&#1072;&#1085;&#1085;&#1099;&#1077; &#1089; &#1072;&#1082;&#1090;&#1080;&#1074;&#1085;&#1099;&#1084;&#1080; &#1073;&#1083;&#1086;&#1082;&#1080;&#1088;&#1086;&#1074;&#1082;&#1072;&#1084;&#1080;, &#1089;&#1086;&#1093;&#1088;&#1072;&#1085;&#1103;&#1102;&#1090;&#1089;&#1103; &#1076;&#1083;&#1103; &#1087;&#1088;&#1077;&#1076;&#1086;&#1090;&#1074;&#1088;&#1072;&#1097;&#1077;&#1085;&#1080;&#1103; &#1080;&#1093; &#1086;&#1073;&#1093;&#1086;&#1076;&#1072;.</p>
+    <h2 class="section-title">8. Удаление аккаунта и данных</h2>
+    <p>Вы можете удалить свой аккаунт и все связанные данные в любой момент непосредственно внутри приложения: <strong>Настройки → Опасная зона → Удалить мой аккаунт и данные</strong>. Либо отправив запрос на support.nearchat@gmail.com. Срок обработки запроса составляет до 30 дней.</p>
+    <p>При удалении стираются: профиль Firestore, аккаунт Firebase Auth, статус в RTDB, записи очередей и сессий.</p>
+    <p>После удаления на сервере фиксируется 7-дневный кулдаун перерегистрации (по Firebase UID и Android ID) для защиты от злоупотреблений. Идентификаторы устройств, находящихся в активном бане, удерживаются бессрочно для обеспечения безопасности.</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">9. &#1058;&#1077;&#1093;&#1085;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1084;&#1077;&#1088;&#1099; &#1073;&#1077;&#1079;&#1086;&#1087;&#1072;&#1089;&#1085;&#1086;&#1089;&#1090;&#1080;</h2>
+    <h2 class="section-title">9. Технические меры безопасности</h2>
+    <p>NearChat реализует следующие меры безопасности:</p>
     <ul>
-      <li>&#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1072; &#1073;&#1077;&#1079;&#1086;&#1087;&#1072;&#1089;&#1085;&#1086;&#1089;&#1090;&#1080; Firebase: &#1082;&#1072;&#1078;&#1076;&#1099;&#1081; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1100; &#1095;&#1080;&#1090;&#1072;&#1077;&#1090; &#1080; &#1079;&#1072;&#1087;&#1080;&#1089;&#1099;&#1074;&#1072;&#1077;&#1090; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1089;&#1074;&#1086;&#1080; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;</li>
-      <li>&#1057;&#1086;&#1079;&#1076;&#1072;&#1085;&#1080;&#1077; &#1089;&#1077;&#1089;&#1089;&#1080;&#1081; &#8212; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1095;&#1077;&#1088;&#1077;&#1079; Cloud Functions &#1085;&#1072; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1077; &#1089;&#1077;&#1088;&#1074;&#1077;&#1088;&#1072;</li>
-      <li>&#1057;&#1087;&#1080;&#1089;&#1086;&#1082; &#1079;&#1072;&#1073;&#1072;&#1085;&#1077;&#1085;&#1085;&#1099;&#1093; &#1091;&#1089;&#1090;&#1088;&#1086;&#1081;&#1089;&#1090;&#1074; &#1076;&#1086;&#1089;&#1090;&#1091;&#1087;&#1077;&#1085; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1072;&#1076;&#1084;&#1080;&#1085;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1086;&#1088;&#1072;&#1084;</li>
-      <li>&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1082;&#1072; &#1073;&#1072;&#1085;&#1072; &#1095;&#1077;&#1088;&#1077;&#1079; bans/{uid} &#8212; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1100; &#1095;&#1080;&#1090;&#1072;&#1077;&#1090; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1089;&#1074;&#1086;&#1081; &#1076;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;</li>
-      <li>&#1058;L&#1057; 1.2+ &#1076;&#1083;&#1103; &#1074;&#1089;&#1077;&#1093; &#1089;&#1086;&#1077;&#1076;&#1080;&#1085;&#1077;&#1085;&#1080;&#1081;</li>
-      <li>&#1057;&#1077;&#1089;&#1089;&#1080;&#1103; &#1072;&#1076;&#1084;&#1080;&#1085;&#1087;&#1072;&#1085;&#1077;&#1083;&#1080; &#1079;&#1072;&#1074;&#1077;&#1088;&#1096;&#1072;&#1077;&#1090;&#1089;&#1103; &#1095;&#1077;&#1088;&#1077;&#1079; 30 &#1084;&#1080;&#1085;&#1091;&#1090; &#1073;&#1077;&#1079;&#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103;</li>
-      <li>&#1042;&#1093;&#1086;&#1076; &#1073;&#1083;&#1086;&#1082;&#1080;&#1088;&#1091;&#1077;&#1090;&#1089;&#1103; &#1085;&#1072; 15 &#1084;&#1080;&#1085;&#1091;&#1090; &#1087;&#1086;&#1089;&#1083;&#1077; 5 &#1085;&#1077;&#1091;&#1076;&#1072;&#1095;&#1085;&#1099;&#1093; &#1087;&#1086;&#1087;&#1099;&#1090;&#1086;&#1082;</li>
+      <li>Firebase Security Rules гарантируют, что каждый пользователь имеет доступ на чтение и запись исключительно к своим собственным данным;</li>
+      <li>Логика подбора чата вынесена на сервер в Cloud Functions;</li>
+      <li>Системные поля защищены от записи из клиентской части кода;</li>
+      <li>Проверка бана выполняется при запуске одновременно по Android ID и Firebase UID;</li>
+      <li>Все соединения защищены сквозным шифрованием TLS 1.2+.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">10. &#1047;&#1072;&#1097;&#1080;&#1090;&#1072; &#1076;&#1077;&#1090;&#1077;&#1081; (COPPA)</h2>
+    <h2 class="section-title">10. Конфиденциальность детей</h2>
     <ul>
-      <li>NearChat &#1087;&#1088;&#1077;&#1076;&#1085;&#1072;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085; &#1080;&#1089;&#1082;&#1083;&#1102;&#1095;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1083;&#1080;&#1094; &#1074; &#1074;&#1086;&#1079;&#1088;&#1072;&#1089;&#1090;&#1077; 18 &#1083;&#1077;&#1090; &#1080; &#1089;&#1090;&#1072;&#1088;&#1096;&#1077;</li>
-      <li>&#1060;&#1080;&#1083;&#1100;&#1090;&#1088; &#171;&#1076;&#1086; 17&#187; &#1086;&#1079;&#1085;&#1072;&#1095;&#1072;&#1077;&#1090; &#1087;&#1088;&#1077;&#1076;&#1087;&#1086;&#1095;&#1090;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1081; &#1074;&#1086;&#1079;&#1088;&#1072;&#1089;&#1090; &#1089;&#1086;&#1073;&#1077;&#1089;&#1077;&#1076;&#1085;&#1080;&#1082;&#1072;, &#1072; &#1085;&#1077; &#1089;&#1072;&#1084;&#1086;&#1075;&#1086; &#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1077;&#1083;&#1103;</li>
-      <li>&#1052;&#1099; &#1085;&#1077; &#1089;&#1086;&#1073;&#1080;&#1088;&#1072;&#1077;&#1084; &#1086;&#1089;&#1086;&#1079;&#1085;&#1072;&#1085;&#1085;&#1086; &#1087;&#1077;&#1088;&#1089;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077; &#1083;&#1080;&#1094; &#1076;&#1086; 13 &#1083;&#1077;&#1090;</li>
-      <li>&#1045;&#1089;&#1083;&#1080; &#1074;&#1099; &#1089;&#1095;&#1080;&#1090;&#1072;&#1077;&#1090;&#1077;, &#1095;&#1090;&#1086; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1077;&#1084; &#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1085;&#1077;&#1089;&#1086;&#1074;&#1077;&#1088;&#1096;&#1077;&#1085;&#1085;&#1086;&#1083;&#1077;&#1090;&#1085;&#1080;&#1081; &#8212; &#1085;&#1077;&#1084;&#1077;&#1076;&#1083;&#1077;&#1085;&#1085;&#1086; &#1089;&#1086;&#1086;&#1073;&#1097;&#1080;&#1090;&#1077; &#1085;&#1072;&#1084;</li>
+      <li>NearChat предназначен исключительно для пользователей в возрасте 18 лет и старше. Проверка возраста происходит строго при первом запуске через экран ввода даты рождения.</li>
+      <li>Все доступные фильтры поиска ограничены совершеннолетними диапазонами (18-21, 22-25, 26-35, 36+).</li>
+      <li>Мы намеренно не собираем личные данные лиц младше 18 лет.</li>
+      <li>Если у вас есть подозрения, что платформой пользуется несовершеннолетний, пожалуйста, немедленно воспользуйтесь встроенной кнопкой «Пожаловаться» (Report) в чате для отправки профиля на ручную проверку модераторам.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">11. &#1057;&#1090;&#1086;&#1088;&#1086;&#1085;&#1085;&#1080;&#1077; &#1089;&#1077;&#1088;&#1074;&#1080;&#1089;&#1099;</h2>
+    <h2 class="section-title">11. Сторонние сервисы</h2>
     <ul>
-      <li>Firebase Authentication (Google LLC) &#8212; &#1072;&#1085;&#1086;&#1085;&#1080;&#1084;&#1085;&#1072;&#1103; &#1072;&#1074;&#1090;&#1086;&#1088;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103; &#1073;&#1077;&#1079; &#1083;&#1080;&#1095;&#1085;&#1099;&#1093; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;; TLS</li>
-      <li>Firebase Firestore (Google LLC) &#8212; &#1087;&#1088;&#1086;&#1092;&#1080;&#1083;&#1100; &#1080; &#1087;&#1072;&#1088;&#1072;&#1084;&#1077;&#1090;&#1088;&#1099; &#1089;&#1077;&#1089;&#1089;&#1080;&#1080;; &#1096;&#1080;&#1092;&#1088;&#1086;&#1074;&#1072;&#1085;&#1080;&#1077; &#1087;&#1088;&#1080; &#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1095;&#1077; &#1080; &#1093;&#1088;&#1072;&#1085;&#1077;&#1085;&#1080;&#1080;</li>
-      <li>Firebase Realtime Database (Google LLC) &#8212; &#1087;&#1086;&#1076;&#1073;&#1086;&#1088; &#1089;&#1086;&#1073;&#1077;&#1089;&#1077;&#1076;&#1085;&#1080;&#1082;&#1072; &#1080; &#1095;&#1072;&#1090; &#1074; &#1088;&#1077;&#1072;&#1083;&#1100;&#1085;&#1086;&#1084; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</li>
-      <li>Firebase Crashlytics (Google LLC) &#8212; &#1076;&#1080;&#1072;&#1075;&#1085;&#1086;&#1089;&#1090;&#1080;&#1082;&#1072; &#1089;&#1073;&#1086;&#1077;&#1074;</li>
-      <li>Firebase Cloud Messaging (Google LLC) &#8212; push-&#1091;&#1074;&#1077;&#1076;&#1086;&#1084;&#1083;&#1077;&#1085;&#1080;&#1103; (&#1090;&#1086;&#1083;&#1100;&#1082;&#1086; FCM-&#1090;&#1086;&#1082;&#1077;&#1085;)</li>
-      <li>Firebase Cloud Functions (Google LLC) &#8212; &#1089;&#1077;&#1088;&#1074;&#1077;&#1088;&#1085;&#1099;&#1081; &#1084;&#1072;&#1090;&#1095;&#1080;&#1085;&#1075;, &#1072;&#1074;&#1090;&#1086;&#1073;&#1072;&#1085;, &#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;, &#1072;&#1074;&#1090;&#1086;&#1091;&#1076;&#1072;&#1083;&#1077;&#1085;&#1080;&#1077;</li>
+      <li>Firebase Authentication (Google LLC) — анонимный вход без сбора персональных данных</li>
+      <li>Firebase Firestore (Google LLC) — надежное облачное хранение профилей и параметров сессий</li>
+      <li>Firebase Realtime Database (Google LLC) — быстрая синхронизация сообщений в реальном времени</li>
+      <li>Firebase Crashlytics (Google LLC) — сбор отчетов о критических ошибках кода</li>
+      <li>Firebase Cloud Functions (Google LLC) — безопасное выполнение серверного кода, проверок банов и очистки баз данных</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">12. &#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1099; &#1080; &#1086;&#1090;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1099;&#1081; &#1079;&#1072; &#1086;&#1073;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1091; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093;</h2>
-    <p>&#1045;&#1089;&#1083;&#1080; &#1091; &#1074;&#1072;&#1089; &#1077;&#1089;&#1090;&#1100; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099; &#1080;&#1083;&#1080; &#1074;&#1099; &#1093;&#1086;&#1090;&#1080;&#1090;&#1077; &#1074;&#1086;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1090;&#1100;&#1089;&#1103; &#1089;&#1074;&#1086;&#1080;&#1084;&#1080; &#1087;&#1088;&#1072;&#1074;&#1072;&#1084;&#1080;, &#1089;&#1074;&#1103;&#1078;&#1080;&#1090;&#1077;&#1089;&#1100; &#1089; &#1085;&#1072;&#1084;&#1080;. &#1054;&#1090;&#1074;&#1077;&#1095;&#1072;&#1077;&#1084; &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; 30 &#1082;&#1072;&#1083;&#1077;&#1085;&#1076;&#1072;&#1088;&#1085;&#1099;&#1093; &#1076;&#1085;&#1077;&#1081;.</p>
+    <h2 class="section-title">12. Контакты и контроллер данных</h2>
+    <p>По любым вопросам касательно политики конфиденциальности вы можете связаться с нами. Ответ будет предоставлен в течение 30 календарных дней.</p>
     <ul>
       <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
@@ -377,127 +364,132 @@
   </div>
 </section>
 
-<!-- AZERBAIJANI -->
 <section class="lang-block" id="az">
   <div class="doc-header">
-    <div class="lang-divider"><span class="lang-divider-flag">&#127462;&#127487;</span><span class="lang-divider-name">Az&#601;rbaycan</span></div>
-    <div class="doc-label">M&#601;xfilik Siyas&#601;ti</div>
-    <h1 class="doc-title">NearChat M&#601;xfilik Siyas&#601;ti</h1>
-    <p class="doc-date">Son yenilm&#601; tarixi: 24.05.2026</p>
+    <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
+    <div class="doc-label">Məxfilik siyasəti</div>
+    <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
+    <p class="doc-date">Son yenilənmə tarixi: 24.05.2026</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">1. Hans&#305; m&#601;lumatlar&#305; toplay&#305;r&#305;q</h2>
+    <h2 class="section-title">1. Hansı məlumatları toplayırıq</h2>
     <ul>
-      <li>Anonim cihaz identifikatoru (Android ID) &#8212; yaln&#305;z sui-istifad&#601;d&#601;n qorunmaq, bloklama v&#601; yenid&#601;n qeydiyyat geri say&#305;m&#305; &#252;&#231;&#252;n; kommersiya m&#601;qs&#601;dil&#601; &#252;&#231;&#252;nc&#252; t&#601;r&#601;fl&#601;r&#601; &#246;t&#252;r&#252;lm&#252;r</li>
-      <li>Firebase UID &#8212; giri&#351;d&#601; verilmiş anonim identifikator; ban yoxlamas&#305; v&#601; sessiya idar&#601;si &#252;&#231;&#252;n</li>
-      <li>Se&#231;ilmi&#351; axtarma parametrl&#601;ri: cins, ya&#351; aral&#305;&#287;&#305;, s&#246;hb&#601;t mövzusu &#8212; yaln&#305;z aktiv sessiya m&#252;dd&#601;tind&#601;</li>
-      <li>&#214;lk&#601; v&#601; &#351;&#601;h&#601;r &#8212; yaln&#305;z &#601;l il&#601; daxil etdikd&#601;</li>
-      <li>Texniki diaqnostik m&#601;lumatlar (Firebase Crashlytics)</li>
-      <li>FCM push-tokeni &#8212; yaln&#305;z bildiri&#351;l&#601;r &#252;&#231;&#252;n</li>
-      <li>Administrator giri&#351; jurnalı &#8212; email, vaxt, brauzer; yaln&#305;z administratorlara &#601;lçatan</li>
+      <li>Anonim cihaz identifikatoru (Android ID) — yalnız server tərəfində sui-istifadənin qarşısını almaq, bloklamaları tətbiq etmək və yenidən qeydiyyat gözləmə müddətini idarə etmək üçün istifadə olunur; kommersiya məqsədilə üçüncü tərəflərə ötürülmür;</li>
+      <li>Firebase UID — giriş zamanı təyin edilən anonim identifikator, təhlükəsizlik yoxlamaları və bloklamaların idarə edilməsi üçün Android ID ilə eyni anda tətbiq olunur;</li>
+      <li>Seçilmiş axtarış parametrləri: cins, yaş aralığı (18-21, 22-25, 26-35, 36+), söhbət mövzusu — yalnız aktiv axtarış növbəsi və sessiya müddətində emal olunur;</li>
+      <li>Ölkə və şəhər — yalnız əllə daxil etdiyiniz halda;</li>
+      <li>Texniki diaqnostika: Əməliyyat sistemi versiyası, cihaz modeli, tətbiq versiyası və xəta hesabatları (Firebase Crashlytics vasitəsilə);</li>
+      <li>FCM push bildiriş tokeni — yalnız yeni mesaj bildirişlərini çatdırmaq üçün istifadə olunur;</li>
+      <li>Admin panel qeydləri — e-poçt, giriş vaxtı, brauzer məlumatları; Firestore-da saxlanılır və yalnız administratorlara görünür.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">2. N&#601; toplamırıq</h2>
+    <h2 class="section-title">2. Nələri toplamırıq</h2>
     <ul>
-      <li>Ad, soyad, email v&#601;ya telefon n&#246;mr&#601;si (adi istifad&#601;&#231;il&#601;rd&#601;n)</li>
-      <li>Yaz&#305;&#351;malar&#305;n m&#601;zmunu &#8212; mesajlar sessiya bitdikd&#601;n sonra saxlan&#305;lm&#305;r</li>
-      <li>D&#601;qiq geolokasiya (GPS/IP istifad&#601; edilmir)</li>
-      <li>Biometrik m&#601;lumatlar v&#601;ya &#246;d&#601;ni&#351; m&#601;lumatlar&#305;</li>
-      <li>Reklam identifikatoru (GAID) &#8212; AdMob inteqrasiyas&#305; silinib; reklam m&#601;lumatlar&#305; toplanm&#305;r</li>
+      <li>Adi istifadəçilərin adı, soyadı, e-poçt ünvanı və ya telefon nömrəsi;</li>
+      <li>Mesaj məzmunu — söhbətlər sessiya bitdikdən sonra serverdə heç vaxt saxlanılmır;</li>
+      <li>Cihazın dəqiq coğrafi yerləşməsi (GPS və ya İP-geolokasiya istifadə edilmir);</li>
+      <li>Sosial şəbəkələrdən və ya digər tətbiqlərdən gələn məlumatlar;</li>
+      <li>Biometrik və ya maliyyə məlumatları;</li>
+      <li>Reklam identifikatoru (GAID) — tətbiqdə reklam şəbəkələri inteqrasiya edilməyib.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">3. M&#601;lumatlar&#305;n i&#351;l&#601;nm&#601;si m&#601;qs&#601;dl&#601;ri</h2>
+    <h2 class="section-title">3. Məlumatların işlənməsi məqsədləri</h2>
     <ul>
-      <li>S&#246;hb&#601;t&#231;i se&#231;imi (yaln&#305;z server t&#601;r&#601;find&#601;n Cloud Functions vasit&#601;sil&#601;)</li>
-      <li>Xidm&#601;tin texniki i&#351;i v&#601; sabitliyi</li>
-      <li>Sui-istifad&#601;d&#601;n qorunma: Android ID v&#601; Firebase UID il&#601; bloklama</li>
-      <li>Hesab silinm&#601;sind&#601;n sonra 7 g&#252;nl&#252;k geri say&#305;m&#305;n t&#601;tbiq edilm&#601;si</li>
-      <li>Push-bildiri&#351;l&#601;r</li>
-      <li>&#350;ikay&#601;tl&#601;rin moderasiyas&#305;</li>
-      <li>Administrator giri&#351;inin t&#601;hl&#252;k&#601;sizlik jurnalı</li>
+      <li>Seçdiyiniz yetkinlik parametrlərinə əsasən həmsöhbətin tapılması (müstəsna olaraq server tərəfində Cloud Functions vasitəsilə həyata keçirilir);</li>
+      <li>Xidmətin texniki dayanıqlığının təmin edilməsi;</li>
+      <li>Sui-istifadənin qarşısının alınması: qaydanı pozanların eyni anda həm Android ID, həm də Firebase UID vasitəsilə bloklanması;</li>
+      <li>Hesab silindikdən sonra sui-istifadənin qarşısını almaq üçün 7 günlük yenidən qeydiyyat gözləmə müddətinin tətbiqi;</li>
+      <li>Push bildirişlərin çatdırılması;</li>
+      <li>Tətbiqdaxili "Şikayət et" (Report) funksiyası vasitəsilə daxil olan müraciətlərin moderasiyası.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">4. Emalın hüquqi &#601;sası (GDPR)</h2>
+    <h2 class="section-title">4. İşlənmənin hüquqi əsasları (GDPR)</h2>
     <ul>
-      <li>Qanuni maraq &#8212; &#601;sas xidm&#601;tin g&#246;st&#601;rilm&#601;si v&#601; t&#601;hl&#252;k&#601;sizlik</li>
-      <li>H&#252;quqi öhd&#601;lik &#8212; CSAM &#351;ikay&#601;tl&#601;ri kimi hallarda m&#601;lumatlar&#305;n a&#231;&#305;qlanmas&#305;</li>
+      <li>Qanuni maraq — anonim çat xidmətinin göstərilməsi, platformanın sui-istifadədən qorunması və təhlükəsizliyin təmin edilməsi;</li>
+      <li>Hüquqi öhdəlik — məlumatların hüquq-mühafizə orqanlarına ötürülməsi zərurəti yarandıqda (məsələn, CSAM hesabatları).</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">5. &#220;&#231;&#252;nc&#252; t&#601;r&#601;fl&#601;r&#601; m&#601;lumat ötürülm&#601;si</h2>
+    <h2 class="section-title">5. Məlumatların üçüncü tərəflərlə paylaşılması</h2>
     <ul>
-      <li>M&#601;lumatlar&#305;n&#305;z&#305; kommersiya m&#601;qs&#601;dil&#601; &#252;&#231;&#252;nc&#252; t&#601;r&#601;fl&#601;r&#601; satm&#305;r&#305;q</li>
-      <li>CSAM &#351;ikay&#601;tl&#601;ri h&#252;quq-m&#252;hafiz&#601; orqanlar&#305;na ötürülür</li>
-      <li>Firebase (Google LLC) &#8212; GDPR-a uyğundur</li>
+      <li>İstifadəçi məlumatlarını kommersiya məqsədilə satmırıq və ya ötürmürük;</li>
+      <li>Məlumatlar yalnız rəsmi hüquqi sorğular əsasında səlahiyyətli dövlət orqanlarına açıqlana bilər;</li>
+      <li>Uşaq təhlükəsizliyi ilə bağlı (CSAM) hesabatlar proaktiv şəkildə hüquq-mühafizə orqanlarına və NCMEC-ə göndərilir;</li>
+      <li>Firebase (Google LLC) infrastrukturu GDPR tələblərinə tam uyğundur, məlumatların işlənməsi müqaviləsi (DPA) bağlanıb.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">6. M&#601;lumatlar&#305;n saxlanmas&#305; v&#601; saxlama müdd&#601;ti</h2>
+    <h2 class="section-title">6. Məlumatların saxlanılması və silinməsi</h2>
     <ul>
-      <li>Mesajlar sessiya bitdikd&#601;n 24 saat sonra avtomatik silinir</li>
-      <li>&#350;ikay&#601;t zaman&#305; son 20 mesaj 30 g&#252;n&#601; qd&#601;r saxlan&#305;l&#305;r</li>
-      <li>Cihaz identifikatoru v&#601; Firebase UID yaln&#305;z bloklama zaman&#305; saxlan&#305;l&#305;r</li>
-      <li>Geri say&#305;m q&#601;ydi (delete_cooldown) silinm&#601;d&#601;n 8 g&#252;n sonra avtomatik silinir</li>
-      <li>Aktiv olmayan hesablar 90 g&#252;nd&#601;n sonra avtomatik silinir</li>
-      <li>Administrator giri&#351; jurnalı 90 g&#252;n saxlan&#305;l&#305;r</li>
+      <li>Mesajlar yalnız aktiv sessiya müddətində mövcuddur və çat bitdikdən sonra 24 saat ərzində avtomatik silinir;</li>
+      <li>Şikayət göndərildikdə son 20 mesaj moderator yoxlaması üçün müvəqqəti saxlanılır və 30 gün ərzində silinir;</li>
+      <li>Cihaz identifikatorları və Firebase UID yalnız aktiv ban olduqda sistemdə saxlanılır;</li>
+      <li>Yenidən qeydiyyat gözləmə müddəti (cooldown) hesab silindikdən sonra düz 7 gün saxlanılır;</li>
+      <li>İstifadəçi profilləri 90 gün tam fəaliyyətsizlikdən sonra server tərəfindən avtomatik təmizlənir.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">7. Sizin hüquqlar&#305;n&#305;z</h2>
+    <h2 class="section-title">7. Hüquqlarınız</h2>
     <ul>
-      <li>Giri&#351; hüququ: hansı m&#601;lumatlar&#305; emal etdiyimiz bar&#601;d&#601; m&#601;lumat t&#601;l&#601;b ed&#601; bil&#601;rsiniz</li>
-      <li>Silm&#601; hüququ: t&#601;tbibd&#601;n hesabı sil&#601; bil&#601;rsiniz</li>
-      <li>Portativlik hüququ: m&#601;lumatlar&#305;n&#305;z&#305;n surétini t&#601;l&#601;b ed&#601; bil&#601;rsiniz</li>
-      <li>&#350;ikay&#601;t hüququ: ölk&#601;nizdəki m&#601;lumatlar&#305;n mühafix&#601;si orqanına &#351;ikay&#601;t ed&#601; bil&#601;rsiniz</li>
+      <li>Giriş hüququ: hansı məlumatların emal edildiyi barədə məlumat tələb edə bilərsiniz;</li>
+      <li>Silmək hüququ: hesabınızı tətbiqin ayarlarından istənilən vaxt tamamilə silə bilərsiniz;</li>
+      <li>Platformanın qanuni maraqlarına əsaslanan emala etiraz etmək hüququ.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">8. Hesabın v&#601; m&#601;lumatların silinm&#601;si</h2>
-    <p>Hesabınızı ist&#601;nil&#601;n vaxt <strong>Parametrl&#601;r &#8594; T&#601;hl&#252;k&#601;li zona &#8594; Hesabımı v&#601; m&#601;lumatlarımı sil</strong> vasit&#601;sil&#601; sil&#601; bil&#601;rsiniz. Silinm&#601; zamanı Firestore profili, Firebase Auth hesabı, RTDB qeydl&#601;ri v&#601; lokal parametrl&#601;r silinir. Geri say&#305;m q&#601;ydi (delete_cooldown) 8 g&#252;n saxlan&#305;l&#305;r.</p>
+    <h2 class="section-title">8. Hesabın və məlumatların silinmesi</h2>
+    <p>Hesabınızı və bütün əlaqəli məlumatları istənilən vaxt birbaşa tətbiq daxilində silə bilərsiniz: <strong>Ayarlar → Təhlükəli zona → Hesabımı və məlumatlarımı sil</strong>. Yaxud support.nearchat@gmail.com ünvanına sorğu göndərə bilərsiniz. Sorğu 30 gün ərzində icra olunacaq.</p>
+    <p>Silindikdə Firestore profili, Firebase Auth hesabı, RTDB statusu, növbə və sessiya qeydləri silinir.</p>
+    <p>Hesab silindikdən sonra sui-istifadənin qarşısını almaq üçün 7 günlük yenidən qeydiyyat gözləmə müddəti (Firebase UID və Android ID vasitəsilə) qeydə alınır. Aktiv banı olan cihazların identifikatorları təhlükəsizlik məqsədilə sistemdə saxlanılır.</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">9. Texniki t&#601;hl&#252;k&#601;sizlik t&#601;dbirL&#601;ri</h2>
+    <h2 class="section-title">9. Texniki təhlükəsizlik tədbirləri</h2>
+    <p>NearChat aşağıdakı təhlükəsizlik tədbirlərini tətbiq edir:</p>
     <ul>
-      <li>Firebase T&#601;hl&#252;k&#601;sizlik Qaydalar&#305; h&#601;r istifad&#601;&#231;inin yaln&#305;z &#246;z m&#601;lumatlar&#305;na giri&#351;ini t&#601;min edir</li>
-      <li>Sessiyalar yaln&#305;z server t&#601;r&#601;find&#601;n yarad&#305;l&#305;r</li>
-      <li>Qadaqlı cihazların siyah&#305;s&#305; yaln&#305;z administratorlara &#601;lçatand&#305;r</li>
-      <li>TLS 1.2+ b&#252;t&#252;n bağlant&#305;lar &#252;&#231;&#252;n</li>
-      <li>Admin panel sessiyası 30 d&#601;qiq&#601; f&#601;aliyy&#601;tsizlikd&#601;n sonra başa çatır</li>
-      <li>5 uğursuz girişd&#601;n sonra 15 d&#601;qiq&#601;lik kilidl&#601;m&#601;</li>
+      <li>Firebase Təhlükəsizlik Qaydaları hər bir istifadəçinin yalnız öz şəxsi məlumatlarına çıxışını təmin edir;</li>
+      <li>Sessiyaların yaradılması server tərəfində Cloud Functions vasitəsilə icra olunur;</li>
+      <li>Sistem sahələrinin müştəri tərəfindən dəyişdirilməsi bloklanıb;</li>
+      <li>Ban yoxlaması giriş zamanı həm Android ID, həm də Firebase UID vasitəsilə paralel aparılır;</li>
+      <li>Bütün bağlantılar TLS 1.2+ şifrələməsi ilə qorunur.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">10. U&#351;aqlar&#305;n qorunmas&#305; (COPPA)</h2>
+    <h2 class="section-title">10. Uşaqların məxfiliyi</h2>
     <ul>
-      <li>NearChat m&#252;st&#601;sna olaraq 18 ya&#351; v&#601; yuxar&#305; &#351;&#601;xl&#601;r &#252;&#231;&#252;n n&#601;z&#601;rd&#601; tutulub</li>
-      <li>13 ya&#351;&#305;na çatmayanların &#351;&#601;xsi m&#601;lumatlarını bilér&#601;kd&#601;n toplamırıq</li>
-      <li>Yetkinlik ya&#351;&#305;na çatmayanın t&#601;tbibd&#601;n istifad&#601; etdiyini d&#252;&#351;ün&#252;rs&#252;n&#252;zs&#601; &#8212; d&#601;rhal bildirin</li>
+      <li>NearChat müstəsna olaraq 18 yaş və yuxarı şəxslər üçün nəzərdə tutulub. Yaş tətbiqə daxil olduqda doğum tarixi ekranı vasitəsilə məcburi şəkildə yoxlanılır.</li>
+      <li>Axtarış filtrləri yalnız yetkin yaş kateqoriyaları ilə məhdudlaşdırılır (18-21, 22-25, 26-35, 36+).</li>
+      <li>Biz 18 yaşından aşağı şəxslərin məlumatlarını bilərəkdən toplamırıq.</li>
+      <li>Əgər hər hansı istifadəçinin yetkinlik yaşına çatmadığından şübhələnirsinizsə, lütfən dərhal çat ekranındakı "Şikayət et" (Report) düyməsindən istifadə edərək profilin moderatorlar tərəfindən yoxlanılması üçün sorğu göndərin.</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">11. &#220;&#231;&#252;nc&#252; t&#601;r&#601;f xidm&#601;tl&#601;ri</h2>
+    <h2 class="section-title">11. Üçüncü tərəf xidmətləri</h2>
     <ul>
-      <li>Firebase Authentication, Firestore, Realtime Database, Crashlytics, Cloud Messaging, Cloud Functions (Google LLC)</li>
+      <li>Firebase Authentication (Google LLC) — anonim qeydiyyat xidməti</li>
+      <li>Firebase Firestore (Google LLC) — profillərin və sessiya parametrlərinin buludda saxlanılması</li>
+      <li>Firebase Realtime Database (Google LLC) — real vaxt rejimində mesajlaşma infrastrukturu</li>
+      <li>Firebase Crashlytics (Google LLC) — xəta hesabatlarının toplanması</li>
+      <li>Firebase Cloud Functions (Google LLC) — təhlükəsiz server funksiyalarının icrası, avtomatik ban və məlumat təmizləmə əməliyyatları</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2 class="section-title">12. &#399;laq&#601; v&#601; m&#601;lumatlar&#305;n emalından m&#601;sul &#351;&#601;xs</h2>
-    <p>M&#601;xfilik siyas&#601;ti il&#601; ba&#287;l&#305; suallar&#305;n&#305;z varsa, birl&#601;r&#601; &#601;laq&#601; saxlay&#305;n. 30 t&#601;qvim g&#252;n&#252; &#601;rzind&#601; cavab veririk.</p>
+    <h2 class="section-title">12. Əlaqə və məlumat nəzarətçisi</h2>
+    <p>Məxfilik siyasəti ilə bağlı hər hansı sualınız olduqda bizimlə əlaqə saxlaya bilərsiniz. Cavab 30 təqvim günü ərzində təqdim olunacaq.</p>
     <ul>
       <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
