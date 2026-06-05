@@ -88,7 +88,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Terms of Service</div>
     <h1 class="doc-title">NearChat User Agreement</h1>
-    <p class="doc-date">Last updated: May 24, 2026</p>
+    <p class="doc-date">Last updated: June 5, 2026</p>
   </div>
 
   <div class="section">
@@ -126,7 +126,8 @@
 
   <div class="section">
     <h2 class="section-title">5. Reporting Violations</h2>
-    <p>You may report a chat partner at any time using the flag button in the top-right corner of the chat screen. Available report reasons: Spam, Insults, Inappropriate content, Child safety, Other violation. Reports include up to the last 20 messages of the session for moderator review. "Child safety" reports are flagged as critical and reviewed with highest priority. The report is sent to Firestore and processed automatically and by the moderation team.</p>
+    <p>You may report a chat partner at any time using the flag button in the top-right corner of the chat screen. Available report reasons: Spam, Insults, Inappropriate content, Child safety, Other violation. Reports include up to the last 20 messages of the session for moderator review. "Child safety" reports are flagged as critical and reviewed with highest priority.</p>
+    <p>Reports are processed automatically by an AI moderation system (see Section 15 — AI Judge and Automated Enforcement). The AI analyses the reported content and context and may apply a mute, ban, or dismiss the report without prior human review. All AI decisions are logged and subject to appeal.</p>
   </div>
 
   <div class="section">
@@ -147,7 +148,15 @@
 
   <div class="section">
     <h2 class="section-title">8. Blocking, Moderation and Appeals</h2>
-    <p>The Administration reserves the right to restrict or permanently block access for any user who violates this Agreement. Blocks are strictly enforced simultaneously via the device identifier (Android ID) and the authenticated Firebase UID to guarantee security. Automatic bans may be applied by the system after a threshold number of reports from unique users is reached. Manual bans may be applied by the moderation team. Users who believe a block was applied in error may appeal by contacting support. Each ban is assigned a unique number displayed on the ban screen — include this number when contacting support. The Administration will review appeals within 30 days.</p>
+    <p>The Administration reserves the right to restrict or permanently block access for any user who violates this Agreement. Enforcement actions include:</p>
+    <ul>
+      <li><strong>Mute</strong> — a temporary restriction from starting new chats (currently 1 hour), applied as a first-level measure for minor or first-time violations confirmed by the AI moderation system</li>
+      <li><strong>Temporary ban</strong> — blocks access to the platform for 3, 6, or 24 hours, applied when multiple unique users have reported the same account and the AI has confirmed violations</li>
+      <li><strong>Permanent block</strong> — applied in cases of CSAM or severe repeated violations</li>
+    </ul>
+    <p>Blocks are enforced simultaneously via the device identifier (Android ID) and Firebase UID. Automatic enforcement may be applied by the AI system when a threshold of confirmed reports is reached. Manual enforcement may be applied by the moderation team.</p>
+    <p><strong>Boomerang mechanism:</strong> if the AI determines that a report was filed in bad faith or constitutes systematic provocation or harassment of the reported user, the person who submitted the report may themselves receive a temporary ban.</p>
+    <p><strong>Appeals:</strong> users who believe an enforcement action was applied in error may appeal by contacting support. Each ban or mute is assigned a unique number displayed on the restriction screen — include this number when contacting support. The Administration will review appeals within 30 days. For bans and mutes applied by the AI system, you have the right to request human review of the decision.</p>
   </div>
 
   <div class="section">
@@ -194,6 +203,26 @@
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
     </ul>
   </div>
+
+  <div class="section">
+    <h2 class="section-title">15. AI Judge and Automated Enforcement</h2>
+    <p>NearChat uses an automated AI moderation system ("AI Judge") to process reports and apply enforcement actions. By using the app you acknowledge and agree to the following:</p>
+    <ul>
+      <li>Reports you submit may be processed entirely by the AI system without prior human review</li>
+      <li>The AI analyses message content, conversation context, and behavioural patterns to determine whether a violation occurred</li>
+      <li>Based on its analysis the AI may apply a mute, a temporary ban, dismiss the report, or — if it determines the report was submitted in bad faith — apply a ban to the reporting user</li>
+      <li>The AI system is designed to resist manipulation: any content in messages that attempts to influence the AI's verdict is treated as a prompt injection attempt and results in dismissal of the report</li>
+      <li>All AI decisions are recorded and may be reviewed by a human administrator</li>
+      <li>You have the right to request human review of any AI enforcement decision by contacting support with your ban or mute number</li>
+      <li>AI analysis is also used to assist administrators when reviewing ban appeals submitted through the support channel</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">16. Trust Score</h2>
+    <p>NearChat maintains a Trust Score for each user — an anonymised reputation indicator calculated from post-chat ratings and feedback tags left by other users after conversations. The Trust Score is used solely to improve matchmaking quality and is not disclosed to other users or third parties. It is automatically reset upon account deletion.</p>
+  </div>
+
 </section>
 
 <section class="lang-block" id="ru">
@@ -201,7 +230,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Пользовательское соглашение</div>
     <h1 class="doc-title">Пользовательское соглашение NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 24.05.2026</p>
+    <p class="doc-date">Дата последнего обновления: 05.06.2026</p>
   </div>
 
   <div class="section">
@@ -239,7 +268,8 @@
 
   <div class="section">
     <h2 class="section-title">5. Жалобы на нарушения</h2>
-    <p>Вы можете пожаловаться на собеседника в любой момент разговора с помощью кнопки с флажком (🚩) в правом верхнем углу экрана чата. Доступные причины: Спам, Оскорбления, Неприемлемый контент, Безопасность детей, Другое нарушение. Жалоба автоматически включает до 20 последних сообщений текущей сессии для проверки модератором. Жалобы на безопасность детей рассматриваются с высшим приоритетом. Все отчеты отправляются в Firestore для оперативного анализа.</p>
+    <p>Вы можете пожаловаться на собеседника в любой момент разговора с помощью кнопки с флажком (🚩) в правом верхнем углу экрана чата. Доступные причины: Спам, Оскорбления, Неприемлемый контент, Безопасность детей, Другое нарушение. Жалоба автоматически включает до 20 последних сообщений текущей сессии. Жалобы на безопасность детей рассматриваются с высшим приоритетом.</p>
+    <p>Жалобы автоматически обрабатываются ИИ-системой модерации (см. раздел 15 — ИИ-судья). ИИ анализирует содержимое и контекст переписки и может наложить мут, бан или отклонить жалобу без предварительного участия человека. Все решения ИИ фиксируются и могут быть обжалованы.</p>
   </div>
 
   <div class="section">
@@ -260,7 +290,15 @@
 
   <div class="section">
     <h2 class="section-title">8. Блокировки, модерация и апелляции</h2>
-    <p>Администрация оставляет за собой право ограничить или навсегда заблокировать доступ любому пользователю, нарушающему условия настоящего Соглашения. Блокировки одновременно применяются как к анонимному идентификатору устройства (Android ID), так и к авторизованному Firebase UID, что исключает возможность обхода бана. Автоматический бан может быть наложен системой при достижении установленного порога жалоб от уникальных пользователей. Пользователи могут обжаловать блокировку, обратившись в поддержку и указав уникальный номер бана с экрана блокировки. Срок рассмотрения составляет до 30 дней.</p>
+    <p>Администрация оставляет за собой право ограничить или навсегда заблокировать доступ любому пользователю, нарушающему условия настоящего Соглашения. Предусмотрены следующие виды ограничений:</p>
+    <ul>
+      <li><strong>Мут</strong> — временное ограничение на начало новых чатов (в настоящее время 1 час), применяется как первичная мера за незначительные или первичные нарушения, подтверждённые ИИ-системой модерации;</li>
+      <li><strong>Временный бан</strong> — ограничение доступа к платформе на 3, 6 или 24 часа, применяется при накоплении жалоб от нескольких уникальных пользователей, подтверждённых ИИ;</li>
+      <li><strong>Постоянная блокировка</strong> — применяется в случаях CSAM или грубых систематических нарушений.</li>
+    </ul>
+    <p>Блокировки одновременно применяются к идентификатору устройства (Android ID) и Firebase UID. Автоматические санкции накладываются ИИ-системой при достижении порогового числа подтверждённых жалоб. Ручные санкции могут применяться командой модерации.</p>
+    <p><strong>Механизм «бумеранга»:</strong> если ИИ устанавливает, что жалоба была подана недобросовестно или представляет собой систематическую провокацию или преследование ответчика, сам заявитель может получить временный бан.</p>
+    <p><strong>Апелляции:</strong> пользователи могут обжаловать любое ограничение, обратившись в поддержку. Каждый бан или мут получает уникальный номер, отображаемый на экране ограничения — укажите его при обращении. Срок рассмотрения — 30 дней. По решениям, принятым ИИ-системой, вы имеете право потребовать проверки живым администратором.</p>
   </div>
 
   <div class="section">
@@ -307,6 +345,26 @@
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
     </ul>
   </div>
+
+  <div class="section">
+    <h2 class="section-title">15. ИИ-судья и автоматизированное применение санкций</h2>
+    <p>NearChat использует автоматизированную систему ИИ-модерации («ИИ-судья») для обработки жалоб и применения мер. Используя приложение, вы подтверждаете своё согласие со следующим:</p>
+    <ul>
+      <li>Поданные вами жалобы могут быть полностью обработаны ИИ-системой без предварительного участия человека;</li>
+      <li>ИИ анализирует содержимое сообщений, контекст переписки и поведенческие паттерны для установления факта нарушения;</li>
+      <li>По результатам анализа ИИ может наложить мут, временный бан, отклонить жалобу или — если жалоба была подана недобросовестно — наложить бан на самого заявителя;</li>
+      <li>Система защищена от инъекций промптов: любые попытки через текст сообщений повлиять на вердикт ИИ расцениваются как атака и приводят к отклонению жалобы;</li>
+      <li>Все решения ИИ фиксируются и могут быть проверены администратором-человеком;</li>
+      <li>Вы вправе потребовать пересмотра любого решения ИИ живым администратором, обратившись в поддержку с указанием номера бана или мута;</li>
+      <li>ИИ-анализ также применяется при рассмотрении апелляций на баны, поданных через канал поддержки.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">16. Trust Score (рейтинг доверия)</h2>
+    <p>NearChat ведёт Trust Score для каждого пользователя — анонимный показатель репутации, рассчитываемый на основе оценок и тегов, оставленных другими пользователями после чатов. Trust Score используется исключительно для улучшения качества подбора собеседников, не раскрывается другим пользователям и третьим лицам и автоматически обнуляется при удалении аккаунта.</p>
+  </div>
+
 </section>
 
 <section class="lang-block" id="az">
@@ -314,7 +372,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">İstifadəçi müqaviləsi</div>
     <h1 class="doc-title">NearChat İstifadəçi Müqaviləsi</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 24.05.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 05.06.2026</p>
   </div>
 
   <div class="section">
@@ -352,7 +410,8 @@
 
   <div class="section">
     <h2 class="section-title">5. Qaydaların pozulması barədə şikayətlər</h2>
-    <p>Həmsöhbətinizdən istənilən vaxt çat ekranının sağ yuxarı küncündəki bayraq (🚩) düyməsi vasitəsilə şikayət edə bilərsiniz. Mövcud səbəblər: Spam, Təhqir, Uyğunsuz məzmun, Uşaq təhlükəsizliyi, Digər pozuntu. Şikayət avtomatik olaraq moderatorun yoxlaması üçün sessiyanın son 20 mesajını əhatə edir. Uşaq təhlükəsizliyi ilə bağlı şikayətlərə ən yüksək prioritetlə baxılır və məlumatlar Firestore üzərindən emal olunur.</p>
+    <p>Həmsöhbətinizdən istənilən vaxt çat ekranının sağ yuxarı küncündəki bayraq (🚩) düyməsi vasitəsilə şikayət edə bilərsiniz. Mövcud səbəblər: Spam, Təhqir, Uyğunsuz məzmun, Uşaq təhlükəsizliyi, Digər pozuntu. Şikayət avtomatik olaraq sessiyanın son 20 mesajını əhatə edir. Uşaq təhlükəsizliyi ilə bağlı şikayətlərə ən yüksək prioritetlə baxılır.</p>
+    <p>Şikayətlər avtomatik olaraq SI moderasiya sistemi tərəfindən emal edilir (bax: Bölmə 15 — SI Hakim). SI məzmunu və söhbət kontekstini təhlil edərək insan iştirakı olmadan mute, ban tətbiq edə və ya şikayəti rədd edə bilər. Bütün SI qərarları qeydə alınır və etiraz edilə bilər.</p>
   </div>
 
   <div class="section">
@@ -373,7 +432,15 @@
 
   <div class="section">
     <h2 class="section-title">8. Bloklama, moderasiya və apellyasiya</h2>
-    <p>Administrasiya bu Müqaviləni pozan hər hansı istifadəçinin girişini məhdudlaşdırmaq və ya tamamilə bloklamaq hüququnu özündə saxlayır. Bloklamalar təhlükəsizliyi təmin etmək üçün server tərəfindən eyni anda həm cihaz identifikatoruna (Android ID), həm də Firebase UID-ə tətbiq edilir. Avtomatik bloklamalar unikal istifadəçilərdən gələn şikayətlər müəyyən həddi keçdikdə tətbiq oluna bilər. Səhvən bloklandığını düşünən istifadəçilər ekrandakı unikal ban nömrəsini qeyd edərək dəstək xidmətinə müraciət edə bilərlər. Apellyasiyalara 30 gün ərzində baxılır.</p>
+    <p>Administrasiya bu Müqaviləni pozan hər hansı istifadəçinin girişini məhdudlaşdırmaq və ya tamamilə bloklamaq hüququnu özündə saxlayır. Aşağıdakı məhdudiyyət növləri mövcuddur:</p>
+    <ul>
+      <li><strong>Səssizləşdirmə (Mute)</strong> — yeni söhbətlər başlatmağa müvəqqəti məhdudiyyət (hazırda 1 saat); SI moderasiya sistemi tərəfindən təsdiqlənmiş ilk və ya kiçik pozuntular üçün ilkin tədqiqat tədbiri kimi tətbiq edilir;</li>
+      <li><strong>Müvəqqəti ban</strong> — platformaya giriş 3, 6 və ya 24 saat müddətinə bloklanır; SI tərəfindən təsdiqlənmiş bir neçə unikal istifadəçinin şikayəti olduqda tətbiq edilir;</li>
+      <li><strong>Daimi bloklama</strong> — CSAM və ya ağır sistematik pozuntular hallarında tətbiq edilir.</li>
+    </ul>
+    <p>Bloklama eyni anda həm cihaz identifikatoruna (Android ID), həm də Firebase UID-ə tətbiq edilir. Avtomatik sanksiyalar müəyyən edilmiş şikayət həddi aşıldıqda SI sistemi tərəfindən tətbiq edilə bilər. Manual sanksiyalar moderasiya qrupu tərəfindən tətbiq olunur.</p>
+    <p><strong>"Bumerang" mexanizmi:</strong> SI şikayətin vicdansız şəkildə və ya həmsöhbəti sistematik şəkildə təqib etmək məqsədilə verildiyi qənaətinə gələrsə, şikayətçinin özü müvəqqəti ban ala bilər.</p>
+    <p><strong>Apellyasiyalar:</strong> istifadəçilər hər hansı məhdudiyyəti etiraz etmək üçün dəstək xidmətinə müraciət edə bilərlər. Hər ban və ya mute məhdudiyyət ekranında göstərilən unikal nömrə ilə müşayiət olunur — müraciət zamanı onu qeyd edin. Baxılma müddəti — 30 gün. SI sistemi tərəfindən verilmiş qərarlara insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var.</p>
   </div>
 
   <div class="section">
@@ -420,6 +487,26 @@
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
     </ul>
   </div>
+
+  <div class="section">
+    <h2 class="section-title">15. SI Hakim və Avtomatlaşdırılmış Sanksiyaların Tətbiqi</h2>
+    <p>NearChat şikayətlərin emalı və sanksiyaların tətbiqi üçün avtomatlaşdırılmış SI moderasiya sistemindən ("SI Hakim") istifadə edir. Tətbiqdən istifadə etməklə aşağıdakı şərtlərlə razılaşırsınız:</p>
+    <ul>
+      <li>Təqdim etdiyiniz şikayətlər tam olaraq SI sistemi tərəfindən insan iştirakı olmadan emal edilə bilər;</li>
+      <li>SI mesajların məzmununu, söhbət kontekstini və davranış nümunələrini pozuntuların müəyyən edilməsi üçün təhlil edir;</li>
+      <li>Təhlilin nəticəsinə əsasən SI mute, müvəqqəti ban tətbiq edə, şikayəti rədd edə və ya — şikayət vicdansız şəkildə verilmişsə — şikayətçinin özünə ban tətbiq edə bilər;</li>
+      <li>Sistem prompt inyeksiyalarından qorunur: mesajlar vasitəsilə SI-nin qərarına təsir etmək cəhdləri aşkar edilir və şikayətin rədd edilməsi ilə nəticələnir;</li>
+      <li>Bütün SI qərarları qeydə alınır və insan administrator tərəfindən yoxlanıla bilər;</li>
+      <li>İstənilən SI qərarının insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var — dəstək xidmətinə ban və ya mute nömrəsi ilə müraciət edin;</li>
+      <li>SI təhlili həmçinin dəstək kanalı vasitəsilə təqdim edilmiş ban apellyasiyalarının baxılmasında administratorlara kömək etmək üçün istifadə olunur.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">16. Trust Score (Etibar Reytinqi)</h2>
+    <p>NearChat hər istifadəçi üçün Trust Score aparır — söhbətlərdən sonra digər istifadəçilər tərəfindən verilən qiymətlər və teqlər əsasında hesablanan anonim reputasiya göstəricisi. Trust Score yalnız həmsöhbət seçiminin keyfiyyətini artırmaq məqsədilə istifadə olunur, digər istifadəçilərə və üçüncü tərəflərə açıqlanmır, hesab silindiyi zaman avtomatik olaraq sıfırlanır.</p>
+  </div>
+
 </section>
 
 </div>
