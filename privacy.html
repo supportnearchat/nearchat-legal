@@ -88,7 +88,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Privacy Policy</div>
     <h1 class="doc-title">NearChat Privacy Policy</h1>
-    <p class="doc-date">Last updated: May 24, 2026</p>
+    <p class="doc-date">Last updated: June 5, 2026</p>
   </div>
 
   <div class="section">
@@ -101,6 +101,8 @@
       <li>Technical diagnostics: OS version, device type, app version, crash reports (via Firebase Crashlytics)</li>
       <li>FCM push token — used solely to deliver active message notifications; never shared with third parties</li>
       <li>Admin panel access logs — email address, login time, browser agent, login result; securely stored in Firestore and accessible only to administrators</li>
+      <li>Trust Score — an anonymised behavioural reputation indicator calculated from post-chat ratings and tags left by other users; used exclusively to improve matchmaking quality and is never disclosed to third parties</li>
+      <li>Report-related data — report reason, session identifier, and up to 20 messages from the reported session, retained temporarily for moderation review and automatic processing by the AI moderation system</li>
     </ul>
   </div>
 
@@ -123,10 +125,12 @@
       <li>Matching you with a chat partner based on your selected adult parameters (performed exclusively server-side via Cloud Functions)</li>
       <li>Ensuring the technical operation and stability of the service</li>
       <li>Abuse prevention: blocking rule violators simultaneously by device identifier (Android ID) and Firebase UID</li>
+      <li>Applying temporary mutes (restriction from starting new chats) as a graduated enforcement measure for first-time or minor violations</li>
       <li>Enforcing platform re-registration cooldown (7 days) via UID and device tracking to prevent post-deletion abuse</li>
       <li>Delivering push notifications about new messages and chat matches</li>
       <li>Improving app performance and stability via crash analytics</li>
-      <li>Moderating user reports submitted via the in-app Report function</li>
+      <li>Automated moderation of user reports via an AI system (see Section 13 — Automated Decision-Making)</li>
+      <li>Calculating and maintaining a Trust Score based on anonymised post-chat ratings to improve matchmaking quality</li>
       <li>Logging administrator access to the moderation panel for security audit purposes</li>
       <li>Complying with applicable legal requirements</li>
     </ul>
@@ -156,10 +160,12 @@
     <h2 class="section-title">6. Data storage and retention</h2>
     <ul>
       <li>Chat messages exist only within an active session and are deleted automatically within 24 hours after the session ends</li>
-      <li>When a report is submitted, the most recent messages (up to 20) are temporarily retained for moderator review, then deleted within 30 days</li>
+      <li>When a report is submitted, the most recent messages (up to 20) are temporarily retained for moderator review and AI processing, then deleted within 30 days</li>
       <li>Device identifier and Firebase UID are retained only when a ban is applied; deleted when the ban expires or is lifted</li>
+      <li>Mute records are deleted automatically as soon as the mute period expires (within 30 minutes)</li>
       <li>Re-registration cooldown record is retained for 7 days after account deletion, then automatically purged by server functions</li>
       <li>User profiles are automatically deleted after 90 days of inactivity</li>
+      <li>Trust Score data is deleted upon account deletion</li>
       <li>Admin access logs are retained for 90 days for security audit purposes</li>
       <li>We do not maintain conversation archives and cannot restore deleted messages</li>
     </ul>
@@ -172,6 +178,7 @@
       <li>Right to erasure: delete your account directly in the app (Settings → Danger zone → Delete my account and data)</li>
       <li>Right to data portability: you may request a copy of your data in a machine-readable format</li>
       <li>Right to object: you may object to processing based on legitimate interest by contacting us</li>
+      <li>Right to human review of automated decisions: if a ban or mute was applied to your account by the automated AI moderation system, you have the right to request that a human administrator review the decision. To do so, contact us and provide your ban or mute number (displayed on the restriction screen)</li>
       <li>Right to lodge a complaint with the data protection authority in your country</li>
     </ul>
   </div>
@@ -228,6 +235,21 @@
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
     </ul>
   </div>
+
+  <div class="section">
+    <h2 class="section-title">13. Automated Decision-Making and AI Moderation</h2>
+    <p>NearChat uses an automated AI moderation system (powered by a large language model) to process user reports and take enforcement actions without prior human review. This constitutes automated decision-making within the meaning of Article 22 of the GDPR.</p>
+    <ul>
+      <li>When a report is submitted, the AI system analyses the reported content and the conversation context to determine whether a violation occurred</li>
+      <li>Based on the analysis, the system may apply a temporary mute (1 hour), a temporary ban (3, 6, or 24 hours depending on the number of confirmed reports), or dismiss the report entirely</li>
+      <li>The system also includes a "boomerang" mechanism: if the AI determines that a report was filed in bad faith or as a form of harassment, the reporting user may themselves receive a temporary ban</li>
+      <li>All AI decisions are logged and are subject to review by a human administrator</li>
+      <li>You have the right to request human review of any automated enforcement action by contacting support and providing your ban or mute number. We will review the case within 30 days</li>
+      <li>The AI system is designed with prompt-injection protections: any attempt to manipulate the system via message content is detected and results in dismissal of the report</li>
+      <li>AI-assisted analysis is also used to help administrators review ban appeals submitted through the support channel</li>
+    </ul>
+  </div>
+
 </section>
 
 <section class="lang-block" id="ru">
@@ -235,7 +257,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Политика конфиденциальности</div>
     <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 24.05.2026</p>
+    <p class="doc-date">Дата последнего обновления: 05.06.2026</p>
   </div>
 
   <div class="section">
@@ -247,7 +269,9 @@
       <li>Страна и город — только в случае, если вы вводите их вручную;</li>
       <li>Техническая диагностика: версия ОС, модель устройства, версия приложения, отчеты о сбоях (через Firebase Crashlytics);</li>
       <li>FCM-токен push-уведомлений — используется только для доставки уведомлений о новых сообщениях;</li>
-      <li>Логи доступа к панели администратора — email, время входа, данные браузера; хранятся в Firestore и доступны только администраторам.</li>
+      <li>Логи доступа к панели администратора — email, время входа, данные браузера; хранятся в Firestore и доступны только администраторам;</li>
+      <li>Trust Score (рейтинг доверия) — анонимный поведенческий показатель, рассчитываемый на основе оценок и тегов, оставленных другими пользователями после чатов; используется исключительно для улучшения качества подбора собеседников и не передаётся третьим лицам;</li>
+      <li>Данные жалоб — причина жалобы, идентификатор сессии и до 20 последних сообщений из сессии; хранятся временно для проверки модератором и автоматической обработки системой ИИ-модерации.</li>
     </ul>
   </div>
 
@@ -269,10 +293,12 @@
       <li>Подбор собеседников на основе выбранных вами параметров совершеннолетия (выполняется строго на стороне сервера через Cloud Functions);</li>
       <li>Обеспечение технической стабильности работы сервиса;</li>
       <li>Предотвращение нарушений: блокировка нарушителей одновременно по идентификатору устройства (Android ID) и Firebase UID;</li>
+      <li>Применение временного мута (ограничения на начало новых чатов) как меры первичного реагирования на незначительные нарушения;</li>
       <li>Контроль кулдауна перерегистрации (7 дней) после удаления аккаунта для предотвращения спама;</li>
       <li>Доставка push-уведомлений о чатах;</li>
       <li>Анализ логов ошибок для улучшения стабильности кода;</li>
-      <li>Обработка жалоб пользователей через встроенную функцию Report.</li>
+      <li>Автоматическая модерация жалоб пользователей с помощью ИИ-системы (см. раздел 13 — Автоматизированная обработка);</li>
+      <li>Расчёт и ведение Trust Score (рейтинга доверия) на основе анонимных оценок после чатов для улучшения качества подбора собеседников.</li>
     </ul>
   </div>
 
@@ -298,10 +324,12 @@
     <h2 class="section-title">6. Хранение и удаление данных</h2>
     <ul>
       <li>Тексты сообщений существуют только в рамках активной сессии чата и автоматически стираются в течение 24 часов после его завершения;</li>
-      <li>При отправке жалобы до 20 сообщений временно удерживаются для проверки модератором и удаляются в течение 30 дней;</li>
+      <li>При отправке жалобы до 20 сообщений временно удерживаются для проверки модератором и автоматической обработки ИИ-системой; удаляются в течение 30 дней;</li>
       <li>Идентификаторы устройств и Firebase UID сохраняются в базе данных только в случае активного бана и удаляются автоматически по истечении его срока;</li>
+      <li>Записи о мутах удаляются автоматически сразу после истечения срока мута (в течение 30 минут);</li>
       <li>Запись о кулдауне перерегистрации хранится ровно 7 дней после удаления профиля;</li>
-      <li>Профили автоматически удаляются после 90 дней полной неактивности пользователя.</li>
+      <li>Профили автоматически удаляются после 90 дней полной неактивности пользователя;</li>
+      <li>Данные Trust Score удаляются при удалении аккаунта.</li>
     </ul>
   </div>
 
@@ -310,7 +338,8 @@
     <ul>
       <li>Право на доступ: вы можете запросить информацию о том, какие данные обрабатываются;</li>
       <li>Право на удаление: вы можете полностью стереть свои данные, нажав кнопку удаления аккаунта в настройках приложения;</li>
-      <li>Право на возражение против обработки, основанной на законных интересах платформы.</li>
+      <li>Право на возражение против обработки, основанной на законных интересах платформы;</li>
+      <li>Право на пересмотр автоматизированного решения: если блокировка или мут были наложены автоматической ИИ-системой модерации, вы вправе потребовать проверки решения живым администратором. Для этого свяжитесь с поддержкой и укажите номер бана или мута, отображённый на экране ограничения.</li>
     </ul>
   </div>
 
@@ -362,6 +391,21 @@
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
     </ul>
   </div>
+
+  <div class="section">
+    <h2 class="section-title">13. Автоматизированная обработка и ИИ-модерация</h2>
+    <p>NearChat использует автоматизированную систему ИИ-модерации (на основе большой языковой модели) для обработки жалоб пользователей и применения санкций без предварительного участия человека. Это является автоматизированным принятием решений в смысле статьи 22 GDPR.</p>
+    <ul>
+      <li>При поступлении жалобы ИИ-система анализирует содержимое и контекст переписки для определения факта нарушения;</li>
+      <li>По результатам анализа система может наложить временный мут (1 час), временный бан (3, 6 или 24 часа в зависимости от количества подтверждённых жалоб) или отклонить жалобу;</li>
+      <li>Система включает механизм «бумеранга»: если ИИ определяет, что жалоба была подана недобросовестно или с целью преследования, сам заявитель может получить временный бан;</li>
+      <li>Все решения ИИ фиксируются в журнале и могут быть проверены администратором-человеком;</li>
+      <li>Вы вправе потребовать пересмотра любого автоматизированного решения живым администратором — для этого свяжитесь с поддержкой и укажите номер бана или мута. Срок рассмотрения — 30 дней;</li>
+      <li>Система защищена от инъекций промптов: любые попытки манипулировать ИИ через текст сообщений обнаруживаются и приводят к отклонению жалобы;</li>
+      <li>ИИ-анализ также используется для помощи администраторам при рассмотрении апелляций на баны.</li>
+    </ul>
+  </div>
+
 </section>
 
 <section class="lang-block" id="az">
@@ -369,7 +413,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">Məxfilik siyasəti</div>
     <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 24.05.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 05.06.2026</p>
   </div>
 
   <div class="section">
@@ -381,7 +425,9 @@
       <li>Ölkə və şəhər — yalnız əllə daxil etdiyiniz halda;</li>
       <li>Texniki diaqnostika: Əməliyyat sistemi versiyası, cihaz modeli, tətbiq versiyası və xəta hesabatları (Firebase Crashlytics vasitəsilə);</li>
       <li>FCM push bildiriş tokeni — yalnız yeni mesaj bildirişlərini çatdırmaq üçün istifadə olunur;</li>
-      <li>Admin panel qeydləri — e-poçt, giriş vaxtı, brauzer məlumatları; Firestore-da saxlanılır və yalnız administratorlara görünür.</li>
+      <li>Admin panel qeydləri — e-poçt, giriş vaxtı, brauzer məlumatları; Firestore-da saxlanılır və yalnız administratorlara görünür;</li>
+      <li>Trust Score (etibar reytinqi) — söhbətlərdən sonra digər istifadəçilər tərəfindən verilən qiymətlər əsasında hesablanan anonim davranış göstəricisi; yalnız həmsöhbət seçiminin keyfiyyətini artırmaq üçün istifadə olunur və üçüncü tərəflərə ötürülmür;</li>
+      <li>Şikayətlə bağlı məlumatlar — şikayət səbəbi, sessiya identifikatoru və sessiyanın son 20 mesajı; moderator yoxlaması və süni intellekt moderasiya sistemi tərəfindən emal üçün müvəqqəti saxlanılır.</li>
     </ul>
   </div>
 
@@ -403,9 +449,11 @@
       <li>Seçdiyiniz yetkinlik parametrlərinə əsasən həmsöhbətin tapılması (müstəsna olaraq server tərəfində Cloud Functions vasitəsilə həyata keçirilir);</li>
       <li>Xidmətin texniki dayanıqlığının təmin edilməsi;</li>
       <li>Sui-istifadənin qarşısının alınması: qaydanı pozanların eyni anda həm Android ID, həm də Firebase UID vasitəsilə bloklanması;</li>
+      <li>Kiçik qayda pozuntuları üçün ilkin tədqiqat tədbiri kimi müvəqqəti səssizləşdirmənin (yeni söhbət başlatma məhdudiyyətinin) tətbiqi;</li>
       <li>Hesab silindikdən sonra sui-istifadənin qarşısını almaq üçün 7 günlük yenidən qeydiyyat gözləmə müddətinin tətbiqi;</li>
       <li>Push bildirişlərin çatdırılması;</li>
-      <li>Tətbiqdaxili "Şikayət et" (Report) funksiyası vasitəsilə daxil olan müraciətlərin moderasiyası.</li>
+      <li>Tətbiqdaxili süni intellekt moderasiya sistemi vasitəsilə şikayətlərin avtomatik işlənməsi (bax: Bölmə 13 — Avtomatlaşdırılmış qərar qəbulu);</li>
+      <li>Həmsöhbət seçiminin keyfiyyətini artırmaq üçün söhbətdən sonrakı anonim qiymətlər əsasında Trust Score-un hesablanması və aparılması.</li>
     </ul>
   </div>
 
@@ -431,10 +479,12 @@
     <h2 class="section-title">6. Məlumatların saxlanılması və silinməsi</h2>
     <ul>
       <li>Mesajlar yalnız aktiv sessiya müddətində mövcuddur və çat bitdikdən sonra 24 saat ərzində avtomatik silinir;</li>
-      <li>Şikayət göndərildikdə son 20 mesaj moderator yoxlaması üçün müvəqqəti saxlanılır və 30 gün ərzində silinir;</li>
+      <li>Şikayət göndərildikdə son 20 mesaj moderator yoxlaması və SI moderasiya sistemi tərəfindən emal üçün müvəqqəti saxlanılır və 30 gün ərzində silinir;</li>
       <li>Cihaz identifikatorları və Firebase UID yalnız aktiv ban olduqda sistemdə saxlanılır;</li>
+      <li>Səssizləşdirmə qeydləri müddət bitdikdən dərhal sonra (30 dəqiqə ərzində) avtomatik silinir;</li>
       <li>Yenidən qeydiyyat gözləmə müddəti (cooldown) hesab silindikdən sonra düz 7 gün saxlanılır;</li>
-      <li>İstifadəçi profilləri 90 gün tam fəaliyyətsizlikdən sonra server tərəfindən avtomatik təmizlənir.</li>
+      <li>İstifadəçi profilləri 90 gün tam fəaliyyətsizlikdən sonra server tərəfindən avtomatik təmizlənir;</li>
+      <li>Trust Score məlumatları hesab silindiyi zaman silinir.</li>
     </ul>
   </div>
 
@@ -443,7 +493,8 @@
     <ul>
       <li>Giriş hüququ: hansı məlumatların emal edildiyi barədə məlumat tələb edə bilərsiniz;</li>
       <li>Silmək hüququ: hesabınızı tətbiqin ayarlarından istənilən vaxt tamamilə silə bilərsiniz;</li>
-      <li>Platformanın qanuni maraqlarına əsaslanan emala etiraz etmək hüququ.</li>
+      <li>Platformanın qanuni maraqlarına əsaslanan emala etiraz etmək hüququ;</li>
+      <li>Avtomatlaşdırılmış qərarın yenidən baxılması hüququ: ban və ya səssizləşdirmə avtomatik SI moderasiya sistemi tərəfindən tətbiq edilibsə, insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var. Bunun üçün dəstək xidmətinə müraciət edin və məhdudiyyət ekranında göstərilən ban və ya səssizlik nömrəsini qeyd edin.</li>
     </ul>
   </div>
 
@@ -495,6 +546,21 @@
       <li>Email: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
     </ul>
   </div>
+
+  <div class="section">
+    <h2 class="section-title">13. Avtomatlaşdırılmış qərar qəbulu və SI moderasiyası</h2>
+    <p>NearChat istifadəçi şikayətlərini emal etmək və insan iştirakı olmadan tədbirlər tətbiq etmək üçün avtomatlaşdırılmış SI moderasiya sistemindən (böyük dil modelinə əsaslanır) istifadə edir. Bu, GDPR-ın 22-ci maddəsi çərçivəsində avtomatlaşdırılmış qərar qəbuluna aiddir.</p>
+    <ul>
+      <li>Şikayət daxil olduqda SI sistemi pozuntuların müəyyən edilməsi üçün məzmunu və söhbət kontekstini təhlil edir;</li>
+      <li>Təhlilin nəticəsinə əsasən sistem müvəqqəti səssizləşdirmə (1 saat), müvəqqəti ban (3, 6 və ya 24 saat — təsdiqlənmiş şikayətlərin sayından asılı olaraq) tətbiq edə və ya şikayəti rədd edə bilər;</li>
+      <li>Sistem "bumerang" mexanizminə malikdir: SI şikayətin vicdansız şəkildə və ya təqib məqsədilə təqdim edildiyini müəyyən edərsə, şikayətçinin özü müvəqqəti ban ala bilər;</li>
+      <li>Bütün SI qərarları jurnal şəklində qeydə alınır və insan administrator tərəfindən yoxlanıla bilər;</li>
+      <li>İstənilən avtomatlaşdırılmış tədqiqatın insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var — dəstək xidmətinə müraciət edin və ban və ya mute nömrəsini göstərin. Baxılma müddəti — 30 gün;</li>
+      <li>Sistem prompt inyeksiyalarından qorunur: mesaj məzmunu vasitəsilə SI-ni manipulyasiya etmək cəhdləri aşkar edilir və şikayətin rədd edilməsi ilə nəticələnir;</li>
+      <li>SI təhlili həmçinin ban apellyasiyalarının baxılmasında administratorlara kömək etmək üçün istifadə olunur.</li>
+    </ul>
+  </div>
+
 </section>
 
 </div>
