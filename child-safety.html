@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NearChat — Child Safety Standards</title>
+<style>
+  :root {
+    --bg: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+    --accent: #0a0a0a; --border: #e8e8e8; --tag-bg: #f4f4f4; --link: #1a1a1a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .lang-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border); padding: 0 24px;
+  }
+  .lang-nav-inner {
+    max-width: 800px; margin: 0 auto; display: flex;
+    align-items: center; gap: 6px; height: 52px; flex-wrap: wrap;
+  }
+  .lang-nav span { font-size: 12px; color: var(--muted); margin-right: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .lang-nav a {
+    font-size: 13px; font-weight: 500; color: var(--text); text-decoration: none;
+    padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border);
+    transition: all 0.18s ease; white-space: nowrap;
+  }
+  .lang-nav a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .page { max-width: 800px; margin: 0 auto; padding: 64px 24px 100px; }
+  .lang-block { padding-top: 24px; }
+  .lang-block + .lang-block { margin-top: 80px; padding-top: 80px; border-top: 1px solid var(--border); }
+  .doc-header { margin-bottom: 56px; }
+  .doc-label {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); background: var(--tag-bg);
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 16px;
+  }
+  .doc-title {
+    font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.02em;
+    line-height: 1.2; color: var(--accent); margin-bottom: 10px;
+  }
+  .doc-date { font-size: 14px; color: var(--muted); }
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 17px; font-weight: 650; letter-spacing: -0.01em; color: var(--accent);
+    margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .section p { font-size: 15px; color: #333; margin-bottom: 10px; }
+  .section ul { list-style: none; padding: 0; }
+  .section ul li {
+    font-size: 15px; color: #333; padding: 8px 0 8px 20px;
+    position: relative; border-bottom: 1px solid #f5f5f5;
+  }
+  .section ul li:last-child { border-bottom: none; }
+  .section ul li::before {
+    content: ""; position: absolute; left: 0; top: 17px;
+    width: 6px; height: 6px; border-radius: 50%; background: #ccc;
+  }
+  .lang-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+  .lang-divider-flag { font-size: 22px; }
+  .lang-divider-name { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  @media (max-width: 600px) { .page { padding: 48px 16px 80px; } .doc-title { font-size: 24px; } }
+</style>
+</head>
+<body>
+
+<nav class="lang-nav" aria-label="Language navigation">
+  <div class="lang-nav-inner">
+    <span>Jump to:</span>
+    <a href="#en">English</a>
+    <a href="#ru">Русский</a>
+    <a href="#az">Azərbaycan</a>
+  </div>
+</nav>
+
+<div class="page">
+
+<!-- ENGLISH -->
+<section class="lang-block" id="en">
+  <div class="doc-header">
+    <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
+    <div class="doc-label">Child Safety Standards</div>
+    <h1 class="doc-title">NearChat Child Safety Standards</h1>
+    <p class="doc-date">Last updated: June 9, 2026</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Our Commitment</h2>
+    <p>NearChat is committed to maintaining a safe environment and strictly prohibits any content or behavior that sexually exploits, endangers, or harms minors. We have zero tolerance for child sexual abuse material (CSAM) or any form of child exploitation on our platform.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Age Restriction</h2>
+    <ul>
+      <li>NearChat is intended exclusively for users aged 18 and older</li>
+      <li>All users must confirm they are 18 or older via a mandatory date-of-birth gate at first launch</li>
+      <li>Users who do not meet the age requirement are denied access to the platform entirely</li>
+      <li>All search filters are strictly limited to adult age brackets (18-21, 22-25, 26-35, 36+)</li>
+      <li>We do not knowingly collect personal data from anyone under the age of 18</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Prohibited Content and Behavior</h2>
+    <p>The following is strictly prohibited on NearChat:</p>
+    <ul>
+      <li>Any sexual content involving minors (CSAM)</li>
+      <li>Grooming, solicitation, or exploitation of minors</li>
+      <li>Sharing, distributing, requesting, or possessing CSAM</li>
+      <li>Any attempt to contact minors through the platform</li>
+      <li>Any content that sexualizes individuals under the age of 18</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Reporting Mechanism</h2>
+    <ul>
+      <li>Users can report violations directly in the app using the in-app Report button available during every chat session</li>
+      <li>All reports are reviewed by our AI moderation system and human administrators</li>
+      <li>Reports can also be submitted via email: support.nearchat@gmail.com</li>
+      <li>Reports can be submitted via Telegram: t.me/nearchatsuppport_bot</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Enforcement and Law Enforcement Cooperation</h2>
+    <ul>
+      <li>Violations result in immediate permanent ban by both device ID and Firebase UID</li>
+      <li>Confirmed CSAM cases are proactively reported to law enforcement authorities</li>
+      <li>CSAM reports are forwarded to NCMEC (National Center for Missing and Exploited Children) where applicable</li>
+      <li>We cooperate fully with law enforcement investigations involving child safety</li>
+      <li>All CSAM-related content is preserved as evidence and provided to authorities upon request</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:support.nearchat@gmail.com">support.nearchat@gmail.com</a></li>
+      <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank">t.me/nearchatsuppport_bot</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- RUSSIAN -->
+<section class="lang-block" id="ru">
+  <div class="doc-header">
+    <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
+    <div class="doc-label">Стандарты безопасности детей</div>
+    <h1 class="doc-title">Стандарты безопасности детей NearChat</h1>
+    <p class="doc-date">Дата последнего обновления: 09.06.2026</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Наши обязательства</h2>
+    <p>NearChat стремится поддерживать безопасную среду и строго запрещает любой контент или поведение, которое сексуально эксплуатирует, подвергает опасности или причиняет вред несовершеннолетним. Мы придерживаемся политики нулевой терпимости к материалам сексуального насилия над детьми (CSAM) и любым формам эксплуатации детей на нашей платформе.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Возрастные ограничения</h2>
+    <ul>
+      <li>NearChat предназначен исключительно для пользователей в возрасте 18 лет и старше</li>
+      <li>Все пользователи обязаны подтвердить свой возраст (18+) через обязательный экран ввода даты рождения при первом запуске</li>
+      <li>Пользователи, не соответствующие возрастному требованию, полностью лишаются доступа к платформе</li>
+      <li>Все фильтры поиска строго ограничены совершеннолетними диапазонами (18-21, 22-25, 26-35, 36+)</li>
+      <li>Мы намеренно не собираем персональные данные лиц моложе 18 лет</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Запрещённый контент и поведение</h2>
+    <p>На платформе NearChat строго запрещено:</p>
+    <ul>
+      <li>Любой сексуальный контент с участием несовершеннолетних (CSAM)</li>
+      <li>Груминг, домогательства или эксплуатация несовершеннолетних</li>
+      <li>Распространение, передача, запрос или хранение CSAM-материалов</li>
+      <li>Любые попытки установить контакт с несовершеннолетними через платформу</li>
+      <li>Любой контент, сексуализирующий лиц моложе 18 лет</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Механизм подачи жалоб</h2>
+    <ul>
+      <li>Пользователи могут сообщать о нарушениях непосредственно в приложении с помощью кнопки «Пожаловаться», доступной во время каждой сессии чата</li>
+      <li>Все жалобы проверяются системой ИИ-модерации и администраторами-людьми</li>
+      <li>Жалобы также можно направить по электронной почте: support.nearchat@gmail.com</li>
+      <li>Жалобы можно подать через Telegram: t.me/nearchatsuppport_bot</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Применение санкций и сотрудничество с правоохранительными органами</h2>
+    <ul>
+      <li>Нарушения влекут за собой немедленную бессрочную блокировку по идентификатору устройства и Firebase UID</li>
+      <li>Подтверждённые случаи CSAM проактивно передаются в правоохранительные органы</li>
+      <li>Сообщения о CSAM направляются в NCMEC (Национальный центр по делам пропавших и эксплуатируемых детей) в соответствующих случаях</li>
+      <li>Мы в полной мере сотрудничаем с расследованиями правоохранительных органов, связанными с безопасностью детей</li>
+      <li>Весь контент, связанный с CSAM, сохраняется в качестве доказательства и предоставляется властям по запросу</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Контакты</h2>
+    <ul>
+      <li>Email: <a href="mailto:support.nearchat@gmail.com">support.nearchat@gmail.com</a></li>
+      <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank">t.me/nearchatsuppport_bot</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- AZERBAIJANI -->
+<section class="lang-block" id="az">
+  <div class="doc-header">
+    <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
+    <div class="doc-label">Uşaq Təhlükəsizliyi Standartları</div>
+    <h1 class="doc-title">NearChat Uşaq Təhlükəsizliyi Standartları</h1>
+    <p class="doc-date">Son yenilənmə tarixi: 09.06.2026</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Öhdəliyimiz</h2>
+    <p>NearChat təhlükəsiz mühit yaratmağa çalışır və uşaqları cinsi istismar edən, təhlükəyə atan və ya zərər verən hər hansı məzmun və ya davranışı qəti şəkildə qadağan edir. Biz platformamızda uşaqlara qarşı cinsi zorakılıq materiallarına (CSAM) və hər hansı uşaq istismarına sıfır tolerantlıq siyasəti tətbiq edirik.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Yaş Məhdudiyyəti</h2>
+    <ul>
+      <li>NearChat müstəsna olaraq 18 yaş və yuxarı istifadəçilər üçün nəzərdə tutulub</li>
+      <li>Bütün istifadəçilər ilk giriş zamanı məcburi doğum tarixi ekranı vasitəsilə 18 yaşdan böyük olduqlarını təsdiqləməlidirlər</li>
+      <li>Yaş tələbinə cavab verməyən istifadəçilər platformaya girişdən tamamilə məhrum edilir</li>
+      <li>Bütün axtarış filtrləri yalnız yetkin yaş kateqoriyaları ilə məhdudlaşdırılır (18-21, 22-25, 26-35, 36+)</li>
+      <li>Biz 18 yaşından aşağı şəxslərin şəxsi məlumatlarını bilərəkdən toplamırıq</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Qadağan Edilmiş Məzmun və Davranış</h2>
+    <p>NearChat-da aşağıdakılar qəti şəkildə qadağandır:</p>
+    <ul>
+      <li>Yetkinlik yaşına çatmamış şəxsləri əhatə edən hər hansı cinsi məzmun (CSAM)</li>
+      <li>Yetkinlik yaşına çatmamış şəxslərin qruming, təcavüz və ya istismarı</li>
+      <li>CSAM materiallarının paylaşılması, ötürülməsi, tələb edilməsi və ya saxlanılması</li>
+      <li>Platform vasitəsilə yetkinlik yaşına çatmamış şəxslərlə əlaqə saxlamaq cəhdləri</li>
+      <li>18 yaşından aşağı şəxsləri seksuallaşdıran hər hansı məzmun</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Şikayət Mexanizmi</h2>
+    <ul>
+      <li>İstifadəçilər hər söhbət sessiyası zamanı mövcud olan tətbiqdaxili "Şikayət et" düyməsindən istifadə edərək pozuntuları birbaşa tətbiqdən bildirib bilər</li>
+      <li>Bütün şikayətlər süni intellekt moderasiya sistemi və insan administratorları tərəfindən yoxlanılır</li>
+      <li>Şikayətlər həmçinin e-poçt vasitəsilə göndərilə bilər: support.nearchat@gmail.com</li>
+      <li>Şikayətlər Telegram vasitəsilə də göndərilə bilər: t.me/nearchatsuppport_bot</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Tədbirlər və Hüquq-mühafizə Orqanları ilə Əməkdaşlıq</h2>
+    <ul>
+      <li>Pozuntular həm cihaz identifikatoru, həm də Firebase UID vasitəsilə dərhal daimi bloklanma ilə nəticələnir</li>
+      <li>Təsdiqlənmiş CSAM halları proaktiv şəkildə hüquq-mühafizə orqanlarına bildirilir</li>
+      <li>CSAM hesabatları müvafiq hallarda NCMEC-ə (İtirilmiş və İstismar Edilən Uşaqlar üzrə Milli Mərkəz) göndərilir</li>
+      <li>Biz uşaq təhlükəsizliyi ilə bağlı hüquq-mühafizə orqanlarının araşdırmalarına tam əməkdaşlıq edirik</li>
+      <li>CSAM ilə bağlı bütün məzmun sübut kimi saxlanılır və tələb əsasında səlahiyyətli orqanlara təqdim edilir</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Əlaqə</h2>
+    <ul>
+      <li>E-poçt: <a href="mailto:support.nearchat@gmail.com">support.nearchat@gmail.com</a></li>
+      <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank">t.me/nearchatsuppport_bot</a></li>
+    </ul>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
