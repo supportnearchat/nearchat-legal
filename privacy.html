@@ -88,7 +88,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Privacy Policy</div>
     <h1 class="doc-title">NearChat Privacy Policy</h1>
-    <p class="doc-date">Last updated: June 13, 2026</p>
+    <p class="doc-date">Last updated: July 17, 2026</p>
   </div>
 
   <div class="section">
@@ -103,6 +103,10 @@
       <li>Admin panel access logs — email address, login time, browser agent, login result; securely stored in Firestore and accessible only to administrators</li>
       <li>Trust Score — an anonymised behavioural reputation indicator calculated from post-chat ratings and tags left by other users; used exclusively to improve matchmaking quality and is never disclosed to third parties</li>
       <li>Report-related data — report reason, session identifier, and up to 20 messages from the reported session, retained temporarily for moderation review and automatic processing by the AI moderation system</li>
+      <li>Anonymous Link chat data — if you create or use a personal Anonymous Link, we process the chat's status (pending/active/blocked), the paired device identifiers (host and guest), the initial message, message timestamps, a short preview (up to ~200 characters) of the most recent message, and any nickname you choose to assign to the other participant (visible only to you, never to them), used solely to render your chat list</li>
+      <li>Anonymous Link presence and interaction signals — while an Anonymous Link chat is active, we process short-lived "typing" indicators, "last active" timestamps used to show an online status, and read-receipt timestamps; each of these is visible only to the other participant of that specific chat. We also process any emoji reaction you leave on a message and a short reference to the message you are replying to, both stored as part of that message</li>
+      <li>Anonymous Link abuse-prevention data — to protect the reporting system from misuse between the same two devices, we temporarily track unverified-report streaks, device-pair report cooldowns, and temporary reporting restrictions, all keyed by device identifier (see Section 14)</li>
+      <li>Anonymous Link block records — once you block an Anonymous Link chat, we record that the two device identifiers involved are paired and blocked, so the blocked device cannot start a new request with you again through the same or a newly generated link</li>
     </ul>
   </div>
 
@@ -110,7 +114,7 @@
     <h2 class="section-title">2. What we do NOT collect</h2>
     <ul>
       <li>Name, surname, email address or phone number (from regular users)</li>
-      <li>Message content — conversations are never stored on the server after the session ends</li>
+      <li>Message content — conversations are never stored on our servers after the session ends, beyond the short Anonymous Link preview described in Section 1 and the local on-device cache described in Section 14</li>
       <li>Precise device geolocation (GPS or IP geolocation is not used)</li>
       <li>Data from social networks or third-party applications</li>
       <li>Biometric data, payment details or financial information</li>
@@ -132,6 +136,7 @@
       <li>Automated moderation of user reports via an AI system (see Section 13 — Automated Decision-Making)</li>
       <li>Calculating and maintaining a Trust Score based on anonymised post-chat ratings to improve matchmaking quality</li>
       <li>Logging administrator access to the moderation panel for security audit purposes</li>
+      <li>Operating the optional Anonymous Link feature, including matching a link to its owner, relinking your anonymous chats after a reinstall, and protecting the anonymous-report system from abuse (see Section 14)</li>
       <li>Complying with applicable legal requirements</li>
     </ul>
   </div>
@@ -168,6 +173,11 @@
       <li>User profiles are automatically deleted after 90 days of inactivity</li>
       <li>Trust Score data is deleted upon account deletion</li>
       <li>Admin access logs are retained for 90 days for security audit purposes</li>
+      <li>Anonymous Link messages follow the same 24-hour deletion schedule as regular chats; the short preview of the latest message (see Section 1) may remain part of the chat record until that record itself is deleted, as described below</li>
+      <li>Anonymous Link chat records (pending or active) are retained for up to 365 days, or until deleted earlier by a participant; the chat document itself is deleted automatically 24 hours after it is blocked</li>
+      <li>Anonymous Link presence signals (typing indicators, online timestamps) are continuously overwritten and are only ever meaningful for a few seconds; read-receipt timestamps are retained for as long as the chat record itself; message reactions and reply references are retained for as long as the underlying message</li>
+      <li>Anonymous Link block records (Section 1) are retained indefinitely and are not subject to the 24-hour or 365-day periods above — they exist specifically so that a blocked device cannot circumvent the block by starting a new request, and are only removed if we determine they are no longer needed for that purpose</li>
+      <li>Anonymous Link abuse-prevention records are short-lived: device-pair report cooldowns are purged after 7 days, and temporary reporting restrictions are deleted automatically once they expire (typically within 6 hours)</li>
       <li>We do not maintain conversation archives and cannot restore deleted messages</li>
     </ul>
   </div>
@@ -203,6 +213,7 @@
       <li>All data is transmitted over encrypted connections (TLS 1.2+)</li>
       <li>Admin panel sessions expire after 30 minutes of inactivity; login attempts are rate-limited</li>
       <li>Administrator actions are logged with timestamp, email, and browser agent</li>
+      <li>Locally cached Anonymous Link messages and locally-stored aliases (see Section 14) never leave your device and are not accessible to us, our staff, or any third party</li>
     </ul>
   </div>
 
@@ -249,6 +260,24 @@
       <li>You have the right to request human review of any automated enforcement action by contacting support and providing your ban or mute number. We will review the case within 30 days</li>
       <li>The AI system is designed with prompt-injection protections: any attempt to manipulate the system via message content is detected and results in dismissal of the report</li>
       <li>AI-assisted analysis is also used to help administrators review ban appeals submitted through the support channel</li>
+      <li>Reports submitted from Anonymous Link chats (see Section 14) are processed by the same AI system, with additional safeguards intended to recognise mutual or consensual conversations between people who already know each other and to avoid unwarranted enforcement in such cases</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">14. Anonymous Link Chats</h2>
+    <p>NearChat offers an optional feature that lets you generate a personal link (and an equivalent QR code) so that other people can start an anonymous chat with you without either of you seeing the other's identity. This section explains the data handling specific to this feature, in addition to the general rules above.</p>
+    <ul>
+      <li><strong>Chat record data:</strong> we process the chat's status (pending / active / blocked), the paired device identifiers of the host and the guest, the initial message, message timestamps, unread-message counters (used only to display notification badges), and a short preview of the latest message used to render your chat list</li>
+      <li><strong>Local message cache:</strong> to let you keep reading your recent Anonymous Link conversations smoothly, the app additionally caches recent messages in a private, app-only database stored on your device. This local cache is never transmitted to our servers, is not accessible to us, and is automatically cleared after 24 hours (it is also removed if you clear the app's data or uninstall it)</li>
+      <li><strong>Aliases you assign to a contact:</strong> you may optionally label an anonymous contact with a nickname of your choosing. This nickname is stored as part of the chat record on our servers, separately for each side of the conversation — it is never shown to the other participant, and syncs automatically if you use the app on more than one device. It is deleted along with the chat itself when the chat is rejected or otherwise removed, but may persist if the chat is only blocked rather than deleted (see Section 6)</li>
+      <li><strong>Presence indicators visible to your chat partner:</strong> while a chat is active, the app may show your partner a "typing…" indicator, an approximate "online" / "last active" status, and read receipts (whether your partner has opened the chat since your last message). These signals are generated automatically from short-lived timestamps and are visible only inside that specific chat — they are not part of any public profile and are not shown anywhere else in the app</li>
+      <li><strong>Reactions and replies:</strong> you may react to a message with an emoji or reply directly to a specific earlier message; both are stored as part of the message record and are visible to your chat partner, following the same retention as the chat itself</li>
+      <li><strong>Device relinking:</strong> if you reinstall the app or clear its data, a new anonymous session identifier is created for your device. To restore access to your existing Anonymous Link chats and links, we match your existing chat records by device identifier and relink them to your new session identifier</li>
+      <li><strong>Abuse prevention for reports:</strong> to keep the anonymous reporting system fair — this feature is often used between people who already know each other, and reports can occasionally be filed as a prank or out of spite — we temporarily track, per device: a streak of reports that the AI moderation system did not confirm as violations; a cooldown between repeated reports involving the same pair of devices (24 hours); and, if a pattern of unconfirmed reports is detected, a temporary restriction (typically 6 hours) on filing further reports or creating new links. These records are automatically deleted once they expire or, for device-pair cooldowns, within 7 days</li>
+      <li><strong>Blocking is permanent for that pair:</strong> when you block an Anonymous Link chat — with or without filing a report — we keep a permanent record pairing the two device identifiers involved, specifically to prevent the blocked device from starting a new request with you, whether through the same link or a link you create later. This record does not expire on the same schedule as other Anonymous Link data (see the Privacy Policy retention section) because its entire purpose is to remain in place</li>
+      <li><strong>Ban scope:</strong> enforcement actions resulting from a violation confirmed within an Anonymous Link chat are internally tagged as originating from this feature. Such a ban restricts only your ability to start new Anonymous Link requests — it does not block your access to the main matchmaking chat. Conversely, a ban originating from the main matchmaking feature also restricts sending new Anonymous Link requests, since bans are enforced by device identifier regardless of source</li>
+      <li>All other rights described in Section 7 (including the right to human review of automated decisions) apply equally to enforcement actions taken within Anonymous Link chats</li>
     </ul>
   </div>
 
@@ -259,7 +288,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Политика конфиденциальности</div>
     <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 13.06.2026</p>
+    <p class="doc-date">Дата последнего обновления: 17.07.2026</p>
   </div>
 
   <div class="section">
@@ -273,7 +302,11 @@
       <li>FCM-токен push-уведомлений — используется только для доставки уведомлений о новых сообщениях;</li>
       <li>Логи доступа к панели администратора — email, время входа, данные браузера; хранятся в Firestore и доступны только администраторам;</li>
       <li>Trust Score (рейтинг доверия) — анонимный поведенческий показатель, рассчитываемый на основе оценок и тегов, оставленных другими пользователями после чатов; используется исключительно для улучшения качества подбора собеседников и не передаётся третьим лицам;</li>
-      <li>Данные жалоб — причина жалобы, идентификатор сессии и до 20 последних сообщений из сессии; хранятся временно для проверки модератором и автоматической обработки системой ИИ-модерации.</li>
+      <li>Данные жалоб — причина жалобы, идентификатор сессии и до 20 последних сообщений из сессии; хранятся временно для проверки модератором и автоматической обработки системой ИИ-модерации;</li>
+      <li>Данные анонимных чатов по ссылке — при создании или использовании персональной анонимной ссылки мы обрабатываем статус чата (ожидание/активен/заблокирован), связанные идентификаторы устройств хоста и гостя, первое сообщение, временные метки сообщений, краткое превью (до ~200 символов) последнего сообщения и любой псевдоним, который вы решили присвоить собеседнику (виден только вам, никогда — ему), используемые исключительно для отображения списка чатов;</li>
+      <li>Сигналы присутствия и взаимодействия в анонимных чатах по ссылке — пока чат активен, мы обрабатываем кратковременные индикаторы «печатает», временные метки «был(а) в сети» для отображения онлайн-статуса и метки прочтения сообщений; каждая из них видна только другому участнику конкретного чата. Также мы обрабатываем эмодзи-реакции, которые вы оставляете на сообщении, и краткую ссылку на сообщение, на которое вы отвечаете — обе хранятся как часть этого сообщения;</li>
+      <li>Записи о блокировке в анонимных чатах по ссылке — после блокировки анонимного чата мы фиксируем, что два идентификатора устройств образуют заблокированную пару, чтобы заблокированное устройство не могло снова отправить вам запрос через ту же или новую ссылку;</li>
+      <li>Данные для защиты от злоупотребления системой жалоб анонимных ссылок — для защиты системы жалоб от злоупотреблений между одними и теми же устройствами мы временно отслеживаем серии неподтверждённых жалоб, кулдауны между жалобами одной и той же пары устройств и временные ограничения на подачу жалоб, привязанные к идентификатору устройства (см. раздел 14).</li>
     </ul>
   </div>
 
@@ -281,7 +314,7 @@
     <h2 class="section-title">2. Что мы НЕ собираем</h2>
     <ul>
       <li>Имена, фамилии, адреса электронной почты или номера телефонов обычных пользователей;</li>
-      <li>Содержимое сообщений — чаты никогда не сохраняются на сервере после завершения сессии;</li>
+      <li>Содержимое сообщений — чаты никогда не сохраняются на сервере после завершения сессии, за исключением краткого превью анонимного чата по ссылке (раздел 1) и локального кеша на устройстве (раздел 14);</li>
       <li>Точное географическое положение (данные GPS или IP-геолокация не используются);</li>
       <li>Данные из ваших социальных сетей или других сторонних приложений;</li>
       <li>Биометрические или финансовые данные.</li>
@@ -300,7 +333,8 @@
       <li>Анализ логов ошибок для улучшения стабильности кода;</li>
       <li>Показ рекламы через Google AdMob для обеспечения бесплатного доступа к сервису;</li>
       <li>Автоматическая модерация жалоб пользователей с помощью ИИ-системы (см. раздел 13 — Автоматизированная обработка);</li>
-      <li>Расчёт и ведение Trust Score (рейтинга доверия) на основе анонимных оценок после чатов для улучшения качества подбора собеседников.</li>
+      <li>Расчёт и ведение Trust Score (рейтинга доверия) на основе анонимных оценок после чатов для улучшения качества подбора собеседников;</li>
+      <li>Работа функции «Анонимная ссылка», включая привязку ссылки к владельцу, восстановление доступа к анонимным чатам после переустановки приложения и защиту системы жалоб от злоупотреблений (см. раздел 14).</li>
     </ul>
   </div>
 
@@ -332,7 +366,12 @@
       <li>Записи о мутах удаляются автоматически сразу после истечения срока мута (в течение 30 минут);</li>
       <li>Запись о кулдауне перерегистрации хранится ровно 7 дней после удаления профиля;</li>
       <li>Профили автоматически удаляются после 90 дней полной неактивности пользователя;</li>
-      <li>Данные Trust Score удаляются при удалении аккаунта.</li>
+      <li>Данные Trust Score удаляются при удалении аккаунта;</li>
+      <li>Сообщения анонимных чатов по ссылке удаляются по тому же 24-часовому графику, что и обычные чаты; краткое превью последнего сообщения (см. раздел 1) может оставаться частью записи чата до её удаления, как описано ниже;</li>
+      <li>Записи анонимных чатов по ссылке (ожидающие или активные) хранятся до 365 дней либо до более раннего удаления одним из участников; сам документ чата автоматически удаляется через 24 часа после блокировки;</li>
+      <li>Сигналы присутствия анонимных чатов по ссылке (индикаторы «печатает», временные метки онлайн-статуса) постоянно перезаписываются и имеют значение лишь несколько секунд; метки прочтения хранятся столько же, сколько и сама запись чата; реакции на сообщения и ссылки на отвечаемые сообщения хранятся столько же, сколько само сообщение;</li>
+      <li>Записи о блокировке в анонимных чатах по ссылке (раздел 1) хранятся бессрочно и не подчиняются срокам в 24 часа или 365 дней выше — они существуют специально для того, чтобы заблокированное устройство не могло обойти блокировку, отправив новый запрос, и удаляются только если мы определим, что они больше не нужны для этой цели;</li>
+      <li>Данные защиты от злоупотребления жалобами анонимных ссылок недолговечны: кулдауны между жалобами пары устройств удаляются через 7 дней, а временные ограничения на подачу жалоб — автоматически по истечении срока (как правило, в течение 6 часов).</li>
     </ul>
   </div>
 
@@ -361,7 +400,8 @@
       <li>Логика подбора чата вынесена на сервер в Cloud Functions;</li>
       <li>Системные поля защищены от записи из клиентской части кода;</li>
       <li>Проверка бана выполняется при запуске одновременно по Android ID и Firebase UID;</li>
-      <li>Все соединения защищены сквозным шифрованием TLS 1.2+.</li>
+      <li>Все соединения защищены сквозным шифрованием TLS 1.2+;</li>
+      <li>Локально кешированные сообщения анонимных чатов по ссылке и локально сохранённые псевдонимы собеседников (см. раздел 14) никогда не покидают ваше устройство и недоступны нам, нашим сотрудникам или третьим лицам.</li>
     </ul>
   </div>
 
@@ -406,7 +446,25 @@
       <li>Все решения ИИ фиксируются в журнале и могут быть проверены администратором-человеком;</li>
       <li>Вы вправе потребовать пересмотра любого автоматизированного решения живым администратором — для этого свяжитесь с поддержкой и укажите номер бана или мута. Срок рассмотрения — 30 дней;</li>
       <li>Система защищена от инъекций промптов: любые попытки манипулировать ИИ через текст сообщений обнаруживаются и приводят к отклонению жалобы;</li>
-      <li>ИИ-анализ также используется для помощи администраторам при рассмотрении апелляций на баны.</li>
+      <li>ИИ-анализ также используется для помощи администраторам при рассмотрении апелляций на баны;</li>
+      <li>Жалобы, поданные из анонимных чатов по ссылке (см. раздел 14), обрабатываются той же ИИ-системой с дополнительными механизмами защиты, призванными распознавать обоюдные/добровольные переписки между уже знакомыми людьми и избегать необоснованных санкций в таких случаях.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">14. Анонимные чаты по ссылке</h2>
+    <p>NearChat предлагает дополнительную функцию, позволяющую сгенерировать персональную ссылку (и соответствующий QR-код), чтобы другие люди могли начать с вами анонимный чат без раскрытия личности с обеих сторон. Этот раздел описывает особенности обработки данных для этой функции в дополнение к общим правилам выше.</p>
+    <ul>
+      <li><strong>Данные записи чата:</strong> мы обрабатываем статус чата (ожидание / активен / заблокирован), связанные идентификаторы устройств хоста и гостя, первое сообщение, временные метки сообщений, счётчики непрочитанных сообщений (используются только для отображения бейджей) и краткое превью последнего сообщения для отображения списка чатов;</li>
+      <li><strong>Локальный кеш сообщений:</strong> чтобы вы могли комфортно просматривать недавнюю переписку анонимных чатов по ссылке, приложение дополнительно кеширует последние сообщения в приватной базе данных, хранящейся только на вашем устройстве. Этот локальный кеш никогда не передаётся на наши серверы, недоступен нам и автоматически очищается через 24 часа (а также удаляется при очистке данных приложения или его удалении);</li>
+      <li><strong>Псевдонимы, которые вы присваиваете собеседнику:</strong> вы можете по желанию подписать анонимного собеседника выбранным вами именем. Этот псевдоним хранится как часть записи чата на наших серверах, отдельно для каждой стороны переписки — он никогда не показывается собеседнику и автоматически синхронизируется, если вы пользуетесь приложением с нескольких устройств. Он удаляется вместе с самим чатом при отклонении запроса, но может сохраниться, если чат был лишь заблокирован, а не удалён (см. раздел 6);</li>
+      <li><strong>Индикаторы присутствия, видимые собеседнику:</strong> пока чат активен, приложение может показывать собеседнику индикатор «печатает…», приблизительный статус «в сети» / «был(а) недавно» и метки прочтения (открывал ли собеседник чат после вашего последнего сообщения). Эти сигналы формируются автоматически из кратковременных временных меток и видны только внутри конкретного чата — они не являются частью какого-либо публичного профиля и не показываются нигде больше в приложении;</li>
+      <li><strong>Реакции и ответы:</strong> вы можете отреагировать на сообщение эмодзи или ответить непосредственно на конкретное более раннее сообщение; оба хранятся как часть записи сообщения и видны собеседнику, следуя тому же сроку хранения, что и сам чат;</li>
+      <li><strong>Релинк устройства:</strong> если вы переустановите приложение или очистите его данные, для вашего устройства создаётся новый анонимный идентификатор сессии. Чтобы восстановить доступ к вашим существующим анонимным чатам и ссылкам, мы находим ваши записи по идентификатору устройства и перепривязываем их к новому идентификатору сессии;</li>
+      <li><strong>Защита системы жалоб от злоупотреблений:</strong> поскольку эта функция часто используется между уже знакомыми людьми и жалобы иногда подаются в шутку или из мести, мы временно отслеживаем по устройству: серию жалоб, не подтверждённых ИИ-системой модерации; кулдаун между повторными жалобами одной и той же пары устройств (24 часа); а при обнаружении паттерна неподтверждённых жалоб — временное ограничение (как правило, 6 часов) на подачу новых жалоб или создание новых ссылок. Эти записи автоматически удаляются по истечении срока, а кулдауны пары устройств — в течение 7 дней;</li>
+      <li><strong>Блокировка постоянна для этой пары:</strong> когда вы блокируете анонимный чат по ссылке — с жалобой или без неё — мы сохраняем постоянную запись, связывающую два идентификатора устройств, специально для того, чтобы заблокированное устройство не могло отправить вам новый запрос ни через ту же ссылку, ни через ссылку, которую вы создадите позже. Эта запись не подчиняется общим срокам хранения других данных анонимных чатов по ссылке (см. раздел о хранении данных в Политике конфиденциальности), потому что весь смысл этой записи — оставаться в силе;</li>
+      <li><strong>Область действия бана:</strong> санкции, применённые за нарушение, подтверждённое в анонимном чате по ссылке, внутренне помечаются как относящиеся к этой функции. Такой бан ограничивает только возможность отправлять новые анонимные запросы по ссылке — он не блокирует доступ к основному чату (рулетке). И наоборот, бан, полученный за нарушение в основном чате, также ограничивает отправку новых анонимных запросов по ссылке, поскольку баны применяются по идентификатору устройства независимо от источника нарушения;</li>
+      <li>Все прочие права, описанные в разделе 7 (включая право на пересмотр автоматизированных решений живым администратором), в равной мере применяются к санкциям, наложенным в рамках анонимных чатов по ссылке.</li>
     </ul>
   </div>
 
@@ -417,7 +475,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">Məxfilik siyasəti</div>
     <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 13.06.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 17.07.2026</p>
   </div>
 
   <div class="section">
@@ -431,7 +489,11 @@
       <li>FCM push bildiriş tokeni — yalnız yeni mesaj bildirişlərini çatdırmaq üçün istifadə olunur;</li>
       <li>Admin panel qeydləri — e-poçt, giriş vaxtı, brauzer məlumatları; Firestore-da saxlanılır və yalnız administratorlara görünür;</li>
       <li>Trust Score (etibar reytinqi) — söhbətlərdən sonra digər istifadəçilər tərəfindən verilən qiymətlər əsasında hesablanan anonim davranış göstəricisi; yalnız həmsöhbət seçiminin keyfiyyətini artırmaq üçün istifadə olunur və üçüncü tərəflərə ötürülmür;</li>
-      <li>Şikayətlə bağlı məlumatlar — şikayət səbəbi, sessiya identifikatoru və sessiyanın son 20 mesajı; moderator yoxlaması və süni intellekt moderasiya sistemi tərəfindən emal üçün müvəqqəti saxlanılır.</li>
+      <li>Şikayətlə bağlı məlumatlar — şikayət səbəbi, sessiya identifikatoru və sessiyanın son 20 mesajı; moderator yoxlaması və süni intellekt moderasiya sistemi tərəfindən emal üçün müvəqqəti saxlanılır;</li>
+      <li>Anonim keçid (link) çatları üzrə məlumatlar — şəxsi anonim keçid yaratdıqda və ya istifadə etdikdə çatın statusunu (gözləmədə / aktiv / bloklanıb), host və qonaq cihazlarının qoşalaşdırılmış identifikatorlarını, ilk mesajı, mesaj vaxt möhürlərini, söhbət siyahısını göstərmək üçün istifadə olunan son mesajın qısa önizləməsini (~200 simvola qədər) və həmsöhbətə verdiyiniz istənilən ləqəbi (yalnız sizə görünür, ona heç vaxt görünmür) emal edirik;</li>
+      <li>Anonim keçid çatlarında iştirak siqnalları — çat aktiv olduğu müddətdə "yazır" indikatorlarını, onlayn statusu göstərmək üçün "son aktivlik" vaxt möhürlərini və mesajların oxunma vaxt möhürlərini emal edirik; bunların hər biri yalnız həmin konkret çatın digər iştirakçısına görünür. Həmçinin mesaja verdiyiniz emoji reaksiyasını və cavab verdiyiniz mesaja qısa istinadı emal edirik — hər ikisi həmin mesajın bir hissəsi kimi saxlanılır;</li>
+      <li>Anonim keçid çatlarında bloklama qeydləri — anonim çatı bloklandıqdan sonra iki cihaz identifikatorunun bloklanmış cüt təşkil etdiyini qeyd edirik ki, bloklanmış cihaz eyni və ya yeni keçid vasitəsilə sizə yenidən sorğu göndərə bilməsin;</li>
+      <li>Anonim keçidin şikayət sistemini sui-istifadədən qoruma məlumatları — eyni iki cihaz arasında şikayət sisteminin sui-istifadəsinin qarşısını almaq üçün cihaz identifikatoruna bağlı olaraq təsdiqlənməmiş şikayət seriyalarını, cihaz cütü arasında şikayət gözləmə müddətlərini və müvəqqəti şikayət məhdudiyyətlərini müvəqqəti izləyirik (bax: Bölmə 14).</li>
     </ul>
   </div>
 
@@ -439,7 +501,7 @@
     <h2 class="section-title">2. Nələri toplamırıq</h2>
     <ul>
       <li>Adi istifadəçilərin adı, soyadı, e-poçt ünvanı və ya telefon nömrəsi;</li>
-      <li>Mesaj məzmunu — söhbətlər sessiya bitdikdən sonra serverdə heç vaxt saxlanılmır;</li>
+      <li>Mesaj məzmunu — söhbətlər sessiya bitdikdən sonra serverdə heç vaxt saxlanılmır, Bölmə 1-də göstərilən anonim keçid önizləməsi və Bölmə 14-də göstərilən cihazdaxili keş istisna olmaqla;</li>
       <li>Cihazın dəqiq coğrafi yerləşməsi (GPS və ya İP-geolokasiya istifadə edilmir);</li>
       <li>Sosial şəbəkələrdən və ya digər tətbiqlərdən gələn məlumatlar;</li>
       <li>Biometrik və ya maliyyə məlumatları.</li>
@@ -457,7 +519,8 @@
       <li>Push bildirişlərin çatdırılması;</li>
       <li>Xidmətə pulsuz giriş imkanı üçün Google AdMob vasitəsilə kontekstual reklamların göstərilməsi;</li>
       <li>Tətbiqdaxili süni intellekt moderasiya sistemi vasitəsilə şikayətlərin avtomatik işlənməsi (bax: Bölmə 13 — Avtomatlaşdırılmış qərar qəbulu);</li>
-      <li>Həmsöhbət seçiminin keyfiyyətini artırmaq üçün söhbətdən sonrakı anonim qiymətlər əsasında Trust Score-un hesablanması və aparılması.</li>
+      <li>Həmsöhbət seçiminin keyfiyyətini artırmaq üçün söhbətdən sonrakı anonim qiymətlər əsasında Trust Score-un hesablanması və aparılması;</li>
+      <li>«Anonim keçid» funksiyasının işləməsi, o cümlədən keçidin sahibi ilə uyğunlaşdırılması, tətbiqi yenidən qurduqdan sonra anonim çatlarınıza girişin bərpası və şikayət sisteminin sui-istifadədən qorunması (bax: Bölmə 14).</li>
     </ul>
   </div>
 
@@ -489,7 +552,12 @@
       <li>Səssizləşdirmə qeydləri müddət bitdikdən dərhal sonra (30 dəqiqə ərzində) avtomatik silinir;</li>
       <li>Yenidən qeydiyyat gözləmə müddəti (cooldown) hesab silindikdən sonra düz 7 gün saxlanılır;</li>
       <li>İstifadəçi profilləri 90 gün tam fəaliyyətsizlikdən sonra server tərəfindən avtomatik təmizlənir;</li>
-      <li>Trust Score məlumatları hesab silindiyi zaman silinir.</li>
+      <li>Trust Score məlumatları hesab silindiyi zaman silinir;</li>
+      <li>Anonim keçid çatlarının mesajları adi çatlarla eyni 24 saatlıq silinmə qrafikinə tabedir; son mesajın qısa önizləməsi (bax: Bölmə 1) çat qeydi silinənə qədər onun tərkibində qala bilər;</li>
+      <li>Anonim keçid çat qeydləri (gözləmədə və ya aktiv) 365 günə qədər saxlanılır və ya iştirakçılardan biri tərəfindən daha tez silinə bilər; çat sənədinin özü bloklandıqdan 24 saat sonra avtomatik silinir;</li>
+      <li>Anonim keçid çatlarının iştirak siqnalları ("yazır" indikatorları, onlayn vaxt möhürləri) daim üzərinə yazılır və yalnız bir neçə saniyə əhəmiyyət kəsb edir; oxunma vaxt möhürləri çat qeydinin özü qədər saxlanılır; mesaj reaksiyaları və cavab istinadları isə müvafiq mesaj qədər saxlanılır;</li>
+      <li>Anonim keçid çatlarının bloklama qeydləri (Bölmə 1) müddətsiz saxlanılır və yuxarıdakı 24 saat və ya 365 günlük müddətlərə tabe deyil — onlar məhz bloklanmış cihazın yeni sorğu göndərməklə bloku aradan qaldırmasının qarşısını almaq üçün mövcuddur və yalnız bu məqsəd üçün artıq lazım olmadığını müəyyən etdiyimiz halda silinir;</li>
+      <li>Anonim keçidin şikayət sisteminin sui-istifadədən qoruma qeydləri qısamüddətlidir: cihaz cütü arasındakı gözləmə müddətləri 7 gün ərzində, müvəqqəti şikayət məhdudiyyətləri isə müddəti bitdikdən dərhal sonra (adətən 6 saat ərzində) avtomatik silinir.</li>
     </ul>
   </div>
 
@@ -518,7 +586,8 @@
       <li>Sessiyaların yaradılması server tərəfində Cloud Functions vasitəsilə icra olunur;</li>
       <li>Sistem sahələrinin müştəri tərəfindən dəyişdirilməsi bloklanıb;</li>
       <li>Ban yoxlaması giriş zamanı həm Android ID, həm də Firebase UID vasitəsilə paralel aparılır;</li>
-      <li>Bütün bağlantılar TLS 1.2+ şifrələməsi ilə qorunur.</li>
+      <li>Bütün bağlantılar TLS 1.2+ şifrələməsi ilə qorunur;</li>
+      <li>Anonim keçid çatlarının lokal keşlənmiş mesajları və lokal saxlanılan həmsöhbət ləqəbləri (bax: Bölmə 14) heç vaxt cihazınızı tərk etmir və bizim, işçilərimizin və ya hər hansı üçüncü tərəfin çıxışına açıq deyil.</li>
     </ul>
   </div>
 
@@ -563,7 +632,25 @@
       <li>Bütün SI qərarları jurnal şəklində qeydə alınır və insan administrator tərəfindən yoxlanıla bilər;</li>
       <li>İstənilən avtomatlaşdırılmış tədqiqatın insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var — dəstək xidmətinə müraciət edin və ban və ya mute nömrəsini göstərin. Baxılma müddəti — 30 gün;</li>
       <li>Sistem prompt inyeksiyalarından qorunur: mesaj məzmunu vasitəsilə SI-ni manipulyasiya etmək cəhdləri aşkar edilir və şikayətin rədd edilməsi ilə nəticələnir;</li>
-      <li>SI təhlili həmçinin ban apellyasiyalarının baxılmasında administratorlara kömək etmək üçün istifadə olunur.</li>
+      <li>SI təhlili həmçinin ban apellyasiyalarının baxılmasında administratorlara kömək etmək üçün istifadə olunur;</li>
+      <li>Anonim keçid çatlarından (bax: Bölmə 14) daxil olan şikayətlər eyni SI sistemi tərəfindən, artıq bir-birini tanıyan insanlar arasındakı qarşılıqlı/könüllü söhbətləri tanımaq və belə hallarda əsassız sanksiyalardan çəkinmək üçün əlavə qoruma mexanizmləri ilə işlənir.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">14. Anonim keçid (link) çatları</h2>
+    <p>NearChat sizə şəxsi keçid (link) və müvafiq QR-kod yaratmaq imkanı verən əlavə funksiya təklif edir ki, digər insanlar hər iki tərəfin şəxsiyyəti gizli qalaraq sizinlə anonim çat başlata bilsinlər. Bu bölmə yuxarıdakı ümumi qaydalara əlavə olaraq bu funksiyaya xas məlumat emalını izah edir.</p>
+    <ul>
+      <li><strong>Çat qeydi məlumatları:</strong> çatın statusunu (gözləmədə / aktiv / bloklanıb), host və qonaq cihazlarının qoşalaşdırılmış identifikatorlarını, ilk mesajı, mesaj vaxt möhürlərini, oxunmamış mesaj sayğaclarını (yalnız bildiriş nişanlarını göstərmək üçün istifadə olunur) və söhbət siyahısını göstərmək üçün son mesajın qısa önizləməsini emal edirik;</li>
+      <li><strong>Lokal mesaj keşi:</strong> anonim keçid söhbətlərinizi rahat izləyə bilməniz üçün tətbiq əlavə olaraq son mesajları yalnız cihazınızda saxlanılan xüsusi, tətbiqə məxsus verilənlər bazasında keşləyir. Bu lokal keş heç vaxt serverlərimizə ötürülmür, bizim üçün əlçatan deyil və 24 saatdan sonra avtomatik təmizlənir (tətbiqin məlumatlarını təmizlədikdə və ya onu sildikdə də silinir);</li>
+      <li><strong>Həmsöhbətə verdiyiniz ləqəblər:</strong> anonim həmsöhbəti istədiyiniz adla işarələyə bilərsiniz. Bu ləqəb serverlərimizdə çat qeydinin bir hissəsi kimi, söhbətin hər tərəfi üçün ayrıca saxlanılır — o heç vaxt həmsöhbətə göstərilmir və tətbiqi bir neçə cihazda istifadə etdiyiniz halda avtomatik sinxronlaşır. Sorğu rədd edildikdə çatla birlikdə silinir, lakin çat sadəcə bloklanıbsa (silinməyibsə), qala bilər (bax: Bölmə 6);</li>
+      <li><strong>Həmsöhbətə görünən iştirak indikatorları:</strong> çat aktiv olduğu müddətdə tətbiq həmsöhbətinizə "yazır…" indikatoru, təxmini "onlayn" / "son aktivlik" statusu və oxunma bildirişlərini (həmsöhbətinizin son mesajınızdan sonra çatı açıb-açmadığını) göstərə bilər. Bu siqnallar qısamüddətli vaxt möhürlərindən avtomatik yaradılır və yalnız konkret çat daxilində görünür — onlar heç bir açıq profilin hissəsi deyil və tətbiqdə başqa heç yerdə göstərilmir;</li>
+      <li><strong>Reaksiyalar və cavablar:</strong> mesaja emoji ilə reaksiya verə və ya konkret əvvəlki mesaja birbaşa cavab yaza bilərsiniz; hər ikisi mesaj qeydinin bir hissəsi kimi saxlanılır və çatın özü ilə eyni saxlama müddətinə tabe olaraq həmsöhbətə görünür;</li>
+      <li><strong>Cihazın yenidən bağlanması:</strong> tətbiqi yenidən quraşdırdıqda və ya məlumatlarını təmizlədikdə cihazınız üçün yeni anonim sessiya identifikatoru yaradılır. Mövcud anonim çatlarınıza və keçidlərinizə girişi bərpa etmək üçün qeydlərinizi cihaz identifikatoruna görə tapır və yeni sessiya identifikatorunuza yenidən bağlayırıq;</li>
+      <li><strong>Şikayət sisteminin sui-istifadədən qorunması:</strong> bu funksiya çox vaxt artıq bir-birini tanıyan insanlar arasında istifadə olunduğundan və şikayətlər bəzən zarafat və ya kinlə verildiyindən, hər cihaz üzrə müvəqqəti olaraq: SI moderasiya sistemi tərəfindən təsdiqlənməmiş şikayət seriyasını; eyni cihaz cütü arasında təkrar şikayətlər üçün gözləmə müddətini (24 saat); təsdiqlənməmiş şikayət naxışı aşkar edildikdə isə yeni şikayət vermək və ya yeni keçid yaratmaq üçün müvəqqəti məhdudiyyəti (adətən 6 saat) izləyirik. Bu qeydlər müddəti bitdikdən sonra, cihaz cütü gözləmə müddətləri isə 7 gün ərzində avtomatik silinir;</li>
+      <li><strong>Bloklama bu cüt üçün daimidir:</strong> anonim keçid çatını — şikayətlə və ya şikayətsiz — bloklayanda, bloklanmış cihazın sizə eyni keçid vasitəsilə, ya da sonradan yaratdığınız keçid vasitəsilə yeni sorğu göndərməsinin qarşısını almaq üçün məhz iki cihaz identifikatorunu əlaqələndirən daimi qeyd saxlayırıq. Bu qeyd digər anonim keçid məlumatlarının ümumi saxlama müddətlərinə (bax: Məxfilik Siyasətinin saxlama bölməsi) tabe deyil, çünki onun bütün mənası qüvvədə qalmaqdır;</li>
+      <li><strong>Ban əhatəsi:</strong> anonim keçid çatında təsdiqlənmiş pozuntuya görə tətbiq edilən sanksiyalar daxili olaraq bu funksiyadan qaynaqlandığı kimi işarələnir. Belə ban yalnız yeni anonim keçid sorğuları göndərmək imkanınızı məhdudlaşdırır — əsas söhbət (rulet) bölməsinə girişinizi bloklamır. Əksinə, əsas söhbət funksiyasında alınan ban da yeni anonim keçid sorğularının göndərilməsini məhdudlaşdırır, çünki banlar pozuntunun mənbəyindən asılı olmayaraq cihaz identifikatoruna görə tətbiq edilir;</li>
+      <li>Bölmə 7-də təsvir edilən bütün digər hüquqlar (o cümlədən avtomatlaşdırılmış qərarların insan administratoru tərəfindən yenidən baxılması hüququ) anonim keçid çatlarında tətbiq edilən sanksiyalara da bərabər şəkildə aiddir.</li>
     </ul>
   </div>
 
