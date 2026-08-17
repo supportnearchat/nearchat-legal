@@ -78,6 +78,7 @@
     <a href="#en">English</a>
     <a href="#ru">Русский</a>
     <a href="#az">Azərbaycan</a>
+    <a href="#tr">Türkçe</a>
   </div>
 </nav>
 
@@ -88,7 +89,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Privacy Policy</div>
     <h1 class="doc-title">NearChat Privacy Policy</h1>
-    <p class="doc-date">Last updated: August 9, 2026</p>
+    <p class="doc-date">Last updated: August 17, 2026</p>
   </div>
 
   <div class="section">
@@ -108,6 +109,9 @@
       <li>Anonymous Link abuse-prevention data — to protect the reporting system from misuse between the same two devices, we temporarily track unverified-report streaks, device-pair report cooldowns, and temporary reporting restrictions, all keyed by device identifier (see Section 14)</li>
       <li>Anonymous Link block records — once you block an Anonymous Link chat, we record that the two device identifiers involved are paired and blocked, so the blocked device cannot start a new request with you again through the same or a newly generated link</li>
       <li>Google account data (optional) — if you choose to sign in with Google from the Anonymous Link section, we receive your Google account's email address and display name from Google. This information is used solely to authenticate you and to make your Anonymous Link chats persistent across reinstalls and devices; it is never shown to the people you chat with, who continue to see you as fully anonymous, and it is never used for advertising or any other purpose</li>
+      <li>Voice messages — when you send a voice message, the audio recording is stored to deliver it to your chat partner and to let you both replay it, following the same retention schedule as other messages (Section 6). If you or your chat partner use the "Transcribe" button, the audio is sent to a third-party AI service (see Section 11) solely to generate a text transcript, which is then stored as part of that message</li>
+      <li>Translated message text — if you use the in-app translation feature, the relevant message or transcript text is sent to a third-party AI service (see Section 11) solely to generate a translation for you to read</li>
+      <li>Install attribution signal (optional) — if you install the app from Google Play after following someone's referral link, Google's Install Referrer API provides us with a one-time referral code at first launch so we can credit the correct referrer; this signal is read once and does not track your activity afterwards (see Section 11)</li>
     </ul>
   </div>
 
@@ -138,6 +142,8 @@
       <li>Calculating and maintaining a Trust Score based on anonymised post-chat ratings to improve matchmaking quality</li>
       <li>Logging administrator access to the moderation panel for security audit purposes</li>
       <li>Operating the optional Anonymous Link feature, including matching a link to its owner, enabling optional persistent storage of your Anonymous Link chats via Google Sign-In, and protecting the anonymous-report system from abuse (see Section 14)</li>
+      <li>Delivering voice messages and, on request, transcribing them to text or translating message text, via a third-party AI service (see Section 11)</li>
+      <li>Attributing app installs that originated from a referral link, via Google Play's Install Referrer API (see Section 11)</li>
       <li>Complying with applicable legal requirements</li>
     </ul>
   </div>
@@ -159,6 +165,7 @@
       <li>CSAM-related reports are proactively forwarded to law enforcement and where applicable to NCMEC</li>
       <li>Firebase (Google LLC) is used for technical infrastructure — GDPR compliant; Data Processing Agreement concluded</li>
       <li>Google AdMob (Google LLC) is used to serve advertisements; AdMob may collect device identifiers and usage data in accordance with Google's privacy policy</li>
+      <li>Groq Inc. is used to process voice message audio (only when you request a transcript) and message text (only when you request a translation) via AI models; content is processed transiently to generate the requested result and is not used by Groq to train its models under our terms with them</li>
       <li>All service providers process data only on our behalf and under data processing agreements</li>
     </ul>
   </div>
@@ -184,6 +191,7 @@
       <li>Anonymous Link block records (Section 1) are retained indefinitely and are not subject to the 24-hour or 365-day periods above — they exist specifically so that a blocked device cannot circumvent the block by starting a new request, and are only removed if we determine they are no longer needed for that purpose</li>
       <li>Anonymous Link abuse-prevention records are short-lived: device-pair report cooldowns are purged after 7 days, and temporary reporting restrictions are deleted automatically once they expire (typically within 6 hours)</li>
       <li>We do not maintain conversation archives and cannot restore deleted messages</li>
+      <li>Voice message audio files follow the same retention schedule as the text messages they are part of (see above); if a transcript or translation was generated for a message, it is deleted at the same time as the message itself</li>
     </ul>
   </div>
 
@@ -242,6 +250,8 @@
       <li>Firebase Cloud Messaging (Google LLC) — push notifications</li>
       <li>Firebase Cloud Functions (Google LLC) — server-side session creation, automatic banning infrastructure, deletion routines</li>
       <li>Google AdMob (Google LLC) — in-app advertising; subject to Google's privacy policy</li>
+      <li>Groq Inc. — AI-based voice transcription and message translation, performed only when you or your chat partner actively request it (see Section 1)</li>
+      <li>Google Play Install Referrer API (Google LLC) — reads a one-time referral attribution signal at first app launch so we can credit the correct referrer (see Section 1)</li>
     </ul>
   </div>
 
@@ -288,6 +298,17 @@
       <li><strong>Ban scope:</strong> enforcement actions resulting from a violation confirmed within an Anonymous Link chat are internally tagged as originating from this feature. Such a ban restricts only your ability to start new Anonymous Link requests — it does not block your access to the main matchmaking chat. Conversely, a ban originating from the main matchmaking feature also restricts sending new Anonymous Link requests, since bans are enforced by device identifier regardless of source</li>
       <li>All other rights described in Section 7 (including the right to human review of automated decisions) apply equally to enforcement actions taken within Anonymous Link chats</li>
     </ul>
+
+    <h2 class="section-title">15. Premium Status, Referral Program and Promo Codes</h2>
+    <p>NearChat offers an optional Premium status that can be obtained through the referral program or a promotional code (paid purchase is not currently available). This section explains the data handling specific to this feature.</p>
+    <ul>
+      <li><strong>Requires Google Sign-In:</strong> the referral program and promo code redemption are available only after you sign in with Google. Your Premium expiry date is tied to your account identifier, which is not durable for guest sessions — reinstalling the app or clearing its data as a guest would otherwise cause an earned reward to be lost without warning</li>
+      <li><strong>Your Premium status:</strong> we store an expiry timestamp on your account indicating how long your Premium status remains active. A limited, non-identifying copy of this timestamp (containing no other profile information) is made readable by other users so that your chat partner's app can display the Premium badge and bubble styling during a conversation — no other part of your profile is exposed through this mechanism</li>
+      <li><strong>Your referral code:</strong> once you sign in with Google, a short code is generated and linked to your account so you can share it with others. Anyone who redeems it grants you additional Premium time; the newcomer also receives a smaller starter reward</li>
+      <li><strong>Referral abuse prevention:</strong> to prevent the same physical device from repeatedly claiming the "new user" reward by clearing app data and signing in with a different account, we keep a permanent record pairing a device identifier with the fact that it has already been credited as a referred newcomer once. This record does not expire, for the same reason as the anonymous-chat blocking record described in Section 14 — its entire purpose is to remain in place</li>
+      <li><strong>Promo codes:</strong> promotional codes are created and managed by us; each may grant a defined number of Premium days and may be limited to a maximum number of uses or deactivated at any time. Redeeming a promo code from the same device more than once with the same code is prevented in the same way as referral codes</li>
+      <li>All other rights described in Section 7 apply equally to data processed under this section</li>
+    </ul>
   </div>
 
 </section>
@@ -297,7 +318,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Политика конфиденциальности</div>
     <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 09.08.2026</p>
+    <p class="doc-date">Дата последнего обновления: 17.08.2026</p>
   </div>
 
   <div class="section">
@@ -317,6 +338,9 @@
       <li>Записи о блокировке в анонимных чатах по ссылке — после блокировки анонимного чата мы фиксируем, что два идентификатора устройств образуют заблокированную пару, чтобы заблокированное устройство не могло снова отправить вам запрос через ту же или новую ссылку;</li>
       <li>Данные для защиты от злоупотребления системой жалоб анонимных ссылок — для защиты системы жалоб от злоупотреблений между одними и теми же устройствами мы временно отслеживаем серии неподтверждённых жалоб, кулдауны между жалобами одной и той же пары устройств и временные ограничения на подачу жалоб, привязанные к идентификатору устройства (см. раздел 14);</li>
       <li>Данные Google-аккаунта (опционально) — если вы решили войти через Google в разделе анонимных ссылок, мы получаем от Google адрес электронной почты и отображаемое имя вашего Google-аккаунта. Эта информация используется исключительно для аутентификации и для того, чтобы ваши чаты по анонимной ссылке сохранялись при переустановке приложения и смене устройства; она никогда не показывается собеседникам — для них вы остаётесь полностью анонимным — и никогда не используется для рекламы или каких-либо иных целей.</li>
+      <li>Голосовые сообщения — при отправке голосового сообщения аудиозапись сохраняется, чтобы доставить её собеседнику и дать вам обоим возможность прослушать её повторно, по тому же графику хранения, что и у остальных сообщений (раздел 6). Если вы или ваш собеседник используете кнопку «Расшифровать», аудио отправляется стороннему ИИ-сервису (см. раздел 11) исключительно для создания текстовой расшифровки, которая затем сохраняется как часть этого сообщения;</li>
+      <li>Переведённый текст сообщений — если вы используете функцию перевода в приложении, соответствующий текст сообщения или расшифровки отправляется стороннему ИИ-сервису (см. раздел 11) исключительно для создания перевода, который вы читаете;</li>
+      <li>Сигнал атрибуции установки (опционально) — если вы устанавливаете приложение из Google Play, перейдя по чьей-то реферальной ссылке, Install Referrer API от Google предоставляет нам одноразовый реферальный код при первом запуске, чтобы засчитать награду правильному пригласившему; этот сигнал считывается один раз и не отслеживает вашу активность в дальнейшем (см. раздел 11).</li>
     </ul>
   </div>
 
@@ -344,7 +368,9 @@
       <li>Показ рекламы через Google AdMob для обеспечения бесплатного доступа к сервису;</li>
       <li>Автоматическая модерация жалоб пользователей с помощью ИИ-системы (см. раздел 13 — Автоматизированная обработка);</li>
       <li>Расчёт и ведение Trust Score (рейтинга доверия) на основе анонимных оценок после чатов для улучшения качества подбора собеседников;</li>
-      <li>Работа функции «Анонимная ссылка», включая привязку ссылки к владельцу, опциональное постоянное хранение ваших чатов по анонимной ссылке через вход Google и защиту системы жалоб от злоупотреблений (см. раздел 14).</li>
+      <li>Работа функции «Анонимная ссылка», включая привязку ссылки к владельцу, опциональное постоянное хранение ваших чатов по анонимной ссылке через вход Google и защиту системы жалоб от злоупотреблений (см. раздел 14);</li>
+      <li>Доставка голосовых сообщений и, по запросу, их расшифровка в текст или перевод текста сообщений — через стороннего ИИ-сервиса (см. раздел 11);</li>
+      <li>Атрибуция установок приложения, пришедших по реферальной ссылке, через Install Referrer API Google Play (см. раздел 11).</li>
     </ul>
   </div>
 
@@ -363,7 +389,8 @@
       <li>Данные передаются только по официальным запросам правоохранительных органов в соответствии с законом;</li>
       <li>Отчеты, связанные с угрозой безопасности детей (CSAM), проактивно направляются в правоохранительные органы и NCMEC;</li>
       <li>Инфраструктура Firebase (Google LLC) полностью соответствует требованиям GDPR, заключено соглашение об обработке данных (DPA);</li>
-      <li>Google AdMob (Google LLC) используется для показа рекламы; AdMob может собирать идентификаторы устройства и данные об использовании в соответствии с политикой конфиденциальности Google.</li>
+      <li>Google AdMob (Google LLC) используется для показа рекламы; AdMob может собирать идентификаторы устройства и данные об использовании в соответствии с политикой конфиденциальности Google;</li>
+      <li>Groq Inc. используется для обработки аудио голосовых сообщений (только когда вы запрашиваете расшифровку) и текста сообщений (только когда вы запрашиваете перевод) с помощью ИИ-моделей; контент обрабатывается кратковременно для получения запрошенного результата и не используется Groq для обучения своих моделей согласно нашим условиям с ними.</li>
     </ul>
   </div>
 
@@ -385,7 +412,8 @@
       <li>Вы можете удалить всю историю чата по ссылке (свою ссылку и все связанные чаты) в любой момент через Настройки → Опасная зона → Удалить историю чата по ссылке, независимо от удаления основного аккаунта; это действие ограничено одним разом в 7 дней на устройство;</li>
       <li>Сигналы присутствия анонимных чатов по ссылке (индикаторы «печатает», временные метки онлайн-статуса) постоянно перезаписываются и имеют значение лишь несколько секунд; метки прочтения хранятся столько же, сколько и сама запись чата; реакции на сообщения и ссылки на отвечаемые сообщения хранятся столько же, сколько само сообщение;</li>
       <li>Записи о блокировке в анонимных чатах по ссылке (раздел 1) хранятся бессрочно и не подчиняются срокам в 24 часа или 365 дней выше — они существуют специально для того, чтобы заблокированное устройство не могло обойти блокировку, отправив новый запрос, и удаляются только если мы определим, что они больше не нужны для этой цели;</li>
-      <li>Данные защиты от злоупотребления жалобами анонимных ссылок недолговечны: кулдауны между жалобами пары устройств удаляются через 7 дней, а временные ограничения на подачу жалоб — автоматически по истечении срока (как правило, в течение 6 часов).</li>
+      <li>Данные защиты от злоупотребления жалобами анонимных ссылок недолговечны: кулдауны между жалобами пары устройств удаляются через 7 дней, а временные ограничения на подачу жалоб — автоматически по истечении срока (как правило, в течение 6 часов);</li>
+      <li>Аудиофайлы голосовых сообщений хранятся по тому же графику, что и текстовые сообщения, частью которых они являются (см. выше); если для сообщения была создана расшифровка или перевод, они удаляются одновременно с самим сообщением.</li>
     </ul>
   </div>
 
@@ -438,6 +466,8 @@
       <li>Firebase Crashlytics (Google LLC) — сбор отчетов о критических ошибках кода</li>
       <li>Firebase Cloud Functions (Google LLC) — безопасное выполнение серверного кода, проверок банов и очистки баз данных</li>
       <li>Google AdMob (Google LLC) — показ рекламы внутри приложения; регулируется политикой конфиденциальности Google</li>
+      <li>Groq Inc. — ИИ-расшифровка голосовых и перевод сообщений, выполняются только когда вы или ваш собеседник это активно запрашиваете (см. раздел 1)</li>
+      <li>Google Play Install Referrer API (Google LLC) — считывает одноразовый сигнал реферальной атрибуции при первом запуске приложения, чтобы засчитать награду правильному пригласившему (см. раздел 1)</li>
     </ul>
   </div>
 
@@ -484,6 +514,17 @@
       <li><strong>Область действия бана:</strong> санкции, применённые за нарушение, подтверждённое в анонимном чате по ссылке, внутренне помечаются как относящиеся к этой функции. Такой бан ограничивает только возможность отправлять новые анонимные запросы по ссылке — он не блокирует доступ к основному чату (рулетке). И наоборот, бан, полученный за нарушение в основном чате, также ограничивает отправку новых анонимных запросов по ссылке, поскольку баны применяются по идентификатору устройства независимо от источника нарушения;</li>
       <li>Все прочие права, описанные в разделе 7 (включая право на пересмотр автоматизированных решений живым администратором), в равной мере применяются к санкциям, наложенным в рамках анонимных чатов по ссылке.</li>
     </ul>
+
+    <h2 class="section-title">15. Премиум-статус, реферальная программа и промокоды</h2>
+    <p>NearChat предлагает опциональный Премиум-статус, который можно получить через реферальную программу или по промокоду (платная покупка пока недоступна). Этот раздел описывает обработку данных, специфичную для этой функции.</p>
+    <ul>
+      <li><strong>Требует вход через Google:</strong> реферальная программа и активация промокодов доступны только после входа через Google. Срок действия вашего Премиум-статуса привязан к идентификатору аккаунта, который не является надёжным для гостевых сессий — переустановка приложения или очистка данных в гостевом режиме иначе привела бы к потере заработанной награды без предупреждения.</li>
+      <li><strong>Ваш Премиум-статус:</strong> мы храним отметку времени на вашем аккаунте, указывающую, до какого момента действует Премиум-статус. Ограниченная, неидентифицирующая копия этой отметки (без какой-либо другой информации профиля) доступна для чтения другими пользователями, чтобы приложение вашего собеседника могло отобразить значок Премиум и особое оформление сообщений во время переписки — никакая другая часть вашего профиля через этот механизм не раскрывается.</li>
+      <li><strong>Ваш реферальный код:</strong> после входа через Google создаётся короткий код, привязанный к вашему аккаунту, которым вы можете поделиться с другими. Каждый, кто его активирует, продлевает ваш Премиум-статус; новый пользователь также получает меньшую стартовую награду.</li>
+      <li><strong>Защита от накрутки рефералов:</strong> чтобы не дать одному и тому же физическому устройству многократно получать награду "нового пользователя" через очистку данных и вход под другим аккаунтом, мы храним постоянную запись, связывающую идентификатор устройства с фактом, что оно уже было засчитано как приведённый новый пользователь. Эта запись не имеет срока истечения — по той же причине, что и запись о блокировке анонимного чата, описанная в разделе 14: её единственная цель — оставаться в силе.</li>
+      <li><strong>Промокоды:</strong> промокоды создаются и управляются нами; каждый может давать определённое число дней Премиума и может быть ограничен максимальным числом активаций или отключён в любой момент. Повторная активация одного и того же промокода с одного устройства предотвращается тем же способом, что и с реферальными кодами.</li>
+      <li>Все прочие права, описанные в разделе 7, в равной мере применяются к данным, обрабатываемым в рамках этого раздела.</li>
+    </ul>
   </div>
 
 </section>
@@ -493,7 +534,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">Məxfilik siyasəti</div>
     <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 09.08.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 17.08.2026</p>
   </div>
 
   <div class="section">
@@ -513,6 +554,9 @@
       <li>Anonim keçid çatlarında bloklama qeydləri — anonim çatı bloklandıqdan sonra iki cihaz identifikatorunun bloklanmış cüt təşkil etdiyini qeyd edirik ki, bloklanmış cihaz eyni və ya yeni keçid vasitəsilə sizə yenidən sorğu göndərə bilməsin;</li>
       <li>Anonim keçidin şikayət sistemini sui-istifadədən qoruma məlumatları — eyni iki cihaz arasında şikayət sisteminin sui-istifadəsinin qarşısını almaq üçün cihaz identifikatoruna bağlı olaraq təsdiqlənməmiş şikayət seriyalarını, cihaz cütü arasında şikayət gözləmə müddətlərini və müvəqqəti şikayət məhdudiyyətlərini müvəqqəti izləyirik (bax: Bölmə 14);</li>
       <li>Google hesab məlumatları (könüllü) — anonim keçid bölməsindən Google ilə daxil olmağı seçdiyiniz halda, Google-dan hesabınızın e-poçt ünvanını və görünən adını alırıq. Bu məlumat yalnız sizin identifikasiyanız üçün və anonim keçid çatlarınızın tətbiqi yenidən qurduqdan və ya cihazı dəyişdikdən sonra da qalması üçün istifadə olunur; həmsöhbətlərə heç vaxt göstərilmir — onlar üçün siz tam anonim qalırsınız — və reklam və ya başqa məqsədlər üçün heç vaxt istifadə edilmir.</li>
+      <li>Səsli mesajlar — səsli mesaj göndərdikdə, audio yazı onu həmsöhbətinizə çatdırmaq və hər ikinizin yenidən dinləyə bilməsi üçün, digər mesajlarla eyni saxlama qrafikinə uyğun saxlanılır (Bölmə 6). Siz və ya həmsöhbətiniz "Mətnə dök" düyməsindən istifadə edərsinizsə, audio yalnız mətn transkripti yaratmaq üçün üçüncü tərəf SI xidmətinə göndərilir (bax: Bölmə 11) və nəticə həmin mesajın bir hissəsi kimi saxlanılır;</li>
+      <li>Tərcümə edilmiş mesaj mətni — tətbiqdaxili tərcümə funksiyasından istifadə etdikdə, müvafiq mesaj və ya transkript mətni yalnız sizin oxumağınız üçün tərcümə yaratmaq məqsədilə üçüncü tərəf SI xidmətinə göndərilir (bax: Bölmə 11);</li>
+      <li>Quraşdırma atributu siqnalı (könüllü) — kiminsə referal linki vasitəsilə Google Play-dən tətbiqi quraşdırdıqda, Google-un Install Referrer API-si ilk açılışda bizə bir dəfəlik referal kodu təqdim edir ki, mükafatı düzgün dəvət edənə hesablaya bilək; bu siqnal yalnız bir dəfə oxunur və sonradan fəaliyyətinizi izləmir (bax: Bölmə 11).</li>
     </ul>
   </div>
 
@@ -539,7 +583,9 @@
       <li>Xidmətə pulsuz giriş imkanı üçün Google AdMob vasitəsilə kontekstual reklamların göstərilməsi;</li>
       <li>Tətbiqdaxili süni intellekt moderasiya sistemi vasitəsilə şikayətlərin avtomatik işlənməsi (bax: Bölmə 13 — Avtomatlaşdırılmış qərar qəbulu);</li>
       <li>Həmsöhbət seçiminin keyfiyyətini artırmaq üçün söhbətdən sonrakı anonim qiymətlər əsasında Trust Score-un hesablanması və aparılması;</li>
-      <li>«Anonim keçid» funksiyasının işləməsi, o cümlədən keçidin sahibi ilə uyğunlaşdırılması, Google ilə giriş vasitəsilə anonim keçid çatlarınızın könüllü daimi saxlanılması və şikayət sisteminin sui-istifadədən qorunması (bax: Bölmə 14).</li>
+      <li>«Anonim keçid» funksiyasının işləməsi, o cümlədən keçidin sahibi ilə uyğunlaşdırılması, Google ilə giriş vasitəsilə anonim keçid çatlarınızın könüllü daimi saxlanılması və şikayət sisteminin sui-istifadədən qorunması (bax: Bölmə 14);</li>
+      <li>Səsli mesajların çatdırılması və, tələb olunduqda, üçüncü tərəf SI xidməti vasitəsilə mətnə çevrilməsi və ya mesaj mətninin tərcüməsi (bax: Bölmə 11);</li>
+      <li>Referal linki vasitəsilə baş verən tətbiq quraşdırmalarının Google Play Install Referrer API vasitəsilə hesablanması (bax: Bölmə 11).</li>
     </ul>
   </div>
 
@@ -558,7 +604,8 @@
       <li>Məlumatlar yalnız rəsmi hüquqi sorğular əsasında səlahiyyətli dövlət orqanlarına açıqlana bilər;</li>
       <li>Uşaq təhlükəsizliyi ilə bağlı (CSAM) hesabatlar proaktiv şəkildə hüquq-mühafizə orqanlarına və NCMEC-ə göndərilir;</li>
       <li>Firebase (Google LLC) infrastrukturu GDPR tələblərinə tam uyğundur, məlumatların işlənməsi müqaviləsi (DPA) bağlanıb;</li>
-      <li>Google AdMob (Google LLC) reklam göstərmək üçün istifadə olunur; AdMob Google-un məxfilik siyasətinə uyğun olaraq cihaz identifikatorlarını və istifadə məlumatlarını toplaya bilər.</li>
+      <li>Google AdMob (Google LLC) reklam göstərmək üçün istifadə olunur; AdMob Google-un məxfilik siyasətinə uyğun olaraq cihaz identifikatorlarını və istifadə məlumatlarını toplaya bilər;</li>
+      <li>Groq Inc. səsli mesaj audiosunu (yalnız transkript tələb etdiyiniz halda) və mesaj mətnini (yalnız tərcümə tələb etdiyiniz halda) SI modelləri vasitəsilə emal etmək üçün istifadə olunur; məzmun yalnız tələb olunan nəticəni yaratmaq üçün müvəqqəti emal olunur və Groq ilə razılaşmamıza əsasən onların modellərinin təlimi üçün istifadə edilmir.</li>
     </ul>
   </div>
 
@@ -580,7 +627,8 @@
       <li>Anonim keçid tarixçənizi (linkinizi və bütün əlaqəli çatları) istənilən vaxt Ayarlar → Təhlükəli zona → Link söhbətinin tarixçəsini sil bölməsindən, əsas hesabınızın silinməsindən asılı olmayaraq silə bilərsiniz; bu əməliyyat cihaz üzrə 7 gündə bir dəfə ilə məhdudlaşdırılıb;</li>
       <li>Anonim keçid çatlarının iştirak siqnalları ("yazır" indikatorları, onlayn vaxt möhürləri) daim üzərinə yazılır və yalnız bir neçə saniyə əhəmiyyət kəsb edir; oxunma vaxt möhürləri çat qeydinin özü qədər saxlanılır; mesaj reaksiyaları və cavab istinadları isə müvafiq mesaj qədər saxlanılır;</li>
       <li>Anonim keçid çatlarının bloklama qeydləri (Bölmə 1) müddətsiz saxlanılır və yuxarıdakı 24 saat və ya 365 günlük müddətlərə tabe deyil — onlar məhz bloklanmış cihazın yeni sorğu göndərməklə bloku aradan qaldırmasının qarşısını almaq üçün mövcuddur və yalnız bu məqsəd üçün artıq lazım olmadığını müəyyən etdiyimiz halda silinir;</li>
-      <li>Anonim keçidin şikayət sisteminin sui-istifadədən qoruma qeydləri qısamüddətlidir: cihaz cütü arasındakı gözləmə müddətləri 7 gün ərzində, müvəqqəti şikayət məhdudiyyətləri isə müddəti bitdikdən dərhal sonra (adətən 6 saat ərzində) avtomatik silinir.</li>
+      <li>Anonim keçidin şikayət sisteminin sui-istifadədən qoruma qeydləri qısamüddətlidir: cihaz cütü arasındakı gözləmə müddətləri 7 gün ərzində, müvəqqəti şikayət məhdudiyyətləri isə müddəti bitdikdən dərhal sonra (adətən 6 saat ərzində) avtomatik silinir;</li>
+      <li>Səsli mesajların audio faylları onların bir hissəsi olduğu mətn mesajları ilə eyni saxlama qrafikinə tabedir (yuxarıya baxın); mesaj üçün transkript və ya tərcümə yaradılıbsa, onlar mesajın özü ilə eyni vaxtda silinir.</li>
     </ul>
   </div>
 
@@ -633,6 +681,8 @@
       <li>Firebase Crashlytics (Google LLC) — xəta hesabatlarının toplanması</li>
       <li>Firebase Cloud Functions (Google LLC) — təhlükəsiz server funksiyalarının icrası, avtomatik ban və məlumat təmizləmə əməliyyatları</li>
       <li>Google AdMob (Google LLC) — tətbiqdaxili reklam göstərilməsi; Google-un məxfilik siyasətinə tabedir</li>
+      <li>Groq Inc. — səsli mesajların SI ilə mətnə çevrilməsi və mesajların tərcüməsi, yalnız siz və ya həmsöhbətiniz bunu aktiv şəkildə tələb etdikdə (bax: Bölmə 1)</li>
+      <li>Google Play Install Referrer API (Google LLC) — mükafatı düzgün dəvət edənə hesablamaq üçün tətbiqin ilk açılışında bir dəfəlik referal atributu siqnalını oxuyur (bax: Bölmə 1)</li>
     </ul>
   </div>
 
@@ -678,6 +728,246 @@
       <li><strong>Bloklama bu cüt üçün daimidir:</strong> anonim keçid çatını — şikayətlə və ya şikayətsiz — bloklayanda, bloklanmış cihazın sizə eyni keçid vasitəsilə, ya da sonradan yaratdığınız keçid vasitəsilə yeni sorğu göndərməsinin qarşısını almaq üçün məhz iki cihaz identifikatorunu əlaqələndirən daimi qeyd saxlayırıq. Bu qeyd digər anonim keçid məlumatlarının ümumi saxlama müddətlərinə (bax: Məxfilik Siyasətinin saxlama bölməsi) tabe deyil, çünki onun bütün mənası qüvvədə qalmaqdır;</li>
       <li><strong>Ban əhatəsi:</strong> anonim keçid çatında təsdiqlənmiş pozuntuya görə tətbiq edilən sanksiyalar daxili olaraq bu funksiyadan qaynaqlandığı kimi işarələnir. Belə ban yalnız yeni anonim keçid sorğuları göndərmək imkanınızı məhdudlaşdırır — əsas söhbət (rulet) bölməsinə girişinizi bloklamır. Əksinə, əsas söhbət funksiyasında alınan ban da yeni anonim keçid sorğularının göndərilməsini məhdudlaşdırır, çünki banlar pozuntunun mənbəyindən asılı olmayaraq cihaz identifikatoruna görə tətbiq edilir;</li>
       <li>Bölmə 7-də təsvir edilən bütün digər hüquqlar (o cümlədən avtomatlaşdırılmış qərarların insan administratoru tərəfindən yenidən baxılması hüququ) anonim keçid çatlarında tətbiq edilən sanksiyalara da bərabər şəkildə aiddir.</li>
+    </ul>
+
+    <h2 class="section-title">15. Premium status, referal proqramı və promokodlar</h2>
+    <p>NearChat referal proqramı və ya promokod vasitəsilə əldə edilə bilən istəyə bağlı Premium status təklif edir (ödənişli alış hələ mövcud deyil). Bu bölmə bu funksiyaya xas olan məlumat emalını izah edir.</p>
+    <ul>
+      <li><strong>Google ilə giriş tələb olunur:</strong> referal proqramı və promokodların aktivləşdirilməsi yalnız Google ilə daxil olduqdan sonra əlçatandır. Premium statusunuzun bitmə tarixi hesab identifikatorunuza bağlıdır — bu, qonaq sessiyaları üçün etibarlı deyil — əks halda qonaq rejimində tətbiqi yenidən qurmaq və ya məlumatları silmək qazanılmış mükafatın xəbərdarlıq olmadan itməsinə səbəb olardı.</li>
+      <li><strong>Premium statusunuz:</strong> hesabınızda Premium statusun nə vaxta qədər aktiv qalacağını göstərən vaxt möhürünü saxlayırıq. Bu möhürün məhdud, şəxsiyyəti müəyyənləşdirməyən nüsxəsi (başqa heç bir profil məlumatı olmadan) digər istifadəçilər tərəfindən oxuna bilər ki, söhbətdaşınızın tətbiqi söhbət zamanı Premium nişanını və mesaj bublcuğunun xüsusi tərtibatını göstərə bilsin — profilinizin başqa heç bir hissəsi bu mexanizm vasitəsilə açıqlanmır.</li>
+      <li><strong>Referal kodunuz:</strong> Google ilə daxil olduqdan sonra hesabınıza bağlı qısa kod yaradılır ki, onu başqaları ilə paylaşa biləsiniz. Onu aktivləşdirən hər kəs Premium müddətinizi artırır; yeni istifadəçi də daha kiçik başlanğıc mükafatı alır.</li>
+      <li><strong>Referal sui-istifadəsinin qarşısının alınması:</strong> eyni fiziki cihazın məlumatları silməklə və başqa hesabla daxil olmaqla "yeni istifadəçi" mükafatını dəfələrlə almasının qarşısını almaq üçün, cihaz identifikatorunu onun artıq dəvət edilmiş yeni istifadəçi kimi qeyd edildiyi faktı ilə əlaqələndirən daimi qeyd saxlayırıq. Bu qeydin bitmə müddəti yoxdur — Bölmə 14-də təsvir edilən anonim çat bloklama qeydi ilə eyni səbəbdən: onun yeganə məqsədi qüvvədə qalmaqdır.</li>
+      <li><strong>Promokodlar:</strong> promokodlar bizim tərəfimizdən yaradılır və idarə olunur; hər biri müəyyən sayda Premium günü verə bilər və maksimum istifadə sayı ilə məhdudlaşdırıla bilər və ya istənilən vaxt deaktiv edilə bilər. Eyni promokodun eyni cihazdan bir dəfədən çox aktivləşdirilməsi referal kodları ilə eyni üsulla qarşısı alınır.</li>
+      <li>Bölmə 7-də təsvir edilən bütün digər hüquqlar bu bölmə çərçivəsində emal edilən məlumatlara da bərabər şəkildə aiddir.</li>
+    </ul>
+  </div>
+
+</section>
+
+<section class="lang-block" id="tr">
+  <div class="doc-header">
+    <div class="lang-divider"><span class="lang-divider-flag">🇹🇷</span><span class="lang-divider-name">Türkçe</span></div>
+    <div class="doc-label">Gizlilik Politikası</div>
+    <h1 class="doc-title">NearChat Gizlilik Politikası</h1>
+    <p class="doc-date">Son güncelleme: 17 Ağustos 2026</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">1. Hangi verileri topluyoruz</h2>
+    <ul>
+      <li>Anonim cihaz kimliği (Android ID) — yalnızca sunucu tarafında kötüye kullanımın önlenmesi, yasakların uygulanması ve yeniden kayıt bekleme süresinin takibi için kullanılır; ticari amaçla üçüncü taraflarla asla paylaşılmaz</li>
+      <li>Firebase UID — girişte atanan anonim kimlik, güvenlik kontrolleri, yasak doğrulaması ve aktif oturum yönetimi için Android ID ile birlikte kullanılır</li>
+      <li>Seçilen arama parametreleri: cinsiyet, yaş aralığı (18-21, 22-25, 26-35, 36+), sohbet konusu — yalnızca aktif eşleştirme kuyruğu ve aktif oturum süresince işlenir ve saklanır</li>
+      <li>Ülke ve şehir — yalnızca elle girdiğiniz takdirde</li>
+      <li>Teknik tanılama: işletim sistemi sürümü, cihaz modeli, uygulama sürümü, çökme raporları (Firebase Crashlytics üzerinden)</li>
+      <li>FCM push bildirim jetonu — yalnızca yeni mesaj bildirimlerini iletmek için kullanılır; üçüncü taraflarla asla paylaşılmaz</li>
+      <li>Yönetici paneli erişim kayıtları — e-posta adresi, giriş zamanı, tarayıcı bilgisi, giriş sonucu; Firestore'da güvenli şekilde saklanır ve yalnızca yöneticiler tarafından erişilebilir</li>
+      <li>Trust Score (Güven Puanı) — sohbet sonrası diğer kullanıcılar tarafından bırakılan değerlendirme ve etiketlere dayanan, anonimleştirilmiş bir davranış itibarı göstergesi; yalnızca eşleştirme kalitesini artırmak için kullanılır ve üçüncü taraflara asla ifşa edilmez</li>
+      <li>Şikayetle ilgili veriler — şikayet nedeni, oturum kimliği ve raporlanan oturumdan en fazla 20 mesaj; moderatör incelemesi ve YZ moderasyon sistemi tarafından otomatik işlem için geçici olarak saklanır</li>
+      <li>Anonim Bağlantı sohbet verileri — kişisel bir Anonim Bağlantı oluşturduğunuzda veya kullandığınızda; sohbetin durumunu (beklemede/aktif/engellenmiş), eşleştirilmiş host ve misafir cihaz kimliklerini, ilk mesajı, mesaj zaman damgalarını, en son mesajın kısa bir önizlemesini (~200 karaktere kadar) ve karşı tarafa verdiğiniz herhangi bir takma adı (yalnızca size görünür, ona asla görünmez) işleriz — bunlar yalnızca sohbet listenizi göstermek için kullanılır</li>
+      <li>Anonim Bağlantı çevrimiçilik ve etkileşim sinyalleri — bir Anonim Bağlantı sohbeti aktifken, kısa ömürlü "yazıyor" göstergelerini, çevrimiçi durumu göstermek için "son aktiflik" zaman damgalarını ve okundu bilgisi zaman damgalarını işleriz; bunların her biri yalnızca o sohbetin diğer katılımcısına görünür. Ayrıca bir mesaja bıraktığınız emoji tepkisini ve yanıtladığınız mesaja kısa bir referansı da işleriz, ikisi de o mesajın bir parçası olarak saklanır</li>
+      <li>Anonim Bağlantı kötüye kullanım önleme verileri — aynı iki cihaz arasında şikayet sisteminin kötüye kullanılmasını önlemek için, cihaz kimliğine bağlı olarak doğrulanmamış şikayet serilerini, cihaz çifti şikayet bekleme sürelerini ve geçici şikayet kısıtlamalarını geçici olarak takip ederiz (bkz. Bölüm 14)</li>
+      <li>Anonim Bağlantı engelleme kayıtları — bir Anonim Bağlantı sohbetini engellediğinizde, ilgili iki cihaz kimliğinin eşleştirilmiş ve engellenmiş olduğunu kaydederiz, böylece engellenen cihaz aynı veya yeni oluşturulan bir bağlantı üzerinden size tekrar istek gönderemez</li>
+      <li>Google hesap verileri (isteğe bağlı) — Anonim Bağlantı bölümünden Google ile giriş yapmayı seçerseniz, Google'dan hesabınızın e-posta adresini ve görünen adını alırız. Bu bilgi yalnızca kimliğinizi doğrulamak ve Anonim Bağlantı sohbetlerinizin yeniden yüklemeler ve cihazlar arasında kalıcı olmasını sağlamak için kullanılır; sohbet ettiğiniz kişilere asla gösterilmez — onlar sizi tamamen anonim görmeye devam eder — ve reklam veya başka herhangi bir amaçla asla kullanılmaz</li>
+      <li>Sesli mesajlar — bir sesli mesaj gönderdiğinizde, ses kaydı sohbet partnerinize iletilmesi ve ikinizin de daha sonra tekrar dinleyebilmesi için, diğer mesajlarla aynı saklama süresine uygun şekilde (Bölüm 6) saklanır. Siz veya sohbet partneriniz "Metne dök" özelliğini kullanırsanız, ses kaydı yalnızca metin transkripti oluşturmak amacıyla üçüncü taraf bir YZ hizmetine gönderilir (bkz. Bölüm 11) ve sonuç o mesajın bir parçası olarak saklanır</li>
+      <li>Çevrilmiş mesaj metni — uygulama içi çeviri özelliğini kullanırsanız, ilgili mesaj veya transkript metni yalnızca sizin okumanız için bir çeviri oluşturmak amacıyla üçüncü taraf bir YZ hizmetine gönderilir (bkz. Bölüm 11)</li>
+      <li>Yükleme atıf sinyali (isteğe bağlı) — birinin referans bağlantısını takip ederek uygulamayı Google Play'den yüklerseniz, Google'ın Install Referrer API'si ilk açılışta bize doğru davetçiyi ödüllendirebilmemiz için tek seferlik bir referans kodu sağlar; bu sinyal yalnızca bir kez okunur ve sonrasında etkinliğinizi takip etmez (bkz. Bölüm 11)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">2. Neleri toplamıyoruz</h2>
+    <ul>
+      <li>Ad, soyad, e-posta adresi veya telefon numarası (normal kullanıcılardan)</li>
+      <li>Mesaj içeriği — Bölüm 1'de açıklanan kısa Anonim Bağlantı önizlemesi ve Bölüm 14'te açıklanan cihaz üzerindeki yerel önbellek dışında, konuşmalar oturum bittikten sonra sunucularımızda asla saklanmaz</li>
+      <li>Cihazın kesin konumu (GPS veya IP tabanlı konum belirleme kullanılmaz)</li>
+      <li>Sosyal ağlardan veya üçüncü taraf uygulamalardan gelen veriler</li>
+      <li>Biyometrik veriler, ödeme bilgileri veya finansal bilgiler</li>
+      <li>Sizi doğrudan bir kişi olarak tanımlayabilecek herhangi bir bilgi</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">3. Veri işlemenin amaçları</h2>
+    <ul>
+      <li>Seçtiğiniz yetişkin parametrelerine göre bir sohbet partneri bulmak (yalnızca sunucu tarafında, Cloud Functions üzerinden gerçekleştirilir)</li>
+      <li>Hizmetin teknik işleyişini ve kararlılığını sağlamak</li>
+      <li>Kötüye kullanımın önlenmesi: kural ihlal edenleri hem cihaz kimliği (Android ID) hem de Firebase UID ile aynı anda engellemek</li>
+      <li>İlk kez veya küçük ihlaller için kademeli bir yaptırım tedbiri olarak geçici susturma (yeni sohbet başlatma kısıtlaması) uygulamak</li>
+      <li>Hesap silindikten sonra kötüye kullanımı önlemek için platform yeniden kayıt bekleme süresini (7 gün) UID ve cihaz takibiyle uygulamak</li>
+      <li>Yeni mesajlar ve sohbet eşleşmeleri hakkında push bildirimleri iletmek</li>
+      <li>Çökme analitiği yoluyla uygulama performansını ve kararlılığını iyileştirmek</li>
+      <li>Hizmete ücretsiz erişimi desteklemek için Google AdMob aracılığıyla bağlamsal reklamlar göstermek</li>
+      <li>Kullanıcı şikayetlerinin bir YZ sistemi aracılığıyla otomatik moderasyonu (bkz. Bölüm 13 — Otomatik Karar Verme)</li>
+      <li>Eşleştirme kalitesini artırmak için anonimleştirilmiş sohbet sonrası değerlendirmelere dayalı Trust Score'un hesaplanması ve sürdürülmesi</li>
+      <li>Güvenlik denetimi amacıyla yöneticilerin moderasyon paneline erişimlerinin kaydedilmesi</li>
+      <li>İsteğe bağlı Anonim Bağlantı özelliğinin işletilmesi — bir bağlantının sahibiyle eşleştirilmesi, Google ile Giriş yoluyla Anonim Bağlantı sohbetlerinizin isteğe bağlı kalıcı olarak saklanmasının sağlanması ve anonim şikayet sisteminin kötüye kullanımdan korunması dahil (bkz. Bölüm 14)</li>
+      <li>Sesli mesajların iletilmesi ve talep üzerine, üçüncü taraf bir YZ hizmeti aracılığıyla metne dökülmesi veya çevrilmesi</li>
+      <li>Google Play'in Install Referrer API'si aracılığıyla, bir referans bağlantısından gelen uygulama yüklemelerinin atfedilmesi</li>
+      <li>Yürürlükteki yasal gerekliliklere uyum sağlamak</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">4. İşlemenin hukuki dayanağı (GDPR)</h2>
+    <ul>
+      <li>Meşru menfaat — temel sohbet eşleştirme hizmetini sunmak, kötüye kullanımı önlemek ve platform güvenliğini sağlamak</li>
+      <li>Yasal yükümlülük — yetkili makamlara veri açıklanmasının gerektiği durumlarda (örneğin CSAM bildirimleri)</li>
+      <li>Rıza — açıkça talep edilen isteğe bağlı özellikler için</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">5. Verilerin üçüncü taraflarla paylaşılması</h2>
+    <ul>
+      <li>Verilerinizi ticari amaçlarla üçüncü taraflara satmıyor veya devretmiyoruz</li>
+      <li>Veriler yalnızca yetkili makamların yasal talebi üzerine açıklanabilir</li>
+      <li>CSAM ile ilgili bildirimler proaktif olarak kolluk kuvvetlerine ve uygulanabildiği yerlerde NCMEC'e iletilir</li>
+      <li>Firebase (Google LLC) teknik altyapı için kullanılır — GDPR uyumludur; Veri İşleme Sözleşmesi imzalanmıştır</li>
+      <li>Google AdMob (Google LLC) reklam göstermek için kullanılır; AdMob, Google'ın gizlilik politikasına uygun olarak cihaz kimliklerini ve kullanım verilerini toplayabilir</li>
+      <li>Groq Inc., sesli mesaj sesini (yalnızca transkript talep ettiğinizde) ve mesaj metnini (yalnızca çeviri talep ettiğinizde) YZ modelleri aracılığıyla işlemek için kullanılır; içerik yalnızca istenen sonucu üretmek için geçici olarak işlenir ve Groq ile aramızdaki koşullar gereği Groq'un kendi modellerini eğitmek için kullanılmaz</li>
+      <li>Tüm hizmet sağlayıcılar verileri yalnızca bizim adımıza ve veri işleme sözleşmeleri kapsamında işler</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">6. Verilerin saklanması ve silinmesi</h2>
+    <ul>
+      <li>Sohbet mesajları yalnızca aktif bir oturum içinde var olur ve oturum bittikten sonra 24 saat içinde otomatik olarak silinir</li>
+      <li>Bir şikayet gönderildiğinde, en son mesajlar (en fazla 20) moderatör incelemesi ve YZ işlemesi için geçici olarak saklanır, ardından 30 gün içinde silinir</li>
+      <li>Cihaz kimliği ve Firebase UID yalnızca bir yasak uygulandığında saklanır; yasak süresi dolduğunda veya kaldırıldığında silinir</li>
+      <li>Susturma kayıtları, susturma süresi dolar dolmaz (30 dakika içinde) otomatik olarak silinir</li>
+      <li>Yeniden kayıt bekleme süresi kaydı, hesap silindikten sonra 7 gün boyunca saklanır, ardından sunucu fonksiyonları tarafından otomatik olarak temizlenir</li>
+      <li>Kullanıcı profilleri 90 günlük hareketsizlikten sonra otomatik olarak silinir</li>
+      <li>Trust Score verileri hesap silindiğinde silinir</li>
+      <li>Yönetici erişim kayıtları güvenlik denetimi amacıyla 90 gün süreyle saklanır</li>
+      <li>Anonim Bağlantı mesajları, normal sohbetlerle aynı 24 saatlik silme takvimini izler; en son mesajın kısa önizlemesi (bkz. Bölüm 1), sohbet kaydının kendisi silinene kadar bu kaydın bir parçası olarak kalabilir</li>
+      <li>Anonim Bağlantı sohbet kayıtları, katılımcılardan en az biri Google ile giriş yapmamışsa, son mesajdan (veya mesaj yoksa oluşturulmasından) 24 saat sonra saklanır; 365 güne kadar hareketsizlik süresi yalnızca <strong>her iki</strong> katılımcı da Google ile giriş yaptığında geçerlidir — ayrıntılar için Bölüm 14'e bakın. Bir kişiyi engellemek bu saklama sürelerini hiçbir şekilde etkilemez (aşağıya bakın)</li>
+      <li><strong>Bir kişiyi engellemek:</strong> Anonim Bağlantı sohbetinde birini engellediğinizde, o kişinin daha sonra bu sohbette gönderdiği mesajlar teknik olarak yine de oluşturulur ve yukarıdaki aynı süreyle sunucularımızda saklanır (kendi kopyası onda kalsın diye) — ancak özellikle sizden gizlenmiş olarak işaretlenir: bunları asla görmeyecek, bildirim almayacak veya sohbet listenizde bir değişiklik fark etmeyeceksiniz. Bu, engellemenin yaygın mesajlaşma uygulamalarındaki gibi çalışması için kasıtlı olarak böyle tasarlanmıştır</li>
+      <li>Anonim Bağlantı özelliğinde bir cihaz çiftinin engellenme kayıtları (Bölüm 1), engellemeden (veya aynı çiftin en son yenilenen engellemesinden) itibaren 365 gün saklanır, ardından otomatik olarak silinir. Engeli kaldırmak kaydı hemen siler</li>
+      <li>Anonim Bağlantının kendisi (oluşturulan sohbetlerden ayrı olarak, paylaşılabilir bağlantı) hiç kullanılmamışsa 30 gün saklanır; kullanıldıktan sonra veya sahibi Google ile giriş yaptıysa, 2 yıla kadar hareketsizlik süresince (üzerinden yeni istek gelmediği sürece) saklanır</li>
+      <li>Tüm Anonim Bağlantı geçmişinizi (bağlantınızı ve ilişkili tüm sohbetleri) istediğiniz zaman Ayarlar → Tehlikeli bölge → Bağlantı sohbeti geçmişini sil üzerinden, ana hesabınızı silmekten bağımsız olarak silebilirsiniz; bu işlem kötüye kullanımı önlemek için cihaz başına 7 günde bir kez ile sınırlıdır</li>
+      <li>Anonim Bağlantı çevrimiçilik sinyalleri (yazıyor göstergeleri, çevrimiçi zaman damgaları) sürekli olarak üzerine yazılır ve yalnızca birkaç saniye anlamlıdır; okundu bilgisi zaman damgaları sohbet kaydının kendisi kadar saklanır; mesaj tepkileri ve yanıt referansları ilgili mesaj kadar saklanır</li>
+      <li>Anonim Bağlantı engelleme kayıtları (Bölüm 1) süresiz olarak saklanır ve yukarıdaki 24 saat veya 365 günlük sürelere tabi değildir — bunlar özellikle engellenen bir cihazın yeni bir istek göndererek engeli aşamamasını sağlamak için mevcuttur ve yalnızca bu amaç için artık gerekli olmadıklarını belirlediğimizde kaldırılır</li>
+      <li>Anonim Bağlantının şikayet sistemi kötüye kullanım önleme kayıtları kısa ömürlüdür: cihaz çifti şikayet bekleme süreleri 7 gün sonra temizlenir, geçici şikayet kısıtlamaları ise süresi dolduğunda (genellikle 6 saat içinde) otomatik olarak silinir</li>
+      <li>Sohbet arşivleri tutmuyoruz ve silinen mesajları geri yükleyemiyoruz</li>
+      <li>Sesli mesaj ses dosyaları, ait oldukları metin mesajlarıyla aynı saklama süresini izler (yukarıya bakın); bir mesaj için transkript veya çeviri oluşturulmuşsa, bunlar mesajın kendisiyle aynı anda silinir</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">7. Haklarınız</h2>
+    <ul>
+      <li>Erişim hakkı: sizinle ilgili hangi verilerin işlendiği konusunda bilgi talep edebilirsiniz</li>
+      <li>Silme hakkı: hesabınızı doğrudan uygulama içinden silin (Ayarlar → Tehlikeli bölge → Hesabımı ve verilerimi sil)</li>
+      <li>Veri taşınabilirliği hakkı: verilerinizin makine tarafından okunabilir bir formatta bir kopyasını talep edebilirsiniz</li>
+      <li>İtiraz hakkı: meşru menfaate dayalı işlemeye itiraz etmek için bizimle iletişime geçebilirsiniz</li>
+      <li>Otomatik kararların insan tarafından incelenmesi hakkı: hesabınıza otomatik YZ moderasyon sistemi tarafından bir yasak veya susturma uygulandıysa, kararın bir insan yönetici tarafından incelenmesini talep etme hakkınız vardır. Bunun için bizimle iletişime geçin ve yasak veya susturma numaranızı (kısıtlama ekranında görüntülenir) belirtin</li>
+      <li>Ülkenizdeki veri koruma otoritesine şikayette bulunma hakkı</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">8. Hesap ve veri silme</h2>
+    <p>Hesabınızı ve tüm ilişkili verileri istediğiniz zaman doğrudan uygulama içinden silebilirsiniz: <strong>Ayarlar → Tehlikeli bölge → Hesabımı ve verilerimi sil</strong>. Alternatif olarak, support.nearchat@gmail.com adresine bir silme talebi gönderebilirsiniz. Talebi 30 gün içinde işleme alacağız.</p>
+    <p>Silme işleminde şunlar kaldırılır: Firestore kullanıcı profiliniz, Firebase Auth hesabınız, RTDB çevrimiçilik durumunuz, kuyruk ve oturum kayıtlarınız ve tüm yerel uygulama tercihleri.</p>
+    <p>Platformun kötüye kullanılmasını önlemek için silme işleminden sonra kesinlikle 7 günlük bir yeniden kayıt bekleme süresi kaydedilir (Firebase UID ve Android ID ile aynı anda). Aktif yasaklara bağlı cihaz kimliği kayıtları, yasağın aşılmasını önlemek amacıyla, platform güvenliğine yönelik meşru menfaatimiz kapsamında saklanır.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">9. Teknik güvenlik önlemleri</h2>
+    <p>NearChat, kullanıcı verilerini korumak için aşağıdaki teknik önlemleri uygular:</p>
+    <ul>
+      <li>Firebase Güvenlik Kuralları: her kullanıcı yalnızca kendi verilerini okuyup yazabilir; sistem alanları (yasak durumu, roller) istemci tarafı kodla değiştirilemez</li>
+      <li>Oturum oluşturma yalnızca sunucu tarafında, Cloud Functions aracılığıyla gerçekleştirilir — istemciler doğrudan oturum oluşturamaz</li>
+      <li>Yasaklı cihazlar listesine (banned_devices) yalnızca yöneticiler Admin SDK aracılığıyla erişebilir — normal kullanıcılar erişemez</li>
+      <li>Yasak doğrulaması, uygulama açılışında hem Android ID hem de kullanıcının bans/{uid} belgesi kullanılarak eş zamanlı yapılır</li>
+      <li>Şikayet gönderimleri sunucu tarafında doğrulanır: şikayet eden UID kimlik doğrulaması yapılmış kullanıcıyla eşleşmelidir; yasaklı alanlar engellenir</li>
+      <li>Tüm veriler şifreli bağlantılar üzerinden aktarılır (TLS 1.2+)</li>
+      <li>Yönetici paneli oturumları 30 dakika hareketsizlikten sonra sona erer; giriş denemeleri hız sınırlamasına tabidir</li>
+      <li>Yönetici eylemleri zaman damgası, e-posta ve tarayıcı bilgisiyle kaydedilir</li>
+      <li>Yerel olarak önbelleğe alınmış Anonim Bağlantı mesajları ve yerel olarak saklanan takma adlar (bkz. Bölüm 14) cihazınızdan asla çıkmaz ve bize, ekibimize veya herhangi bir üçüncü tarafa erişilebilir değildir</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">10. Çocukların gizliliği</h2>
+    <ul>
+      <li>NearChat yalnızca 18 yaş ve üzeri kullanıcılar için tasarlanmıştır. Yaş, uygulama açılışında zorunlu bir doğum tarihi ekranı aracılığıyla doğrulanır.</li>
+      <li>Tüm aktif arama filtreleri kesinlikle yetişkin yaş aralıklarıyla (18-21, 22-25, 26-35, 36+) sınırlıdır.</li>
+      <li>18 yaşından küçük hiç kimseden bilerek kişisel veri toplamıyoruz.</li>
+      <li>Herhangi bir kullanıcının reşit olmadığından veya yaş politikasını ihlal ettiğinden şüpheleniyorsanız, lütfen moderatör incelemesi için hemen uygulama içi Şikayet düğmesini kullanarak bir bildirim gönderin.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">11. Üçüncü taraf hizmetler</h2>
+    <ul>
+      <li>Firebase Authentication (Google LLC) — varsayılan olarak anonim giriş; isteğe bağlı olarak, Anonim Bağlantı özelliği için Google ile Giriş, bu durumda yalnızca kimlik doğrulama amacıyla Google hesabınızın e-postasını ve görünen adını bizimle paylaşır (bkz. Bölüm 1)</li>
+      <li>Firebase Firestore (Google LLC) — kullanıcı profili ve oturum parametresi depolama</li>
+      <li>Firebase Realtime Database (Google LLC) — gerçek zamanlı sohbet eşleştirme ve çevrimiçilik altyapısı</li>
+      <li>Firebase Crashlytics (Google LLC) — kararlılığı artırmak için çökme tanılaması</li>
+      <li>Firebase Cloud Messaging (Google LLC) — push bildirimleri</li>
+      <li>Firebase Cloud Functions (Google LLC) — sunucu tarafında oturum oluşturma, otomatik yasaklama altyapısı, silme rutinleri</li>
+      <li>Google AdMob (Google LLC) — uygulama içi reklamcılık; Google'ın gizlilik politikasına tabidir</li>
+      <li>Groq Inc. — yalnızca siz veya sohbet partneriniz aktif olarak talep ettiğinde YZ tabanlı sesli mesaj transkripti ve mesaj çevirisi (bkz. Bölüm 1)</li>
+      <li>Google Play Install Referrer API (Google LLC) — doğru davetçiyi ödüllendirebilmemiz için uygulamanın ilk açılışında tek seferlik bir referans atıf sinyali okur (bkz. Bölüm 1)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">12. İletişim ve Veri Sorumlusu</h2>
+    <p>Bu Gizlilik Politikası hakkında sorularınız varsa veya haklarınızı kullanmak istiyorsanız bizimle iletişime geçin. 30 takvim günü içinde yanıt veririz.</p>
+    <ul>
+      <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
+      <li>E-posta: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">13. Otomatik Karar Verme ve YZ Moderasyonu</h2>
+    <p>NearChat, kullanıcı şikayetlerini işlemek ve önceden insan incelemesi olmadan yaptırım uygulamak için otomatik bir YZ moderasyon sistemi (büyük bir dil modeli tarafından desteklenen) kullanır. Bu, GDPR'ın 22. maddesi kapsamında otomatik karar vermeyi oluşturur.</p>
+    <ul>
+      <li>Bir şikayet gönderildiğinde, YZ sistemi bir ihlal olup olmadığını belirlemek için raporlanan içeriği ve sohbet bağlamını analiz eder</li>
+      <li>Analize dayanarak sistem geçici bir susturma, geçici bir yasak uygulayabilir veya şikayeti reddedebilir; süreler mevcut platform kurallarına göre belirlenir</li>
+      <li>Sistem ayrıca bir "bumerang" mekanizması içerir: YZ, bir şikayetin kötü niyetle veya taciz amacıyla gönderildiğini belirlerse, şikayeti gönderen kullanıcının kendisi geçici bir yasak alabilir</li>
+      <li>Tüm YZ kararları kaydedilir ve bir insan yönetici tarafından incelemeye tabidir</li>
+      <li>Herhangi bir otomatik yaptırım eylemi için, destek ekibiyle iletişime geçip yasak veya susturma numaranızı belirterek insan incelemesi talep etme hakkınız vardır. Vakayı 30 gün içinde inceleyeceğiz</li>
+      <li>YZ sistemi, prompt enjeksiyonuna karşı korumalı olarak tasarlanmıştır: mesaj içeriği aracılığıyla sistemi manipüle etme girişimleri tespit edilir ve şikayetin reddedilmesiyle sonuçlanır</li>
+      <li>YZ destekli analiz, yöneticilerin destek kanalı üzerinden gönderilen yasak itirazlarını incelemesine yardımcı olmak için de kullanılır</li>
+      <li>Anonim Bağlantı sohbetlerinden gönderilen şikayetler (bkz. Bölüm 14), zaten birbirini tanıyan kişiler arasındaki karşılıklı veya gönüllü sohbetleri tanımak ve bu tür durumlarda haksız yaptırımlardan kaçınmak amacıyla ek koruma önlemleriyle aynı YZ sistemi tarafından işlenir</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">14. Anonim Bağlantı Sohbetleri</h2>
+    <p>NearChat, kişisel bir bağlantı (ve buna eşdeğer bir QR kodu) oluşturmanıza olanak tanıyan isteğe bağlı bir özellik sunar, böylece diğer insanlar ikinizin de kimliğini görmeden sizinle anonim bir sohbet başlatabilir. Bu bölüm, yukarıdaki genel kurallara ek olarak bu özelliğe özgü veri işlemeyi açıklar.</p>
+    <ul>
+      <li><strong>Sohbet kaydı verileri:</strong> sohbetin durumunu (beklemede / aktif / engellenmiş), host ve misafirin eşleştirilmiş cihaz kimliklerini, ilk mesajı, mesaj zaman damgalarını, okunmamış mesaj sayaçlarını (yalnızca bildirim rozetlerini görüntülemek için kullanılır) ve sohbet listenizi göstermek için kullanılan en son mesajın kısa bir önizlemesini işleriz</li>
+      <li><strong>Yerel mesaj önbelleği:</strong> son Anonim Bağlantı sohbetlerinizi sorunsuzca okumaya devam edebilmeniz için uygulama, ayrıca son mesajları cihazınızda saklanan özel, yalnızca uygulamaya ait bir veritabanında önbelleğe alır. Bu yerel önbellek sunucularımıza asla iletilmez, bize erişilebilir değildir ve 24 saat sonra otomatik olarak temizlenir (uygulama verilerini temizlerseniz veya uygulamayı kaldırırsanız da silinir)</li>
+      <li><strong>Bir kişiye verdiğiniz takma adlar:</strong> anonim bir kişiyi istediğiniz bir takma adla isteğe bağlı olarak etiketleyebilirsiniz. Bu takma ad, sohbetin her tarafı için ayrı ayrı sunucularımızda sohbet kaydının bir parçası olarak saklanır — diğer katılımcıya asla gösterilmez ve uygulamayı birden fazla cihazda kullanırsanız otomatik olarak senkronize edilir. Sohbet reddedildiğinde veya başka bir şekilde kaldırıldığında sohbetle birlikte silinir, ancak sohbet yalnızca engellenmiş (silinmemiş) ise kalabilir (bkz. Bölüm 6)</li>
+      <li><strong>Sohbet partnerinize görünen çevrimiçilik göstergeleri:</strong> bir sohbet aktifken, uygulama partnerinize "yazıyor…" göstergesi, yaklaşık bir "çevrimiçi" / "son aktiflik" durumu ve okundu bilgisi (partnerinizin son mesajınızdan bu yana sohbeti açıp açmadığı) gösterebilir. Bu sinyaller kısa ömürlü zaman damgalarından otomatik olarak oluşturulur ve yalnızca o belirli sohbet içinde görünür — herhangi bir genel profilin parçası değildir ve uygulamanın başka hiçbir yerinde gösterilmez</li>
+      <li><strong>Tepkiler ve yanıtlar:</strong> bir mesaja emoji ile tepki verebilir veya belirli bir önceki mesaja doğrudan yanıt verebilirsiniz; her ikisi de mesaj kaydının bir parçası olarak saklanır ve sohbetin kendisiyle aynı saklama süresini izleyerek sohbet partnerinize görünür</li>
+      <li><strong>Varsayılan olarak misafir modu:</strong> Anonim Bağlantı özelliğini herhangi bir hesap olmadan hemen kullanabilirsiniz — cihazınıza otomatik olarak anonim bir oturum kimliği atanır. Misafir moddayken uygulamayı yeniden yüklerseniz veya verilerini temizlerseniz, bu kimlik kaybolur ve bununla birlikte mevcut Anonim Bağlantı sohbetlerinize ve bağlantılarınıza erişim de kaybolur; en az bir katılımcının Google ile giriş yapmadığı misafir modu sohbetleri de son mesajdan 24 saat sonra otomatik olarak silinir (bkz. Gizlilik Politikası saklama bölümü)</li>
+      <li><strong>Google ile Giriş yoluyla isteğe bağlı kalıcı saklama:</strong> Anonim Bağlantı bölümünden ("Bu sohbeti sonsuza kadar sakla" istemi veya hesap menüsü aracılığıyla) Google ile giriş yapmayı seçebilirsiniz. Bu, mevcut sohbetlerinizi veya bağlantılarınızı kaybetmeden Google hesabınızı mevcut anonim oturum kimliğinize bağlar. Belirli bir sohbetin <strong>her iki</strong> katılımcısı da Google ile giriş yaptığında, o belirli sohbet kalıcı hale gelir ve artık 24 saatlik misafir silme takvimine tabi olmaz. Yalnızca kimlik doğrulama için Google hesabınızın e-postasını ve görünen adını alırız — diğer katılımcıya asla gösterilmez, o sizi tamamen anonim görmeye devam eder. İstediğiniz zaman hesap menüsünden farklı bir Google hesabına geçebilir veya misafir moduna geri dönebilirsiniz</li>
+      <li><strong>Yeni bir cihazda veya yeniden yükledikten sonra erişimi geri kazanma:</strong> daha önce Google ile giriş yaptıysanız, aynı Google hesabıyla tekrar giriş yapmak — aynı veya farklı bir cihazda — mevcut Anonim Bağlantınıza ve sohbetlerinize erişimi geri yükler. Google ile Giriş olmadan, yeniden yükleme veya veri temizleme sonrasında misafir modu verilerini geri yüklemenin bir yolu yoktur — bu, tasarım gereğidir</li>
+      <li><strong>Engelleme:</strong> Anonim Bağlantı sohbetinde bir kişiyi engellemek, mesajlarının size ulaşmasını bundan böyle durdurur — sohbet listenizde görünmeye devam eder, ancak artık yeni mesajlarını, bildirimlerini veya okunmamış sayaçlarını almazsınız. İstediğiniz zaman engeli sohbet içinden kaldırabilirsiniz; yalnızca engelleyen kişi engeli kaldırabilir ve engellediğiniz herkesin listesi hesap menüsünden erişilebilir</li>
+      <li><strong>Anonim Bağlantı geçmişinizi silme:</strong> kişisel bağlantınızı ve ilişkili tüm sohbet geçmişini, ana hesabınızdan bağımsız olarak istediğiniz zaman Ayarlar → Tehlikeli bölge → Bağlantı sohbeti geçmişini sil üzerinden silebilirsiniz. Host olduğunuz sohbetler tamamen silinir; başkasının bağlantısında misafir olduğunuz sohbetlerde yalnızca sizin kopyanız kaldırılır, diğer katılımcının kopyası etkilenmez. Bu işlem cihaz başına 7 günde bir kez ile sınırlıdır. Google ile giriş yaptıysanız, isteğe bağlı olarak Google hesabınızın bağlantısını aynı anda kaldırıp misafir moduna dönebilirsiniz</li>
+      <li><strong>Şikayetler için kötüye kullanım önleme:</strong> bu özellik genellikle zaten birbirini tanıyan kişiler arasında kullanıldığından ve şikayetler bazen şaka amaçlı veya kin gütmek için gönderilebildiğinden, cihaz başına geçici olarak şunları takip ederiz: YZ moderasyon sisteminin ihlal olarak onaylamadığı şikayet serisi; aynı cihaz çifti arasında tekrarlanan şikayetler için bir bekleme süresi (24 saat); ve onaylanmamış bir şikayet paterni tespit edilirse, yeni şikayet gönderme veya yeni bağlantı oluşturma konusunda geçici bir kısıtlama (genellikle 6 saat). Bu kayıtlar süresi dolduğunda veya cihaz çifti bekleme süreleri için 7 gün içinde otomatik olarak silinir</li>
+      <li><strong>Engelleme o çift için kalıcıdır:</strong> bir Anonim Bağlantı sohbetini — şikayetle veya şikayet olmadan — engellediğinizde, engellenen cihazın aynı bağlantı veya daha sonra oluşturduğunuz bir bağlantı üzerinden size yeni bir istek göndermesini önlemek amacıyla, ilgili iki cihaz kimliğini eşleştiren kalıcı bir kayıt tutarız. Bu kayıt, diğer Anonim Bağlantı verileriyle aynı saklama takvimine tabi değildir (bkz. Gizlilik Politikası saklama bölümü) çünkü tüm amacı yerinde kalmaktır</li>
+      <li><strong>Yasak kapsamı:</strong> bir Anonim Bağlantı sohbetinde onaylanan bir ihlalden kaynaklanan yaptırımlar, dahili olarak bu özellikten kaynaklandığı şeklinde etiketlenir. Böyle bir yasak yalnızca yeni Anonim Bağlantı istekleri başlatma yeteneğinizi kısıtlar — ana eşleştirme sohbetine erişiminizi engellemez. Tersine, ana eşleştirme özelliğinden kaynaklanan bir yasak, yeni Anonim Bağlantı isteklerinin gönderilmesini de kısıtlar, çünkü yasaklar kaynağından bağımsız olarak cihaz kimliğine göre uygulanır</li>
+      <li>Bölüm 7'de açıklanan diğer tüm haklar (otomatik kararların insan tarafından incelenmesi hakkı dahil) Anonim Bağlantı sohbetleri içinde alınan yaptırım eylemlerine de eşit şekilde uygulanır</li>
+    </ul>
+
+    <h2 class="section-title">15. Premium Durumu, Referans Programı ve Promosyon Kodları</h2>
+    <p>NearChat, referans programı veya bir promosyon kodu aracılığıyla elde edilebilen isteğe bağlı bir Premium durumu sunar (ücretli satın alma şu anda mevcut değildir). Bu bölüm, bu özelliğe özgü veri işlemeyi açıklar.</p>
+    <ul>
+      <li><strong>Google ile Giriş gerektirir:</strong> referans programı ve promosyon kodu kullanımı yalnızca Google ile giriş yaptıktan sonra kullanılabilir. Premium bitiş tarihiniz, misafir oturumları için kalıcı olmayan hesap kimliğinize bağlıdır — aksi takdirde uygulamayı yeniden yüklemek veya misafir modundayken verilerini temizlemek, kazanılan bir ödülün uyarı yapılmadan kaybolmasına neden olurdu</li>
+      <li><strong>Premium durumunuz:</strong> Premium durumunuzun ne zamana kadar aktif kalacağını gösteren bir bitiş zaman damgasını hesabınızda saklarız. Bu zaman damgasının sınırlı, kimliği belirlemeyen bir kopyası (başka hiçbir profil bilgisi içermeyen) diğer kullanıcılar tarafından okunabilir hale getirilir, böylece sohbet partnerinizin uygulaması bir konuşma sırasında Premium rozetini ve mesaj balonu stilini gösterebilir — profilinizin başka hiçbir bölümü bu mekanizma aracılığıyla ifşa edilmez</li>
+      <li><strong>Referans kodunuz:</strong> Google ile giriş yaptıktan sonra, başkalarıyla paylaşabilmeniz için hesabınıza bağlı kısa bir kod oluşturulur. Onu kullanan herkes size ek Premium süresi kazandırır; yeni kullanıcı da daha küçük bir başlangıç ödülü alır</li>
+      <li><strong>Referans kötüye kullanımının önlenmesi:</strong> aynı fiziksel cihazın, uygulama verilerini temizleyip farklı bir hesapla giriş yaparak "yeni kullanıcı" ödülünü tekrar tekrar talep etmesini önlemek için, bir cihaz kimliğini, daha önce bir kez davet edilen yeni kullanıcı olarak ödüllendirildiği gerçeğiyle eşleştiren kalıcı bir kayıt tutarız. Bu kayıt, Bölüm 14'te açıklanan anonim sohbet engelleme kaydıyla aynı nedenle süresiz olarak saklanır — tüm amacı yerinde kalmaktır</li>
+      <li><strong>Promosyon kodları:</strong> promosyon kodları tarafımızca oluşturulur ve yönetilir; her biri belirli sayıda Premium günü verebilir ve maksimum kullanım sayısıyla sınırlandırılabilir veya istediğimiz zaman devre dışı bırakılabilir. Aynı promosyon kodunun aynı cihazdan birden fazla kez kullanılması, referans kodlarıyla aynı şekilde engellenir</li>
+      <li>Bölüm 7'de açıklanan diğer tüm haklar, bu bölüm kapsamında işlenen verilere de eşit şekilde uygulanır</li>
     </ul>
   </div>
 
