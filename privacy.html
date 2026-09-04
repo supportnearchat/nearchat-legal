@@ -89,7 +89,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Privacy Policy</div>
     <h1 class="doc-title">NearChat Privacy Policy</h1>
-    <p class="doc-date">Last updated: August 22, 2026</p>
+    <p class="doc-date">Last updated: September 4, 2026</p>
   </div>
 
   <div class="section">
@@ -317,6 +317,20 @@
     </ul>
   </div>
 
+  <div class="section">
+    <h2 class="section-title">16. Open Questions and Answers</h2>
+    <p>NearChat offers an optional feature that lets you create a public "open question" — a shareable link and QR code so that anyone can submit an anonymous text answer to you without creating an account. This section explains the data handling specific to this feature, in addition to the general rules above.</p>
+    <ul>
+      <li><strong>Question data:</strong> when you create an open question, we store the question text, your account identifier, and a short slug used to form your shareable link</li>
+      <li><strong>Answer data:</strong> when someone answers your open question, we store the answer text, a timestamp, and the answerer's device identifier (Android ID) — not any personal account, since answering does not require signing in</li>
+      <li><strong>Report data:</strong> if you report an answer, we store the report reason, a reference to the reported answer, your account identifier, and a timestamp, retained for moderation review; an administrator may delete a report once it has been reviewed</li>
+      <li><strong>Automated device restriction:</strong> each reported answer is analysed by the same automated AI system described in Section 13, adapted to review a single answer. If it confirms a violation, we create a record restricting the answering device from submitting further answers anywhere in the app, for a duration set by current platform rules; this record is superseded if the device is restricted again later. Independently, if a defined number of distinct reported answers accumulate from the same device within a rolling time window, the same kind of restriction record is created as a safety net regardless of the AI's individual outcomes. This constitutes automated decision-making within the meaning of Article 22 of the GDPR, and the rights described in Section 7 — including the right to request human review — apply equally here</li>
+      <li><strong>Per-question blocking:</strong> independently of reporting, you may block a specific answerer's device from your own open question. We keep a permanent record pairing your question with that device identifier for this purpose, similar to the Anonymous Link blocking record described in Section 14; it does not affect that device's ability to answer other people's open questions</li>
+      <li><strong>Answer-volume rate limiting:</strong> to prevent flooding, we keep a short-lived, rolling 24-hour counter of how many answers a single device has submitted to a specific open question</li>
+      <li>All other rights described in Section 7 apply equally to data processed under this section</li>
+    </ul>
+  </div>
+
 </section>
 
 <section class="lang-block" id="ru">
@@ -324,7 +338,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Политика конфиденциальности</div>
     <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 22.08.2026</p>
+    <p class="doc-date">Дата последнего обновления: 04.09.2026</p>
   </div>
 
   <div class="section">
@@ -539,6 +553,20 @@
     </ul>
   </div>
 
+  <div class="section">
+    <h2 class="section-title">16. Открытые вопросы и ответы</h2>
+    <p>NearChat предлагает дополнительную функцию, позволяющую создать публичный «открытый вопрос» — ссылку и QR-код, по которым любой человек может анонимно отправить вам текстовый ответ, не создавая аккаунт. Этот раздел объясняет обработку данных, специфичную для этой функции, в дополнение к общим правилам выше.</p>
+    <ul>
+      <li><strong>Данные вопроса:</strong> при создании открытого вопроса мы храним текст вопроса, идентификатор вашего аккаунта и короткий слаг, используемый для формирования вашей ссылки;</li>
+      <li><strong>Данные ответа:</strong> когда кто-то отвечает на ваш открытый вопрос, мы храним текст ответа, временную метку и идентификатор устройства отвечающего (Android ID) — не какой-либо личный аккаунт, поскольку для ответа не требуется входить в систему;</li>
+      <li><strong>Данные жалобы:</strong> если вы жалуетесь на ответ, мы храним причину жалобы, ссылку на зарепорченный ответ, идентификатор вашего аккаунта и временную метку; данные хранятся для проверки модерацией, администратор может удалить жалобу после того, как она рассмотрена;</li>
+      <li><strong>Автоматизированное ограничение устройства:</strong> каждый зарепорченный ответ анализируется той же автоматизированной ИИ-системой, что описана в разделе 13, адаптированной для разбора одного ответа. Если она подтверждает нарушение, мы создаём запись, ограничивающую отвечающее устройство в отправке новых ответов где-либо в приложении, на срок, определяемый текущими правилами платформы; эта запись заменяется новой, если устройство ограничивается повторно позже. Независимо от этого, при накоплении определённого числа различных зарепорченных ответов с одного устройства за скользящий промежуток времени создаётся такая же запись-ограничение в качестве дополнительной меры безопасности, вне зависимости от отдельных решений ИИ. Это представляет собой автоматизированную обработку в значении статьи 22 GDPR, и права, описанные в разделе 7 — включая право потребовать проверки человеком — в равной мере применяются здесь;</li>
+      <li><strong>Блокировка для конкретного вопроса:</strong> независимо от подачи жалобы, вы можете заблокировать устройство конкретного отвечающего именно для своего открытого вопроса. Мы храним постоянную запись, связывающую ваш вопрос с этим идентификатором устройства для этой цели, аналогично записи о блокировке в анонимных чатах по ссылке (раздел 14); это не влияет на возможность этого устройства отвечать на открытые вопросы других людей;</li>
+      <li><strong>Ограничение частоты ответов:</strong> чтобы предотвратить флуд, мы храним кратковременный скользящий 24-часовой счётчик того, сколько ответов одно устройство отправило на конкретный открытый вопрос;</li>
+      <li>Все прочие права, описанные в разделе 7, в равной мере применяются к данным, обрабатываемым в рамках этого раздела.</li>
+    </ul>
+  </div>
+
 </section>
 
 <section class="lang-block" id="az">
@@ -546,7 +574,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">Məxfilik siyasəti</div>
     <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 22.08.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 04.09.2026</p>
   </div>
 
   <div class="section">
@@ -760,6 +788,20 @@
     </ul>
   </div>
 
+  <div class="section">
+    <h2 class="section-title">16. Açıq suallar və cavablar</h2>
+    <p>NearChat sizə ictimai "açıq sual" yaratmaq imkanı verən əlavə funksiya təklif edir — paylaşıla bilən keçid və QR-kod, bunların vasitəsilə istənilən şəxs hesab yaratmadan sizə anonim mətn cavabı göndərə bilər. Bu bölmə yuxarıdakı ümumi qaydalara əlavə olaraq bu funksiyaya xas məlumat emalını izah edir.</p>
+    <ul>
+      <li><strong>Sual məlumatları:</strong> açıq sual yaratdıqda, sual mətnini, hesab identifikatorunuzu və keçidinizi formalaşdırmaq üçün istifadə olunan qısa slaqı saxlayırıq;</li>
+      <li><strong>Cavab məlumatları:</strong> kimsə açıq sualınıza cavab verdikdə, cavab mətnini, zaman möhürünü və cavab verənin cihaz identifikatorunu (Android ID) saxlayırıq — heç bir şəxsi hesabı deyil, çünki cavab vermək üçün daxil olmaq tələb olunmur;</li>
+      <li><strong>Şikayət məlumatları:</strong> bir cavaba şikayət etdikdə, şikayət səbəbini, şikayət edilmiş cavaba istinadı, hesab identifikatorunuzu və zaman möhürünü saxlayırıq; məlumatlar moderasiya baxışı üçün saxlanılır, administrator baxıldıqdan sonra şikayəti silə bilər;</li>
+      <li><strong>Avtomatlaşdırılmış cihaz məhdudiyyəti:</strong> hər bir şikayət edilmiş cavab Bölmə 13-də təsvir edilən eyni avtomatlaşdırılmış SI sistemi tərəfindən, tək bir cavabı nəzərdən keçirmək üçün uyğunlaşdırılmış şəkildə təhlil edilir. Pozuntu təsdiqlənərsə, cavab verən cihazı tətbiqin heç bir yerində yeni cavab göndərməkdən məhdudlaşdıran qeyd yaradırıq — müddət platformanın cari qaydaları ilə müəyyən edilir; cihaz sonradan yenidən məhdudlaşdırılarsa, bu qeyd yenisi ilə əvəz olunur. Bundan asılı olmayaraq, eyni cihazdan müəyyən sayda fərqli şikayət edilmiş cavab müəyyən zaman pəncərəsi ərzində toplandıqda, SI-nin fərdi nəticələrindən asılı olmayaraq eyni növ məhdudiyyət qeydi təhlükəsizlik tədbiri kimi yaradılır. Bu, GDPR-in 22-ci maddəsi mənasında avtomatlaşdırılmış qərar qəbuludur və Bölmə 7-də təsvir edilən hüquqlar — o cümlədən insan tərəfindən yenidən baxılmasını tələb etmək hüququ — burada da eyni dərəcədə tətbiq olunur;</li>
+      <li><strong>Konkret sual üçün bloklama:</strong> şikayət verməkdən asılı olmayaraq, konkret cavab verənin cihazını yalnız öz açıq sualınız üçün bloklaya bilərsiniz. Bu məqsədlə sualınızı həmin cihaz identifikatoru ilə əlaqələndirən daimi qeyd saxlayırıq, Bölmə 14-də təsvir edilən anonim keçid bloklama qeydinə bənzər şəkildə; bu, həmin cihazın başqalarının açıq suallarına cavab vermə imkanına təsir etmir;</li>
+      <li><strong>Cavab tezliyinin məhdudlaşdırılması:</strong> daşqının qarşısını almaq üçün, bir cihazın konkret açıq suala göndərdiyi cavabların sayının qısamüddətli, sürüşkən 24 saatlıq sayğacını saxlayırıq;</li>
+      <li>Bölmə 7-də təsvir edilən bütün digər hüquqlar bu bölmə çərçivəsində emal edilən məlumatlara eyni dərəcədə tətbiq olunur.</li>
+    </ul>
+  </div>
+
 </section>
 
 <section class="lang-block" id="tr">
@@ -767,7 +809,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇹🇷</span><span class="lang-divider-name">Türkçe</span></div>
     <div class="doc-label">Gizlilik Politikası</div>
     <h1 class="doc-title">NearChat Gizlilik Politikası</h1>
-    <p class="doc-date">Son güncelleme: 22 Ağustos 2026</p>
+    <p class="doc-date">Son güncelleme: 4 Eylül 2026</p>
   </div>
 
   <div class="section">
@@ -992,6 +1034,20 @@
       <li><strong>Referans kötüye kullanımının önlenmesi:</strong> aynı fiziksel cihazın, uygulama verilerini temizleyip farklı bir hesapla giriş yaparak "yeni kullanıcı" ödülünü tekrar tekrar talep etmesini önlemek için, bir cihaz kimliğini, daha önce bir kez davet edilen yeni kullanıcı olarak ödüllendirildiği gerçeğiyle eşleştiren kalıcı bir kayıt tutarız. Bu kayıt, Bölüm 14'te açıklanan anonim sohbet engelleme kaydıyla aynı nedenle süresiz olarak saklanır — tüm amacı yerinde kalmaktır</li>
       <li><strong>Promosyon kodları:</strong> promosyon kodları tarafımızca oluşturulur ve yönetilir; her biri belirli sayıda Premium günü verebilir ve maksimum kullanım sayısıyla sınırlandırılabilir veya istediğimiz zaman devre dışı bırakılabilir. Aynı promosyon kodunun aynı cihazdan birden fazla kez kullanılması, referans kodlarıyla aynı şekilde engellenir</li>
       <li>Bölüm 7'de açıklanan diğer tüm haklar, bu bölüm kapsamında işlenen verilere de eşit şekilde uygulanır</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">16. Açık Sorular ve Cevaplar</h2>
+    <p>NearChat, hesap oluşturmadan herhangi birinin size anonim bir metin cevabı gönderebileceği paylaşılabilir bir bağlantı ve QR kod içeren, herkese açık bir "açık soru" oluşturmanıza olanak tanıyan isteğe bağlı bir özellik sunar. Bu bölüm, yukarıdaki genel kurallara ek olarak bu özelliğe özgü veri işlemeyi açıklar.</p>
+    <ul>
+      <li><strong>Soru verileri:</strong> bir açık soru oluşturduğunuzda, soru metnini, hesap kimliğinizi ve bağlantınızı oluşturmak için kullanılan kısa bir kod (slug) saklarız</li>
+      <li><strong>Cevap verileri:</strong> biri açık sorunuza cevap verdiğinde, cevap metnini, bir zaman damgasını ve cevaplayanın cihaz kimliğini (Android ID) saklarız — cevap vermek oturum açmayı gerektirmediği için herhangi bir kişisel hesabı değil</li>
+      <li><strong>Bildirim verileri:</strong> bir cevabı bildirdiğinizde, bildirim nedenini, bildirilen cevaba bir referansı, hesap kimliğinizi ve bir zaman damgasını, moderasyon incelemesi için saklarız; bir yönetici incelendikten sonra bildirimi silebilir</li>
+      <li><strong>Otomatik cihaz kısıtlaması:</strong> bildirilen her cevap, Bölüm 13'te açıklanan aynı otomatik YZ sistemi tarafından, tek bir cevabı incelemek üzere uyarlanmış şekilde analiz edilir. Bir ihlal doğrulanırsa, cevaplayan cihazı uygulamanın hiçbir yerinde yeni cevap göndermekten kısıtlayan bir kayıt oluştururuz — süre geçerli platform kurallarına göre belirlenir; cihaz daha sonra tekrar kısıtlanırsa bu kayıt yenisiyle değiştirilir. Bundan bağımsız olarak, aynı cihazdan belirli sayıda farklı bildirilen cevap belirli bir zaman aralığında birikirse, YZ'nin bireysel sonuçlarından bağımsız olarak bir güvenlik önlemi olarak aynı türde bir kısıtlama kaydı oluşturulur. Bu, GDPR'nin 22. Maddesi anlamında otomatik karar vermeyi oluşturur ve Bölüm 7'de açıklanan haklar — insan incelemesi talep etme hakkı dahil — burada da eşit şekilde geçerlidir</li>
+      <li><strong>Soruya özgü engelleme:</strong> bildirimde bulunmaktan bağımsız olarak, belirli bir cevaplayanın cihazını yalnızca kendi açık sorunuz için engelleyebilirsiniz. Bu amaçla, Bölüm 14'te açıklanan Anonim Bağlantı engelleme kaydına benzer şekilde, sorunuzu bu cihaz kimliğiyle ilişkilendiren kalıcı bir kayıt tutarız; bu, o cihazın başkalarının açık sorularını cevaplama yeteneğini etkilemez</li>
+      <li><strong>Cevap hacmi sınırlaması:</strong> spam'i önlemek için, tek bir cihazın belirli bir açık soruya kaç cevap gönderdiğine dair kısa ömürlü, kayan 24 saatlik bir sayaç tutarız</li>
+      <li>Bölüm 7'de açıklanan diğer tüm haklar, bu bölüm kapsamında işlenen verilere eşit şekilde uygulanır</li>
     </ul>
   </div>
 
