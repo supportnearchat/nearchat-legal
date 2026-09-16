@@ -89,7 +89,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Terms of Service</div>
     <h1 class="doc-title">NearChat User Agreement</h1>
-    <p class="doc-date">Last updated: September 4, 2026</p>
+    <p class="doc-date">Last updated: September 16, 2026</p>
   </div>
 
   <div class="section">
@@ -118,6 +118,8 @@
       <li>Using the app for human trafficking, exploitation or any form of coercion</li>
       <li>Attempting to circumvent moderation, bans or technical restrictions of the app</li>
       <li>Filing reports in bad faith, including coordinated or repeated unfounded reports intended to get another user muted or banned</li>
+          <li>Accessing the service, its public web pages or its backend by automated means (bots, scripts, emulated devices) or bypassing the app's integrity checks; posting or answering by automated means</li>
+      <li>Posting chat requests that contain contact details, advertising, links, or content prohibited above; the Code of Conduct applies in full to chat requests (Section 20) and to answers submitted from the web page</li>
     </ul>
   </div>
 
@@ -159,12 +161,18 @@
     <p>Blocks are enforced simultaneously via the device identifier (Android ID) and Firebase UID. Automatic enforcement may be applied by the AI system when a threshold of confirmed reports is reached. Manual enforcement may be applied by the moderation team.</p>
     <p><strong>Boomerang mechanism:</strong> if the AI determines that a report was filed in bad faith or constitutes systematic provocation or harassment of the reported user, the person who submitted the report may themselves receive a temporary ban.</p>
     <p><strong>Appeals:</strong> users who believe an enforcement action was applied in error may appeal by contacting support. Each ban or mute is assigned a unique number displayed on the restriction screen — include this number when contacting support. The Administration will review appeals within 30 days. For bans and mutes applied by the AI system, you have the right to request human review of the decision.</p>
+    <p><strong>Escalating restrictions for open-question answers and chat requests:</strong> a first confirmed violation restricts the account or device for 24 hours, a second for 7 days, a third and any further violation for 30 days. Each restriction has a number, a reason and an end date shown in the app or on the web page. Restrictions may also be applied by the moderation team manually, including for an indefinite period in severe cases.</p>
+    <p><strong>Restrictions follow the device:</strong> every ban, mute and restriction is recorded against your device as well as your account. Reinstalling the app, clearing its data, deleting your account or creating a new guest account on the same device does not lift a restriction — a new account created on a restricted device inherits it, and prior violations are taken into account for 90 days after a restriction expires.</p>
+    <p><strong>Report thresholds:</strong> a chat request reported by several different users is hidden from the feed immediately, and an open-question answer that reaches the report threshold is restricted, in each case without waiting for the AI decision; the AI decision, and your right to human review, apply as described in Section 15.</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">9. Account Deletion and Re-registration Cooldown</h2>
     <p>You may delete your account at any time via <strong>Settings → Danger zone → Delete my account and data</strong>, or by submitting a request to support.nearchat@gmail.com. Upon deletion the following are removed: your Firestore profile, Firebase Auth account, RTDB presence, queue and session records, and all local app preferences. This action is permanent and cannot be undone.</p>
     <p>A mandatory 7-day cooldown period applies after account deletion before a new account may be created from the same device. This security measure prevents platform abuse and is strictly tracked via Firebase UID records and device verification. Hardware and account data tied to active server-side bans are retained permanently to ensure ban enforcement.</p>
+    <p><strong>Scope of deletion:</strong> deleting your account also deletes your Anonymous Link and every chat where you are the host, your open-question link with all answers and its card image, your chat requests and responses, and your Premium record. Restrictions recorded against your device remain in force. Premium time remaining on a deleted account is lost.</p>
+    <p><strong>Inactivity:</strong> an account that has not signed in with Google is deleted automatically after 90 days without opening the app, together with all its links and data; you will receive a push notification 7 days before. Accounts signed in with Google are not deleted for inactivity. Retention periods for individual data types are set out in the Privacy Policy (Section 6).</p>
+    <p><strong>Changing your links:</strong> you may change your Anonymous Link and your open-question link from Settings → Danger zone, each no more than once every 7 days per device. The old link stops working immediately; chats and messages you already received are kept. We are not responsible for links you have shared that stop working after you change them.</p>
   </div>
 
   <div class="section">
@@ -241,7 +249,7 @@
       <li><strong>Locally-cached messages:</strong> the app may cache recent Anonymous Link messages on your own device, for your convenience; this local cache is not visible to us or to the other participant (see the Privacy Policy, Section 14, for details)</li>
       <li><strong>Nicknames for a contact:</strong> any nickname you assign to an anonymous contact is stored on our servers as part of the chat record, separately for each side — it is never shown to the other participant, but it is not purely local: it syncs across your devices and follows the retention described in the Privacy Policy (Section 14)</li>
       <li><strong>Transferring chats on a Google account conflict:</strong> if the Google account you sign in with was already linked to a different one of your own anonymous sessions, you may be offered the option to transfer your current guest session's Anonymous Link chats to that account before sign-in completes. This is entirely optional — declining still lets you sign in, it simply does not move your current guest chats, which remain unaffected but inaccessible from the account you switch to</li>
-      <li><strong>Guest mode and optional Google Sign-In:</strong> you may use this feature as a guest, without any account. In guest mode, if you reinstall the app or clear its data, you lose access to your existing links and chats, and any chat where at least one participant has not signed in with Google is automatically deleted 24 hours after the last message. You may optionally sign in with Google to make your account persistent: once both participants of a chat have signed in with Google, that chat is retained for up to 365 days of inactivity instead of 24 hours. We only receive your Google account's email and display name for authentication — the other participant never sees this information and continues to see you as fully anonymous. You may switch to a different Google account or sign out back to guest mode at any time from the account menu. Details on data retention are in the Privacy Policy (Section 14)</li>
+      <li><strong>Guest mode and optional Google Sign-In:</strong> you may use this feature as a guest, without any account. Guest data is not durable: chats where at least one participant has not signed in with Google are deleted 7 days after the last message, and a guest account itself is deleted after 90 days without opening the app, together with its link and chats. Signing in with Google makes your link and — once both participants have signed in — your chats persistent with no inactivity limit, and lets you restore them on another device or after reinstalling. You can delete individual chats at any time and change your link from Settings (once every 7 days per device)</li>
       <li><strong>Deleting your Anonymous Link history:</strong> you may delete your personal link and all associated chat history at any time from Settings, independently of deleting your main account. Chats where you are the host are deleted in full; chats where you are a guest of someone else's link only have your own copy removed. This action is limited to once every 7 days per device</li>
       <li>All other provisions of this Agreement — including the Code of Conduct (Section 3), Child Safety policy (Section 4), and AI Judge provisions (Section 15) — apply in full to Anonymous Link chats</li>
     </ul>
@@ -269,7 +277,25 @@
       <li><strong>AI Judge review:</strong> each reported answer is analysed by the same automated AI Judge system described in Section 15, adapted to review a single answer rather than a two-way conversation. If the AI confirms a violation, the answering device is automatically and temporarily prevented from submitting further answers anywhere in the app, for a duration set by current platform rules; if the AI does not confirm a violation, the report is dismissed. Independently of the AI, if a defined number of distinct reported answers accumulate from the same device within a rolling time window, that device is temporarily restricted as a safety net regardless of the individual AI outcomes. All outcomes are logged and may be reviewed or overridden by a human administrator</li>
       <li><strong>Blocking without reporting:</strong> independently of reporting, you may block a specific answerer's device from your own open question at any time, with or without filing a report; this does not affect that device's ability to answer other people's open questions</li>
       <li><strong>Answer volume limits:</strong> to prevent flooding, the number of answers a single device may submit to the same open question within a 24-hour period is capped by current platform rules</li>
+      <li><strong>Your card image is public:</strong> when you share your open-question link from the app, the card you designed is published as an image that anyone opening the link can see, and is used as the link preview in messengers. Do not put on the card anything you would not want to be public; the Code of Conduct applies to card content</li>
+      <li><strong>Answering from the web page:</strong> people who answer from the public web page are bound by this Agreement and the Code of Conduct in the same way as app users; volume limits and restrictions apply to their browser, and a restricted browser is shown the restriction number, reason and end date</li>
+      <li><strong>Escalating restrictions:</strong> restrictions for reported answers last 24 hours, 7 days and 30 days for the first, second and subsequent violations respectively (Section 8)</li>
+      <li><strong>Changing your link:</strong> you may change your open-question link once every 7 days per device; the old link stops working immediately and answers you already received are kept</li>
       <li>Data handling specific to this feature — including what is stored, for how long, and your rights — is described in the Privacy Policy (Section 16)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">20. Chat Requests</h2>
+    <p>NearChat offers an optional "Chat Requests" feature: you may post a short public request describing who you would like to talk to, and other users may respond. By posting or responding to a request you additionally agree to the following:</p>
+    <ul>
+      <li><strong>Public by design:</strong> your request — its text and the gender, age range, topic and audience you selected — is visible to all users of the app while it is open. Your identity is not shown; do not include contact details or anything that identifies you or a third party</li>
+      <li><strong>One request at a time:</strong> only one open request per account is allowed. A request closes automatically 24 hours after posting or as soon as you accept a response; you may close it yourself at any time</li>
+      <li><strong>Responses and chats:</strong> responding to a request or accepting a response starts a regular chat session between the two of you, governed by the same rules, moderation and retention as the main matchmaking chat; there is no "next partner" in such a chat. Only one active chat at a time is possible — while a chat is active you cannot start a new search or accept another response</li>
+      <li><strong>Code of Conduct applies in full:</strong> the rules in Section 3 apply to request text and to the resulting chat. Requests may be reported by any user; a request reported by several different users is hidden immediately</li>
+      <li><strong>Enforcement:</strong> a violation confirmed by the AI Judge (Section 15) restricts the author from posting requests and responding to them for 24 hours, 7 days or 30 days for the first, second and subsequent violations, recorded against both the account and the device (Section 8); a ban from the main matchmaking chat also prevents using chat requests</li>
+      <li><strong>Remembered choices:</strong> the parameters you last used are remembered on your device for convenience; you remain responsible for what you post each time</li>
+      <li>Data handling specific to this feature is described in the Privacy Policy (Section 17)</li>
     </ul>
   </div>
 
@@ -280,7 +306,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Пользовательское соглашение</div>
     <h1 class="doc-title">Пользовательское соглашение NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 04.09.2026</p>
+    <p class="doc-date">Дата последнего обновления: 16.09.2026</p>
   </div>
 
   <div class="section">
@@ -309,6 +335,8 @@
       <li>Использование приложения для торговли людьми, эксплуатации или любых форм принуждения;</li>
       <li>Попытки обойти систему модерации, блокировки или технические ограничения приложения;</li>
       <li>Подача жалоб недобросовестно, включая скоординированные или повторные необоснованные жалобы с целью добиться мута или бана другого пользователя.</li>
+          <li>Доступ к сервису, его публичным веб-страницам или серверной части автоматизированными средствами (боты, скрипты, эмулированные устройства) или обход проверок целостности приложения; публикация или отправка ответов автоматизированными средствами</li>
+      <li>Публикация заявок на разговор, содержащих контактные данные, рекламу, ссылки или запрещённый выше контент; правила поведения в полном объёме распространяются на заявки (Раздел 20) и на ответы, отправленные с веб-страницы</li>
     </ul>
   </div>
 
@@ -350,12 +378,18 @@
     <p>Блокировки одновременно применяются к идентификатору устройства (Android ID) и Firebase UID. Автоматические санкции накладываются ИИ-системой при достижении порогового числа подтверждённых жалоб. Ручные санкции могут применяться командой модерации.</p>
     <p><strong>Механизм «бумеранга»:</strong> если ИИ устанавливает, что жалоба была подана недобросовестно или представляет собой систематическую провокацию или преследование ответчика, сам заявитель может получить временный бан.</p>
     <p><strong>Апелляции:</strong> пользователи могут обжаловать любое ограничение, обратившись в поддержку. Каждый бан или мут получает уникальный номер, отображаемый на экране ограничения — укажите его при обращении. Срок рассмотрения — 30 дней. По решениям, принятым ИИ-системой, вы имеете право потребовать проверки живым администратором.</p>
+    <p><strong>Нарастающие ограничения за ответы на открытые вопросы и заявки:</strong> первое подтверждённое нарушение ограничивает аккаунт или устройство на 24 часа, второе — на 7 дней, третье и последующие — на 30 дней. У каждого ограничения есть номер, причина и дата окончания, показываемые в приложении или на веб-странице. Ограничения также могут применяться командой модерации вручную, в том числе бессрочно в серьёзных случаях.</p>
+    <p><strong>Ограничения следуют за устройством:</strong> каждый бан, мут и ограничение фиксируются не только за аккаунтом, но и за устройством. Переустановка приложения, очистка его данных, удаление аккаунта или создание нового гостевого аккаунта на том же устройстве не снимают ограничение — новый аккаунт, созданный на ограниченном устройстве, наследует его, а прошлые нарушения учитываются в течение 90 дней после окончания ограничения.</p>
+    <p><strong>Пороги жалоб:</strong> заявка, на которую пожаловались несколько разных пользователей, скрывается из ленты немедленно, а ответ на открытый вопрос, набравший порог жалоб, ограничивается — в обоих случаях не дожидаясь решения ИИ; решение ИИ и ваше право на рассмотрение человеком действуют, как описано в Разделе 15.</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">9. Удаление аккаунта и кулдаун перерегистрации</h2>
     <p>Вы можете полностью удалить свой аккаунт в любой момент через меню: <strong>Настройки → Опасная зона → Удалить мой аккаунт и данные</strong>, либо отправив запрос на support.nearchat@gmail.com. При удалении безвозвратно стираются: профиль Firestore, аккаунт Firebase Auth, статус в реальном времени (RTDB), записи очередей и активных сессий.</p>
     <p>После удаления аккаунта действует обязательный 7-дневный кулдаун (период ожидания), прежде чем с этого же устройства можно будет зарегистрировать новый аккаунт. Эта защитная мера от спама и злоупотреблений отслеживается сервером через Firebase UID и технические идентификаторы. Данные устройств, заблокированных за грубые нарушения, сохраняются системой бессрочно.</p>
+    <p><strong>Объём удаления:</strong> удаление аккаунта также удаляет вашу анонимную ссылку и все чаты, где вы хост, ссылку на открытый вопрос со всеми ответами и картинкой карточки, ваши заявки на разговор и отклики, а также запись о Премиуме. Ограничения, зафиксированные за вашим устройством, продолжают действовать. Оставшееся время Премиума на удалённом аккаунте теряется.</p>
+    <p><strong>Неактивность:</strong> аккаунт, не вошедший через Google, автоматически удаляется после 90 дней без запуска приложения вместе со всеми ссылками и данными; за 7 дней до этого вы получите push-уведомление. Аккаунты, вошедшие через Google, за неактивность не удаляются. Сроки хранения отдельных типов данных приведены в Политике конфиденциальности (Раздел 6).</p>
+    <p><strong>Смена ссылок:</strong> вы можете сменить анонимную ссылку и ссылку на открытый вопрос в Настройки → Опасная зона, каждую не чаще раза в 7 дней на устройство. Старая ссылка сразу перестаёт работать; уже полученные чаты и сообщения сохраняются. Мы не несём ответственности за то, что ссылки, которыми вы поделились, перестают работать после смены.</p>
   </div>
 
   <div class="section">
@@ -432,7 +466,7 @@
       <li><strong>Локально кешируемые сообщения:</strong> приложение может кешировать недавние сообщения анонимных чатов по ссылке только на вашем собственном устройстве, для вашего удобства; этот локальный кеш не виден нам и не виден другому участнику (подробности см. в Политике конфиденциальности, раздел 14);</li>
       <li><strong>Псевдоним собеседника:</strong> любой псевдоним, который вы присваиваете анонимному собеседнику, хранится на наших серверах как часть записи чата, отдельно для каждой стороны — он никогда не показывается собеседнику, но это не чисто локальные данные: он синхронизируется между вашими устройствами и подчиняется срокам хранения, описанным в Политике конфиденциальности (раздел 14);</li>
       <li><strong>Перенос чатов при конфликте Google-аккаунтов:</strong> если Google-аккаунт, через который вы входите, уже был привязан к другой вашей анонимной сессии, перед завершением входа вам может быть предложено перенести чаты текущей гостевой сессии по анонимной ссылке на этот аккаунт. Это полностью необязательно — отказ всё равно позволит войти, просто без переноса текущих гостевых чатов, которые останутся нетронутыми, но недоступными из аккаунта, на который вы переключаетесь;</li>
-      <li><strong>Гостевой режим и опциональный вход через Google:</strong> вы можете пользоваться этой функцией как гость, без какого-либо аккаунта. В гостевом режиме, если вы переустановите приложение или очистите его данные, вы теряете доступ к существующим ссылкам и чатам, а любой чат, где хотя бы один участник не вошёл через Google, автоматически удаляется через 24 часа после последнего сообщения. Вы можете опционально войти через Google, чтобы сделать свой аккаунт постоянным: как только оба участника чата войдут через Google, этот чат хранится до 365 дней бездействия вместо 24 часов. Мы получаем только email и отображаемое имя вашего Google-аккаунта для аутентификации — собеседник никогда не видит эту информацию и по-прежнему видит вас полностью анонимным. Вы можете в любой момент сменить Google-аккаунт или выйти обратно в гостевой режим через меню аккаунта. Подробности о хранении данных — в Политике конфиденциальности (раздел 14);</li>
+      <li><strong>Гостевой режим и опциональный вход через Google:</strong> вы можете пользоваться этой функцией как гость, без аккаунта. Гостевые данные не являются постоянными: чаты, где хотя бы один участник не вошёл через Google, удаляются через 7 дней после последнего сообщения, а сам гостевой аккаунт — после 90 дней без запуска приложения, вместе со ссылкой и чатами. Вход через Google делает вашу ссылку и — когда оба участника вошли — ваши чаты постоянными без ограничения по неактивности и позволяет восстановить их на другом устройстве или после переустановки. Вы можете удалять отдельные чаты в любой момент и менять ссылку в настройках (раз в 7 дней на устройство)</li>
       <li><strong>Удаление истории чата по ссылке:</strong> вы можете удалить свою личную ссылку и всю связанную историю чатов в любой момент через настройки, независимо от удаления основного аккаунта. Чаты, где вы хост, удаляются полностью; в чатах, где вы гость чужой ссылки, удаляется только ваша копия. Это действие ограничено одним разом в 7 дней на устройство;</li>
       <li>Все прочие положения настоящего Соглашения — включая Правила поведения (раздел 3), политику безопасности детей (раздел 4) и положения об ИИ-судье (раздел 15) — в полной мере применяются к анонимным чатам по ссылке.</li>
     </ul>
@@ -460,7 +494,25 @@
       <li><strong>Проверка ИИ-судьёй:</strong> каждый зарепорченный ответ анализируется той же автоматизированной системой ИИ-судьи, что описана в разделе 15, адаптированной для разбора одного ответа, а не двусторонней переписки. Если ИИ подтверждает нарушение, отвечающее устройство автоматически и временно лишается возможности отправлять новые ответы где-либо в приложении — на срок, определяемый текущими правилами платформы; если ИИ не подтверждает нарушение, жалоба отклоняется. Независимо от ИИ, при накоплении определённого числа различных зарепорченных ответов с одного устройства за скользящий промежуток времени это устройство временно ограничивается в качестве дополнительной меры безопасности, вне зависимости от отдельных решений ИИ. Все результаты фиксируются и могут быть проверены или изменены администратором-человеком;</li>
       <li><strong>Блокировка без жалобы:</strong> независимо от подачи жалобы, вы можете в любой момент заблокировать устройство конкретного отвечающего именно для своего открытого вопроса, с жалобой или без неё; это не влияет на возможность этого устройства отвечать на открытые вопросы других людей;</li>
       <li><strong>Ограничение числа ответов:</strong> чтобы предотвратить флуд, количество ответов, которое одно устройство может отправить на один и тот же открытый вопрос в течение 24 часов, ограничено текущими правилами платформы;</li>
+      <li><strong>Картинка вашей карточки публична:</strong> когда вы делитесь ссылкой на открытый вопрос из приложения, оформленная вами карточка публикуется как изображение, которое видит любой, кто откроет ссылку, и используется как превью ссылки в мессенджерах. Не размещайте на карточке то, что не хотите сделать публичным; правила поведения распространяются на содержимое карточки</li>
+      <li><strong>Ответы с веб-страницы:</strong> лица, отвечающие с публичной веб-страницы, связаны настоящим Соглашением и правилами поведения так же, как пользователи приложения; лимиты и ограничения применяются к их браузеру, а ограниченному браузеру показываются номер ограничения, причина и дата окончания</li>
+      <li><strong>Нарастающие ограничения:</strong> ограничения за ответы, на которые поступили жалобы, длятся 24 часа, 7 дней и 30 дней за первое, второе и последующие нарушения соответственно (Раздел 8)</li>
+      <li><strong>Смена ссылки:</strong> вы можете сменить ссылку на открытый вопрос раз в 7 дней на устройство; старая ссылка сразу перестаёт работать, уже полученные ответы сохраняются</li>
       <li>Обработка данных, специфичная для этой функции — что именно хранится, как долго и какие у вас права — описана в Политике конфиденциальности (раздел 16).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">20. Заявки на разговор</h2>
+    <p>NearChat предлагает опциональную функцию «Заявки на разговор»: вы можете опубликовать короткую публичную заявку с описанием, с кем хотели бы поговорить, а другие пользователи могут на неё откликнуться. Публикуя заявку или откликаясь на неё, вы дополнительно соглашаетесь со следующим:</p>
+    <ul>
+      <li><strong>Публичность по замыслу:</strong> ваша заявка — её текст и выбранные пол, возраст, тема и аудитория — видна всем пользователям приложения, пока она открыта. Ваша личность не показывается; не указывайте контактные данные и ничего, что идентифицирует вас или третьих лиц</li>
+      <li><strong>Одна заявка за раз:</strong> допускается только одна открытая заявка на аккаунт. Заявка закрывается автоматически через 24 часа после публикации или как только вы принимаете отклик; вы можете закрыть её сами в любой момент</li>
+      <li><strong>Отклики и чаты:</strong> отклик на заявку или принятие отклика запускает между вами обычную чат-сессию, на которую распространяются те же правила, модерация и сроки хранения, что и на основной чат; в таком чате нет «следующего собеседника». Одновременно возможен только один активный чат — пока чат идёт, нельзя начать новый поиск или принять другой отклик</li>
+      <li><strong>Правила поведения в полном объёме:</strong> правила Раздела 3 распространяются на текст заявки и на возникший чат. На заявку может пожаловаться любой пользователь; заявка, на которую пожаловались несколько разных пользователей, скрывается немедленно</li>
+      <li><strong>Санкции:</strong> нарушение, подтверждённое ИИ-судьёй (Раздел 15), ограничивает автору публикацию заявок и отклики на 24 часа, 7 дней или 30 дней за первое, второе и последующие нарушения, с фиксацией и за аккаунтом, и за устройством (Раздел 8); бан в основном чате также запрещает пользоваться заявками</li>
+      <li><strong>Запомненный выбор:</strong> параметры, использованные в прошлый раз, запоминаются на вашем устройстве для удобства; ответственность за то, что вы публикуете каждый раз, остаётся на вас</li>
+      <li>Обработка данных, специфичная для этой функции, описана в Политике конфиденциальности (Раздел 17)</li>
     </ul>
   </div>
 
@@ -471,7 +523,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">İstifadəçi müqaviləsi</div>
     <h1 class="doc-title">NearChat İstifadəçi Müqaviləsi</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 04.09.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 16.09.2026</p>
   </div>
 
   <div class="section">
@@ -500,6 +552,8 @@
       <li>Tətbiqdən insan alveri, istismar və ya hər hansı məcburetmə forması üçün istifadə etmək;</li>
       <li>Moderasiya, bloklamalar və ya tətbiqin texniki məhdudiyyətlərini keçməyə çalışmaq;</li>
       <li>Şikayətləri vicdansız şəkildə vermək, o cümlədən digər istifadəçini mute və ya banla nəticələndirmək məqsədilə koordinasiyalı və ya təkrar əsassız şikayətlər.</li>
+          <li>Xidmətə, onun açıq veb səhifələrinə və ya server hissəsinə avtomatlaşdırılmış vasitələrlə (botlar, skriptlər, emulyasiya olunmuş cihazlar) daxil olmaq və ya tətbiqin bütövlük yoxlamalarını keçmək; avtomatlaşdırılmış vasitələrlə yerləşdirmək və ya cavab vermək</li>
+      <li>Əlaqə məlumatları, reklam, linklər və ya yuxarıda qadağan olunmuş məzmun ehtiva edən söhbət sorğuları yerləşdirmək; davranış qaydaları söhbət sorğularına (Bölmə 20) və veb səhifədən göndərilən cavablara tam şəkildə tətbiq olunur</li>
     </ul>
   </div>
 
@@ -541,12 +595,18 @@
     <p>Bloklama eyni anda həm cihaz identifikatoruna (Android ID), həm də Firebase UID-ə tətbiq edilir. Avtomatik sanksiyalar müəyyən edilmiş şikayət həddi aşıldıqda SI sistemi tərəfindən tətbiq edilə bilər. Manual sanksiyalar moderasiya qrupu tərəfindən tətbiq olunur.</p>
     <p><strong>"Bumerang" mexanizmi:</strong> SI şikayətin vicdansız şəkildə və ya həmsöhbəti sistematik şəkildə təqib etmək məqsədilə verildiyi qənaətinə gələrsə, şikayətçinin özü müvəqqəti ban ala bilər.</p>
     <p><strong>Apellyasiyalar:</strong> istifadəçilər hər hansı məhdudiyyəti etiraz etmək üçün dəstək xidmətinə müraciət edə bilərlər. Hər ban və ya mute məhdudiyyət ekranında göstərilən unikal nömrə ilə müşayiət olunur — müraciət zamanı onu qeyd edin. Baxılma müddəti — 30 gün. SI sistemi tərəfindən verilmiş qərarlara insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var.</p>
+    <p><strong>Açıq suallara cavablar və söhbət sorğuları üzrə artan məhdudiyyətlər:</strong> ilk təsdiqlənmiş pozuntu hesabı və ya cihazı 24 saat, ikincisi 7 gün, üçüncü və sonrakılar 30 gün məhdudlaşdırır. Hər məhdudiyyətin tətbiqdə və ya veb səhifədə göstərilən nömrəsi, səbəbi və bitmə tarixi var. Məhdudiyyətlər moderasiya komandası tərəfindən əl ilə də, ciddi hallarda müddətsiz olaraq da tətbiq oluna bilər.</p>
+    <p><strong>Məhdudiyyətlər cihazı izləyir:</strong> hər ban, mute və məhdudiyyət hesabınızla yanaşı cihazınıza da qeyd olunur. Tətbiqi yenidən quraşdırmaq, məlumatlarını təmizləmək, hesabı silmək və ya eyni cihazda yeni qonaq hesabı yaratmaq məhdudiyyəti götürmür — məhdudlaşdırılmış cihazda yaradılan yeni hesab onu miras alır, əvvəlki pozuntular isə məhdudiyyət bitdikdən sonra 90 gün nəzərə alınır.</p>
+    <p><strong>Şikayət hədləri:</strong> bir neçə fərqli istifadəçinin şikayət etdiyi söhbət sorğusu dərhal lentdən gizlədilir, şikayət həddinə çatan açıq sual cavabı isə məhdudlaşdırılır — hər iki halda SI qərarını gözləmədən; SI qərarı və insan tərəfindən baxılma hüququnuz Bölmə 15-də təsvir edildiyi kimi tətbiq olunur.</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">9. Hesabın silinməsi və yenidən qeydiyyat gözləmə müddəti (Cooldown)</h2>
     <p>Hesabınızı istənilən vaxt tətbiqdəki menyudan: <strong>Ayarlar → Təhlükəli zona → Hesabımı və məlumatlarımı sil</strong> bölməsindən və ya support.nearchat@gmail.com ünvanına müraciət edərək silə bilərsiniz. Silindikdə Firestore profili, Firebase Auth hesabı, RTDB statusu, növbə və sessiya qeydləri silinir. Bu proses geri qaytarıla bilməz.</p>
     <p>Hesab silindikdən sonra sui-istifadənin və blokdan yayınma hallarının qarşısını almaq üçün eyni cihazdan yeni hesabın yaradılması üçün 7 günlük məcburi gözləmə müddəti (cooldown) tətbiq olunur. Bu proses server tərəfindən Firebase UID və cihaz göstəriciləri vasitəsilə izlənilir. Ciddi qayda pozuntularına görə ban olunmuş cihazların məlumatları sistemdə daimi saxlanılır.</p>
+    <p><strong>Silinmənin əhatəsi:</strong> hesabın silinməsi həmçinin anonim linkinizi və host olduğunuz bütün çatları, bütün cavabları və kart şəkli ilə açıq sual linkinizi, söhbət sorğularınızı və cavablarınızı, habelə Premium qeydinizi silir. Cihazınıza qeyd olunmuş məhdudiyyətlər qüvvədə qalır. Silinmiş hesabda qalan Premium vaxtı itir.</p>
+    <p><strong>Qeyri-aktivlik:</strong> Google ilə daxil olmayan hesab tətbiq 90 gün açılmadıqda bütün linkləri və məlumatları ilə birlikdə avtomatik silinir; 7 gün əvvəl push bildirişi alacaqsınız. Google ilə daxil olmuş hesablar qeyri-aktivliyə görə silinmir. Ayrı-ayrı məlumat növlərinin saxlanma müddətləri Məxfilik Siyasətində (Bölmə 6) göstərilib.</p>
+    <p><strong>Linklərin dəyişdirilməsi:</strong> anonim linkinizi və açıq sual linkinizi Tənzimləmələr → Təhlükəli zona bölməsindən hər birini cihaz başına 7 gündə bir dəfədən çox olmayaraq dəyişə bilərsiniz. Köhnə link dərhal işləmir; artıq alınan çatlar və mesajlar qalır. Dəyişdikdən sonra paylaşdığınız linklərin işləməməsinə görə məsuliyyət daşımırıq.</p>
   </div>
 
   <div class="section">
@@ -623,7 +683,7 @@
       <li><strong>Lokal keşlənən mesajlar:</strong> tətbiq rahatlığınız üçün anonim keçid çatlarının son mesajlarını yalnız öz cihazınızda keşləyə bilər; bu lokal keş nə bizə, nə də digər iştirakçıya görünür (ətraflı məlumat üçün bax: Məxfilik Siyasəti, Bölmə 14);</li>
       <li><strong>Həmsöhbətin ləqəbi:</strong> anonim həmsöhbətə verdiyiniz istənilən ləqəb serverlərimizdə çat qeydinin bir hissəsi kimi, hər tərəf üçün ayrıca saxlanılır — o heç vaxt həmsöhbətə göstərilmir, lakin bu tamamilə lokal məlumat deyil: cihazlarınız arasında sinxronlaşır və Məxfilik Siyasətində (Bölmə 14) təsvir edilən saxlama müddətlərinə tabedir;</li>
       <li><strong>Google hesab münaqişəsində söhbətlərin köçürülməsi:</strong> daxil olduğunuz Google hesabı artıq sizin başqa anonim sessiyanıza bağlıdırsa, giriş tamamlanmazdan əvvəl cari qonaq sessiyanızdakı link üzrə söhbətləri həmin hesaba köçürmək təklif oluna bilər. Bu tamamilə könüllüdür — imtina etsəniz belə giriş edə bilərsiniz, sadəcə cari qonaq söhbətləriniz köçürülmür, onlar toxunulmaz qalır, lakin keçdiyiniz hesabdan əlçatmaz olur;</li>
-      <li><strong>Qonaq rejimi və könüllü Google ilə giriş:</strong> bu funksiyadan heç bir hesab olmadan, qonaq kimi istifadə edə bilərsiniz. Qonaq rejimində tətbiqi yenidən quraşdırsanız və ya məlumatlarını təmizləsəniz, mövcud linklərinizə və çatlarınıza girişi itirirsiniz, iştirakçılardan azı biri Google ilə daxil olmayan istənilən çat isə son mesajdan 24 saat sonra avtomatik silinir. Hesabınızı daimi etmək üçün könüllü olaraq Google ilə daxil ola bilərsiniz: bir çatın hər iki iştirakçısı Google ilə daxil olduqda, həmin çat 24 saat əvəzinə 365 günə qədər fəaliyyətsizlik müddətində saxlanılır. Biz yalnız identifikasiya üçün Google hesabınızın e-poçtunu və görünən adını alırıq — həmsöhbət bu məlumatı heç vaxt görmür və sizi tam anonim görməyə davam edir. İstənilən vaxt hesab menyusundan başqa Google hesabına keçə və ya qonaq rejiminə qayıda bilərsiniz. Məlumatların saxlanılması haqqında ətraflı — Məxfilik Siyasətində (Bölmə 14);</li>
+      <li><strong>Qonaq rejimi və könüllü Google ilə giriş:</strong> bu funksiyadan heç bir hesab olmadan, qonaq kimi istifadə edə bilərsiniz. Qonaq məlumatları daimi deyil: iştirakçılardan ən azı birinin Google ilə daxil olmadığı çatlar son mesajdan 7 gün sonra, qonaq hesabının özü isə tətbiq 90 gün açılmadıqda linki və çatları ilə birlikdə silinir. Google ilə giriş linkinizi və — hər iki iştirakçı daxil olduqda — çatlarınızı qeyri-aktivlik məhdudiyyəti olmadan daimi edir və onları başqa cihazda və ya yenidən quraşdırdıqdan sonra bərpa etməyə imkan verir. Ayrı-ayrı çatları istənilən vaxt silə və linkinizi Tənzimləmələrdən dəyişə bilərsiniz (cihaz başına 7 gündə bir dəfə)</li>
       <li><strong>Link söhbətinin tarixçəsinin silinməsi:</strong> şəxsi linkinizi və bütün əlaqəli söhbət tarixçəsini istənilən vaxt ayarlardan, əsas hesabınızın silinməsindən asılı olmayaraq silə bilərsiniz. Sahibi olduğunuz çatlar tamamilə silinir; başqasının linkinin qonağı olduğunuz çatlarda isə yalnız sizin nüsxəniz silinir. Bu əməliyyat cihaz üzrə 7 gündə bir dəfə ilə məhdudlaşdırılıb;</li>
       <li>Bu Müqavilənin bütün digər müddəaları — o cümlədən Davranış qaydaları (Bölmə 3), Uşaq təhlükəsizliyi siyasəti (Bölmə 4) və SI Hakim müddəaları (Bölmə 15) — anonim keçid çatlarına tam şəkildə tətbiq edilir.</li>
     </ul>
@@ -651,7 +711,25 @@
       <li><strong>SI Hakim tərəfindən yoxlanılır:</strong> hər bir şikayət edilmiş cavab Bölmə 15-də təsvir edilən eyni avtomatlaşdırılmış SI Hakim sistemi tərəfindən təhlil edilir, tək bir cavabı (ikitərəfli söhbət əvəzinə) nəzərdən keçirmək üçün uyğunlaşdırılmış şəkildə. SI pozuntunu təsdiqləsə, cavab verən cihaz avtomatik və müvəqqəti olaraq tətbiqin heç bir yerində yeni cavab göndərə bilmir — müddət platformanın cari qaydaları ilə müəyyən edilir; SI pozuntunu təsdiqləməsə, şikayət rədd edilir. SI-dan asılı olmayaraq, eyni cihazdan müəyyən sayda fərqli şikayət edilmiş cavab müəyyən zaman pəncərəsi ərzində toplandıqda, bu cihaz fərdi SI nəticələrindən asılı olmayaraq təhlükəsizlik tədbiri kimi müvəqqəti məhdudlaşdırılır. Bütün nəticələr qeydə alınır və insan administrator tərəfindən yoxlanıla və ya dəyişdirilə bilər;</li>
       <li><strong>Şikayətsiz bloklama:</strong> şikayət verməkdən asılı olmayaraq, istənilən vaxt konkret cavab verənin cihazını yalnız öz açıq sualınız üçün bloklaya bilərsiniz, şikayətlə və ya şikayətsiz; bu, həmin cihazın başqalarının açıq suallarına cavab vermə imkanına təsir etmir;</li>
       <li><strong>Cavab sayı məhdudiyyəti:</strong> daşqının qarşısını almaq üçün, bir cihazın eyni açıq suala 24 saat ərzində göndərə biləcəyi cavabların sayı platformanın cari qaydaları ilə məhdudlaşdırılıb;</li>
+      <li><strong>Kart şəkliniz açıqdır:</strong> açıq sual linkinizi tətbiqdən paylaşdıqda tərtib etdiyiniz kart linki açan hər kəsin görə biləcəyi şəkil kimi dərc olunur və messencerlərdə link önizləməsi kimi istifadə edilir. Karta açıq olmasını istəmədiyiniz heç nə qoymayın; davranış qaydaları kart məzmununa tətbiq olunur</li>
+      <li><strong>Veb səhifədən cavab:</strong> açıq veb səhifədən cavab verən şəxslər bu Müqavilə və davranış qaydaları ilə tətbiq istifadəçiləri kimi bağlıdır; həcm limitləri və məhdudiyyətlər onların brauzerinə tətbiq olunur, məhdudlaşdırılmış brauzerə məhdudiyyət nömrəsi, səbəbi və bitmə tarixi göstərilir</li>
+      <li><strong>Artan məhdudiyyətlər:</strong> şikayət edilən cavablar üzrə məhdudiyyətlər birinci, ikinci və sonrakı pozuntular üçün müvafiq olaraq 24 saat, 7 gün və 30 gün davam edir (Bölmə 8)</li>
+      <li><strong>Linkin dəyişdirilməsi:</strong> açıq sual linkinizi cihaz başına 7 gündə bir dəfə dəyişə bilərsiniz; köhnə link dərhal işləmir, artıq alınan cavablar qalır</li>
       <li>Bu funksiyaya xas məlumatların emalı — nə saxlanıldığı, nə qədər müddətə və hüquqlarınız — Məxfilik Siyasətində (Bölmə 16) təsvir edilib.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">20. Söhbət sorğuları</h2>
+    <p>NearChat istəyə bağlı «Söhbət sorğuları» funksiyası təklif edir: kiminlə danışmaq istədiyinizi təsvir edən qısa açıq sorğu yerləşdirə bilərsiniz, digər istifadəçilər isə cavab verə bilər. Sorğu yerləşdirməklə və ya ona cavab verməklə əlavə olaraq aşağıdakılarla razılaşırsınız:</p>
+    <ul>
+      <li><strong>Məqsədli açıqlıq:</strong> sorğunuz — mətni və seçdiyiniz cins, yaş aralığı, mövzu və auditoriya — açıq olduğu müddətdə tətbiqin bütün istifadəçilərinə görünür. Kimliyiniz göstərilmir; əlaqə məlumatları və sizi və ya üçüncü şəxsi tanıdan heç nə daxil etməyin</li>
+      <li><strong>Eyni anda bir sorğu:</strong> hesab başına yalnız bir açıq sorğuya icazə verilir. Sorğu yerləşdirildikdən 24 saat sonra və ya cavabı qəbul edən kimi avtomatik bağlanır; onu istənilən vaxt özünüz bağlaya bilərsiniz</li>
+      <li><strong>Cavablar və çatlar:</strong> sorğuya cavab vermək və ya cavabı qəbul etmək aranızda əsas uyğunlaşdırma söhbəti ilə eyni qaydalara, moderasiyaya və saxlanma müddətlərinə tabe adi söhbət sessiyası başladır; belə çatda «növbəti həmsöhbət» yoxdur. Eyni anda yalnız bir aktiv çat mümkündür — çat davam edərkən yeni axtarış başlatmaq və ya başqa cavabı qəbul etmək olmaz</li>
+      <li><strong>Davranış qaydaları tam şəkildə tətbiq olunur:</strong> Bölmə 3-ün qaydaları sorğu mətninə və yaranan çata tətbiq olunur. Sorğudan istənilən istifadəçi şikayət edə bilər; bir neçə fərqli istifadəçinin şikayət etdiyi sorğu dərhal gizlədilir</li>
+      <li><strong>Sanksiyalar:</strong> SI Hakimin (Bölmə 15) təsdiqlədiyi pozuntu müəllifə birinci, ikinci və sonrakı pozuntular üçün 24 saat, 7 gün və ya 30 gün sorğu yerləşdirməyi və cavab verməyi məhdudlaşdırır, həm hesaba, həm də cihaza qeyd olunur (Bölmə 8); əsas söhbətdəki ban söhbət sorğularından istifadəni də qadağan edir</li>
+      <li><strong>Yadda saxlanan seçim:</strong> son istifadə etdiyiniz parametrlər rahatlıq üçün cihazınızda yadda saxlanılır; hər dəfə yerləşdirdiyinizə görə məsuliyyət sizdədir</li>
+      <li>Bu funksiyaya xas məlumat emalı Məxfilik Siyasətində (Bölmə 17) təsvir edilib</li>
     </ul>
   </div>
 
@@ -662,7 +740,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇹🇷</span><span class="lang-divider-name">Türkçe</span></div>
     <div class="doc-label">Kullanıcı Sözleşmesi</div>
     <h1 class="doc-title">NearChat Kullanıcı Sözleşmesi</h1>
-    <p class="doc-date">Son güncelleme: 4 Eylül 2026</p>
+    <p class="doc-date">Son güncelleme: 16 Eylül 2026</p>
   </div>
 
   <div class="section">
@@ -691,6 +769,8 @@
       <li>Uygulamayı insan ticareti, sömürü veya herhangi bir zorlama biçimi için kullanmak</li>
       <li>Moderasyonu, yasakları veya uygulamanın teknik kısıtlamalarını aşmaya çalışmak</li>
       <li>Başka bir kullanıcının susturulmasını veya yasaklanmasını sağlamak amacıyla, koordineli veya tekrarlanan asılsız şikayetler dahil, kötü niyetle şikayet göndermek</li>
+          <li>Hizmete, genel web sayfalarına veya sunucu tarafına otomatik araçlarla (botlar, komut dosyaları, emüle edilmiş cihazlar) erişmek veya uygulamanın bütünlük kontrollerini atlatmak; otomatik araçlarla yayınlamak veya cevap vermek</li>
+      <li>İletişim bilgileri, reklam, bağlantı veya yukarıda yasaklanan içerik içeren sohbet talepleri yayınlamak; Davranış Kuralları sohbet taleplerine (Bölüm 20) ve web sayfasından gönderilen cevaplara tam olarak uygulanır</li>
     </ul>
   </div>
 
@@ -732,12 +812,18 @@
     <p>Engellemeler, cihaz kimliği (Android ID) ve Firebase UID aracılığıyla eş zamanlı olarak uygulanır. Onaylanmış şikayet eşiğine ulaşıldığında YZ sistemi tarafından otomatik yaptırım uygulanabilir. Manuel yaptırım moderasyon ekibi tarafından uygulanabilir.</p>
     <p><strong>Bumerang mekanizması:</strong> YZ, bir şikayetin kötü niyetle gönderildiğini veya raporlanan kullanıcıya karşı sistematik bir kışkırtma veya taciz oluşturduğunu belirlerse, şikayeti gönderen kişi kendisi geçici bir yasak alabilir.</p>
     <p><strong>İtirazlar:</strong> bir yaptırımın hatalı uygulandığını düşünen kullanıcılar, destek ile iletişime geçerek itiraz edebilir. Her yasak veya susturmaya, kısıtlama ekranında görüntülenen benzersiz bir numara atanır — destekle iletişime geçerken bu numarayı belirtin. Yönetim, itirazları 30 gün içinde inceleyecektir. YZ sistemi tarafından uygulanan yasaklar ve susturmalar için, kararın insan tarafından incelenmesini talep etme hakkınız vardır.</p>
+    <p><strong>Açık soru cevapları ve sohbet talepleri için artan kısıtlamalar:</strong> doğrulanan ilk ihlal hesabı veya cihazı 24 saat, ikincisi 7 gün, üçüncü ve sonraki ihlaller 30 gün kısıtlar. Her kısıtlamanın uygulamada veya web sayfasında gösterilen bir numarası, nedeni ve bitiş tarihi vardır. Kısıtlamalar moderasyon ekibi tarafından manuel olarak, ciddi durumlarda süresiz olarak da uygulanabilir.</p>
+    <p><strong>Kısıtlamalar cihazı takip eder:</strong> her yasak, susturma ve kısıtlama hesabınızın yanı sıra cihazınıza da kaydedilir. Uygulamayı yeniden yüklemek, verilerini temizlemek, hesabınızı silmek veya aynı cihazda yeni bir misafir hesabı oluşturmak kısıtlamayı kaldırmaz — kısıtlanmış bir cihazda oluşturulan yeni hesap bunu devralır ve önceki ihlaller kısıtlama sona erdikten sonra 90 gün boyunca dikkate alınır.</p>
+    <p><strong>Şikayet eşikleri:</strong> birkaç farklı kullanıcının şikayet ettiği bir sohbet talebi hemen akıştan gizlenir ve şikayet eşiğine ulaşan bir açık soru cevabı kısıtlanır — her iki durumda da YZ kararı beklenmeden; YZ kararı ve insan incelemesi hakkınız Bölüm 15'te açıklandığı gibi geçerlidir.</p>
   </div>
 
   <div class="section">
     <h2 class="section-title">9. Hesap Silme ve Yeniden Kayıt Bekleme Süresi</h2>
     <p>Hesabınızı istediğiniz zaman <strong>Ayarlar → Tehlikeli bölge → Hesabımı ve verilerimi sil</strong> üzerinden veya support.nearchat@gmail.com adresine bir talep göndererek silebilirsiniz. Silme işleminde şunlar kaldırılır: Firestore profiliniz, Firebase Auth hesabınız, RTDB çevrimiçilik durumunuz, kuyruk ve oturum kayıtlarınız ve tüm yerel uygulama tercihleri. Bu işlem kalıcıdır ve geri alınamaz.</p>
     <p>Hesap silindikten sonra, aynı cihazdan yeni bir hesap oluşturulmadan önce zorunlu 7 günlük bir bekleme süresi uygulanır. Bu güvenlik önlemi, platformun kötüye kullanılmasını önler ve Firebase UID kayıtları ve cihaz doğrulaması aracılığıyla sıkı bir şekilde takip edilir. Aktif sunucu tarafı yasaklarına bağlı donanım ve hesap verileri, yasak uygulamasını sağlamak amacıyla kalıcı olarak saklanır.</p>
+    <p><strong>Silmenin kapsamı:</strong> hesabınızı silmek, Anonim Bağlantınızı ve ev sahibi olduğunuz tüm sohbetleri, tüm cevapları ve kart görseliyle açık soru bağlantınızı, sohbet taleplerinizi ve yanıtlarınızı ve Premium kaydınızı da siler. Cihazınıza kaydedilen kısıtlamalar yürürlükte kalır. Silinen hesapta kalan Premium süresi kaybolur.</p>
+    <p><strong>Hareketsizlik:</strong> Google ile giriş yapmamış bir hesap, uygulama 90 gün açılmazsa tüm bağlantıları ve verileriyle birlikte otomatik olarak silinir; 7 gün önce bir anlık bildirim alırsınız. Google ile giriş yapmış hesaplar hareketsizlik nedeniyle silinmez. Veri türlerine göre saklama süreleri Gizlilik Politikası'nda (Bölüm 6) belirtilmiştir.</p>
+    <p><strong>Bağlantılarınızı değiştirme:</strong> Anonim Bağlantınızı ve açık soru bağlantınızı Ayarlar → Tehlikeli bölge'den, her birini cihaz başına 7 günde en fazla bir kez değiştirebilirsiniz. Eski bağlantı hemen çalışmayı durdurur; zaten aldığınız sohbetler ve mesajlar korunur. Değiştirdikten sonra paylaştığınız bağlantıların çalışmamasından sorumlu değiliz.</p>
   </div>
 
   <div class="section">
@@ -814,7 +900,7 @@
       <li><strong>Yerel olarak önbelleğe alınan mesajlar:</strong> uygulama, kolaylığınız için son Anonim Bağlantı mesajlarını kendi cihazınızda önbelleğe alabilir; bu yerel önbellek bize veya diğer katılımcıya görünür değildir (ayrıntılar için bkz. Gizlilik Politikası, Bölüm 14)</li>
       <li><strong>Bir kişi için takma adlar:</strong> anonim bir kişiye verdiğiniz herhangi bir takma ad, her taraf için ayrı ayrı, sunucularımızda sohbet kaydının bir parçası olarak saklanır — diğer katılımcıya asla gösterilmez, ancak yalnızca yerel değildir: cihazlarınız arasında senkronize olur ve Gizlilik Politikasında (Bölüm 14) açıklanan saklama süresini izler</li>
       <li><strong>Google hesap çakışmasında sohbetleri taşıma:</strong> giriş yaptığınız Google hesabı zaten başka bir anonim oturumunuza bağlıysa, giriş tamamlanmadan önce mevcut misafir oturumunuzdaki link üzerinden sohbetleri o hesaba taşıma seçeneği sunulabilir. Bu tamamen isteğe bağlıdır — reddetseniz de giriş yapabilirsiniz, sadece mevcut misafir sohbetleriniz taşınmaz, bunlar olduğu gibi kalır ancak geçtiğiniz hesaptan erişilemez hale gelir</li>
-      <li><strong>Misafir modu ve isteğe bağlı Google ile Giriş:</strong> bu özelliği herhangi bir hesap olmadan, misafir olarak kullanabilirsiniz. Misafir modunda, uygulamayı yeniden yüklerseniz veya verilerini temizlerseniz, mevcut bağlantılarınıza ve sohbetlerinize erişimi kaybedersiniz ve en az bir katılımcının Google ile giriş yapmadığı herhangi bir sohbet, son mesajdan 24 saat sonra otomatik olarak silinir. Hesabınızı kalıcı hale getirmek için isteğe bağlı olarak Google ile giriş yapabilirsiniz: bir sohbetin her iki katılımcısı da Google ile giriş yaptığında, o sohbet 24 saat yerine 365 güne kadar hareketsizlik süresince saklanır. Yalnızca kimlik doğrulama için Google hesabınızın e-postasını ve görünen adını alırız — diğer katılımcı bu bilgiyi asla görmez ve sizi tamamen anonim görmeye devam eder. İstediğiniz zaman hesap menüsünden farklı bir Google hesabına geçebilir veya misafir moduna geri dönebilirsiniz. Veri saklama hakkında ayrıntılar Gizlilik Politikasındadır (Bölüm 14)</li>
+      <li><strong>Misafir modu ve isteğe bağlı Google ile Giriş:</strong> bu özelliği herhangi bir hesap olmadan, misafir olarak kullanabilirsiniz. Misafir verileri kalıcı değildir: katılımcılardan en az birinin Google ile giriş yapmadığı sohbetler son mesajdan 7 gün sonra, misafir hesabının kendisi ise uygulama 90 gün açılmadığında bağlantısı ve sohbetleriyle birlikte silinir. Google ile giriş yapmak bağlantınızı ve — her iki katılımcı da giriş yaptığında — sohbetlerinizi hareketsizlik sınırı olmadan kalıcı hale getirir ve başka bir cihazda veya yeniden yükledikten sonra geri yüklemenize olanak tanır. Tek tek sohbetleri istediğiniz zaman silebilir ve bağlantınızı Ayarlar'dan değiştirebilirsiniz (cihaz başına 7 günde bir)</li>
       <li><strong>Anonim Bağlantı geçmişinizi silme:</strong> kişisel bağlantınızı ve ilişkili tüm sohbet geçmişini, ana hesabınızı silmekten bağımsız olarak istediğiniz zaman ayarlardan silebilirsiniz. Host olduğunuz sohbetler tamamen silinir; başkasının bağlantısında misafir olduğunuz sohbetlerde yalnızca sizin kopyanız kaldırılır. Bu işlem cihaz başına 7 günde bir kez ile sınırlıdır</li>
       <li>Bu Sözleşmenin diğer tüm hükümleri — Davranış Kuralları (Bölüm 3), Çocuk Güvenliği politikası (Bölüm 4) ve YZ Hakim hükümleri (Bölüm 15) dahil — Anonim Bağlantı sohbetlerine tam olarak uygulanır</li>
     </ul>
@@ -842,7 +928,25 @@
       <li><strong>YZ Hakim incelemesi:</strong> bildirilen her cevap, Bölüm 15'te açıklanan aynı otomatik YZ Hakim sistemi tarafından, iki taraflı bir sohbet yerine tek bir cevabı incelemek üzere uyarlanmış şekilde analiz edilir. YZ bir ihlali doğrularsa, cevaplayan cihaz otomatik ve geçici olarak uygulamanın hiçbir yerinde yeni cevap gönderemez hale gelir — süre geçerli platform kurallarına göre belirlenir; YZ bir ihlali doğrulamazsa, bildirim reddedilir. YZ'den bağımsız olarak, aynı cihazdan belirli sayıda farklı bildirilen cevap belirli bir zaman aralığında birikirse, bu cihaz bireysel YZ sonuçlarından bağımsız olarak bir güvenlik önlemi olarak geçici olarak kısıtlanır. Tüm sonuçlar kaydedilir ve bir insan yönetici tarafından incelenebilir veya değiştirilebilir</li>
       <li><strong>Bildirim yapmadan engelleme:</strong> bildirimde bulunmaktan bağımsız olarak, belirli bir cevaplayanın cihazını istediğiniz zaman yalnızca kendi açık sorunuz için engelleyebilirsiniz, bildirimle veya bildirim olmadan; bu, o cihazın başkalarının açık sorularını cevaplama yeteneğini etkilemez</li>
       <li><strong>Cevap sayısı sınırı:</strong> spam'i önlemek için, tek bir cihazın aynı açık soruya 24 saat içinde gönderebileceği cevap sayısı geçerli platform kurallarıyla sınırlandırılmıştır</li>
+      <li><strong>Kart görseliniz herkese açıktır:</strong> açık soru bağlantınızı uygulamadan paylaştığınızda tasarladığınız kart, bağlantıyı açan herkesin görebileceği bir görsel olarak yayınlanır ve mesajlaşma uygulamalarında bağlantı önizlemesi olarak kullanılır. Karta herkese açık olmasını istemediğiniz hiçbir şey koymayın; Davranış Kuralları kart içeriğine uygulanır</li>
+      <li><strong>Web sayfasından cevap verme:</strong> genel web sayfasından cevap veren kişiler, uygulama kullanıcılarıyla aynı şekilde bu Sözleşme ve Davranış Kuralları ile bağlıdır; hacim sınırları ve kısıtlamalar tarayıcılarına uygulanır ve kısıtlanmış bir tarayıcıya kısıtlama numarası, nedeni ve bitiş tarihi gösterilir</li>
+      <li><strong>Artan kısıtlamalar:</strong> şikayet edilen cevaplar için kısıtlamalar birinci, ikinci ve sonraki ihlaller için sırasıyla 24 saat, 7 gün ve 30 gün sürer (Bölüm 8)</li>
+      <li><strong>Bağlantınızı değiştirme:</strong> açık soru bağlantınızı cihaz başına 7 günde bir değiştirebilirsiniz; eski bağlantı hemen çalışmayı durdurur ve zaten aldığınız cevaplar korunur</li>
       <li>Bu özelliğe özgü veri işleme — nelerin saklandığı, ne kadar süreyle ve haklarınız — Gizlilik Politikası'nda (Bölüm 16) açıklanmıştır</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">20. Sohbet Talepleri</h2>
+    <p>NearChat isteğe bağlı bir "Sohbet Talepleri" özelliği sunar: kiminle konuşmak istediğinizi anlatan kısa, herkese açık bir talep yayınlayabilirsiniz ve diğer kullanıcılar yanıt verebilir. Bir talep yayınlayarak veya bir talebe yanıt vererek ek olarak aşağıdakileri kabul edersiniz:</p>
+    <ul>
+      <li><strong>Tasarım gereği herkese açık:</strong> talebiniz — metni ve seçtiğiniz cinsiyet, yaş aralığı, konu ve hedef kitle — açık olduğu sürece uygulamanın tüm kullanıcılarına görünür. Kimliğiniz gösterilmez; iletişim bilgileri veya sizi ya da üçüncü bir kişiyi tanımlayan hiçbir şey eklemeyin</li>
+      <li><strong>Aynı anda bir talep:</strong> hesap başına yalnızca bir açık talebe izin verilir. Bir talep yayınlandıktan 24 saat sonra veya bir yanıtı kabul ettiğiniz anda otomatik olarak kapanır; onu istediğiniz zaman kendiniz kapatabilirsiniz</li>
+      <li><strong>Yanıtlar ve sohbetler:</strong> bir talebe yanıt vermek veya bir yanıtı kabul etmek, aranızda ana eşleştirme sohbetiyle aynı kurallara, moderasyona ve saklama sürelerine tabi normal bir sohbet oturumu başlatır; böyle bir sohbette "sonraki partner" yoktur. Aynı anda yalnızca bir etkin sohbet mümkündür — bir sohbet etkinken yeni bir arama başlatamaz veya başka bir yanıtı kabul edemezsiniz</li>
+      <li><strong>Davranış Kuralları tam olarak uygulanır:</strong> Bölüm 3'teki kurallar talep metnine ve ortaya çıkan sohbete uygulanır. Talepler herhangi bir kullanıcı tarafından şikayet edilebilir; birkaç farklı kullanıcının şikayet ettiği bir talep hemen gizlenir</li>
+      <li><strong>Yaptırım:</strong> YZ Hakim (Bölüm 15) tarafından doğrulanan bir ihlal, yazarın talep yayınlamasını ve yanıt vermesini birinci, ikinci ve sonraki ihlaller için 24 saat, 7 gün veya 30 gün kısıtlar ve hem hesaba hem de cihaza kaydedilir (Bölüm 8); ana eşleştirme sohbetindeki bir yasak, sohbet taleplerinin kullanılmasını da engeller</li>
+      <li><strong>Hatırlanan seçimler:</strong> en son kullandığınız parametreler kolaylık için cihazınızda hatırlanır; her seferinde yayınladıklarınızdan siz sorumlu kalırsınız</li>
+      <li>Bu özelliğe özgü veri işleme Gizlilik Politikası'nda (Bölüm 17) açıklanmıştır</li>
     </ul>
   </div>
 
