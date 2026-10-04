@@ -79,6 +79,7 @@
     <a href="#ru">Русский</a>
     <a href="#az">Azərbaycan</a>
     <a href="#tr">Türkçe</a>
+    <a href="#pt">Português</a>
   </div>
 </nav>
 
@@ -89,7 +90,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇬🇧</span><span class="lang-divider-name">English</span></div>
     <div class="doc-label">Privacy Policy</div>
     <h1 class="doc-title">NearChat Privacy Policy</h1>
-    <p class="doc-date">Last updated: September 28, 2026</p>
+    <p class="doc-date">Last updated: October 5, 2026</p>
   </div>
 
   <div class="section">
@@ -98,10 +99,10 @@
       <li>Anonymous device identifier (Android ID) — used strictly for server-side abuse prevention, ban enforcement, and tracking re-registration cooldown; it is never shared with third parties for commercial use</li>
       <li>Firebase UID — anonymous identifier assigned at sign-in, used simultaneously with Android ID for security checks, ban verification, and active session management</li>
       <li>Selected search parameters: gender, age range (18-21, 22-25, 26-35, 36+), conversation topic — processed and stored only for the duration of the active matchmaking queue and active session</li>
-      <li>Country and city — only if you enter them manually</li>
+      <li>Audience (a country or language group, e.g. “Russian-speaking”) — only if you choose it as a search filter (a Premium feature); it is used for matching and is not part of a public profile</li>
       <li>Technical diagnostics: OS version, device type, app version, crash reports (via Firebase Crashlytics)</li>
       <li>FCM push token — used solely to deliver active message notifications; never shared with third parties</li>
-      <li>Device time zone (for example, “Asia/Baku”) — used only to send the “NearChat Hour” notification at your local time; this is a phone setting, not your location</li>
+      <li>Device time zone (for example, “Asia/Baku”) — used only to send notifications at a suitable local time (for example, the “NearChat Hour” announcement, or so that reminders never arrive at night); this is a phone setting, not your location</li>
       <li>Re-engagement candidate signals — when another user has been actively searching for a chat partner for a while without a match, we may briefly compare your gender, age range, country (if set), general recent-activity timestamp, and FCM push token against that search request to decide whether to send you a one-time notification inviting you back into the search; this comparison happens only at the moment such a search is active and does not create any standing profile visible to anyone. You can turn this notification type off at any time in Settings → Notifications</li>
       <li>Account-merge ticket (optional) — if you sign in with Google and that account was already linked to a different anonymous session of yours, and you choose to transfer your current guest session's Anonymous Link chats to it, we temporarily create a short-lived record linking your old and new identifiers solely to perform that transfer; it is deleted immediately after use, or automatically within 10 minutes if unused</li>
       <li>Admin panel access logs — email address, login time, browser agent, login result; securely stored in Firestore and accessible only to administrators</li>
@@ -122,6 +123,7 @@
       <li><strong>App language and notification preferences</strong> — your chosen app language is stored on your profile so that server-sent notifications (for example the daily "NearChat Hour" announcement) arrive in your language; which notification categories you enabled is stored only on your device</li>
       <li><strong>Enforcement records</strong> — when a restriction is applied, we store the ban number, the reason code, a short explanation in three languages, the expiry time, how many times the same account or device has been restricted before (used to escalate durations), and — for restrictions tied to a device — the device identifier. Crash reports sent to Firebase Crashlytics are associated with your anonymous account identifier and app language so that a crash can be matched to server-side data when diagnosing it</li>
       <li><strong>Link-change cooldown records</strong> — when you change your Anonymous Link or your open-question link, we record the device identifier and time of the change for 7 days to enforce the change cooldown</li>
+      <li><strong>Usage analytics</strong> — the app uses Google Analytics for Firebase to understand how the app is used: which screens are opened and key actions (for example creating a link, sharing a card, starting a search or a chat, opening a notification), together with an app-instance identifier, device model, OS and app version, app language and an approximate region (country/city) that Google derives from the IP address. Message and answer texts are never sent to analytics; the data is used only in aggregated form to improve the app</li>
     </ul>
   </div>
 
@@ -130,7 +132,7 @@
     <ul>
       <li>Name, surname, email address or phone number (from regular users)</li>
       <li>Message content — conversations are never stored on our servers after the session ends, beyond the short Anonymous Link preview described in Section 1 and the local on-device cache described in Section 14</li>
-      <li>Precise device geolocation (GPS or IP geolocation is not used)</li>
+      <li>Precise device geolocation (GPS is not used; the only location-related signal is the approximate region that Google Analytics derives from the IP address, see Section 1)</li>
       <li>Data from social networks or third-party applications</li>
       <li>Biometric data, payment details or financial information</li>
       <li>Any information that could directly identify you as a person</li>
@@ -161,6 +163,8 @@
       <li>Warning guest users by push notification 7 days before their account is deleted for inactivity, and announcing the daily "NearChat Hour" window when enabled — both can be disabled in Settings</li>
       <li>Applying restrictions to a device as well as to an account, so that a restriction cannot be circumvented by reinstalling the app or creating a new guest account on the same device</li>
       <li>Checking for and installing app updates through Google Play's in-app update mechanism</li>
+      <li>Measuring how the app is used, in aggregated form, to decide what to improve (Google Analytics for Firebase)</li>
+      <li>Sending a one-time reminder if your question link has received no answers 2–3 days after you created it, suggesting you share it — this reminder is sent only once per account</li>
     </ul>
   </div>
 
@@ -185,6 +189,7 @@
       <li>All service providers process data only on our behalf and under data processing agreements</li>
           <li>Google LLC (Play Integrity and reCAPTCHA Enterprise) evaluates device and browser integrity signals on our behalf to issue App Check tokens</li>
       <li>Groq Inc. also processes reported content (reported conversations, reported open-question answers and reported chat requests) via AI models solely to reach a moderation decision (see Section 13); content is processed transiently and is not used by Groq to train its models under our terms with them</li>
+      <li>Telegram is used only to deliver internal service alerts to the developer: technical summaries of new app crashes (the place in the code, the error type and the app version — no message content or account identifiers) and notices that a public question page has been reported (page identifier and reason)</li>
     </ul>
   </div>
 
@@ -280,6 +285,8 @@
       <li>Google Play In-App Updates (Google LLC) — lets the app check for and install updates without leaving the app</li>
       <li>Google Credential Manager (Google LLC) — provides the on-device Google sign-in sheet; after a reinstall it may offer to continue with a Google account previously used with NearChat on the same device — nothing is transmitted to us until you confirm</li>
       <li>Groq Inc. — also provides the AI moderation model that reviews reported conversations, answers and chat requests (see Section 13)</li>
+      <li>Google Analytics for Firebase (Google LLC) — aggregated usage analytics (see Section 1)</li>
+      <li>Telegram — delivery of internal service alerts to the developer only (see Section 5)</li>
     </ul>
   </div>
 
@@ -363,6 +370,7 @@
       <li><strong>Your reply to an answer:</strong> the reply you write to a received message is stored together with that message and deleted together with it;</li>
       <li><strong>Nickname and emoji avatar (optional):</strong> you may set a nickname (up to 20 characters) and choose an emoji. They are stored in your profile and shown to everyone who opens your link; the nickname is checked against a list of prohibited words. You can change or remove them at any time, and they are deleted together with your account. Any visitor of the page may report it — we store such a report (page identifier, random browser identifier, date) for moderation review;</li>
       <li><strong>Chat invitation from an answer:</strong> so that you can invite a responder to an anonymous chat, we store alongside the answer a service record linking it to the responder's account (if the answer was sent from the app) or to a random browser identifier (if sent from the web page). This record is not accessible to other users, including the question owner, and is used only by the server to create a chat at your request. The responder's “I'd like to chat with the author” flag is stored with the answer. If you invite a web responder, we store the invitation (answer reference, browser identifier, status) to show it on the page and open the chat after the app is installed. Once a chat is created, Section 14 applies;</li>
+      <li><strong>“No answers yet” reminder:</strong> if none of your question links has received a visible answer 2–3 days after you created it, we send one push notification suggesting you share your card. It is sent once per account, only during the day in your time zone; the time it was sent is stored on your profile so it is never repeated;</li>
       <li>All other rights described in Section 7 apply equally to data processed under this section</li>
     </ul>
   </div>
@@ -378,6 +386,7 @@
       <li><strong>Remembered choices:</strong> the parameters you last used when creating a request are stored only on your device so the form opens pre-filled</li>
       <li><strong>Notifications:</strong> you receive a push notification when someone responds to your request or accepts your response; this category can be disabled in Settings</li>
       <li><strong>Search preferences in your profile:</strong> the topic, partner gender and age and country you selected are stored in your profile so that matching requests are shown first and we can notify you about a new matching request — at most once per day; the notification can be turned off in settings. We also store the time of the last such notification;</li>
+      <li><strong>Connecting with Roulette:</strong> while your request is open, a person searching in Roulette with matching filters may be connected to you directly if nobody else is available — only if you have the app open or were active in it during the last 10 minutes (we check whether the app is currently open and when your request was created or reopened). You receive a notification, and the chat is a regular session; the person who came from Roulette can move on to the next partner;</li>
       <li>All other rights described in Section 7 apply equally to data processed under this section</li>
     </ul>
   </div>
@@ -389,7 +398,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇷🇺</span><span class="lang-divider-name">Русский</span></div>
     <div class="doc-label">Политика конфиденциальности</div>
     <h1 class="doc-title">Политика конфиденциальности NearChat</h1>
-    <p class="doc-date">Дата последнего обновления: 28.09.2026</p>
+    <p class="doc-date">Дата последнего обновления: 05.10.2026</p>
   </div>
 
   <div class="section">
@@ -398,10 +407,10 @@
       <li>Анонимный идентификатор устройства (Android ID) — используется исключительно на стороне сервера для предотвращения нарушений правил, применения банов и контроля кулдауна перерегистрации; никогда не передается третьим лицам;</li>
       <li>Firebase UID — анонимный идентификатор, присваиваемый при входе, используемый одновременно с Android ID для проверки статуса блокировок и управления сессиями;</li>
       <li>Выбранные параметры поиска: пол, возрастной диапазон (18-21, 22-25, 26-35, 36+), тема общения — обрабатываются сервером только во время нахождения в очереди и активной сессии общения;</li>
-      <li>Страна и город — только в случае, если вы вводите их вручную;</li>
+      <li>Аудитория (страна или языковая группа, например «Русскоязычные») — только если вы выбрали её как фильтр поиска (функция Премиума); используется для подбора собеседника и не входит в публичный профиль;</li>
       <li>Техническая диагностика: версия ОС, модель устройства, версия приложения, отчеты о сбоях (через Firebase Crashlytics);</li>
       <li>FCM-токен push-уведомлений — используется только для доставки уведомлений о новых сообщениях;</li>
-      <li>Часовой пояс устройства (например, «Asia/Baku») — только для того, чтобы прислать уведомление о «Часе NearChat» в ваше местное время; это настройка телефона, а не ваше местоположение;</li>
+      <li>Часовой пояс устройства (например, «Asia/Baku») — только для того, чтобы присылать уведомления в подходящее местное время (например, о «Часе NearChat» или чтобы напоминания не приходили ночью); это настройка телефона, а не ваше местоположение;</li>
       <li>Сигналы для дозывных уведомлений — когда другой пользователь долго ищет собеседника без совпадения, мы можем кратко сравнить ваш пол, возрастной диапазон, страну (если указана), метку последней активности и FCM-токен с этим запросом поиска, чтобы решить, отправить ли вам разовое уведомление с приглашением вернуться в поиск; такое сравнение происходит только в момент активного поиска и не формирует видимый кому-либо постоянный профиль. Вы можете отключить этот тип уведомлений в любой момент в Настройках → Уведомления;</li>
       <li>Тикет переноса аккаунта (опционально) — если вы входите через Google, а этот аккаунт уже был привязан к другой вашей анонимной сессии, и вы решаете перенести чаты текущей гостевой сессии по анонимной ссылке на него, мы временно создаём короткоживущую запись, связывающую старый и новый идентификаторы, исключительно для выполнения этого переноса; она удаляется сразу после использования либо автоматически в течение 10 минут, если не была использована;</li>
       <li>Логи доступа к панели администратора — email, время входа, данные браузера; хранятся в Firestore и доступны только администраторам;</li>
@@ -422,64 +431,73 @@
       <li><strong>Язык приложения и настройки уведомлений</strong> — выбранный язык хранится в профиле, чтобы серверные уведомления (например, ежедневное объявление «Час NearChat») приходили на вашем языке; какие категории уведомлений вы включили, хранится только на устройстве</li>
       <li><strong>Записи об ограничениях</strong> — при применении ограничения мы храним номер бана, код причины, короткое объяснение на трёх языках, срок окончания, сколько раз тот же аккаунт или устройство уже ограничивались (для увеличения срока) и — для ограничений, привязанных к устройству, — идентификатор устройства. Отчёты о сбоях, отправляемые в Firebase Crashlytics, связываются с вашим анонимным идентификатором аккаунта и языком приложения, чтобы сбой можно было сопоставить с серверными данными при диагностике</li>
       <li><strong>Записи о смене ссылки</strong> — когда вы меняете свою анонимную ссылку или ссылку на открытый вопрос, мы на 7 дней сохраняем идентификатор устройства и время смены для соблюдения кулдауна</li>
+      <li><strong>Аналитика использования</strong> — приложение использует Google Analytics для Firebase, чтобы понимать, как им пользуются: какие экраны открываются и основные действия (например, создание ссылки, отправка карточки, начало поиска или чата, открытие уведомления), вместе с идентификатором установки приложения, моделью устройства, версией ОС и приложения, языком приложения и примерным регионом (страна/город), который Google определяет по IP-адресу. Тексты сообщений и ответов в аналитику никогда не передаются; данные используются только в обобщённом виде для улучшения приложения;</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">2. Что мы НЕ собираем</h2>
     <ul>
-      <li>Имена, фамилии, адреса электронной почты или номера телефонов обычных пользователей;</li>
-      <li>Содержимое сообщений — чаты никогда не сохраняются на сервере после завершения сессии, за исключением краткого превью анонимного чата по ссылке (раздел 1) и локального кеша на устройстве (раздел 14);</li>
-      <li>Точное географическое положение (данные GPS или IP-геолокация не используются);</li>
-      <li>Данные из ваших социальных сетей или других сторонних приложений;</li>
-      <li>Биометрические или финансовые данные.</li>
+      <li>Имя, фамилию, адрес электронной почты или номер телефона (у обычных пользователей);</li>
+      <li>Содержание сообщений — переписка не хранится на наших серверах после завершения сессии, за исключением короткого превью анонимного чата по ссылке (раздел 1) и локального кэша на устройстве (раздел 14);</li>
+      <li>Точное географическое положение (GPS не используется; единственный связанный с местом сигнал — примерный регион, который Google Analytics определяет по IP-адресу, см. раздел 1);</li>
+      <li>Данные из социальных сетей или сторонних приложений;</li>
+      <li>Биометрические данные, платёжные реквизиты и финансовую информацию;</li>
+      <li>Любую информацию, которая могла бы напрямую идентифицировать вас как личность.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">3. Цели обработки данных</h2>
     <ul>
-      <li>Подбор собеседников на основе выбранных вами параметров совершеннолетия (выполняется строго на стороне сервера через Cloud Functions);</li>
-      <li>Обеспечение технической стабильности работы сервиса;</li>
-      <li>Предотвращение нарушений: блокировка нарушителей одновременно по идентификатору устройства (Android ID) и Firebase UID;</li>
-      <li>Применение временного мута (ограничения на начало новых чатов) как меры первичного реагирования на незначительные нарушения;</li>
-      <li>Контроль кулдауна перерегистрации (7 дней) после удаления аккаунта для предотвращения спама;</li>
-      <li>Доставка push-уведомлений о чатах;</li>
-      <li>Выбор и уведомление небольшого числа других пользователей, которые могут подойти, когда кто-то долго ищет собеседника без успеха, на основе параметров профиля и недавней активности — с возможностью отказа в Настройках;</li>
-      <li>Анализ логов ошибок для улучшения стабильности кода;</li>
-      <li>Показ рекламы через Google AdMob для обеспечения бесплатного доступа к сервису;</li>
-      <li>Автоматическая модерация жалоб пользователей с помощью ИИ-системы (см. раздел 13 — Автоматизированная обработка);</li>
-      <li>Расчёт и ведение Trust Score (рейтинга доверия) на основе анонимных оценок после чатов для улучшения качества подбора собеседников;</li>
-      <li>Работа функции «Анонимная ссылка», включая привязку ссылки к владельцу, опциональное постоянное хранение ваших чатов по анонимной ссылке через вход Google и защиту системы жалоб от злоупотреблений (см. раздел 14);</li>
-      <li>Доставка голосовых сообщений и, по запросу, их расшифровка в текст или перевод текста сообщений — через стороннего ИИ-сервиса (см. раздел 11);</li>
-      <li>Атрибуция установок приложения, пришедших по реферальной ссылке, через Install Referrer API Google Play (см. раздел 11).</li>
-          <li>Работа функции «Заявки на разговор»: публикация вашей заявки другим пользователям, доставка вам их откликов и запуск чата при принятии отклика</li>
-      <li>Защита сервиса и его публичной веб-страницы от автоматизированных злоупотреблений (боты, скрипты) с помощью Firebase App Check c Google Play Integrity и reCAPTCHA Enterprise</li>
-      <li>Предупреждение гостевых пользователей push-уведомлением за 7 дней до удаления аккаунта за неактивность и объявление ежедневного окна «Час NearChat», когда оно включено — оба уведомления можно отключить в настройках</li>
-      <li>Применение ограничений к устройству, а не только к аккаунту, чтобы ограничение нельзя было обойти переустановкой приложения или созданием нового гостевого аккаунта на том же устройстве</li>
-      <li>Проверка и установка обновлений приложения через механизм обновлений Google Play внутри приложения</li>
+      <li>Подбор собеседника по выбранным вами взрослым параметрам (выполняется исключительно на сервере через Cloud Functions);</li>
+      <li>Обеспечение технической работы и стабильности сервиса;</li>
+      <li>Предотвращение злоупотреблений: блокировка нарушителей одновременно по идентификатору устройства (Android ID) и Firebase UID;</li>
+      <li>Применение временных мутов (запрет начинать новые чаты) как ступенчатой меры за первые или незначительные нарушения;</li>
+      <li>Соблюдение периода ожидания повторной регистрации (7 дней) по UID и устройству, чтобы предотвратить злоупотребления после удаления аккаунта;</li>
+      <li>Доставка пуш-уведомлений о новых сообщениях и найденных собеседниках;</li>
+      <li>Подбор и уведомление небольшого числа других пользователей, которые могут подойти, когда кто-то долго ищет собеседника без результата, — на основе критериев профиля и недавней активности, чтобы они вернулись в поиск; это можно отключить в настройках;</li>
+      <li>Улучшение производительности и стабильности приложения с помощью анализа сбоев;</li>
+      <li>Показ контекстной рекламы через Google AdMob, чтобы сервис оставался бесплатным;</li>
+      <li>Автоматическая модерация жалоб с помощью ИИ-системы (см. раздел 13 — автоматизированное принятие решений);</li>
+      <li>Расчёт и поддержание Trust Score на основе обезличенных оценок после чатов для улучшения подбора;</li>
+      <li>Журналирование доступа администраторов к панели модерации для аудита безопасности;</li>
+      <li>Работа необязательной функции анонимных чатов по ссылке, включая привязку ссылки к её владельцу, необязательное постоянное хранение таких чатов через вход Google и защиту системы анонимных жалоб от злоупотреблений (см. раздел 14);</li>
+      <li>Доставка голосовых сообщений и, по запросу, их расшифровка в текст или перевод текста сообщений через сторонний ИИ-сервис (см. раздел 11);</li>
+      <li>Атрибуция установок, пришедших по реферальной ссылке, через Install Referrer API Google Play (см. раздел 11);</li>
+      <li>Соблюдение применимых требований закона;</li>
+      <li>Работа функции заявок на разговор: публикация вашей заявки для других пользователей, доставка их откликов вам и начало чата, когда вы принимаете отклик;</li>
+      <li>Защита сервиса и его публичной веб-страницы от автоматизированных злоупотреблений (боты, отправка скриптами) с помощью Firebase App Check с Google Play Integrity и reCAPTCHA Enterprise;</li>
+      <li>Предупреждение гостевых пользователей пуш-уведомлением за 7 дней до удаления аккаунта за неактивность и объявление ежедневного «Часа NearChat», когда он включён, — и то и другое можно отключить в настройках;</li>
+      <li>Применение ограничений не только к аккаунту, но и к устройству, чтобы их нельзя было обойти переустановкой приложения или созданием нового гостевого аккаунта на том же устройстве;</li>
+      <li>Проверка и установка обновлений приложения через механизм обновлений Google Play внутри приложения;</li>
+      <li>Обобщённая оценка того, как используется приложение, чтобы решать, что улучшать (Google Analytics для Firebase);</li>
+      <li>Однократное напоминание, если через 2–3 дня после создания ссылки на вопросы на неё не пришло ни одного ответа, — с предложением поделиться ссылкой; такое напоминание отправляется аккаунту только один раз.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">4. Правовые основания для обработки (GDPR)</h2>
     <ul>
-      <li>Законный интерес — предоставление услуг анонимного чата, защита платформы от злоупотреблений и обеспечение безопасности;</li>
-      <li>Юридическое обязательство — при необходимости передачи данных государственным органам (например, критические отчеты CSAM).</li>
+      <li>Законный интерес — предоставление основного сервиса подбора собеседников, предотвращение злоупотреблений и обеспечение безопасности платформы;</li>
+      <li>Юридическая обязанность — когда закон требует передать данные уполномоченным органам (например, сообщения о CSAM);</li>
+      <li>Согласие — для необязательных функций, где оно запрашивается явно.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">5. Передача данных третьим лицам</h2>
     <ul>
-      <li>Мы не продаем и не передаем данные пользователей третьим лицам в коммерческих целях;</li>
-      <li>Данные передаются только по официальным запросам правоохранительных органов в соответствии с законом;</li>
-      <li>Отчеты, связанные с угрозой безопасности детей (CSAM), проактивно направляются в правоохранительные органы и NCMEC;</li>
-      <li>Инфраструктура Firebase (Google LLC) полностью соответствует требованиям GDPR, заключено соглашение об обработке данных (DPA);</li>
+      <li>Мы не продаём и не передаём ваши данные третьим лицам в коммерческих целях;</li>
+      <li>Данные могут быть раскрыты только по законному запросу уполномоченных органов;</li>
+      <li>Сообщения, связанные с CSAM, по нашей инициативе передаются в правоохранительные органы и, где применимо, в NCMEC;</li>
+      <li>Firebase (Google LLC) используется для технической инфраструктуры — соответствует GDPR; заключено соглашение об обработке данных;</li>
       <li>Google AdMob (Google LLC) используется для показа рекламы; AdMob может собирать идентификаторы устройства и данные об использовании в соответствии с политикой конфиденциальности Google;</li>
-      <li>Groq Inc. используется для обработки аудио голосовых сообщений (только когда вы запрашиваете расшифровку) и текста сообщений (только когда вы запрашиваете перевод) с помощью ИИ-моделей; контент обрабатывается кратковременно для получения запрошенного результата и не используется Groq для обучения своих моделей согласно нашим условиям с ними.</li>
-          <li>Google LLC (Play Integrity и reCAPTCHA Enterprise) оценивает сигналы целостности устройства и браузера от нашего имени для выдачи токенов App Check</li>
-      <li>Groq Inc. также обрабатывает контент, на который поступила жалоба (переписки, ответы на открытые вопросы и заявки на разговор), с помощью ИИ-моделей исключительно для принятия решения по модерации (см. Раздел 13); контент обрабатывается транзитно и по нашим условиям с Groq не используется для обучения моделей</li>
+      <li>Groq Inc. используется для обработки аудио голосовых сообщений (только когда вы запрашиваете расшифровку) и текста сообщений (только когда вы запрашиваете перевод) с помощью ИИ-моделей; содержимое обрабатывается кратковременно, только чтобы получить запрошенный результат, и по условиям нашего соглашения не используется Groq для обучения моделей;</li>
+      <li>Все поставщики услуг обрабатывают данные только от нашего имени и на основании соглашений об обработке данных;</li>
+      <li>Google LLC (Play Integrity и reCAPTCHA Enterprise) от нашего имени оценивает сигналы целостности устройства и браузера, чтобы выдавать токены App Check;</li>
+      <li>Groq Inc. также обрабатывает материалы жалоб (обжалованные переписки, ответы на открытые вопросы и заявки на разговор) с помощью ИИ-моделей исключительно для принятия решения о модерации (см. раздел 13); содержимое обрабатывается кратковременно и по условиям нашего соглашения не используется Groq для обучения моделей;</li>
+      <li>Telegram используется только для служебных уведомлений разработчику: технических сводок о новых сбоях приложения (место в коде, тип ошибки и версия приложения — без текстов сообщений и идентификаторов аккаунтов) и сообщений о жалобах на публичную страницу вопросов (идентификатор страницы и причина).</li>
     </ul>
   </div>
 
@@ -514,10 +532,12 @@
   <div class="section">
     <h2 class="section-title">7. Ваши права</h2>
     <ul>
-      <li>Право на доступ: вы можете запросить информацию о том, какие данные обрабатываются;</li>
-      <li>Право на удаление: вы можете полностью стереть свои данные, нажав кнопку удаления аккаунта в настройках приложения;</li>
-      <li>Право на возражение против обработки, основанной на законных интересах платформы;</li>
-      <li>Право на пересмотр автоматизированного решения: если блокировка или мут были наложены автоматической ИИ-системой модерации, вы вправе потребовать проверки решения живым администратором. Для этого свяжитесь с поддержкой и укажите номер бана или мута, отображённый на экране ограничения.</li>
+      <li>Право на доступ: вы можете запросить информацию о том, какие ваши данные мы обрабатываем;</li>
+      <li>Право на удаление: удалите аккаунт прямо в приложении (Настройки → Опасная зона → Удалить аккаунт);</li>
+      <li>Право на переносимость данных: вы можете запросить копию своих данных в машиночитаемом формате;</li>
+      <li>Право на возражение: вы можете возразить против обработки на основании законного интереса, связавшись с нами;</li>
+      <li>Право на пересмотр автоматизированных решений: если бан или мут был наложен на ваш аккаунт автоматической ИИ-системой модерации, вы вправе потребовать, чтобы решение проверил живой администратор. Для этого свяжитесь с нами и укажите номер бана или мута (он показан на экране ограничения);</li>
+      <li>Право подать жалобу в орган по защите персональных данных вашей страны.</li>
     </ul>
   </div>
 
@@ -532,14 +552,17 @@
 
   <div class="section">
     <h2 class="section-title">9. Технические меры безопасности</h2>
-    <p>NearChat реализует следующие меры безопасности:</p>
+    <p>NearChat применяет следующие технические меры для защиты данных пользователей:</p>
     <ul>
-      <li>Firebase Security Rules гарантируют, что каждый пользователь имеет доступ на чтение и запись исключительно к своим собственным данным;</li>
-      <li>Логика подбора чата вынесена на сервер в Cloud Functions;</li>
-      <li>Системные поля защищены от записи из клиентской части кода;</li>
-      <li>Проверка бана выполняется при запуске одновременно по Android ID и Firebase UID;</li>
-      <li>Все соединения защищены сквозным шифрованием TLS 1.2+;</li>
-      <li>Локально кешированные сообщения анонимных чатов по ссылке и локально сохранённые псевдонимы собеседников (см. раздел 14) никогда не покидают ваше устройство и недоступны нам, нашим сотрудникам или третьим лицам.</li>
+      <li>Firebase Security Rules: каждый пользователь может читать и изменять только свои данные; системные поля (статус бана, роли) нельзя изменить из кода приложения;</li>
+      <li>Сессии создаются исключительно на сервере через Cloud Functions — приложение не может создать сессию напрямую;</li>
+      <li>Список заблокированных устройств (banned_devices) доступен только администраторам через Admin SDK — обычным пользователям он недоступен;</li>
+      <li>Проверка бана при запуске выполняется одновременно по Android ID и документу bans/{uid} пользователя;</li>
+      <li>Жалобы проверяются на сервере: UID отправителя должен совпадать с авторизованным пользователем, запрещённые поля блокируются;</li>
+      <li>Все данные передаются по зашифрованным соединениям (TLS 1.2+);</li>
+      <li>Сессии панели администратора истекают после 30 минут бездействия, число попыток входа ограничено;</li>
+      <li>Действия администраторов журналируются с указанием времени, email и браузера;</li>
+      <li>Локально кешированные сообщения анонимных чатов по ссылке и локально сохранённые псевдонимы (см. раздел 14) никогда не покидают ваше устройство и недоступны нам, нашим сотрудникам или третьим лицам.</li>
     </ul>
   </div>
 
@@ -556,19 +579,22 @@
   <div class="section">
     <h2 class="section-title">11. Сторонние сервисы</h2>
     <ul>
-      <li>Firebase Authentication (Google LLC) — по умолчанию анонимный вход без сбора персональных данных; опционально — вход через Google для функции анонимной ссылки, при котором мы получаем email и отображаемое имя вашего Google-аккаунта исключительно для аутентификации (см. раздел 1)</li>
-      <li>Firebase Firestore (Google LLC) — надежное облачное хранение профилей и параметров сессий</li>
-      <li>Firebase Realtime Database (Google LLC) — быстрая синхронизация сообщений в реальном времени</li>
-      <li>Firebase Crashlytics (Google LLC) — сбор отчетов о критических ошибках кода</li>
-      <li>Firebase Cloud Functions (Google LLC) — безопасное выполнение серверного кода, проверок банов и очистки баз данных</li>
-      <li>Google AdMob (Google LLC) — показ рекламы внутри приложения; регулируется политикой конфиденциальности Google</li>
-      <li>Groq Inc. — ИИ-расшифровка голосовых и перевод сообщений, выполняются только когда вы или ваш собеседник это активно запрашиваете (см. раздел 1)</li>
-      <li>Google Play Install Referrer API (Google LLC) — считывает одноразовый сигнал реферальной атрибуции при первом запуске приложения, чтобы засчитать награду правильному пригласившему (см. раздел 1)</li>
-          <li>Firebase App Check с Google Play Integrity (Google LLC) — подтверждает, что запросы исходят от подлинного приложения NearChat; Google reCAPTCHA Enterprise (Google LLC) выполняет ту же проверку на публичной веб-странице ответов</li>
-      <li>Firebase Storage (Google LLC) — хранение голосовых сообщений и публичной картинки карточки вашего открытого вопроса</li>
-      <li>Google Play In-App Updates (Google LLC) — проверка и установка обновлений, не выходя из приложения</li>
-      <li>Google Credential Manager (Google LLC) — системная шторка входа через Google; после переустановки может предложить продолжить с Google-аккаунтом, которым ранее входили в NearChat на этом устройстве, — нам ничего не передаётся, пока вы не подтвердите</li>
-      <li>Groq Inc. — также предоставляет ИИ-модель модерации, которая разбирает переписки, ответы и заявки, на которые поступили жалобы (см. Раздел 13)</li>
+      <li>Firebase Authentication (Google LLC) — анонимный вход по умолчанию; по желанию — вход через Google для функции анонимных чатов по ссылке, при котором нам передаются email и отображаемое имя вашего аккаунта Google только для аутентификации (см. раздел 1);</li>
+      <li>Firebase Firestore (Google LLC) — хранение профиля пользователя и параметров сессии;</li>
+      <li>Firebase Realtime Database (Google LLC) — подбор собеседников и статус присутствия в реальном времени;</li>
+      <li>Firebase Crashlytics (Google LLC) — диагностика сбоев для повышения стабильности;</li>
+      <li>Firebase Cloud Messaging (Google LLC) — пуш-уведомления;</li>
+      <li>Firebase Cloud Functions (Google LLC) — создание сессий на сервере, инфраструктура автоматических банов, процедуры удаления;</li>
+      <li>Google AdMob (Google LLC) — реклама в приложении; регулируется политикой конфиденциальности Google;</li>
+      <li>Groq Inc. — расшифровка голосовых сообщений и перевод сообщений с помощью ИИ, только когда вы или ваш собеседник явно этого запрашиваете (см. раздел 1);</li>
+      <li>Google Play Install Referrer API (Google LLC) — однократно при первом запуске считывает сигнал реферальной атрибуции, чтобы засчитать приглашение нужному человеку (см. раздел 1);</li>
+      <li>Firebase App Check с Google Play Integrity (Google LLC) — проверяет, что запросы приходят из настоящего приложения NearChat; Google reCAPTCHA Enterprise (Google LLC) выполняет такую же проверку на публичной веб-странице ответов;</li>
+      <li>Firebase Storage (Google LLC) — хранит голосовые сообщения и публичное изображение карточки вашего открытого вопроса;</li>
+      <li>Google Play In-App Updates (Google LLC) — позволяет приложению проверять и устанавливать обновления, не выходя из него;</li>
+      <li>Google Credential Manager (Google LLC) — показывает окно входа через Google на устройстве; после переустановки может предложить продолжить с аккаунтом Google, который уже использовался с NearChat на этом устройстве, — пока вы не подтвердите, нам ничего не передаётся;</li>
+      <li>Groq Inc. — также предоставляет ИИ-модель модерации, которая проверяет обжалованные переписки, ответы и заявки на разговор (см. раздел 13);</li>
+      <li>Google Analytics для Firebase (Google LLC) — обобщённая аналитика использования (см. раздел 1);</li>
+      <li>Telegram — только доставка служебных уведомлений разработчику (см. раздел 5).</li>
     </ul>
   </div>
 
@@ -652,6 +678,7 @@
       <li><strong>Ваша реплика на ответ:</strong> ответ, который вы пишете на полученное сообщение, хранится вместе с этим сообщением и удаляется вместе с ним;</li>
       <li><strong>Ник и эмодзи-аватар (необязательно):</strong> вы можете указать ник (до 20 символов) и выбрать эмодзи. Они хранятся в вашем профиле и показываются всем, кто открывает вашу ссылку; ник проверяется на запрещённые слова. Вы можете изменить или удалить их в любой момент, они удаляются вместе с аккаунтом. Любой посетитель страницы может пожаловаться на неё — мы храним такую жалобу (идентификатор страницы, случайный идентификатор браузера, дата) для проверки модерацией;</li>
       <li><strong>Приглашение в чат из ответа:</strong> чтобы вы могли пригласить отвечавшего в анонимный чат, вместе с ответом мы храним служебную запись, связывающую его с аккаунтом отвечавшего (если ответ отправлен из приложения) или со случайным идентификатором браузера (если с веб-страницы). Эта запись недоступна другим пользователям, включая владельца вопроса, и используется только сервером для создания чата по вашему запросу. Отметка отвечавшего «хочу поговорить с автором» хранится вместе с ответом. Если вы пригласили в чат отвечавшего с веб-страницы, мы храним приглашение (ссылка на ответ, идентификатор браузера, статус), чтобы показать его на странице и открыть чат после установки приложения. После создания чата действуют правила раздела 14;</li>
+      <li><strong>Напоминание «ответов пока нет»:</strong> если через 2–3 дня после создания ни на одну вашу ссылку на вопросы не пришло ни одного видимого ответа, мы присылаем одно пуш-уведомление с предложением поделиться карточкой. Оно отправляется аккаунту один раз и только днём по вашему часовому поясу; время отправки сохраняется в профиле, чтобы напоминание никогда не повторялось;</li>
       <li>Все прочие права, описанные в разделе 7, в равной мере применяются к данным, обрабатываемым в рамках этого раздела.</li>
     </ul>
   </div>
@@ -667,6 +694,7 @@
       <li><strong>Запомненный выбор:</strong> параметры, использованные при последнем создании заявки, хранятся только на вашем устройстве, чтобы форма открывалась заполненной</li>
       <li><strong>Уведомления:</strong> вы получаете push-уведомление, когда кто-то откликнулся на вашу заявку или принял ваш отклик; эту категорию можно отключить в настройках</li>
       <li><strong>Параметры поиска в профиле:</strong> выбранные вами тема, пол и возраст собеседника и страна сохраняются в вашем профиле, чтобы показывать подходящие заявки первыми и отправлять уведомление о новой подходящей заявке — не чаще одного раза в сутки; уведомление отключается в настройках. Мы также храним время последнего такого уведомления;</li>
+      <li><strong>Соединение с рулеткой:</strong> пока ваша заявка открыта, человек, который ищет собеседника в рулетке с подходящими фильтрами, может быть соединён с вами напрямую, если больше никого нет, — только если приложение у вас открыто или вы были в нём в последние 10 минут (мы проверяем, открыто ли приложение сейчас, и когда заявка была создана или снова открыта). Вы получаете уведомление, а чат — обычная сессия; пришедший из рулетки может перейти к следующему собеседнику;</li>
       <li>Все остальные права, описанные в Разделе 7, в равной мере применяются к данным, обрабатываемым в рамках этого раздела</li>
     </ul>
   </div>
@@ -678,7 +706,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇦🇿</span><span class="lang-divider-name">Azərbaycan</span></div>
     <div class="doc-label">Məxfilik siyasəti</div>
     <h1 class="doc-title">NearChat Məxfilik Siyasəti</h1>
-    <p class="doc-date">Son yenilənmə tarixi: 28.09.2026</p>
+    <p class="doc-date">Son yenilənmə tarixi: 05.10.2026</p>
   </div>
 
   <div class="section">
@@ -687,10 +715,10 @@
       <li>Anonim cihaz identifikatoru (Android ID) — yalnız server tərəfində sui-istifadənin qarşısını almaq, bloklamaları tətbiq etmək və yenidən qeydiyyat gözləmə müddətini idarə etmək üçün istifadə olunur; kommersiya məqsədilə üçüncü tərəflərə ötürülmür;</li>
       <li>Firebase UID — giriş zamanı təyin edilən anonim identifikator, təhlükəsizlik yoxlamaları və bloklamaların idarə edilməsi üçün Android ID ilə eyni anda tətbiq olunur;</li>
       <li>Seçilmiş axtarış parametrləri: cins, yaş aralığı (18-21, 22-25, 26-35, 36+), söhbət mövzusu — yalnız aktiv axtarış növbəsi və sessiya müddətində emal olunur;</li>
-      <li>Ölkə və şəhər — yalnız əllə daxil etdiyiniz halda;</li>
+      <li>Auditoriya (ölkə və ya dil qrupu, məsələn, «Rusca danışanlar») — yalnız onu axtarış filtri kimi seçdiyiniz halda (Premium funksiyası); həmsöhbət seçimi üçün istifadə olunur və ictimai profilin hissəsi deyil;</li>
       <li>Texniki diaqnostika: Əməliyyat sistemi versiyası, cihaz modeli, tətbiq versiyası və xəta hesabatları (Firebase Crashlytics vasitəsilə);</li>
       <li>FCM push bildiriş tokeni — yalnız yeni mesaj bildirişlərini çatdırmaq üçün istifadə olunur;</li>
-      <li>Cihazın saat qurşağı (məsələn, «Asia/Baku») — yalnız «NearChat saatı» bildirişini sizin yerli vaxtınızda göndərmək üçün; bu telefonun parametridir, məkanınız deyil;</li>
+      <li>Cihazın saat qurşağı (məsələn, «Asia/Baku») — yalnız bildirişləri uyğun yerli vaxtda göndərmək üçün (məsələn, «NearChat saatı» bildirişi və ya xatırlatmaların gecə gəlməməsi üçün); bu telefonun parametridir, məkanınız deyil;</li>
       <li>Axtarışa dəvət bildirişləri üçün siqnallar — başqa istifadəçi uzun müddət uğursuz həmsöhbət axtardıqda, ona axtarışa qayıtmaq təklifi ilə bir dəfəlik bildiriş göndərmək lazım olub-olmadığını müəyyən etmək üçün sizin cinsinizi, yaş aralığınızı, ölkənizi (təyin edilibsə), son aktivlik vaxtınızı və FCM push tokeninizi qısaca həmin axtarışla müqayisə edə bilərik; bu müqayisə yalnız axtarış aktiv olduğu anda baş verir və heç kimə görünən daimi profil yaratmır. Bu bildiriş növünü istənilən vaxt Tənzimləmələr → Bildirişlər bölməsində söndürə bilərsiniz;</li>
       <li>Hesab birləşdirmə tiketi (könüllü) — Google ilə daxil olduğunuzda həmin hesab artıq sizin başqa anonim sessiyanıza bağlıdırsa və siz cari qonaq sessiyanızdakı anonim keçid çatlarını ona köçürməyi seçsəniz, yalnız bu köçürməni həyata keçirmək üçün köhnə və yeni identifikatorlarınızı bağlayan qısa müddətli qeyd yaradırıq; istifadədən dərhal sonra, ya da istifadə olunmayıbsa 10 dəqiqə ərzində avtomatik silinir;</li>
       <li>Admin panel qeydləri — e-poçt, giriş vaxtı, brauzer məlumatları; Firestore-da saxlanılır və yalnız administratorlara görünür;</li>
@@ -711,63 +739,73 @@
       <li><strong>Tətbiq dili və bildiriş tənzimləmələri</strong> — seçdiyiniz dil profilinizdə saxlanılır ki, serverdən göndərilən bildirişlər (məsələn, gündəlik «NearChat saatı» elanı) sizin dilinizdə gəlsin; hansı bildiriş kateqoriyalarını açdığınız yalnız cihazda saxlanılır</li>
       <li><strong>Məhdudiyyət qeydləri</strong> — məhdudiyyət tətbiq olunanda ban nömrəsini, səbəb kodunu, üç dildə qısa izahı, bitmə vaxtını, eyni hesab və ya cihazın əvvəl neçə dəfə məhdudlaşdırıldığını (müddəti artırmaq üçün) və — cihaza bağlı məhdudiyyətlərdə — cihaz identifikatorunu saxlayırıq. Firebase Crashlytics-ə göndərilən qəza hesabatları anonim hesab identifikatorunuz və tətbiq dili ilə əlaqələndirilir ki, qəzanı diaqnostika edərkən server məlumatları ilə tutuşdurmaq mümkün olsun</li>
       <li><strong>Link dəyişmə gözləmə qeydləri</strong> — anonim linkinizi və ya açıq sual linkinizi dəyişəndə gözləmə müddətinə riayət üçün cihaz identifikatorunu və dəyişmə vaxtını 7 gün saxlayırıq</li>
+      <li><strong>İstifadə analitikası</strong> — tətbiq necə istifadə olunduğunu anlamaq üçün Firebase üçün Google Analytics-dən istifadə edir: hansı ekranların açıldığı və əsas hərəkətlər (məsələn, link yaratmaq, kartı paylaşmaq, axtarışa və ya söhbətə başlamaq, bildirişi açmaq), tətbiq quraşdırmasının identifikatoru, cihaz modeli, ƏS və tətbiq versiyası, tətbiqin dili və Google-un İP ünvanına əsasən müəyyən etdiyi təxmini region (ölkə/şəhər) ilə birlikdə. Mesaj və cavab mətnləri heç vaxt analitikaya göndərilmir; məlumatlar yalnız ümumiləşdirilmiş şəkildə tətbiqi təkmilləşdirmək üçün istifadə olunur;</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">2. Nələri toplamırıq</h2>
     <ul>
-      <li>Adi istifadəçilərin adı, soyadı, e-poçt ünvanı və ya telefon nömrəsi;</li>
-      <li>Mesaj məzmunu — söhbətlər sessiya bitdikdən sonra serverdə heç vaxt saxlanılmır, Bölmə 1-də göstərilən anonim keçid önizləməsi və Bölmə 14-də göstərilən cihazdaxili keş istisna olmaqla;</li>
-      <li>Cihazın dəqiq coğrafi yerləşməsi (GPS və ya İP-geolokasiya istifadə edilmir);</li>
-      <li>Sosial şəbəkələrdən və ya digər tətbiqlərdən gələn məlumatlar;</li>
-      <li>Biometrik və ya maliyyə məlumatları.</li>
+      <li>Ad, soyad, e-poçt ünvanı və ya telefon nömrəsi (adi istifadəçilərdən);</li>
+      <li>Mesajların məzmunu — yazışmalar sessiya bitdikdən sonra serverlərimizdə saxlanılmır; istisna Bölmə 1-də təsvir olunan anonim keçid çatının qısa önizləməsi və Bölmə 14-də təsvir olunan cihazdakı lokal keşdir;</li>
+      <li>Cihazın dəqiq coğrafi yerləşməsi (GPS istifadə edilmir; məkanla bağlı yeganə siqnal Google Analytics-in İP ünvanına əsasən müəyyən etdiyi təxmini regiondur, bax: Bölmə 1);</li>
+      <li>Sosial şəbəkələrdən və ya üçüncü tərəf tətbiqlərindən məlumatlar;</li>
+      <li>Biometrik məlumatlar, ödəniş rekvizitləri və ya maliyyə məlumatları;</li>
+      <li>Sizi şəxs kimi birbaşa müəyyən edə biləcək hər hansı məlumat.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">3. Məlumatların işlənməsi məqsədləri</h2>
     <ul>
-      <li>Seçdiyiniz yetkinlik parametrlərinə əsasən həmsöhbətin tapılması (müstəsna olaraq server tərəfində Cloud Functions vasitəsilə həyata keçirilir);</li>
-      <li>Xidmətin texniki dayanıqlığının təmin edilməsi;</li>
-      <li>Sui-istifadənin qarşısının alınması: qaydanı pozanların eyni anda həm Android ID, həm də Firebase UID vasitəsilə bloklanması;</li>
-      <li>Kiçik qayda pozuntuları üçün ilkin tədqiqat tədbiri kimi müvəqqəti səssizləşdirmənin tətbiqi;</li>
-      <li>Hesab silindikdən sonra sui-istifadənin qarşısını almaq üçün 7 günlük yenidən qeydiyyat gözləmə müddətinin tətbiqi;</li>
-      <li>Push bildirişlərin çatdırılması;</li>
-      <li>Kimsə uzun müddət uğursuz həmsöhbət axtardıqda, profil meyarlarına və son aktivliyə əsasən uyğun ola biləcək az sayda digər istifadəçini seçib bildiriş göndərmək — Tənzimləmələrdə imtina etmək mümkündür;</li>
-      <li>Xidmətə pulsuz giriş imkanı üçün Google AdMob vasitəsilə kontekstual reklamların göstərilməsi;</li>
-      <li>Tətbiqdaxili süni intellekt moderasiya sistemi vasitəsilə şikayətlərin avtomatik işlənməsi (bax: Bölmə 13 — Avtomatlaşdırılmış qərar qəbulu);</li>
-      <li>Həmsöhbət seçiminin keyfiyyətini artırmaq üçün söhbətdən sonrakı anonim qiymətlər əsasında Trust Score-un hesablanması və aparılması;</li>
-      <li>«Anonim keçid» funksiyasının işləməsi, o cümlədən keçidin sahibi ilə uyğunlaşdırılması, Google ilə giriş vasitəsilə anonim keçid çatlarınızın könüllü daimi saxlanılması və şikayət sisteminin sui-istifadədən qorunması (bax: Bölmə 14);</li>
-      <li>Səsli mesajların çatdırılması və, tələb olunduqda, üçüncü tərəf SI xidməti vasitəsilə mətnə çevrilməsi və ya mesaj mətninin tərcüməsi (bax: Bölmə 11);</li>
-      <li>Referal linki vasitəsilə baş verən tətbiq quraşdırmalarının Google Play Install Referrer API vasitəsilə hesablanması (bax: Bölmə 11).</li>
-          <li>«Söhbət sorğuları» funksiyasının işləməsi: sorğunuzun digər istifadəçilərə göstərilməsi, cavabların sizə çatdırılması və cavabı qəbul edəndə söhbətin başladılması</li>
-      <li>Xidmətin və onun açıq veb səhifəsinin avtomatlaşdırılmış sui-istifadədən (botlar, skriptlər) Google Play Integrity və reCAPTCHA Enterprise ilə Firebase App Check vasitəsilə qorunması</li>
-      <li>Qonaq istifadəçilərin hesabın qeyri-aktivliyə görə silinməsindən 7 gün əvvəl push bildirişi ilə xəbərdar edilməsi və aktiv olduqda gündəlik «NearChat saatı» pəncərəsinin elan edilməsi — hər ikisi Tənzimləmələrdə söndürülə bilər</li>
-      <li>Məhdudiyyətlərin yalnız hesaba deyil, cihaza da tətbiqi ki, məhdudiyyəti tətbiqi yenidən quraşdırmaqla və ya eyni cihazda yeni qonaq hesabı yaratmaqla keçmək mümkün olmasın</li>
-      <li>Google Play-in tətbiqdaxili yeniləmə mexanizmi vasitəsilə yeniləmələrin yoxlanması və quraşdırılması</li>
+      <li>Seçdiyiniz yetkin parametrlərə əsasən sizə həmsöhbət seçilməsi (yalnız server tərəfində, Cloud Functions vasitəsilə);</li>
+      <li>Xidmətin texniki işinin və sabitliyinin təmin edilməsi;</li>
+      <li>Sui-istifadənin qarşısının alınması: qayda pozanların eyni anda cihaz identifikatoru (Android ID) və Firebase UID üzrə bloklanması;</li>
+      <li>İlk və ya yüngül pozuntulara görə pilləli tədbir kimi müvəqqəti səssizləşdirmənin (yeni çat başlatmaq qadağası) tətbiqi;</li>
+      <li>Hesab silindikdən sonra sui-istifadənin qarşısını almaq üçün UID və cihaz üzrə təkrar qeydiyyat gözləmə müddətinə (7 gün) riayət olunması;</li>
+      <li>Yeni mesajlar və tapılmış həmsöhbətlər barədə push-bildirişlərin çatdırılması;</li>
+      <li>Kimsə uzun müddət nəticəsiz həmsöhbət axtardıqda, profil meyarlarına və son fəallığa əsasən uyğun ola biləcək az sayda digər istifadəçinin seçilməsi və axtarışa qayıtmaları üçün xəbərdar edilməsi — bunu parametrlərdə söndürə bilərsiniz;</li>
+      <li>Çökmə analitikası vasitəsilə tətbiqin performansının və sabitliyinin yaxşılaşdırılması;</li>
+      <li>Xidmətin pulsuz qalması üçün Google AdMob vasitəsilə kontekstual reklamların göstərilməsi;</li>
+      <li>Şikayətlərin SI sistemi ilə avtomatik moderasiyası (bax: Bölmə 13 — Avtomatlaşdırılmış qərar qəbulu);</li>
+      <li>Seçimin keyfiyyətini artırmaq üçün çatdan sonrakı anonimləşdirilmiş qiymətləndirmələr əsasında Trust Score-un hesablanması və saxlanılması;</li>
+      <li>Təhlükəsizlik auditi məqsədilə administratorların moderasiya panelinə girişlərinin qeydə alınması;</li>
+      <li>İxtiyari anonim keçid funksiyasının işi, o cümlədən keçidin sahibinə bağlanması, Google ilə giriş vasitəsilə anonim keçid çatlarının ixtiyari daimi saxlanılması və anonim şikayət sisteminin sui-istifadədən qorunması (bax: Bölmə 14);</li>
+      <li>Səsli mesajların çatdırılması və tələb olunduqda onların üçüncü tərəf SI xidməti vasitəsilə mətnə çevrilməsi və ya mesaj mətninin tərcüməsi (bax: Bölmə 11);</li>
+      <li>Referal keçiddən gələn quraşdırmaların Google Play Install Referrer API vasitəsilə aid edilməsi (bax: Bölmə 11);</li>
+      <li>Tətbiq olunan qanun tələblərinə əməl edilməsi;</li>
+      <li>Söhbət sorğuları funksiyasının işi: sorğunuzun digər istifadəçilərə dərc edilməsi, onların cavablarının sizə çatdırılması və cavabı qəbul etdikdə çatın başladılması;</li>
+      <li>Xidmətin və onun ictimai veb-səhifəsinin avtomatlaşdırılmış sui-istifadədən (botlar, skriptlə göndərmələr) Google Play Integrity və reCAPTCHA Enterprise ilə Firebase App Check vasitəsilə qorunması;</li>
+      <li>Qonaq istifadəçilərin hesab fəaliyyətsizliyə görə silinməzdən 7 gün əvvəl push-bildirişlə xəbərdar edilməsi və aktiv olduqda gündəlik «NearChat saatı»nın elan edilməsi — hər ikisini parametrlərdə söndürmək olar;</li>
+      <li>Məhdudiyyətlərin yenidən quraşdırmaqla və ya eyni cihazda yeni qonaq hesabı yaratmaqla yan keçilə bilməməsi üçün onların təkcə hesaba deyil, cihaza da tətbiq edilməsi;</li>
+      <li>Google Play-in tətbiqdaxili yeniləmə mexanizmi vasitəsilə tətbiq yeniləmələrinin yoxlanılması və quraşdırılması;</li>
+      <li>Nəyi təkmilləşdirməyə qərar vermək üçün tətbiqin necə istifadə olunduğunun ümumiləşdirilmiş qiymətləndirilməsi (Firebase üçün Google Analytics);</li>
+      <li>Sual linkinizə yaradıldıqdan 2–3 gün sonra heç bir cavab gəlməyibsə, onu paylaşmağı təklif edən birdəfəlik xatırlatma; bu xatırlatma hər hesaba yalnız bir dəfə göndərilir.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">4. İşlənmənin hüquqi əsasları (GDPR)</h2>
     <ul>
-      <li>Qanuni maraq — anonim çat xidmətinin göstərilməsi, platformanın sui-istifadədən qorunması və təhlükəsizliyin təmin edilməsi;</li>
-      <li>Hüquqi öhdəlik — məlumatların hüquq-mühafizə orqanlarına ötürülməsi zərurəti yarandıqda (məsələn, CSAM hesabatları).</li>
+      <li>Qanuni maraq — əsas həmsöhbət seçimi xidmətini göstərmək, sui-istifadənin qarşısını almaq və platformanın təhlükəsizliyini təmin etmək üçün;</li>
+      <li>Hüquqi öhdəlik — qanun məlumatların səlahiyyətli orqanlara açıqlanmasını tələb etdikdə (məsələn, CSAM barədə məlumatlar);</li>
+      <li>Razılıq — razılığın açıq şəkildə istənildiyi ixtiyari funksiyalar üçün.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2 class="section-title">5. Məlumatların üçüncü tərəflərlə paylaşılması</h2>
     <ul>
-      <li>İstifadəçi məlumatlarını kommersiya məqsədilə satmırıq və ya ötürmürük;</li>
-      <li>Məlumatlar yalnız rəsmi hüquqi sorğular əsasında səlahiyyətli dövlət orqanlarına açıqlana bilər;</li>
-      <li>Uşaq təhlükəsizliyi ilə bağlı (CSAM) hesabatlar proaktiv şəkildə hüquq-mühafizə orqanlarına və NCMEC-ə göndərilir;</li>
-      <li>Firebase (Google LLC) infrastrukturu GDPR tələblərinə tam uyğundur, məlumatların işlənməsi müqaviləsi (DPA) bağlanıb;</li>
-      <li>Google AdMob (Google LLC) reklam göstərmək üçün istifadə olunur; AdMob Google-un məxfilik siyasətinə uyğun olaraq cihaz identifikatorlarını və istifadə məlumatlarını toplaya bilər;</li>
-      <li>Groq Inc. səsli mesaj audiosunu (yalnız transkript tələb etdiyiniz halda) və mesaj mətnini (yalnız tərcümə tələb etdiyiniz halda) SI modelləri vasitəsilə emal etmək üçün istifadə olunur; məzmun yalnız tələb olunan nəticəni yaratmaq üçün müvəqqəti emal olunur və Groq ilə razılaşmamıza əsasən onların modellərinin təlimi üçün istifadə edilmir.</li>
-          <li>Google LLC (Play Integrity və reCAPTCHA Enterprise) App Check tokenləri vermək üçün cihaz və brauzer bütövlük siqnallarını bizim adımızdan qiymətləndirir</li>
-      <li>Groq Inc. həmçinin şikayət edilən məzmunu (yazışmalar, açıq suallara cavablar və söhbət sorğuları) yalnız moderasiya qərarı vermək üçün SI modelləri ilə emal edir (bax Bölmə 13); məzmun tranzit emal olunur və Groq ilə şərtlərimizə görə modellərin öyrədilməsi üçün istifadə edilmir</li>
+      <li>Məlumatlarınızı kommersiya məqsədləri üçün üçüncü tərəflərə satmırıq və ötürmürük;</li>
+      <li>Məlumatlar yalnız səlahiyyətli orqanların qanuni sorğusu əsasında açıqlana bilər;</li>
+      <li>CSAM ilə bağlı şikayətlər öz təşəbbüsümüzlə hüquq-mühafizə orqanlarına və müvafiq hallarda NCMEC-ə göndərilir;</li>
+      <li>Texniki infrastruktur üçün Firebase (Google LLC) istifadə olunur — GDPR-a uyğundur; məlumatların emalı haqqında müqavilə bağlanıb;</li>
+      <li>Reklam göstərmək üçün Google AdMob (Google LLC) istifadə olunur; AdMob Google-un məxfilik siyasətinə uyğun olaraq cihaz identifikatorlarını və istifadə məlumatlarını toplaya bilər;</li>
+      <li>Groq Inc. SI modelləri vasitəsilə səsli mesajların audiosunu (yalnız siz transkripsiya istədikdə) və mesaj mətnini (yalnız siz tərcümə istədikdə) emal etmək üçün istifadə olunur; məzmun yalnız tələb olunan nəticəni əldə etmək üçün qısa müddətə emal edilir və onlarla şərtlərimizə əsasən Groq tərəfindən modellərin öyrədilməsi üçün istifadə olunmur;</li>
+      <li>Bütün xidmət təminatçıları məlumatları yalnız bizim adımızdan və məlumatların emalı haqqında müqavilələr əsasında emal edir;</li>
+      <li>Google LLC (Play Integrity və reCAPTCHA Enterprise) App Check tokenlərini vermək üçün bizim adımızdan cihaz və brauzer bütövlüyü siqnallarını qiymətləndirir;</li>
+      <li>Groq Inc. həmçinin şikayət edilmiş məzmunu (şikayət edilmiş yazışmalar, açıq suallara cavablar və söhbət sorğuları) yalnız moderasiya qərarı vermək üçün SI modelləri vasitəsilə emal edir (bax: Bölmə 13); məzmun qısa müddətə emal edilir və onlarla şərtlərimizə əsasən Groq tərəfindən modellərin öyrədilməsi üçün istifadə olunmur;</li>
+      <li>Telegram yalnız tərtibatçıya xidməti bildirişlər çatdırmaq üçün istifadə olunur: tətbiqin yeni çökmələri barədə texniki xülasələr (koddakı yer, xəta növü və tətbiq versiyası — mesaj mətnləri və hesab identifikatorları olmadan) və ictimai sual səhifəsinə edilən şikayətlər barədə bildirişlər (səhifə identifikatoru və səbəb).</li>
     </ul>
   </div>
 
@@ -802,10 +840,12 @@
   <div class="section">
     <h2 class="section-title">7. Hüquqlarınız</h2>
     <ul>
-      <li>Giriş hüququ: hansı məlumatların emal edildiyi barədə məlumat tələb edə bilərsiniz;</li>
-      <li>Silmək hüququ: hesabınızı tətbiqin ayarlarından istənilən vaxt tamamilə silə bilərsiniz;</li>
-      <li>Platformanın qanuni maraqlarına əsaslanan emala etiraz etmək hüququ;</li>
-      <li>Avtomatlaşdırılmış qərarın yenidən baxılması hüququ: ban və ya səssizləşdirmə avtomatik SI moderasiya sistemi tərəfindən tətbiq edilibsə, insan administratoru tərəfindən yenidən baxılmasını tələb etmək hüququnuz var. Bunun üçün dəstək xidmətinə müraciət edin və məhdudiyyət ekranında göstərilən ban və ya səssizlik nömrəsini qeyd edin.</li>
+      <li>Giriş hüququ: hansı məlumatlarınızın emal edildiyi barədə məlumat tələb edə bilərsiniz;</li>
+      <li>Silmək hüququ: hesabı birbaşa tətbiqdə silin (Parametrlər → Təhlükəli zona → Hesabı sil);</li>
+      <li>Məlumatların daşınması hüququ: məlumatlarınızın surətini maşın tərəfindən oxuna bilən formatda tələb edə bilərsiniz;</li>
+      <li>Etiraz hüququ: bizimlə əlaqə saxlayaraq qanuni marağa əsaslanan emala etiraz edə bilərsiniz;</li>
+      <li>Avtomatlaşdırılmış qərarlara insan tərəfindən baxılması hüququ: hesabınıza ban və ya səssizləşdirmə avtomatik SI moderasiya sistemi tərəfindən tətbiq edilibsə, qərara canlı administratorun baxmasını tələb etmək hüququnuz var. Bunun üçün bizimlə əlaqə saxlayın və ban və ya səssizləşdirmə nömrəsini (məhdudiyyət ekranında göstərilir) qeyd edin;</li>
+      <li>Ölkənizdəki fərdi məlumatların qorunması orqanına şikayət vermək hüququ.</li>
     </ul>
   </div>
 
@@ -820,14 +860,17 @@
 
   <div class="section">
     <h2 class="section-title">9. Texniki təhlükəsizlik tədbirləri</h2>
-    <p>NearChat aşağıdakı təhlükəsizlik tədbirlərini tətbiq edir:</p>
+    <p>NearChat istifadəçi məlumatlarını qorumaq üçün aşağıdakı texniki tədbirləri tətbiq edir:</p>
     <ul>
-      <li>Firebase Təhlükəsizlik Qaydaları hər bir istifadəçinin yalnız öz şəxsi məlumatlarına çıxışını təmin edir;</li>
-      <li>Sessiyaların yaradılması server tərəfində Cloud Functions vasitəsilə icra olunur;</li>
-      <li>Sistem sahələrinin müştəri tərəfindən dəyişdirilməsi bloklanıb;</li>
-      <li>Ban yoxlaması giriş zamanı həm Android ID, həm də Firebase UID vasitəsilə paralel aparılır;</li>
-      <li>Bütün bağlantılar TLS 1.2+ şifrələməsi ilə qorunur;</li>
-      <li>Anonim keçid çatlarının lokal keşlənmiş mesajları və lokal saxlanılan həmsöhbət ləqəbləri (bax: Bölmə 14) heç vaxt cihazınızı tərk etmir və bizim, işçilərimizin və ya hər hansı üçüncü tərəfin çıxışına açıq deyil.</li>
+      <li>Firebase Təhlükəsizlik Qaydaları: hər bir istifadəçi yalnız öz məlumatlarını oxuya və dəyişə bilər; sistem sahələri (ban statusu, rollar) tətbiqin kodundan dəyişdirilə bilməz;</li>
+      <li>Sessiyalar yalnız server tərəfində Cloud Functions vasitəsilə yaradılır — tətbiq sessiyanı birbaşa yarada bilməz;</li>
+      <li>Bloklanmış cihazların siyahısı (banned_devices) yalnız Admin SDK vasitəsilə administratorlar üçün əlçatandır — adi istifadəçilər üçün deyil;</li>
+      <li>Ban yoxlaması tətbiq açılarkən eyni anda Android ID və istifadəçinin bans/{uid} sənədi üzrə aparılır;</li>
+      <li>Şikayətlər server tərəfində yoxlanılır: göndərənin UID-i daxil olmuş istifadəçi ilə üst-üstə düşməlidir; qadağan olunmuş sahələr bloklanır;</li>
+      <li>Bütün məlumatlar şifrələnmiş bağlantılar (TLS 1.2+) vasitəsilə ötürülür;</li>
+      <li>Administrator paneli sessiyaları 30 dəqiqə fəaliyyətsizlikdən sonra bitir; giriş cəhdlərinin sayı məhdudlaşdırılıb;</li>
+      <li>Administratorların hərəkətləri vaxt, e-poçt və brauzer göstərilməklə qeydə alınır;</li>
+      <li>Anonim keçid çatlarının lokal keşlənmiş mesajları və lokal saxlanılan ləqəblər (bax: Bölmə 14) heç vaxt cihazınızı tərk etmir və bizim, işçilərimizin və ya hər hansı üçüncü tərəfin çıxışına açıq deyil.</li>
     </ul>
   </div>
 
@@ -844,19 +887,22 @@
   <div class="section">
     <h2 class="section-title">11. Üçüncü tərəf xidmətləri</h2>
     <ul>
-      <li>Firebase Authentication (Google LLC) — standart olaraq anonim qeydiyyat xidməti; könüllü olaraq, anonim keçid funksiyası üçün Google ilə giriş, bu zaman yalnız identifikasiya məqsədilə Google hesabınızın e-poçtu və görünən adı bizimlə paylaşılır (bax: Bölmə 1)</li>
-      <li>Firebase Firestore (Google LLC) — profillərin və sessiya parametrlərinin buludda saxlanılması</li>
-      <li>Firebase Realtime Database (Google LLC) — real vaxt rejimində mesajlaşma infrastrukturu</li>
-      <li>Firebase Crashlytics (Google LLC) — xəta hesabatlarının toplanması</li>
-      <li>Firebase Cloud Functions (Google LLC) — təhlükəsiz server funksiyalarının icrası, avtomatik ban və məlumat təmizləmə əməliyyatları</li>
-      <li>Google AdMob (Google LLC) — tətbiqdaxili reklam göstərilməsi; Google-un məxfilik siyasətinə tabedir</li>
-      <li>Groq Inc. — səsli mesajların SI ilə mətnə çevrilməsi və mesajların tərcüməsi, yalnız siz və ya həmsöhbətiniz bunu aktiv şəkildə tələb etdikdə (bax: Bölmə 1)</li>
-      <li>Google Play Install Referrer API (Google LLC) — mükafatı düzgün dəvət edənə hesablamaq üçün tətbiqin ilk açılışında bir dəfəlik referal atributu siqnalını oxuyur (bax: Bölmə 1)</li>
-          <li>Google Play Integrity ilə Firebase App Check (Google LLC) — sorğuların həqiqi NearChat tətbiqindən gəldiyini təsdiqləyir; Google reCAPTCHA Enterprise (Google LLC) eyni yoxlamanı açıq veb cavab səhifəsində aparır</li>
-      <li>Firebase Storage (Google LLC) — səsli mesajların və açıq sualınızın açıq kart şəklinin saxlanması</li>
-      <li>Google Play In-App Updates (Google LLC) — tətbiqdən çıxmadan yeniləmələrin yoxlanması və quraşdırılması</li>
-      <li>Google Credential Manager (Google LLC) — sistem Google giriş pəncərəsi; yenidən quraşdırdıqdan sonra bu cihazda NearChat-a əvvəl daxil olmuş Google hesabı ilə davam etməyi təklif edə bilər — siz təsdiq edənədək bizə heç nə ötürülmür</li>
-      <li>Groq Inc. — həmçinin şikayət edilən yazışmaları, cavabları və sorğuları nəzərdən keçirən SI moderasiya modelini təqdim edir (bax Bölmə 13)</li>
+      <li>Firebase Authentication (Google LLC) — defolt olaraq anonim giriş; istəyə görə anonim keçid funksiyası üçün Google ilə giriş, bu zaman Google hesabınızın e-poçtu və görünən adı bizə yalnız autentifikasiya üçün ötürülür (bax: Bölmə 1);</li>
+      <li>Firebase Firestore (Google LLC) — istifadəçi profilinin və sessiya parametrlərinin saxlanılması;</li>
+      <li>Firebase Realtime Database (Google LLC) — real vaxtda həmsöhbət seçimi və onlayn status;</li>
+      <li>Firebase Crashlytics (Google LLC) — sabitliyi artırmaq üçün çökmələrin diaqnostikası;</li>
+      <li>Firebase Cloud Messaging (Google LLC) — push-bildirişlər;</li>
+      <li>Firebase Cloud Functions (Google LLC) — sessiyaların server tərəfində yaradılması, avtomatik ban infrastrukturu, silmə prosedurları;</li>
+      <li>Google AdMob (Google LLC) — tətbiqdaxili reklam; Google-un məxfilik siyasətinə tabedir;</li>
+      <li>Groq Inc. — SI ilə səsli mesajların mətnə çevrilməsi və mesajların tərcüməsi, yalnız siz və ya həmsöhbətiniz bunu açıq şəkildə istədikdə (bax: Bölmə 1);</li>
+      <li>Google Play Install Referrer API (Google LLC) — dəvəti düzgün şəxsə aid etmək üçün ilk açılışda referal siqnalını bir dəfə oxuyur (bax: Bölmə 1);</li>
+      <li>Google Play Integrity ilə Firebase App Check (Google LLC) — sorğuların həqiqi NearChat tətbiqindən gəldiyini yoxlayır; Google reCAPTCHA Enterprise (Google LLC) ictimai cavab veb-səhifəsində eyni yoxlamanı aparır;</li>
+      <li>Firebase Storage (Google LLC) — səsli mesajları və açıq sualınızın kartının ictimai şəklini saxlayır;</li>
+      <li>Google Play In-App Updates (Google LLC) — tətbiqə yeniləmələri ondan çıxmadan yoxlamağa və quraşdırmağa imkan verir;</li>
+      <li>Google Credential Manager (Google LLC) — cihazda Google ilə giriş pəncərəsini göstərir; yenidən quraşdırmadan sonra həmin cihazda NearChat ilə əvvəl istifadə olunmuş Google hesabı ilə davam etməyi təklif edə bilər — siz təsdiqləyənə qədər bizə heç nə ötürülmür;</li>
+      <li>Groq Inc. — həmçinin şikayət edilmiş yazışmaları, cavabları və söhbət sorğularını yoxlayan SI moderasiya modelini təqdim edir (bax: Bölmə 13);</li>
+      <li>Firebase üçün Google Analytics (Google LLC) — ümumiləşdirilmiş istifadə analitikası (bax: Bölmə 1);</li>
+      <li>Telegram — yalnız tərtibatçıya xidməti bildirişlərin çatdırılması (bax: Bölmə 5).</li>
     </ul>
   </div>
 
@@ -940,6 +986,7 @@
       <li><strong>Cavaba sizin cavabınız:</strong> aldığınız mesaja yazdığınız cavab həmin mesajla birlikdə saxlanılır və onunla birlikdə silinir;</li>
       <li><strong>Ləqəb və emoji-avatar (könüllü):</strong> ləqəb (20 simvola qədər) göstərə və emoji seçə bilərsiniz. Onlar profilinizdə saxlanılır və linkinizi açan hər kəsə göstərilir; ləqəb qadağan olunmuş sözlər siyahısı ilə yoxlanılır. Onları istənilən vaxt dəyişə və ya silə bilərsiniz, hesabla birlikdə silinirlər. Səhifənin istənilən ziyarətçisi ondan şikayət edə bilər — belə şikayəti (səhifə identifikatoru, təsadüfi brauzer identifikatoru, tarix) moderasiya yoxlaması üçün saxlayırıq;</li>
       <li><strong>Cavabdan çata dəvət:</strong> cavab verəni anonim çata dəvət edə bilməniz üçün cavabla birlikdə onu cavab verənin hesabı ilə (cavab tətbiqdən göndərilibsə) və ya təsadüfi brauzer identifikatoru ilə (veb səhifədən göndərilibsə) əlaqələndirən xidməti qeyd saxlayırıq. Bu qeyd digər istifadəçilərə, o cümlədən sualın sahibinə əlçatan deyil və yalnız sizin sorğunuzla çat yaratmaq üçün server tərəfindən istifadə olunur. Cavab verənin «müəlliflə danışmaq istəyirəm» işarəsi cavabla birlikdə saxlanılır. Veb səhifədən cavab verəni çata dəvət etmisinizsə, dəvəti (cavaba istinad, brauzer identifikatoru, status) səhifədə göstərmək və tətbiq quraşdırıldıqdan sonra çatı açmaq üçün saxlayırıq. Çat yaradıldıqdan sonra 14-cü bölmənin qaydaları tətbiq olunur;</li>
+      <li><strong>«Hələ cavab yoxdur» xatırlatması:</strong> sual linkləriniz yaradıldıqdan 2–3 gün sonra onların heç birinə görünən cavab gəlməyibsə, kartınızı paylaşmağı təklif edən bir push-bildiriş göndəririk. O, hər hesaba yalnız bir dəfə və yalnız saat qurşağınıza görə gündüz göndərilir; göndərilmə vaxtı profilinizdə saxlanılır ki, xatırlatma heç vaxt təkrarlanmasın;</li>
       <li>Bölmə 7-də təsvir edilən bütün digər hüquqlar bu bölmə çərçivəsində emal edilən məlumatlara eyni dərəcədə tətbiq olunur.</li>
     </ul>
   </div>
@@ -955,6 +1002,7 @@
       <li><strong>Yadda saxlanan seçim:</strong> son sorğunu yaradarkən istifadə etdiyiniz parametrlər forma dolu açılsın deyə yalnız cihazınızda saxlanılır</li>
       <li><strong>Bildirişlər:</strong> kimsə sorğunuza cavab verəndə və ya cavabınızı qəbul edəndə push bildirişi alırsınız; bu kateqoriya Tənzimləmələrdə söndürülə bilər</li>
       <li><strong>Profildə axtarış parametrləri:</strong> seçdiyiniz mövzu, həmsöhbətin cinsi və yaşı, ölkə profilinizdə saxlanılır ki, uyğun sorğular birinci göstərilsin və yeni uyğun sorğu barədə bildiriş göndərə bilək — gündə ən çox bir dəfə; bildiriş tənzimləmələrdə söndürülə bilər. Belə son bildirişin vaxtını da saxlayırıq;</li>
+      <li><strong>Rulet ilə birləşmə:</strong> sorğunuz açıq olduğu müddətdə, uyğun filtrlərlə ruletdə həmsöhbət axtaran şəxs başqa heç kim olmadıqda birbaşa sizinlə birləşdirilə bilər — yalnız tətbiq sizdə açıqdırsa və ya son 10 dəqiqə ərzində orada olmusunuzsa (tətbiqin hazırda açıq olub-olmadığını və sorğunun nə vaxt yaradıldığını və ya yenidən açıldığını yoxlayırıq). Siz bildiriş alırsınız, söhbət isə adi sessiyadır; ruletdən gələn şəxs növbəti həmsöhbətə keçə bilər;</li>
       <li>Bölmə 7-də təsvir olunan bütün digər hüquqlar bu bölmə çərçivəsində emal olunan məlumatlara da eyni dərəcədə tətbiq olunur</li>
     </ul>
   </div>
@@ -966,7 +1014,7 @@
     <div class="lang-divider"><span class="lang-divider-flag">🇹🇷</span><span class="lang-divider-name">Türkçe</span></div>
     <div class="doc-label">Gizlilik Politikası</div>
     <h1 class="doc-title">NearChat Gizlilik Politikası</h1>
-    <p class="doc-date">Son güncelleme: 28 Eylül 2026</p>
+    <p class="doc-date">Son güncelleme: 5 Ekim 2026</p>
   </div>
 
   <div class="section">
@@ -975,10 +1023,10 @@
       <li>Anonim cihaz kimliği (Android ID) — yalnızca sunucu tarafında kötüye kullanımın önlenmesi, yasakların uygulanması ve yeniden kayıt bekleme süresinin takibi için kullanılır; ticari amaçla üçüncü taraflarla asla paylaşılmaz</li>
       <li>Firebase UID — girişte atanan anonim kimlik, güvenlik kontrolleri, yasak doğrulaması ve aktif oturum yönetimi için Android ID ile birlikte kullanılır</li>
       <li>Seçilen arama parametreleri: cinsiyet, yaş aralığı (18-21, 22-25, 26-35, 36+), sohbet konusu — yalnızca aktif eşleştirme kuyruğu ve aktif oturum süresince işlenir ve saklanır</li>
-      <li>Ülke ve şehir — yalnızca elle girdiğiniz takdirde</li>
+      <li>Kitle (bir ülke veya dil grubu, örneğin “Rusça konuşanlar”) — yalnızca bunu bir arama filtresi olarak seçerseniz (Premium özelliği); eşleştirme için kullanılır ve herkese açık bir profilin parçası değildir</li>
       <li>Teknik tanılama: işletim sistemi sürümü, cihaz modeli, uygulama sürümü, çökme raporları (Firebase Crashlytics üzerinden)</li>
       <li>FCM push bildirim jetonu — yalnızca yeni mesaj bildirimlerini iletmek için kullanılır; üçüncü taraflarla asla paylaşılmaz</li>
-      <li>Cihaz saat dilimi (örneğin “Asia/Baku”) — yalnızca “NearChat Saati” bildirimini yerel saatinizde göndermek için kullanılır; bu bir telefon ayarıdır, konumunuz değildir</li>
+      <li>Cihaz saat dilimi (örneğin “Asia/Baku”) — yalnızca bildirimleri uygun yerel saatte göndermek için kullanılır (örneğin “NearChat Saati” bildirimi veya hatırlatmaların gece gelmemesi için); bu bir telefon ayarıdır, konumunuz değildir</li>
       <li>Aramaya dönme bildirimleri için sinyaller — başka bir kullanıcı uzun süredir başarısız şekilde sohbet partneri ararsa, ona aramaya dönmesi için tek seferlik bir bildirim gönderip göndermeyeceğimizi belirlemek amacıyla cinsiyetinizi, yaş aralığınızı, ülkenizi (belirtilmişse), son aktiflik zamanınızı ve FCM push jetonunuzu kısaca bu arama isteğiyle karşılaştırabiliriz; bu karşılaştırma yalnızca arama aktifken gerçekleşir ve kimseye görünen kalıcı bir profil oluşturmaz. Bu bildirim türünü istediğiniz zaman Ayarlar → Bildirimler bölümünden kapatabilirsiniz</li>
       <li>Hesap birleştirme bileti (isteğe bağlı) — Google ile giriş yaptığınızda bu hesap zaten başka bir anonim oturumunuza bağlıysa ve mevcut misafir oturumunuzdaki Anonim Bağlantı sohbetlerini ona taşımayı seçerseniz, yalnızca bu taşımayı gerçekleştirmek için eski ve yeni kimliklerinizi bağlayan kısa ömürlü bir kayıt oluştururuz; kullanıldıktan hemen sonra veya kullanılmazsa 10 dakika içinde otomatik olarak silinir</li>
       <li>Yönetici paneli erişim kayıtları — e-posta adresi, giriş zamanı, tarayıcı bilgisi, giriş sonucu; Firestore'da güvenli şekilde saklanır ve yalnızca yöneticiler tarafından erişilebilir</li>
@@ -999,6 +1047,7 @@
       <li><strong>Uygulama dili ve bildirim tercihleri</strong> — seçtiğiniz dil, sunucudan gönderilen bildirimlerin (örneğin günlük "NearChat saati" duyurusu) sizin dilinizde gelmesi için profilinizde saklanır; hangi bildirim kategorilerini açtığınız yalnızca cihazınızda saklanır</li>
       <li><strong>Yaptırım kayıtları</strong> — bir kısıtlama uygulandığında yasak numarasını, neden kodunu, üç dilde kısa bir açıklamayı, bitiş zamanını, aynı hesabın veya cihazın daha önce kaç kez kısıtlandığını (süreyi artırmak için) ve — cihaza bağlı kısıtlamalarda — cihaz tanımlayıcısını saklarız. Firebase Crashlytics'e gönderilen çökme raporları, bir çökmenin teşhisinde sunucu verileriyle eşleştirilebilmesi için anonim hesap kimliğiniz ve uygulama dilinizle ilişkilendirilir</li>
       <li><strong>Bağlantı değiştirme bekleme kayıtları</strong> — Anonim Bağlantınızı veya açık soru bağlantınızı değiştirdiğinizde, bekleme süresini uygulamak için cihaz tanımlayıcısını ve değişiklik zamanını 7 gün boyunca kaydederiz</li>
+      <li><strong>Kullanım analitiği</strong> — uygulama, nasıl kullanıldığını anlamak için Firebase için Google Analytics kullanır: hangi ekranların açıldığı ve temel işlemler (örneğin bağlantı oluşturma, kart paylaşma, arama veya sohbet başlatma, bildirim açma), uygulama kurulum tanımlayıcısı, cihaz modeli, işletim sistemi ve uygulama sürümü, uygulama dili ve Google'ın IP adresinden çıkardığı yaklaşık bölge (ülke/şehir) ile birlikte. Mesaj ve cevap metinleri asla analitiğe gönderilmez; veriler yalnızca toplu hâlde uygulamayı geliştirmek için kullanılır</li>
     </ul>
   </div>
 
@@ -1007,7 +1056,7 @@
     <ul>
       <li>Ad, soyad, e-posta adresi veya telefon numarası (normal kullanıcılardan)</li>
       <li>Mesaj içeriği — Bölüm 1'de açıklanan kısa Anonim Bağlantı önizlemesi ve Bölüm 14'te açıklanan cihaz üzerindeki yerel önbellek dışında, konuşmalar oturum bittikten sonra sunucularımızda asla saklanmaz</li>
-      <li>Cihazın kesin konumu (GPS veya IP tabanlı konum belirleme kullanılmaz)</li>
+      <li>Cihazın kesin konumu (GPS kullanılmaz; konumla ilgili tek sinyal, Google Analytics'in IP adresinden çıkardığı yaklaşık bölgedir, bkz. Bölüm 1)</li>
       <li>Sosyal ağlardan veya üçüncü taraf uygulamalardan gelen veriler</li>
       <li>Biyometrik veriler, ödeme bilgileri veya finansal bilgiler</li>
       <li>Sizi doğrudan bir kişi olarak tanımlayabilecek herhangi bir bilgi</li>
@@ -1038,6 +1087,8 @@
       <li>Misafir kullanıcıların hesaplarının hareketsizlik nedeniyle silinmesinden 7 gün önce anlık bildirimle uyarılması ve etkinleştirildiğinde günlük "NearChat saati" penceresinin duyurulması — ikisi de Ayarlar'dan kapatılabilir</li>
       <li>Kısıtlamaların yalnızca hesaba değil cihaza da uygulanması; böylece bir kısıtlama uygulamayı yeniden yükleyerek veya aynı cihazda yeni bir misafir hesabı oluşturarak aşılamaz</li>
       <li>Google Play'in uygulama içi güncelleme mekanizması aracılığıyla güncellemelerin kontrol edilmesi ve yüklenmesi</li>
+      <li>Neyin geliştirileceğine karar vermek için uygulamanın nasıl kullanıldığının toplu olarak ölçülmesi (Firebase için Google Analytics)</li>
+      <li>Soru bağlantınız oluşturulduktan 2–3 gün sonra hiç cevap almamışsa, paylaşmanızı öneren tek seferlik bir hatırlatma gönderilmesi; bu hatırlatma her hesaba yalnızca bir kez gönderilir</li>
     </ul>
   </div>
 
@@ -1062,6 +1113,7 @@
       <li>Tüm hizmet sağlayıcılar verileri yalnızca bizim adımıza ve veri işleme sözleşmeleri kapsamında işler</li>
           <li>Google LLC (Play Integrity ve reCAPTCHA Enterprise), App Check belirteçleri vermek için cihaz ve tarayıcı bütünlük sinyallerini bizim adımıza değerlendirir</li>
       <li>Groq Inc. ayrıca şikayet edilen içeriği (şikayet edilen konuşmalar, açık soru cevapları ve sohbet talepleri) yalnızca bir moderasyon kararına varmak için YZ modelleriyle işler (bkz. Bölüm 13); içerik geçici olarak işlenir ve Groq ile şartlarımız uyarınca modellerini eğitmek için kullanılmaz</li>
+      <li>Telegram yalnızca geliştiriciye dahili hizmet uyarıları iletmek için kullanılır: uygulamadaki yeni çökmelerin teknik özetleri (koddaki yer, hata türü ve uygulama sürümü — mesaj içeriği veya hesap tanımlayıcıları olmadan) ve herkese açık bir soru sayfasının şikâyet edildiğine dair bildirimler (sayfa tanımlayıcısı ve neden)</li>
     </ul>
   </div>
 
@@ -1157,6 +1209,8 @@
       <li>Google Play In-App Updates (Google LLC) — uygulamadan çıkmadan güncellemelerin kontrol edilmesini ve yüklenmesini sağlar</li>
       <li>Google Credential Manager (Google LLC) — cihaz üzerindeki Google giriş penceresini sağlar; yeniden yüklemeden sonra bu cihazda NearChat ile daha önce kullanılan bir Google hesabıyla devam etmeyi önerebilir — siz onaylayana kadar bize hiçbir şey iletilmez</li>
       <li>Groq Inc. — ayrıca şikayet edilen konuşmaları, cevapları ve sohbet taleplerini inceleyen YZ moderasyon modelini sağlar (bkz. Bölüm 13)</li>
+      <li>Firebase için Google Analytics (Google LLC) — toplu kullanım analitiği (bkz. Bölüm 1)</li>
+      <li>Telegram — yalnızca geliştiriciye dahili hizmet uyarılarının iletilmesi (bkz. Bölüm 5)</li>
     </ul>
   </div>
 
@@ -1240,6 +1294,7 @@
       <li><strong>Cevaba yanıtınız:</strong> aldığınız mesaja yazdığınız yanıt o mesajla birlikte saklanır ve onunla birlikte silinir;</li>
       <li><strong>Takma ad ve emoji avatar (isteğe bağlı):</strong> bir takma ad (en fazla 20 karakter) belirleyebilir ve bir emoji seçebilirsiniz. Bunlar profilinizde saklanır ve linkinizi açan herkese gösterilir; takma ad yasaklı kelimeler listesiyle kontrol edilir. Bunları istediğiniz zaman değiştirebilir veya kaldırabilirsiniz; hesapla birlikte silinirler. Sayfanın herhangi bir ziyaretçisi sayfayı şikayet edebilir — böyle bir şikayeti (sayfa kimliği, rastgele tarayıcı kimliği, tarih) moderasyon incelemesi için saklarız;</li>
       <li><strong>Cevaptan sohbete davet:</strong> cevaplayanı anonim bir sohbete davet edebilmeniz için cevapla birlikte onu cevaplayanın hesabına (cevap uygulamadan gönderildiyse) veya rastgele bir tarayıcı kimliğine (web sayfasından gönderildiyse) bağlayan bir hizmet kaydı saklarız. Bu kayıt, soru sahibi dahil diğer kullanıcılar tarafından erişilemez ve yalnızca sizin talebinizle sohbet oluşturmak için sunucu tarafından kullanılır. Cevaplayanın «yazarla konuşmak istiyorum» işareti cevapla birlikte saklanır. Web sayfasından cevaplayan birini davet ettiyseniz, daveti (cevap referansı, tarayıcı kimliği, durum) sayfada göstermek ve uygulama kurulduktan sonra sohbeti açmak için saklarız. Sohbet oluşturulduktan sonra 14. bölüm geçerlidir;</li>
+      <li><strong>“Henüz cevap yok” hatırlatması:</strong> soru bağlantılarınız oluşturulduktan 2–3 gün sonra hiçbirine görünür bir cevap gelmemişse, kartınızı paylaşmanızı öneren tek bir anlık bildirim göndeririz. Her hesaba yalnızca bir kez ve yalnızca saat diliminize göre gündüz gönderilir; gönderilme zamanı profilinizde saklanır, böylece hatırlatma asla tekrarlanmaz;</li>
       <li>Bölüm 7'de açıklanan diğer tüm haklar, bu bölüm kapsamında işlenen verilere eşit şekilde uygulanır</li>
     </ul>
   </div>
@@ -1255,7 +1310,316 @@
       <li><strong>Hatırlanan seçimler:</strong> bir talep oluştururken en son kullandığınız parametreler, formun dolu açılması için yalnızca cihazınızda saklanır</li>
       <li><strong>Bildirimler:</strong> biri talebinize yanıt verdiğinde veya yanıtınızı kabul ettiğinde anlık bildirim alırsınız; bu kategori Ayarlar'dan kapatılabilir</li>
       <li><strong>Profildeki arama tercihleri:</strong> seçtiğiniz konu, karşı tarafın cinsiyeti ve yaşı ile ülke profilinizde saklanır; böylece uygun talepler önce gösterilir ve yeni bir uygun talep hakkında sizi bilgilendirebiliriz — günde en fazla bir kez; bildirim ayarlardan kapatılabilir. Bu tür son bildirimin zamanını da saklarız;</li>
+      <li><strong>Rulet ile bağlantı:</strong> talebiniz açıkken, uygun filtrelerle rulette sohbet arayan biri, başka kimse yoksa doğrudan sizinle bağlanabilir — yalnızca uygulama sizde açıksa veya son 10 dakika içinde uygulamadaysanız (uygulamanın şu an açık olup olmadığını ve talebin ne zaman oluşturulduğunu ya da yeniden açıldığını kontrol ederiz). Bir bildirim alırsınız ve sohbet normal bir oturumdur; ruletten gelen kişi bir sonraki sohbet partnerine geçebilir;</li>
       <li>Bölüm 7'de açıklanan diğer tüm haklar bu bölüm kapsamında işlenen veriler için de eşit şekilde geçerlidir</li>
+    </ul>
+  </div>
+
+</section>
+
+<section class="lang-block" id="pt">
+  <div class="doc-header">
+    <div class="lang-divider"><span class="lang-divider-flag">🇧🇷</span><span class="lang-divider-name">Português</span></div>
+    <div class="doc-label">Política de Privacidade</div>
+    <h1 class="doc-title">Política de Privacidade do NearChat</h1>
+    <p class="doc-date">Última atualização: 5 de outubro de 2026</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">1. Quais dados coletamos</h2>
+    <ul>
+      <li>Identificador anônimo do aparelho (Android ID) — usado estritamente no servidor para prevenir abusos, aplicar banimentos e controlar o período de espera para novo cadastro; nunca é compartilhado com terceiros para fins comerciais</li>
+      <li>Firebase UID — identificador anônimo atribuído no login, usado junto com o Android ID para verificações de segurança, verificação de banimentos e gerenciamento de sessões ativas</li>
+      <li>Parâmetros de busca selecionados: gênero, faixa etária (18-21, 22-25, 26-35, 36+), tema da conversa — processados e armazenados apenas enquanto durarem a fila de busca e a sessão ativa</li>
+      <li>Público (um país ou grupo de idioma, por exemplo “Falantes de russo”) — somente se você escolhê-lo como filtro de busca (recurso Premium); é usado para encontrar parceiros de conversa e não faz parte de um perfil público</li>
+      <li>Diagnóstico técnico: versão do sistema, tipo de aparelho, versão do app, relatórios de falhas (via Firebase Crashlytics)</li>
+      <li>Token de push do FCM — usado apenas para entregar notificações; nunca é compartilhado com terceiros</li>
+      <li>Fuso horário do aparelho (por exemplo, “Asia/Baku”) — usado apenas para enviar notificações em um horário local adequado (por exemplo, o aviso da “Hora do NearChat”, ou para que lembretes nunca cheguem de madrugada); é uma configuração do celular, não a sua localização</li>
+      <li>Sinais para convites de retorno — quando outro usuário está buscando um parceiro de conversa há algum tempo sem sucesso, podemos comparar rapidamente seu gênero, faixa etária, país (se definido), o horário geral da sua atividade recente e seu token de push do FCM com essa busca, para decidir se enviamos a você uma notificação única convidando a voltar à busca; essa comparação só acontece enquanto a busca está ativa e não cria nenhum perfil permanente visível a alguém. Você pode desativar esse tipo de notificação a qualquer momento em Configurações → Notificações</li>
+      <li>Registro de transferência de conta (opcional) — se você entrar com o Google e essa conta já estiver vinculada a outra sessão anônima sua, e você optar por transferir os chats por Link Anônimo da sua sessão de convidado atual para ela, criamos temporariamente um registro de curta duração que liga seus identificadores antigo e novo apenas para fazer essa transferência; ele é apagado logo após o uso, ou automaticamente em até 10 minutos se não for usado</li>
+      <li>Registros de acesso ao painel de administração — endereço de e-mail, horário de login, navegador, resultado do login; armazenados com segurança no Firestore e acessíveis apenas aos administradores</li>
+      <li>Trust Score — um indicador de reputação comportamental anonimizado, calculado a partir das avaliações e tags deixadas por outros usuários após os chats; usado exclusivamente para melhorar a qualidade das combinações e nunca divulgado a terceiros</li>
+      <li>Dados de denúncias — motivo da denúncia, identificador da sessão e até 20 mensagens da sessão denunciada, mantidos temporariamente para análise de moderação e processamento automático pelo sistema de moderação com IA</li>
+      <li>Dados de chats por Link Anônimo — se você cria ou usa um Link Anônimo pessoal, processamos o status do chat (pendente/ativo/bloqueado), os identificadores dos aparelhos do par (anfitrião e convidado), a mensagem inicial, os horários das mensagens, uma prévia curta (até ~200 caracteres) da mensagem mais recente e qualquer apelido que você der ao outro participante (visível só para você, nunca para ele), usados apenas para montar sua lista de chats</li>
+      <li>Sinais de presença e interação no Link Anônimo — enquanto um chat por Link Anônimo está ativo, processamos indicadores de “digitando” de curta duração, horários de “ativo por último” usados para mostrar o status online e horários de leitura; cada um deles é visível apenas para o outro participante daquele chat. Também processamos qualquer reação com emoji que você deixe em uma mensagem e uma referência curta à mensagem que você está respondendo, ambas guardadas como parte dessa mensagem</li>
+      <li>Dados de prevenção de abuso do Link Anônimo — para proteger o sistema de denúncias contra uso indevido entre os mesmos dois aparelhos, registramos temporariamente sequências de denúncias não confirmadas, intervalos de espera entre denúncias do mesmo par de aparelhos e restrições temporárias de denúncia, tudo vinculado ao identificador do aparelho (veja a Seção 14)</li>
+      <li>Registros de bloqueio do Link Anônimo — quando você bloqueia um chat por Link Anônimo, registramos que os dois identificadores de aparelho envolvidos formam um par bloqueado, para que o aparelho bloqueado não possa iniciar um novo pedido com você pelo mesmo link ou por um link novo</li>
+      <li>Dados da conta Google (opcional) — se você escolher entrar com o Google na seção de Link Anônimo, recebemos do Google o endereço de e-mail e o nome de exibição da sua conta. Essas informações são usadas apenas para autenticar você e tornar seus chats por Link Anônimo permanentes entre reinstalações e aparelhos; nunca são mostradas às pessoas com quem você conversa, que continuam vendo você de forma totalmente anônima, e nunca são usadas para publicidade ou qualquer outra finalidade</li>
+      <li>Mensagens de voz — quando você envia uma mensagem de voz, a gravação é armazenada para ser entregue ao seu parceiro de conversa e para que ambos possam ouvi-la de novo, seguindo o mesmo prazo de retenção das outras mensagens (Seção 6). Se você ou seu parceiro usarem o botão “Transcrever”, o áudio é enviado a um serviço de IA de terceiros (veja a Seção 11) apenas para gerar a transcrição em texto, que fica guardada como parte da mensagem</li>
+      <li>Texto de mensagem traduzido — se você usar a tradução no app, o texto da mensagem ou da transcrição é enviado a um serviço de IA de terceiros (veja a Seção 11) apenas para gerar uma tradução para você ler</li>
+      <li>Sinal de atribuição de instalação (opcional) — se você instalar o app pelo Google Play depois de seguir o link de indicação de alguém, a Install Referrer API do Google nos fornece um código de indicação único na primeira abertura, para creditarmos a pessoa certa; esse sinal é lido uma única vez e não acompanha sua atividade depois (veja a Seção 11)</li>
+      <li><strong>Dados de Pedidos de conversa</strong> — se você publica um “pedido de conversa”, armazenamos o texto do pedido (até 150 caracteres), o gênero, a faixa etária, o tema e o público/país selecionados, o identificador da sua conta, os horários de criação e de expiração e o status do pedido. Os pedidos são mostrados a todos os outros usuários. As respostas a um pedido guardam o identificador da conta de quem respondeu e o status. Os parâmetros que você escolheu por último ao criar um pedido também ficam salvos localmente no seu aparelho, para que o formulário abra já preenchido</li>
+      <li><strong>Imagem do cartão da sua pergunta aberta</strong> — quando você compartilha o link da sua pergunta aberta pelo app (abre o menu de compartilhamento ou copia o link), o app envia o cartão que você criou (fundo, texto, estilo) como uma imagem pequena (JPEG 540×960) para o Firebase Storage. Essa imagem pode ser vista por qualquer pessoa que abra o seu link e é usada como prévia do link nos mensageiros. Ela é substituída quando você compartilha de novo e apagada junto com a sua pergunta ou a sua conta</li>
+      <li><strong>Sinais de integridade do app</strong> — para proteger o serviço contra bots e abusos, o app obtém um token do Firebase App Check via Google Play Integrity, e a página web de respostas obtém um via Google reCAPTCHA Enterprise. O Google avalia sinais de integridade do aparelho / navegador para isso, de acordo com a política de privacidade do Google; recebemos apenas um token de aprovado/reprovado de curta duração, não os sinais em si</li>
+      <li><strong>Identificador da página web de respostas</strong> — quando alguém responde a uma pergunta aberta pelo navegador, a página guarda um identificador aleatório no armazenamento local desse navegador, usado apenas para o limite de quantidade de respostas e para aplicar restrições; ele não está ligado a nenhuma conta e pode ser apagado limpando os dados do navegador</li>
+      <li><strong>Idioma do app e preferências de notificação</strong> — o idioma escolhido para o app (por padrão, o idioma do seu celular) é salvo no seu perfil para que as notificações enviadas pelo servidor (por exemplo, o aviso da “Hora do NearChat”) cheguem no seu idioma; quais categorias de notificação você ativou fica salvo apenas no seu aparelho</li>
+      <li><strong>Registros de restrições</strong> — quando uma restrição é aplicada, guardamos o número da restrição, o código do motivo, uma breve explicação em três idiomas, o horário de término, quantas vezes a mesma conta ou aparelho já foi restringido antes (usado para aumentar a duração) e — para restrições ligadas a um aparelho — o identificador do aparelho. Os relatórios de falhas enviados ao Firebase Crashlytics são associados ao identificador anônimo da sua conta e ao idioma do app, para que uma falha possa ser relacionada aos dados do servidor durante o diagnóstico</li>
+      <li><strong>Registros de espera para troca de link</strong> — quando você troca seu Link Anônimo ou o link da sua pergunta aberta, registramos o identificador do aparelho e o horário da troca por 7 dias, para aplicar o intervalo entre trocas</li>
+      <li><strong>Análise de uso</strong> — o app usa o Google Analytics para Firebase para entender como ele é usado: quais telas são abertas e as principais ações (por exemplo, criar um link, compartilhar um cartão, iniciar uma busca ou um chat, abrir uma notificação), junto com um identificador da instalação do app, modelo do aparelho, versão do sistema e do app, idioma do app e uma região aproximada (país/cidade) que o Google deduz do endereço IP. Textos de mensagens e respostas nunca são enviados para a análise; os dados são usados apenas de forma agregada para melhorar o app</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">2. O que NÃO coletamos</h2>
+    <ul>
+      <li>Nome, sobrenome, endereço de e-mail ou número de telefone (de usuários comuns)</li>
+      <li>Conteúdo das mensagens — as conversas nunca ficam armazenadas em nossos servidores depois que a sessão termina, além da prévia curta do Link Anônimo descrita na Seção 1 e do cache local no aparelho descrito na Seção 14</li>
+      <li>Geolocalização precisa do aparelho (o GPS não é usado; o único sinal relacionado à localização é a região aproximada que o Google Analytics deduz do endereço IP, veja a Seção 1)</li>
+      <li>Dados de redes sociais ou de aplicativos de terceiros</li>
+      <li>Dados biométricos, dados de pagamento ou informações financeiras</li>
+      <li>Qualquer informação que possa identificar você diretamente como pessoa</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">3. Finalidades do tratamento de dados</h2>
+    <ul>
+      <li>Encontrar um parceiro de conversa para você com base nos parâmetros adultos selecionados (feito exclusivamente no servidor, via Cloud Functions)</li>
+      <li>Garantir o funcionamento técnico e a estabilidade do serviço</li>
+      <li>Prevenção de abusos: bloqueio de quem viola as regras, simultaneamente pelo identificador do aparelho (Android ID) e pelo Firebase UID</li>
+      <li>Aplicar silenciamentos temporários (proibição de iniciar novos chats) como medida gradual para violações leves ou de primeira vez</li>
+      <li>Aplicar o período de espera para novo cadastro (7 dias) por meio do UID e do controle do aparelho, para evitar abusos após a exclusão</li>
+      <li>Entregar notificações push sobre novas mensagens e novos parceiros encontrados</li>
+      <li>Selecionar e notificar um pequeno número de outros usuários que possam combinar bem quando alguém está buscando sem sucesso, com base nos critérios do perfil e na atividade recente, para que voltem à busca — você pode desativar isso em Configurações</li>
+      <li>Melhorar o desempenho e a estabilidade do app por meio da análise de falhas</li>
+      <li>Exibir anúncios contextuais via Google AdMob para manter o acesso gratuito ao serviço</li>
+      <li>Moderação automática de denúncias por um sistema de IA (veja a Seção 13 — Decisões automatizadas)</li>
+      <li>Calcular e manter um Trust Score com base em avaliações anonimizadas após os chats, para melhorar a qualidade das combinações</li>
+      <li>Registrar o acesso de administradores ao painel de moderação para fins de auditoria de segurança</li>
+      <li>Operar o recurso opcional de Link Anônimo, incluindo associar um link ao seu dono, permitir o armazenamento permanente opcional dos seus chats por Link Anônimo via login com Google e proteger o sistema de denúncias anônimas contra abusos (veja a Seção 14)</li>
+      <li>Entregar mensagens de voz e, a pedido, transcrevê-las em texto ou traduzir o texto das mensagens, por meio de um serviço de IA de terceiros (veja a Seção 11)</li>
+      <li>Atribuir instalações do app originadas de um link de indicação, via Install Referrer API do Google Play (veja a Seção 11)</li>
+      <li>Cumprir as exigências legais aplicáveis</li>
+      <li>Operar o recurso de Pedidos de conversa: publicar seu pedido para outros usuários, entregar as respostas deles a você e iniciar um chat quando você aceita uma</li>
+      <li>Proteger o serviço e sua página web pública contra abusos automatizados (bots, envios por script) usando o Firebase App Check com Google Play Integrity e reCAPTCHA Enterprise</li>
+      <li>Avisar usuários convidados por notificação push 7 dias antes de a conta ser excluída por inatividade, e anunciar a “Hora do NearChat” diária quando ela estiver ativada — ambos podem ser desativados em Configurações</li>
+      <li>Aplicar restrições ao aparelho além da conta, para que uma restrição não possa ser contornada reinstalando o app ou criando uma nova conta de convidado no mesmo aparelho</li>
+      <li>Verificar e instalar atualizações do app pelo mecanismo de atualização dentro do app do Google Play</li>
+      <li>Medir, de forma agregada, como o app é usado para decidir o que melhorar (Google Analytics para Firebase)</li>
+      <li>Enviar um lembrete único se o seu link de perguntas não tiver recebido nenhuma resposta 2–3 dias após a criação, sugerindo que você o compartilhe — esse lembrete é enviado só uma vez por conta</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">4. Bases legais para o tratamento (GDPR)</h2>
+    <ul>
+      <li>Interesse legítimo — para oferecer o serviço principal de chat, prevenir abusos e garantir a segurança da plataforma</li>
+      <li>Obrigação legal — quando for exigido divulgar dados às autoridades competentes (por exemplo, denúncias de CSAM)</li>
+      <li>Consentimento — para recursos opcionais em que ele é solicitado explicitamente</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">5. Compartilhamento de dados com terceiros</h2>
+    <ul>
+      <li>Não vendemos nem transferimos seus dados a terceiros para fins comerciais</li>
+      <li>Os dados só podem ser divulgados mediante solicitação legal de autoridades competentes</li>
+      <li>Denúncias relacionadas a CSAM são encaminhadas proativamente às autoridades policiais e, quando aplicável, ao NCMEC</li>
+      <li>O Firebase (Google LLC) é usado para a infraestrutura técnica — em conformidade com o GDPR; há um Contrato de Tratamento de Dados firmado</li>
+      <li>O Google AdMob (Google LLC) é usado para exibir anúncios; o AdMob pode coletar identificadores do aparelho e dados de uso de acordo com a política de privacidade do Google</li>
+      <li>A Groq Inc. é usada para processar o áudio de mensagens de voz (somente quando você pede uma transcrição) e o texto de mensagens (somente quando você pede uma tradução) por meio de modelos de IA; o conteúdo é processado de forma transitória para gerar o resultado pedido e, pelos nossos termos com a Groq, não é usado para treinar os modelos dela</li>
+      <li>Todos os prestadores de serviço tratam dados apenas em nosso nome e sob contratos de tratamento de dados</li>
+      <li>O Google LLC (Play Integrity e reCAPTCHA Enterprise) avalia sinais de integridade do aparelho e do navegador em nosso nome para emitir tokens do App Check</li>
+      <li>A Groq Inc. também processa conteúdo denunciado (conversas denunciadas, respostas denunciadas a perguntas abertas e pedidos de conversa denunciados) por meio de modelos de IA, apenas para chegar a uma decisão de moderação (veja a Seção 13); o conteúdo é processado de forma transitória e, pelos nossos termos com a Groq, não é usado para treinar os modelos dela</li>
+      <li>O Telegram é usado apenas para entregar alertas internos do serviço ao desenvolvedor: resumos técnicos de novas falhas do app (o ponto no código, o tipo de erro e a versão do app — sem conteúdo de mensagens nem identificadores de conta) e avisos de que uma página pública de perguntas foi denunciada (identificador da página e motivo)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">6. Armazenamento e retenção de dados</h2>
+    <ul>
+      <li>As mensagens do chat principal de combinação existem apenas dentro de uma sessão ativa e são apagadas automaticamente em até 24 horas após o fim da sessão</li>
+      <li>Quando uma denúncia é enviada, as mensagens mais recentes (até 20) ficam guardadas temporariamente para análise do moderador e processamento pela IA, e depois são apagadas em até 30 dias</li>
+      <li>Os registros de banimento e silenciamento do chat principal ligados a um identificador de aparelho e ao Firebase UID ficam guardados enquanto a restrição estiver ativa; os registros de silenciamento são apagados automaticamente assim que o período termina (em até 30 minutos)</li>
+      <li>Os registros de restrições para respostas a perguntas abertas e pedidos de conversa (Seções 16 e 17) são mantidos por 90 dias após o fim da restrição, apenas para que uma nova violação da mesma conta ou do mesmo aparelho receba uma duração maior (24 horas → 7 dias → 30 dias); depois disso, são apagados</li>
+      <li>O registro do período de espera para novo cadastro é mantido por 7 dias após a exclusão da conta e depois removido automaticamente pelas funções do servidor; os registros de espera para troca de link são mantidos por 7 dias</li>
+      <li><strong>Exclusão por inatividade (apenas contas de convidado):</strong> uma conta que não entrou com o Google é excluída automaticamente após 90 dias sem abrir o app, junto com seu Link Anônimo, o link da sua pergunta aberta, todas as mensagens recebidas por eles e a imagem do cartão. Uma notificação push avisando sobre a exclusão é enviada 7 dias antes; abrir o app reinicia o prazo de 90 dias. Contas que entraram com o Google nunca são excluídas por inatividade</li>
+      <li>Os dados do Trust Score são apagados quando a conta é excluída</li>
+      <li>Dados das notificações de retorno — o horário da sua última notificação de volta à busca e o horário do seu próprio último pedido de candidatos ficam no seu perfil e seguem as mesmas regras de exclusão do restante do perfil; não mantemos um registro separado de quem foi comparado ou notificado</li>
+      <li>Registro de transferência de conta — apagado logo após a transferência ser concluída, ou automaticamente após 10 minutos se ela não for concluída</li>
+      <li>Os registros de acesso de administradores são mantidos por 90 dias para fins de auditoria de segurança</li>
+      <li><strong>Chats por Link Anônimo — contas de convidado:</strong> se pelo menos um dos participantes não entrou com o Google, o chat e suas mensagens são apagados 7 dias após a última mensagem (ou após a criação, se nenhuma mensagem vier depois). <strong>Contas Google:</strong> quando os dois participantes entram com o Google, o chat é mantido até que um deles o apague ou apague a própria conta — não há prazo por inatividade. A prévia curta da última mensagem faz parte do registro do chat até que o próprio registro seja apagado</li>
+      <li>Bloquear um contato: quando você bloqueia alguém em um chat por Link Anônimo, as mensagens que essa pessoa enviar depois nesse chat continuam sendo criadas e armazenadas em nossos servidores com o mesmo prazo de retenção acima (para que a cópia dela seja preservada) — mas ficam marcadas como ocultas especificamente para você, e você nunca as verá, nem receberá notificação delas, nem verá o chat subir na sua lista por causa delas</li>
+      <li>Os registros de um par de aparelhos bloqueado no recurso de Link Anônimo (Seção 1) são mantidos por 365 dias a partir do bloqueio (ou do bloqueio renovado mais recente do mesmo par) e depois apagados automaticamente. Desbloquear remove o registro na hora</li>
+      <li><strong>O próprio Link Anônimo</strong> (o link compartilhável, separado de qualquer chat criado por ele): para contas de convidado, é mantido por 30 dias se nunca tiver sido usado por ninguém e por até 2 anos de inatividade depois de usado, e em qualquer caso é apagado junto com a conta (veja a exclusão por inatividade acima). Para contas que entraram com o Google, o link é mantido até você trocá-lo ou excluir sua conta</li>
+      <li><strong>Perguntas abertas e respostas:</strong> as respostas recebidas por uma conta de convidado são apagadas 7 dias após o envio; as respostas recebidas por uma conta que entrou com o Google são mantidas até você apagá-las ou apagar sua conta. O link da pergunta e a imagem do cartão são mantidos até você trocar o link, apagar a pergunta ou excluir sua conta (ou, para contas de convidado, até a exclusão por inatividade)</li>
+      <li><strong>Pedidos de conversa:</strong> um pedido aberto é fechado automaticamente 24 horas após a publicação, ou assim que você aceitar uma resposta. Pedidos fechados e removidos, suas respostas e as denúncias sobre eles são mantidos para fins de moderação e removidos pelos administradores após a análise ou junto com a sua conta</li>
+      <li>Você pode trocar seu Link Anônimo e o link da sua pergunta aberta em Configurações → Zona de perigo (cada um no máximo uma vez a cada 7 dias por aparelho): o link antigo para de funcionar na hora, e os chats ou mensagens que você já recebeu são mantidos</li>
+      <li>Os sinais de presença do Link Anônimo (indicadores de digitação, horários online) são sobrescritos continuamente e só fazem sentido por alguns segundos; os horários de leitura são mantidos enquanto existir o próprio registro do chat; reações e referências de resposta são mantidas enquanto existir a mensagem correspondente</li>
+      <li>Os registros de bloqueio do Link Anônimo (Seção 1) são mantidos por tempo indeterminado e não estão sujeitos aos prazos acima — eles existem justamente para que um aparelho bloqueado não contorne o bloqueio iniciando um novo pedido, e só são removidos se concluirmos que não são mais necessários para essa finalidade</li>
+      <li>Os registros de prevenção de abuso do Link Anônimo são de curta duração: os intervalos de espera entre denúncias de um par de aparelhos são removidos após 7 dias, e as restrições temporárias de denúncia são apagadas automaticamente quando expiram (normalmente em até 6 horas)</li>
+      <li>Não mantemos arquivos de conversas e não conseguimos restaurar mensagens apagadas</li>
+      <li>Os arquivos de áudio das mensagens de voz seguem o mesmo prazo de retenção das mensagens de texto de que fazem parte (veja acima); se uma transcrição ou tradução foi gerada para uma mensagem, ela é apagada junto com a própria mensagem</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">7. Seus direitos</h2>
+    <ul>
+      <li>Direito de acesso: você pode pedir informações sobre quais dados seus tratamos</li>
+      <li>Direito à exclusão: exclua sua conta diretamente no app (Configurações → Zona de perigo → Excluir conta)</li>
+      <li>Direito à portabilidade: você pode pedir uma cópia dos seus dados em formato legível por máquina</li>
+      <li>Direito de oposição: você pode se opor ao tratamento baseado em interesse legítimo entrando em contato conosco</li>
+      <li>Direito à revisão humana de decisões automatizadas: se um banimento ou silenciamento foi aplicado à sua conta pelo sistema automático de moderação com IA, você tem o direito de pedir que um administrador humano revise a decisão. Para isso, entre em contato conosco e informe o número do banimento ou silenciamento (exibido na tela da restrição)</li>
+      <li>Direito de apresentar reclamação à autoridade de proteção de dados do seu país (no Brasil, a ANPD)</li>
+    </ul>
+  </div>
+
+  <div class="section" id="account-deletion-pt">
+    <h2 class="section-title">8. Exclusão da conta e dos dados</h2>
+    <p>Você pode excluir sua conta e todos os dados associados a qualquer momento diretamente no app: <strong>Configurações → Zona de perigo → Excluir conta</strong>. Se preferir, envie um pedido de exclusão para support.nearchat@gmail.com. Atenderemos o pedido em até 30 dias.</p>
+    <p>Com a exclusão, são removidos: seu perfil de usuário no Firestore, a conta no Firebase Auth, os registros de presença, fila e sessão no RTDB e todas as preferências locais do app.</p>
+    <p>Após a exclusão, é registrado um período de espera de 7 dias para novo cadastro (vinculado ao Firebase UID e ao Android ID ao mesmo tempo), para evitar abusos da plataforma. Os registros de identificador de aparelho ligados a banimentos ativos são mantidos para evitar que o banimento seja contornado, conforme nosso interesse legítimo na segurança da plataforma.</p>
+    <p>Excluir sua conta também remove: seu Link Anônimo e todos os chats por Link Anônimo em que você é o anfitrião (chats em que você é convidado mantêm a cópia do outro participante), o link da sua pergunta aberta, todas as respostas recebidas por ele, a imagem do cartão no Firebase Storage, todos os seus pedidos de conversa e respostas e o seu registro de Premium. Os registros de restrição ligados ao seu <em>aparelho</em> (e não só à sua conta) são mantidos enquanto a restrição estiver ativa e aplicados de novo a qualquer conta nova criada no mesmo aparelho — excluir a conta não é uma forma de remover uma restrição</p>
+    <p>Como o Premium está ligado ao identificador da sua conta, o tempo de Premium restante em uma conta excluída é perdido</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">9. Medidas técnicas de segurança</h2>
+    <p>O NearChat adota as seguintes medidas técnicas para proteger os dados dos usuários:</p>
+    <ul>
+      <li>Firebase Security Rules: cada usuário só pode ler e gravar os próprios dados; campos de sistema (status de banimento, funções) não podem ser alterados pelo código do app</li>
+      <li>As sessões são criadas exclusivamente no servidor, via Cloud Functions — o app não pode criar sessões diretamente</li>
+      <li>A lista de aparelhos banidos (banned_devices) só é acessível aos administradores via Admin SDK — não aos usuários comuns</li>
+      <li>A verificação de banimento usa ao mesmo tempo o Android ID e o documento bans/{uid} do usuário ao abrir o app</li>
+      <li>As denúncias são validadas no servidor: o UID de quem denuncia precisa corresponder ao usuário autenticado; campos proibidos são bloqueados</li>
+      <li>Todos os dados são transmitidos por conexões criptografadas (TLS 1.2+)</li>
+      <li>As sessões do painel de administração expiram após 30 minutos de inatividade; as tentativas de login têm limite de frequência</li>
+      <li>As ações dos administradores são registradas com horário, e-mail e navegador</li>
+      <li>As mensagens do Link Anônimo guardadas em cache local e os apelidos guardados localmente (veja a Seção 14) nunca saem do seu aparelho e não são acessíveis a nós, à nossa equipe ou a terceiros</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">10. Privacidade de menores</h2>
+    <ul>
+      <li>O NearChat destina-se exclusivamente a usuários com 18 anos ou mais. A idade é verificada ao abrir o app por meio de uma tela obrigatória de data de nascimento.</li>
+      <li>Todos os filtros de busca são estritamente limitados a faixas etárias adultas (18-21, 22-25, 26-35, 36+).</li>
+      <li>Não coletamos intencionalmente dados pessoais de ninguém com menos de 18 anos.</li>
+      <li>Se você suspeitar que um usuário é menor de idade ou está violando a política de idade, use imediatamente o botão Denunciar no app para enviar uma denúncia para análise do moderador.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">11. Serviços de terceiros</h2>
+    <ul>
+      <li>Firebase Authentication (Google LLC) — login anônimo por padrão; opcionalmente, login com Google para o recurso de Link Anônimo, que compartilha conosco o e-mail e o nome de exibição da sua conta Google apenas para autenticação (veja a Seção 1)</li>
+      <li>Firebase Firestore (Google LLC) — armazenamento do perfil do usuário e dos parâmetros da sessão</li>
+      <li>Firebase Realtime Database (Google LLC) — combinação de chats e presença em tempo real</li>
+      <li>Firebase Crashlytics (Google LLC) — diagnóstico de falhas para melhorar a estabilidade</li>
+      <li>Firebase Cloud Messaging (Google LLC) — notificações push</li>
+      <li>Firebase Cloud Functions (Google LLC) — criação de sessões no servidor, infraestrutura de banimento automático, rotinas de exclusão</li>
+      <li>Google AdMob (Google LLC) — publicidade no app; sujeito à política de privacidade do Google</li>
+      <li>Groq Inc. — transcrição de voz e tradução de mensagens por IA, feitas somente quando você ou seu parceiro de conversa pedem ativamente (veja a Seção 1)</li>
+      <li>Google Play Install Referrer API (Google LLC) — lê um sinal único de atribuição de indicação na primeira abertura do app, para creditarmos a pessoa certa (veja a Seção 1)</li>
+      <li>Firebase App Check com Google Play Integrity (Google LLC) — verifica se as solicitações vêm do app NearChat original; o Google reCAPTCHA Enterprise (Google LLC) faz a verificação equivalente na página web pública de respostas</li>
+      <li>Firebase Storage (Google LLC) — armazena mensagens de voz e a imagem pública do cartão da sua pergunta aberta</li>
+      <li>Google Play In-App Updates (Google LLC) — permite que o app verifique e instale atualizações sem sair dele</li>
+      <li>Google Credential Manager (Google LLC) — oferece a janela de login com Google no aparelho; após uma reinstalação, pode sugerir continuar com uma conta Google já usada no NearChat no mesmo aparelho — nada é enviado a nós até você confirmar</li>
+      <li>Groq Inc. — também fornece o modelo de moderação com IA que analisa conversas, respostas e pedidos de conversa denunciados (veja a Seção 13)</li>
+      <li>Google Analytics para Firebase (Google LLC) — análise de uso agregada (veja a Seção 1)</li>
+      <li>Telegram — apenas entrega de alertas internos do serviço ao desenvolvedor (veja a Seção 5)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">12. Contato e controlador dos dados</h2>
+    <p>Se você tiver dúvidas sobre esta Política de Privacidade ou quiser exercer seus direitos, entre em contato conosco. Respondemos em até 30 dias corridos.</p>
+    <ul>
+      <li>Telegram: <a href="https://t.me/nearchatsuppport_bot" target="_blank"><strong>t.me/nearchatsuppport_bot</strong></a></li>
+      <li>E-mail: <a href="mailto:support.nearchat@gmail.com"><strong>support.nearchat@gmail.com</strong></a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">13. Decisões automatizadas e moderação com IA</h2>
+    <p>O NearChat usa um sistema automático de moderação com IA (baseado em um modelo de linguagem de grande porte) para processar denúncias e aplicar medidas sem análise humana prévia. Isso constitui uma decisão automatizada no sentido do Artigo 22 do GDPR.</p>
+    <ul>
+      <li>Quando uma denúncia é enviada, o sistema de IA analisa o conteúdo denunciado e o contexto da conversa para determinar se houve uma violação</li>
+      <li>Com base na análise, o sistema pode aplicar um silenciamento temporário, um banimento temporário ou arquivar a denúncia; as durações seguem as regras atuais da plataforma</li>
+      <li>O sistema também tem um mecanismo “bumerangue”: se a IA concluir que uma denúncia foi feita de má-fé ou como forma de assédio, quem denunciou pode receber um banimento temporário</li>
+      <li>Todas as decisões da IA são registradas e podem ser revisadas por um administrador humano</li>
+      <li>Você tem o direito de pedir a revisão humana de qualquer medida automática entrando em contato com o suporte e informando o número do banimento ou silenciamento. Analisaremos o caso em até 30 dias</li>
+      <li>O sistema de IA tem proteção contra prompt injection: qualquer tentativa de manipular o sistema pelo conteúdo das mensagens é detectada e resulta no arquivamento da denúncia</li>
+      <li>A análise com IA também é usada para ajudar os administradores a revisar recursos contra banimentos enviados pelo canal de suporte</li>
+      <li>As denúncias enviadas a partir de chats por Link Anônimo (veja a Seção 14) são processadas pelo mesmo sistema de IA, com salvaguardas adicionais para reconhecer conversas mútuas ou consentidas entre pessoas que já se conhecem e evitar punições injustificadas nesses casos</li>
+      <li>Os pedidos de conversa (Seção 17) denunciados por outros usuários são analisados pelo mesmo sistema de IA; um pedido denunciado por vários usuários diferentes é ocultado do feed mesmo antes da decisão da IA</li>
+      <li>As restrições aplicadas a respostas a perguntas abertas e a pedidos de conversa seguem uma escala que depende de quantas vezes a mesma conta ou o mesmo aparelho já foi restringido antes: primeira restrição 24 horas, segunda 7 dias, terceira e seguintes 30 dias. As restrições para respostas que atingiram o limite de denúncias sem decisão da IA seguem a mesma escala</li>
+      <li>Toda restrição mostra, no app ou na página web, seu número, o motivo (no seu idioma, quando disponível) e a data de término. Informe o número ao entrar em contato com o suporte</li>
+      <li>As restrições são registradas no seu aparelho além da sua conta: uma nova conta de convidado criada em um aparelho com restrição ativa a herda, e o histórico de agravamento é mantido por 90 dias após o fim de uma restrição</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">14. Chats por Link Anônimo</h2>
+    <p>O NearChat oferece um recurso opcional que permite gerar um link pessoal (e um QR code equivalente) para que outras pessoas iniciem um chat anônimo com você sem que nenhum dos dois veja a identidade do outro. Esta seção explica o tratamento de dados específico deste recurso, além das regras gerais acima.</p>
+    <ul>
+      <li><strong>Dados do registro do chat:</strong> processamos o status do chat (pendente / ativo / bloqueado), os identificadores dos aparelhos do anfitrião e do convidado, a mensagem inicial, os horários das mensagens, contadores de mensagens não lidas (usados apenas para mostrar os indicadores de notificação) e uma prévia curta da última mensagem usada para montar sua lista de chats</li>
+      <li><strong>Cache local de mensagens:</strong> para que você continue lendo suas conversas recentes por Link Anônimo sem travamentos, o app também guarda as mensagens recentes em um banco de dados privado, só do app, no seu aparelho. Esse cache local nunca é enviado aos nossos servidores, não é acessível a nós e é apagado automaticamente após 24 horas (também é removido se você limpar os dados do app ou desinstalá-lo)</li>
+      <li><strong>Apelidos que você dá a um contato:</strong> você pode, se quiser, dar a um contato anônimo um apelido de sua escolha. Esse apelido é guardado como parte do registro do chat em nossos servidores, separadamente para cada lado da conversa — nunca é mostrado ao outro participante e é sincronizado automaticamente se você usar o app em mais de um aparelho. Ele é apagado junto com o próprio chat quando o chat é recusado ou removido, mas pode continuar existindo se o chat for apenas bloqueado, e não apagado (veja a Seção 6)</li>
+      <li><strong>Indicadores de presença visíveis ao seu parceiro de conversa:</strong> enquanto um chat está ativo, o app pode mostrar ao seu parceiro um indicador de “digitando…”, um status aproximado de “online” / “ativo por último” e confirmações de leitura (se o seu parceiro abriu o chat desde a sua última mensagem). Esses sinais são gerados automaticamente a partir de horários de curta duração e só são visíveis dentro daquele chat específico — não fazem parte de nenhum perfil público e não aparecem em nenhum outro lugar do app</li>
+      <li><strong>Reações e respostas:</strong> você pode reagir a uma mensagem com um emoji ou responder diretamente a uma mensagem anterior específica; ambos são guardados como parte do registro da mensagem e são visíveis ao seu parceiro de conversa, com a mesma retenção do próprio chat</li>
+      <li><strong>Modo convidado por padrão:</strong> você pode usar o recurso de Link Anônimo imediatamente, sem nenhuma conta — seu aparelho recebe automaticamente um identificador de sessão anônimo. Se você reinstalar o app ou limpar os dados dele no modo convidado, esse identificador se perde e, com ele, o acesso aos seus chats e links por Link Anônimo; chats no modo convidado em que pelo menos um participante não entrou com o Google também são apagados 7 dias após a última mensagem, e a própria conta de convidado é excluída após 90 dias sem abrir o app (Seção 6)</li>
+      <li><strong>Armazenamento permanente opcional via login com Google:</strong> você pode entrar com o Google na seção de Link Anônimo (pela sugestão de salvar o chat ou pelo menu da conta). Isso vincula sua conta Google ao seu identificador de sessão anônimo atual sem perder nenhum dos seus chats ou links. Quando <strong>você e</strong> o outro participante de um chat entram com o Google, aquele chat se torna permanente e deixa de estar sujeito à exclusão de convidados em 7 dias. Recebemos apenas o e-mail e o nome de exibição da sua conta Google para autenticação — nunca mostrados ao outro participante, que continua vendo você de forma totalmente anônima. Você pode trocar de conta Google ou sair e voltar ao modo convidado a qualquer momento pelo menu da conta</li>
+      <li><strong>Transferência de chats após um conflito de conta Google:</strong> se a conta Google com que você entra já estava vinculada a outra das suas sessões anônimas, não conseguimos uni-las automaticamente. Se a sua sessão de convidado atual tiver chats por Link Anônimo, perguntamos se você quer transferi-los para essa conta Google antes de concluir o login; se você concordar, a titularidade dos chats passa para essa conta. A escolha é totalmente sua — recusar apenas faz o login sem mover nada, e seus chats de convidado atuais continuam como estavam, mas ficam inacessíveis a partir da conta para a qual você está mudando, como descrito abaixo</li>
+      <li><strong>Recuperar o acesso em um aparelho novo ou após reinstalar:</strong> se você já entrou com o Google antes, entrar de novo com a mesma conta Google — no mesmo ou em outro aparelho — restaura o acesso ao seu Link Anônimo e aos seus chats. Sem o login com Google, não há como restaurar os dados do modo convidado após uma reinstalação ou limpeza de dados, por definição</li>
+      <li><strong>Bloqueio:</strong> bloquear um contato em um chat por Link Anônimo impede que as mensagens dele cheguem até você daí em diante — o chat continua visível na sua lista, mas você deixa de receber as novas mensagens, notificações e contadores de não lidas dele. Você pode desbloquear a qualquer momento dentro do chat; só quem bloqueou pode desbloquear, e a lista de todas as pessoas que você bloqueou fica disponível no menu da conta</li>
+      <li><strong>Apagar e trocar:</strong> você pode apagar chats por Link Anônimo individuais no app a qualquer momento; os chats em que você é o anfitrião são apagados por completo, e nos chats em que você é convidado do link de outra pessoa só a sua cópia é removida. Você pode trocar seu link pessoal em Configurações → Zona de perigo → Mudar link do chat (uma vez a cada 7 dias por aparelho) — o link antigo para de funcionar, e os chats existentes são mantidos. Excluir sua conta inteira (Seção 8) remove seu link e todos os chats em que você é o anfitrião</li>
+      <li><strong>Prevenção de abuso nas denúncias:</strong> para manter o sistema de denúncias anônimas justo — este recurso é muitas vezes usado entre pessoas que já se conhecem, e às vezes denúncias são feitas por brincadeira ou por raiva — registramos temporariamente, por aparelho: uma sequência de denúncias que o sistema de moderação com IA não confirmou como violações; um intervalo de espera entre denúncias repetidas envolvendo o mesmo par de aparelhos (24 horas); e, se for detectado um padrão de denúncias não confirmadas, uma restrição temporária (normalmente de 6 horas) para enviar novas denúncias ou criar novos links. Esses registros são apagados automaticamente quando expiram ou, no caso dos intervalos entre pares de aparelhos, em até 7 dias</li>
+      <li><strong>O bloqueio é permanente para aquele par:</strong> quando você bloqueia um chat por Link Anônimo — com ou sem denúncia — mantemos um registro permanente que liga os dois identificadores de aparelho envolvidos, justamente para impedir que o aparelho bloqueado inicie um novo pedido com você, seja pelo mesmo link ou por um link que você crie depois. Esse registro não expira no mesmo prazo que os outros dados do Link Anônimo (veja a seção de retenção desta Política) porque toda a sua finalidade é permanecer em vigor</li>
+      <li><strong>Alcance do banimento:</strong> as medidas resultantes de uma violação confirmada dentro de um chat por Link Anônimo são marcadas internamente como originadas deste recurso. Esse banimento restringe apenas a possibilidade de iniciar novos pedidos por Link Anônimo — não bloqueia seu acesso ao chat principal de combinação. Por outro lado, um banimento originado do chat principal também restringe o envio de novos pedidos por Link Anônimo, já que os banimentos são aplicados pelo identificador do aparelho, independentemente da origem</li>
+      <li>Todos os outros direitos descritos na Seção 7 (incluindo o direito à revisão humana de decisões automatizadas) valem igualmente para as medidas tomadas em chats por Link Anônimo</li>
+    </ul>
+
+    <h2 class="section-title">15. Status Premium, programa de indicação e códigos promocionais</h2>
+    <p>O NearChat oferece um status Premium opcional, que pode ser obtido pelo programa de indicação ou por um código promocional (a compra paga não está disponível no momento). Esta seção explica o tratamento de dados específico deste recurso.</p>
+    <ul>
+      <li><strong>Exige login com Google:</strong> o programa de indicação e o resgate de códigos promocionais só estão disponíveis depois que você entra com o Google. A data de expiração do seu Premium está ligada ao identificador da sua conta, que não é durável em sessões de convidado — reinstalar o app ou limpar os dados dele como convidado faria uma recompensa conquistada se perder sem aviso</li>
+      <li><strong>Seu status Premium:</strong> guardamos na sua conta um horário de expiração que indica até quando seu status Premium fica ativo. Uma cópia limitada e não identificável desse horário (sem nenhuma outra informação do perfil) pode ser lida por outros usuários, para que o app do seu parceiro de conversa mostre o selo Premium e o estilo das mensagens durante a conversa — nenhuma outra parte do seu perfil é exposta por esse mecanismo</li>
+      <li><strong>Seu código de indicação:</strong> quando você entra com o Google, um código curto é gerado e vinculado à sua conta para que você o compartilhe. Quem resgatá-lo dá a você tempo extra de Premium; a pessoa nova também recebe uma recompensa inicial menor</li>
+      <li><strong>Prevenção de abuso nas indicações:</strong> para impedir que o mesmo aparelho físico peça repetidamente a recompensa de “usuário novo” limpando os dados do app e entrando com outra conta, mantemos um registro permanente que liga um identificador de aparelho ao fato de ele já ter sido creditado uma vez como pessoa indicada. Esse registro não expira, pelo mesmo motivo do registro de bloqueio de chat anônimo descrito na Seção 14 — toda a sua finalidade é permanecer em vigor</li>
+      <li><strong>Códigos promocionais:</strong> os códigos promocionais são criados e gerenciados por nós; cada um pode conceder um número definido de dias de Premium, pode ter um número máximo de usos e pode ser desativado a qualquer momento. Resgatar o mesmo código mais de uma vez no mesmo aparelho é impedido da mesma forma que com os códigos de indicação</li>
+      <li>Todos os outros direitos descritos na Seção 7 valem igualmente para os dados tratados nesta seção</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">16. Perguntas abertas e respostas</h2>
+    <p>O NearChat oferece um recurso opcional que permite criar uma “pergunta aberta” pública — um link compartilhável e um QR code para que qualquer pessoa envie a você uma resposta anônima em texto, sem criar conta. Esta seção explica o tratamento de dados específico deste recurso, além das regras gerais acima.</p>
+    <ul>
+      <li><strong>Dados da pergunta:</strong> quando você cria uma pergunta aberta, guardamos o texto da pergunta, o identificador da sua conta e um código curto usado para formar seu link compartilhável</li>
+      <li><strong>Dados da resposta:</strong> quando alguém responde à sua pergunta aberta, guardamos o texto da resposta, o horário e o identificador do aparelho de quem respondeu (Android ID) — não uma conta pessoal, já que responder não exige login</li>
+      <li><strong>Dados de denúncia:</strong> se você denunciar uma resposta, guardamos o motivo, uma referência à resposta denunciada, o identificador da sua conta e o horário, mantidos para análise de moderação; um administrador pode apagar a denúncia depois de analisada</li>
+      <li><strong>Restrição automática do aparelho:</strong> cada resposta denunciada é analisada pelo mesmo sistema automático de IA descrito na Seção 13, adaptado para analisar uma única resposta. Se ele confirmar uma violação, criamos um registro que impede o aparelho que respondeu de enviar novas respostas em qualquer lugar do app, pela duração definida nas regras atuais da plataforma; esse registro é substituído se o aparelho for restringido de novo depois. Independentemente disso, se um número definido de respostas denunciadas diferentes do mesmo aparelho se acumular dentro de uma janela de tempo móvel, o mesmo tipo de restrição é criado como rede de segurança, seja qual for o resultado individual da IA. Isso constitui uma decisão automatizada no sentido do Artigo 22 do GDPR, e os direitos descritos na Seção 7 — incluindo o direito de pedir revisão humana — valem igualmente aqui</li>
+      <li><strong>Bloqueio por pergunta:</strong> independentemente das denúncias, você pode bloquear o aparelho de uma pessoa específica na sua própria pergunta aberta. Para isso, mantemos um registro permanente que liga sua pergunta a esse identificador de aparelho, semelhante ao registro de bloqueio do Link Anônimo descrito na Seção 14; isso não afeta a possibilidade desse aparelho responder às perguntas abertas de outras pessoas</li>
+      <li><strong>Limite de quantidade de respostas:</strong> para evitar inundação, mantemos um contador de curta duração, numa janela móvel de 24 horas, de quantas respostas um único aparelho enviou para uma pergunta aberta específica</li>
+      <li><strong>Imagem do cartão:</strong> quando você compartilha seu link pelo app, o cartão que você criou é enviado como uma pequena imagem pública e mostrado no topo da sua página de respostas e como prévia do link nos mensageiros (Seção 1). Ele contém apenas o que você colocou no cartão. É substituído toda vez que você compartilha de novo e apagado junto com a pergunta ou a conta</li>
+      <li><strong>Responder pelo navegador:</strong> quem responde pela página web é identificado apenas por um identificador aleatório guardado no navegador (não por uma conta ou aparelho); a página também obtém um token do Google reCAPTCHA Enterprise para comprovar que não é um bot (Seção 1). Se esse navegador estiver restringido, a página mostra o número da restrição, o motivo e a data de término</li>
+      <li><strong>Retenção:</strong> as respostas recebidas por uma conta de convidado são apagadas após 7 dias; as respostas recebidas por uma conta que entrou com o Google são mantidas até você apagá-las ou apagar sua conta (Seção 6)</li>
+      <li><strong>Restrições progressivas:</strong> as restrições aplicadas por respostas denunciadas duram 24 horas na primeira violação, 7 dias na segunda e 30 dias a partir da terceira, e são registradas com número e motivo (Seção 13)</li>
+      <li><strong>Trocar seu link:</strong> você pode trocar o link da sua pergunta aberta em Configurações → Zona de perigo → Mudar link de perguntas, uma vez a cada 7 dias por aparelho; o link antigo para de funcionar na hora e as respostas que você já recebeu são mantidas</li>
+      <li><strong>Publicar respostas na sua página:</strong> você pode deixar respostas recebidas visíveis, uma a uma, na sua página pública de respostas junto com a sua réplica (o “mural de respostas”). Só aparecem na página o texto da resposta, a sua réplica e a data — o identificador do aparelho ou do navegador de quem respondeu nunca é publicado. Você pode tirar uma resposta da página a qualquer momento; apagar a resposta ou a sua conta também a remove da página;</li>
+      <li><strong>Sua réplica a uma resposta:</strong> a réplica que você escreve para uma mensagem recebida é guardada junto com essa mensagem e apagada junto com ela;</li>
+      <li><strong>Apelido e avatar de emoji (opcional):</strong> você pode definir um apelido (até 20 caracteres) e escolher um emoji. Eles ficam no seu perfil e são mostrados a todos que abrem o seu link; o apelido é verificado contra uma lista de palavras proibidas. Você pode alterá-los ou removê-los a qualquer momento, e eles são apagados junto com a sua conta. Qualquer visitante da página pode denunciá-la — guardamos essa denúncia (identificador da página, identificador aleatório do navegador, data) para análise de moderação;</li>
+      <li><strong>Convite para chat a partir de uma resposta:</strong> para que você possa convidar quem respondeu para um chat anônimo, guardamos junto com a resposta um registro de serviço que a liga à conta de quem respondeu (se a resposta foi enviada pelo app) ou a um identificador aleatório do navegador (se foi enviada pela página web). Esse registro não é acessível a outros usuários, incluindo o dono da pergunta, e é usado apenas pelo servidor para criar um chat a seu pedido. A marcação “Quero conversar com o autor” de quem respondeu fica guardada com a resposta. Se você convidar alguém que respondeu pela web, guardamos o convite (referência à resposta, identificador do navegador, status) para mostrá-lo na página e abrir o chat depois que o app for instalado. Depois que um chat é criado, vale a Seção 14;</li>
+      <li><strong>Lembrete “ainda sem respostas”:</strong> se nenhum dos seus links de perguntas tiver recebido uma resposta visível 2–3 dias após a criação, enviamos uma única notificação push sugerindo que você compartilhe seu cartão. Ela é enviada uma vez por conta, só durante o dia no seu fuso horário; o horário do envio fica salvo no seu perfil para que o lembrete nunca se repita;</li>
+      <li>Todos os outros direitos descritos na Seção 7 valem igualmente para os dados tratados nesta seção</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">17. Pedidos de conversa</h2>
+    <p>O NearChat oferece um recurso opcional de “Pedidos de conversa”: em vez de esperar na fila de combinação ao vivo, você pode publicar um pedido público curto dizendo com quem gostaria de conversar, e outros usuários podem respondê-lo. Esta seção explica o tratamento de dados específico deste recurso, além das regras gerais acima.</p>
+    <ul>
+      <li><strong>Dados do pedido:</strong> guardamos o texto do seu pedido (até 150 caracteres), o gênero, a faixa etária, o tema e o público/país escolhidos, o identificador da sua conta e as informações de criação, expiração e status. Seu pedido fica visível a todos os usuários do app enquanto estiver aberto; o identificador da sua conta não é mostrado a eles</li>
+      <li><strong>Respostas:</strong> quando alguém responde ao seu pedido, guardamos o identificador da conta dessa pessoa e o status da resposta; quando você aceita uma resposta, começa uma sessão de chat comum entre vocês (com as mesmas regras e a mesma retenção do chat principal de combinação) e o seu pedido é fechado</li>
+      <li><strong>Duração:</strong> um pedido é fechado automaticamente 24 horas após a publicação, ou quando você aceita uma resposta; você também pode fechá-lo quando quiser. Só é permitido um pedido aberto por conta</li>
+      <li><strong>Denúncias e moderação:</strong> qualquer usuário pode denunciar um pedido; guardamos o motivo da denúncia, os identificadores das contas de quem denunciou e do autor e o texto do pedido para análise pelo sistema automático de IA (Seção 13). Um pedido denunciado por vários usuários diferentes é ocultado do feed na hora. Uma violação confirmada impede o autor de publicar pedidos e de responder a eles por um período progressivo (24 horas, 7 dias, 30 dias), registrado tanto na conta quanto no aparelho</li>
+      <li><strong>Escolhas lembradas:</strong> os parâmetros que você usou por último ao criar um pedido ficam salvos apenas no seu aparelho, para que o formulário abra já preenchido</li>
+      <li><strong>Notificações:</strong> você recebe uma notificação push quando alguém responde ao seu pedido ou aceita a sua resposta; essa categoria pode ser desativada em Configurações</li>
+      <li><strong>Preferências de busca no seu perfil:</strong> o tema, o gênero e a idade do parceiro e o país que você selecionou ficam no seu perfil para que os pedidos compatíveis apareçam primeiro e para que possamos avisar você sobre um novo pedido compatível — no máximo uma vez por dia; a notificação pode ser desativada nas configurações. Também guardamos o horário da última notificação desse tipo;</li>
+      <li><strong>Conexão com a Roleta:</strong> enquanto seu pedido estiver aberto, uma pessoa que busca alguém na Roleta com filtros compatíveis pode ser conectada diretamente a você se não houver mais ninguém disponível — somente se você estiver com o app aberto ou tiver estado nele nos últimos 10 minutos (verificamos se o app está aberto agora e quando o pedido foi criado ou reaberto). Você recebe uma notificação, e o chat é uma sessão comum; quem veio da Roleta pode passar para a próxima pessoa;</li>
+      <li>Todos os outros direitos descritos na Seção 7 valem igualmente para os dados tratados nesta seção</li>
     </ul>
   </div>
 
